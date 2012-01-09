@@ -1,0 +1,59 @@
+<?php
+function demopoly_generate_menu() {
+  $items = array();
+
+$items['admin/config/development/generate/protest'] = array(
+      'title' => 'Generate Protest',
+      'description' => 'Generate a given number of protests. Optionally delete current protest.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('demopoly_generate_protest_form'),
+      'access arguments' => array('administer protest'),
+    );
+    return $items;
+}
+function demopoly_generate_protest_form() {
+  $options = array();
+  $form['kill_protest'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Delete existing protests.'),
+    '#default_value' => FALSE,
+  );
+  $form['protest_count'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Count of protests.'),
+  	'#size'=>5,
+  '#default_value'=>10
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Generate'),
+  );
+  return $form;
+}
+/**
+ * FormAPI submission to generate taxonomy terms.
+ */
+function demopoly_generate_protest_form_submit($form_id, &$form_state) {
+  module_load_include('inc', 'devel_generate');
+  module_load_include('inc', 'devel_generate','devel_generate.fields');
+  $users = devel_get_users();
+  if ($form_state['values']['kill_protest']==1) {
+  	$ids = db_select('demopoly_protest')->fields('demopoly_protest', array('pid'))->execute()->fetchAll();
+  	foreach ($ids as $id=>$o) { 
+  		entity_delete('protest', $o->pid);
+  	}
+  	//	db_delete('demopoly_protest')->execute();
+  }
+  $count = (int)$form_state['values']['protest_count'];
+  for ($i=0;$i<$count;$i++) { 
+  $protest = (object) array (
+    'pid' => '',
+    'type' => 'protest',
+  'language'=>'und',
+  'uid'=>$users[array_rand($users)]
+	);
+	devel_generate_fields($protest, 'protest', 'protest');
+	entity_save('protest', $protest);
+  }
+}
+	

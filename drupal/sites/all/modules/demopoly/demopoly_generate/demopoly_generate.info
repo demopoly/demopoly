@@ -1,0 +1,6 @@
+name = demopoly Protest generation
+description = Provides the protest entity generation.
+dependencies[] = demopoly_protest
+dependencies[] = devel_generate
+package = demopoly
+core = 7.x

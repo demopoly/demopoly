@@ -1,0 +1,12 @@
+drupal/sites/default/files
+drupal/sites/www.wissen.local-stage/files
+drupal/sites/default/local.settings.php
+drupal/sites/local2.wissen.de
+test
+
+drupal/backup/
+.buildpath
+.project
+.directory
+.settings
+.DS_Store

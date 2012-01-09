@@ -1,0 +1,52 @@
+<?php
+function demopoly_protest_schema() {
+	$schema['demopoly_protest'] = array (
+    'description' => 'The protest',
+    'fields' => array(
+      'pid' => array(
+        'description' => 'Primary key',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+	),
+      'uid' => array(
+        'description' => 'The user of the protest',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+	),
+  	'parent_pid' => array(
+          'description' => 'The parent protest',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE	,
+	),
+  'created' => array(
+        'description' => 'The Unix timestamp when the node was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+	),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the node was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+	),
+	),
+	'indexes' => array(
+      'protest_changed'        => array('changed'),
+      'protest_created'        => array('created'),
+    ),
+    'foreign keys' => array(
+      'protest_author' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+    'primary key' => array('pid'),
+	);
+
+	return $schema;
+}
+?>

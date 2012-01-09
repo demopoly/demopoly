@@ -1,0 +1,5 @@
+name = demopoly Protest
+description = Provides the protest entity.
+dependencies[] = entity
+package = demopoly
+core = 7.x

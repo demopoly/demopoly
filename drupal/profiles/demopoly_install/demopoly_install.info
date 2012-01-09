@@ -1,0 +1,44 @@
+name = Localized Drupal
+description = Install localized with commonly used features pre-configured.
+version = VERSION
+core = 7.x
+
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = menu
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = taxonomy
+dependencies[] = toolbar
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = context
+dependencies[] = context_ui
+dependencies[] = profile2
+dependencies[] = features
+dependencies[] = demopoly_common
+
+
+; ships with locale modules
+dependencies[] = locale
+dependencies[] = l10n_update
+
+files[] = demopoly_install.profile
+
+; Information added by drupal.org packaging script on 2011-06-05
+version = "7.x-1.0-beta7"
+core = "7.x"
+project = "demopoly_install"
+datestamp = "1307282520"
+

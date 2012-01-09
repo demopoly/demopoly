@@ -1,0 +1,171 @@
+<?php 
+class ProtestController extends EntityAPIControllerExportable{
+	public function save($protest) {
+		if (empty($protest->pid)) { 
+			$protest->created=time();
+		}
+		$protest->changed=time();
+		kpr($protest);
+		drupal_write_record('demopoly_protest', $protest);
+		field_attach_insert('protest', $protest);
+		module_invoke_all('entity_insert', 'protest', $protest);
+		return $protest;
+	}
+	
+}
+function demopoly_protest_entity_info(){
+	$protest_info['protest'] = array(
+    'label' => t('Protest'),
+    'controller class' => 'ProtestController',
+    'base table' => 'demopoly_protest',
+    'uri callback' => 'demopoly_protest_uri',
+	'save callback'=>'demopoly_protest_save',
+	'views controller class' => 'EntityDefaultViewsController',
+	
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'pid',
+	),
+    'static cache' => TRUE,
+    'bundles' => array(
+      'protest'=> array(
+        'label' => 'Protest',
+        'admin' => array(
+          'path' => 'admin/structure/protest/manage',
+          'access arguments' => array('administer protest'),
+	),
+	),
+	),
+    'view modes' => array(
+      'full' => array(
+        'label' => t('Full Protest'),
+        'custom settings' =>  FALSE,
+	),
+	'teaser' => array(
+	        'label' => t('Protest teaser'),
+	        'custom settings' =>  FALSE,
+	),
+	)
+	);
+
+	return $protest_info;
+}
+function demopoly_protest_uri($protest){
+	return array(
+    'path' => 'protest/' . $protest->pid,
+	);
+}
+
+
+function demopoly_protest_menu(){
+	$items['admin/structure/protest/manage'] = array(
+    'title' => 'Protest Admin',
+    'description' => 'Manage Protest structure',
+    'page callback' => 'demopoly_protest_info',
+    'access arguments' => array('administer protests'),
+	);
+	$items['protest/%demopoly_protest'] = array(
+    'title callback' => 'demopoly_protest_page_title',
+    'title arguments' => array(1),
+    'page callback' => 'demopoly_protest_page_view',
+    'page arguments' => array(1),
+    'access arguments' => array('view protests'),
+    'type' => MENU_CALLBACK,
+	);
+	$items['protest/%demopoly_protest/edit'] = array(
+    'title callback' => 'demopoly_protest_page_title',
+    'title arguments' => array(1),
+    'page callback' => 'demopoly_protest_edit',
+    'page arguments' => array(1),
+    'access arguments' => array('edit protests'),
+    'type' => MENU_CALLBACK,
+	);
+	$items['protest/add'] = array(
+	    'title' => 'Add an Protest!',
+	    'page callback' => 'demopoly_protest_add',
+	    'access arguments' => array('create protest'),
+	);
+	return $items;
+}
+function demopoly_protest_load($id) {
+	return entity_load_single('protest', $id) ;
+	
+}
+function demopoly_protest_permission(){
+	return array(
+    'administer protests' =>  array(
+      'title' => t('Administer protests'),
+      'restrict access' => TRUE,
+	),
+    'view protests' => array(
+      'title' => t('View protests'),
+	),
+	'add protests' => array(
+      'title' => t('Add protests'),
+	),
+	'edit protests' => array(
+      'title' => t('Edit protests'),
+	)
+	);
+}
+
+
+function demopoly_protest_info() {
+	return ('Welcome to the administration page for your protests!');
+}
+
+function demopoly_protest_page_title($protest){
+	return $protest->pid;
+}
+
+function demopoly_protest_page_view($protest, $view_mode = 'full'){
+	$protest->content = array();
+	// Build fields content.
+	field_attach_prepare_view('demo', array($protest->pid => $protest), $view_mode);
+	entity_prepare_view('protest', array($protest->pid => $protest));
+	$protest->content += field_attach_view('protest', $protest, $view_mode);
+
+	return $protest->content;
+}
+function demopoly_protest_edit($protest) {
+	return drupal_get_form('demopoly_protest_add_form', $protest);
+}
+function demopoly_protest_add() {
+	global $user;
+	
+	$protest = (object) array (
+    'pid' => '',
+    'type' => 'protest',
+	);
+
+	return drupal_get_form('demopoly_protest_add_form', $protest);
+}
+
+
+function demopoly_protest_add_form($form, &$form_state, $protest) {
+	$form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+);
+	field_attach_form('protest', $protest, $form, $form_state);
+	return $form;
+}
+
+function demopoly_protest_add_form_validate($form, &$form_state) {
+	$protest_submisttion = (object) $form_state['values'];
+	field_attach_form_validate('protest', $protest_submisttion, $form, $form_state);
+}
+
+function demopoly_protest_add_form_submit($form, &$form_state) {
+	global $user;
+	$protest_submission = (object) $form_state['values'];
+	field_attach_submit('protest', $protest_submission, $form, $form_state);
+	$protest_submission->uid = $user->uid; 
+	$protest = demopoly_protest_save($protest_submission);
+	$form_state['redirect'] = "protest/$protest->pid";
+}
+function demopoly_protest_save(&$protest) {
+	return entity_get_controller('protest')->save($protest);
+}
+
+?>

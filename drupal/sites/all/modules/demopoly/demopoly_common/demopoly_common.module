@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the demopoly_common feature.
+ */
+
+include_once('demopoly_common.features.inc');
