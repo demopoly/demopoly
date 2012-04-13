@@ -1,0 +1,20 @@
+<?php 
+/**
+ * @file
+ * Code for the demopoly_common feature.
+ */
+
+include_once('demopoly_registration.features.inc');
+/**
+ * implements hook_form_alter()
+ */
+function demopoly_registration_form_alter(&$form,&$form_state,$form_id) { 
+	if ($form_id=='user_register_form') {
+		$form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>blub<br><br><br>','#weight'=>-20);
+		$form['youth_protection']=array('#type'=>'fieldset','#title'=>'youth protections','#weight'=>-10);
+		$form['youth_protection']['youth_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I am 14 years old or older');
+		$form['agree']=array('#type'=>'fieldset','#title'=>'terms and conditions','#weight'=>10);
+		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions <a href="/terms" class="terms-link">LEGALS / PRIVACY</a>');
+	}
+}
+?>

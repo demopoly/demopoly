@@ -1,0 +1,24 @@
+name = GeoNames API
+description = The GeoNames API provides the programming framework for the GeoNames services.
+package = Geonames
+core = 7.x
+; php = 5.1
+
+
+files[] = geonames.admin.inc
+files[] = geonames.doc.inc
+files[] = geonames.install
+files[] = geonames.module
+files[] = geonames_config.inc
+; files[] = geonames_tools.module
+files[] = tests/geonames.test
+files[] = tests/geonames.all.test
+
+configure = admin/config/geonames
+
+; Information added by drupal.org packaging script on 2011-05-07
+version = "7.x-1.0"
+core = "7.x"
+project = "geonames"
+datestamp = "1304738515"
+

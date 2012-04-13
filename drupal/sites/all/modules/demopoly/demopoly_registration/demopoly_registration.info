@@ -1,0 +1,6 @@
+name = demopoly Registration
+description = Provides registrations functionality.
+dependencies[] = "features"
+package = demopoly
+core = 7.x
+features[ctools][] = "strongarm:strongarm:1"

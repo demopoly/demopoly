@@ -25,7 +25,6 @@ dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = context
 dependencies[] = context_ui
-dependencies[] = profile2
 dependencies[] = features
 dependencies[] = demopoly_common
 
@@ -41,4 +40,3 @@ version = "7.x-1.0-beta7"
 core = "7.x"
 project = "demopoly_install"
 datestamp = "1307282520"
-

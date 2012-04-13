@@ -1,0 +1,22 @@
+name = Geonames Tools
+description = Various tools that depend on the Geonames Services
+dependencies[] = geonames
+package = Geonames
+core = 7.x
+; version =
+
+
+; files[] = geonames.admin.inc
+; files[] = geonames.doc.inc
+; files[] = geonames.install
+; files[] = geonames.module
+; files[] = geonames_config.inc
+files[] = geonames_tools.module
+; files[] = tests/geonames.test
+
+; Information added by drupal.org packaging script on 2011-05-07
+version = "7.x-1.0"
+core = "7.x"
+project = "geonames"
+datestamp = "1304738515"
+

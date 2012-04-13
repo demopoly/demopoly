@@ -1,0 +1,166 @@
+<?php
+
+/**
+ * @file
+ * Tests for geonames module.
+ */
+
+class GeoNamesTestCase extends DrupalWebTestCase {
+
+  /**
+   * Implementation of getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('GeoNames'),
+      'description' => t('Test basic functionality of GeoNames module - requires internet access.'),
+      'group' => t('GeoNames'),
+    );
+  }
+
+  /**
+   * Implementation of setUp().
+   */
+  protected function setUp() {
+    parent::setUp('geonames');
+    variable_set('geonames_commercial_active', FALSE);
+    variable_set('geonames_cache', FALSE);
+    variable_set('geonames_username', 'demo');
+  }
+
+  /**
+   * Check geonames_query() with a simple search.
+   */
+  protected function testGeoNamesQuery() {
+    // Setup configuration for the tests.
+    variable_set('geonames_cache', TRUE);
+    variable_set('geonames_reveal_cache', TRUE);
+
+    // Perform a search for "Melbourne" which should return quite a few results.
+    $query = array(
+      'query' => 'Melbourne',
+      'maxrows' => 5,
+      'featureclass' => array('P'),
+      // 'featurecode' => array('PPL', 'PPLA', 'PPLG', 'PPLR', 'PPLC', 'PPLS', 'STLM'),
+      'style' => 'full',
+    );
+    $result = geonames_query('search', $query);
+
+    // Check the results of the search.
+    $this->assertTrue($result->total_results_count > 5, t('At least FIVE results found for "Melbourne"'));
+    $this->assertEqual(count($result->results), 5, t('FIVE results returned (maxrows)'));
+
+    // Check for a couple of results that should be there: Melbourne, Australia;
+    // and Melbourne, FL, US
+    $found_melau = $found_melfl = FALSE;
+    foreach ($result->results as $res) {
+      if ($res['name'] == 'Melbourne' && $res['countrycode'] == 'AU') {
+        $found_melau = TRUE;
+      }
+      if ($res['name'] == 'Melbourne' && $res['countrycode'] == 'US' && $res['admincode1'] == 'FL') {
+        $found_melfl = TRUE;
+      }
+    }
+    $this->assertTrue($found_melau, t('Found Melbourne, Australia'));
+    $this->assertTrue($found_melfl, t('Found Melbourne, Florida, USA'));
+
+    // Perform the same search again, and check that we got the same results,
+    // and the cache was used.
+    $result2 = geonames_query('search', $query);
+    $this->assertTrue($result2->request['cached'], t('Second geonames query is cached'));
+    $this->assertEqual($result->total_results_count, $result2->total_results_count, t('Cached and uncached results are the same count'));
+    $this->assertEqual($result->results, $result2->results, t('Cached and uncached results are the same data'));
+
+    module_load_include('inc', 'geonames', 'geonames.admin');
+
+    $num_cache_items = db_query("SELECT COUNT(*) FROM {cache_geonames}")->fetchField();
+    $this->assertEqual($num_cache_items, 1, t('One entry in the cache after one query'));
+
+    // TODO: Check a query which names the columns it wants explicitly
+    // $query['columns'] = array('geonameid', 'countrycode', 'countryname');
+    // $result3 = geonames_query('search', $query);
+    // error_log(print_r($result3, TRUE));
+  }
+
+  protected function testCacheSorting() {
+    variable_set('geonames_cache', TRUE);
+    variable_set('geonames_reveal_cache', TRUE);
+
+    // Test that results from cache are sorted the same as uncached results
+    // See http://drupal.org/node/623720
+    $query = array('lat' => '28.500103', 'lng' => '-81.357992', 'radius' => 50, 'style' => 'full', 'maxrows' => 10);
+    $options = array('sortby' => 'population', 'sortorder' => 'desc');
+    $results = geonames_query('nearbyplace', $query, $options);
+    if (array_key_exists('cached', $results->request)) {
+      $this->assertNotEqual($results->request['cached'], 'result', 'First request for sorted results IS NOT cached');
+    }
+    $last_population = PHP_INT_MAX;
+    foreach ($results->results as $result) {
+      if ($result['population'] != '') {
+        $this->assertTrue($result['population'] < $last_population, "Population of $result[name] ($result[population]) <= $last_population");
+        $last_population = $result['population'];
+      }
+    }
+
+    // Retest with cached results
+    $results = geonames_query('nearbyplace', $query, $options);
+    $this->assertEqual($results->request['cached'], 'result', 'Second request for sorted results IS cached');
+    $last_population = PHP_INT_MAX;
+    foreach ($results->results as $result) {
+      if ($result['population'] != '') {
+        $this->assertTrue($result['population'] < $last_population, "Population of $result[name] ($result[population]) <= $last_population");
+        $last_population = $result['population'];
+      }
+    }
+  }
+
+  /**
+   * Check that GeoNames loads country-info and feature-codes metadata from
+   * Geonames, and returns it to local queries.
+   */
+  protected function testMetaData() {
+    // Update the MetaData, and check it updated the last-updated value
+    variable_set('geonames_metadata_updated', 0);
+    geonames_metadata_update();
+    $updated = variable_get('geonames_metadata_updated', 0);
+    $this->assertTrue($updated > 0, t('MetaData was updated successfully'));
+
+    // Check countryinfo
+    $numcountries = db_query('SELECT COUNT(*) FROM {geonames_countryinfo}')->fetchField();
+    $this->assertTrue($numcountries > 200, t('At least 200 countries in metadata'));
+    $aus1 = geonames_countryinfo('AU');
+    $this->assertEqual($aus1['name'], 'Australia', t('Australia countryinfo found by country code'));
+    $aus2 = geonames_countryinfo('Australia');
+    $this->assertEqual($aus2['iso_alpha2'], 'AU', t('Australia countryinfo found by name'));
+    $this->assertEqual($aus1, $aus2, t('Lookup by country code matches lookup by name'));
+
+    $num_iso_numeric = db_query('SELECT COUNT(DISTINCT(iso_numeric)) FROM {geonames_countryinfo}')->fetchField();
+    $this->assertEqual($numcountries, $num_iso_numeric, t('All countries have distinct ISO numeric codes'));
+
+    // Check geonames_countries()
+    $oc_countries = geonames_countries(array('continent' => 'OC'));
+    $this->assertTrue(count($oc_countries) > 10, t('Found >10 Oceania countries'));
+    $this->assertTrue(count($oc_countries) < 50, t('Found <50 Oceania countries'));
+
+    // Check featurecodes
+    $numcountries = db_query('SELECT COUNT(*) FROM {geonames_featurecodes}')->fetchField();
+    $this->assertTrue($numcountries > 500, t('At least 500 feature codes in metadata'));
+    $info = geonames_featureinfo('ADMD');
+    $this->assertEqual($info['name'], 'administrative division', 'Found ADMD:administrative division (featurecode)');
+  }
+
+  protected function testHelperFunctions() {
+    // Check Continent Codes
+    $codes = geonames_continent_codes();
+    $this->assertEqual(count($codes), 7, t('Seven continents found'));
+    $codes_by_cc = geonames_continent_codes('short');
+    $this->assertEqual(count($codes_by_cc), 7, t('Seven continents found by CC'));
+    $this->assertEqual($codes_by_cc['OC']['name'], 'Oceania', t('Oceanie found in continent list by CC'));
+
+    // Check US States (technically DC isn't a state, but we'll let that one slide...)
+    $states = geonames_us_states();
+    $this->assertEqual(count($states), 51, t('51 states found'));
+    $this->assertEqual(geonames_us_states('CA'), 'California', t('California found'));
+  }
+
+}

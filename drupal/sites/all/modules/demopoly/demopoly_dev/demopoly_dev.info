@@ -1,7 +1,7 @@
 name = "demopoly dev"
 description = "development modules and settings"
 core = "7.x"
-package = "Features"
+package = "demopoly"
 dependencies[] = "demopoly_generate"
 dependencies[] = "devel"
 dependencies[] = "devel_generate"

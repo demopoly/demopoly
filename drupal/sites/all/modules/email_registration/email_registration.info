@@ -1,0 +1,12 @@
+name = Email Registration
+description = For registration process without a username.
+files[] = email_registration.module
+files[] = email_registration.test
+core = 7.x
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "email_registration"
+datestamp = "1298619192"
+

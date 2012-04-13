@@ -132,7 +132,6 @@ function demopoly_protest_edit($protest) {
 }
 function demopoly_protest_add() {
 	global $user;
-	
 	$protest = (object) array (
     'pid' => '',
     'type' => 'protest',

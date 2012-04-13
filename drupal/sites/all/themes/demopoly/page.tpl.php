@@ -1,97 +1,78 @@
-  <?php
-  //$nodeA = node_load('12');
-  //kpr($nodeA); ?>
-<?php
-$template_path= '/'.drupal_get_path('theme', 'demopoly');
+<?php 
+$base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 ?>
-<!-- <div id="branding" class="clearfix">
-    <?php print $breadcrumb; ?>
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1 class="page-title"><?php print $title; ?></h1>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    <?php print render($primary_local_tasks); ?>
-  </div>
- -->
-<div id="page">
+<?php if ($user->uid==1):?>
+<?php print render($tabs);?>
+<?php endif;?>
 
+<div id="wrapper">
 
+<!-- Start Logo-->    
 
-
-
-
-
-
-
-<?php if ($messages): ?>
-	<div id="console" class="clearfix">
-	<?php print $messages; ?></div>
-	  	<?php endif; ?>
-<div id="container">
-    	<ul id="meta-navigation">
-        <li><a href="<?php echo url('user')?>" title="test">login</a></li>
-        <li><a href="#" title="test">|</a></li>
-        <li><a href="#" title="test">contact</a></li>
-        <li><a href="#" title="test">|</a></li>
-        <li><a href="#" title="test">legal notices</a></li>
-        </ul>
-        
-    	<div id="header"> <a href="index.html"><img class="logo" src="<?php print $template_path?>/images/common/logo.png" width="271" height="60" alt="Bratwurst Logo" /></a>
-		<div id="message">
-        <h1>this is a democratic art project <br />
-		<span class="blue">upload &bull; download &bull; multiply!</span></h1><br />
- 		</div>
-      	</div>
-        
-        <div id="content">
-        <a href="#" id="open-info">information <img src="<?php print $template_path?>/images/common/icon-info_22x22.png" alt="Information Icon" width="22" height="22" align="absmiddle" /></a>
-        <?php if (user_is_logged_in()):?>
-        <a href="<?php echo url('protest/add');?>" id="open-participate">participate <img src="<?php print $template_path?>/images/common/icon-participate_22x22.png" alt="participate Icon" width="22" height="22" align="absmiddle" /></a>
-        
-        <a href="<?php echo url('user/logout')?>" id="open-leave">leave <img src="<?php print $template_path?>/images/common/icon-leave_22x22.png" alt="Leave Icon" width="22" height="22" align="absmiddle" /></a>
-        <?php endif;?>
-   	    
-        
-        <br clear="all" /><br /><br />
-        <?php print render($tabs)?>
-        <?php print render($page['content']);?>
-        
-	</div>  
-    
-<div id="participate-container">
-<a href="#" id="close-participate">Close X</a>
-<div id="participate-inner-container">
-<!-- Inhalt wird per Jquery geladen -->
-</div> 
-</div> 
-
-<div id="info-container">
-<a href="#" id="close-info">Close X</a>
-<div id="info-inner-container">
-<!-- Inhalt wird per Jquery geladen -->
-</div> 
-</div> 
-
-<div id="leave-container">
-<a href="#" id="close-leave">Close X</a>
-<div id="leave-inner-container">
-<!-- Inhalt wird per Jquery geladen -->
-</div> 
-</div> 
-
-<!-- FOOTER -->
-<div id="footer">
-<a href="#" id="open-filter">
-<img src="<?php print $template_path?>/images/common/icon-filter_22x22.png" alt="Filter Icon" width="22" height="22" align="absmiddle" /> show photo filter</a>
-<a href="#" id="close-filter">
-<img src="<?php print $template_path?>/images/common/icon-filter_22x22.png" alt="Filter Icon" width="22" height="22" align="absmiddle" /> close photo filter</a>
-
-<a id="back-top" href="#top">Back to top <img src="<?php print $template_path?>/images/common/icon-back_to_top_22x22.png" alt="Back to top" width="22" height="22" align="absmiddle" /></a>
-<div id="filter">        
-<span style="color:#000000">hier kommt die Filter Navigation rein </span>    
-</div>
+<div id="logo">
+<a class="logoLink" href="<?php print url('<front>')?>"  title="demopoly"><img src="<?php print $base_path;?>img/logo-demopoly.jpg" alt="demopoly"></a>
 </div>
 
-	  	
+<!-- Ende Logo-->    
+
+
+<!-- Start Navigation-->    
+
+<div id="navigation">
+    <ul>
+    	<li><a class="active" href="javascript:jQuery('#block-user-login').toggle()" target="_self" title="Login">Login</a></li>
+    	<li><a href="#" target="_self" title="Expressum">Expressum</a></li>
+    	<li><a href="#" target="_self" title="Contact">Contact</a></li>
+    	<li><a href="#" target="_self" title="Privacy">Privacy</a></li>
+    	<li><a href="#" target="_self" title="Legals">Legals</a></li>
+    </ul>
 </div>
+
+<!-- Ende Navigation-->    
+
+<!-- Start Information -->    
+
+<div id="information">
+    <ul>
+    	<li><a class="active" href="./demopoly_files/demopoly.html" target="_self" title="Information"><img src="<?php print $base_path?>img/informationen.jpg" alt="demopoly"></a></li>
+    	<?php if ($user->uid==0):?>
+    	<li><a href="<?php print url('user/register')?>" target="_self" title="Take Part"><img src="<?php print $base_path?>img/take-part.jpg" alt="demopoly"></a></li>
+    	<?php endif;?>
+    	<?php if ($user->uid!=0):?>
+    	<li><a href="<?php print url('user/logout')?>" target="_self" title="Leave"><img src="<?php print $base_path?>img/leave.jpg" alt="demopoly"></a></li>
+    	<?php endif;?>
+    </ul>
+</div>
+<?php print render($page['login']);?>
+<!-- Ende Information -->  
+
+<!-- Start Claim -->    
+
+<div id="claim">
+    <p>this is a democratic art project...</p>
+</div>
+
+<!-- Ende Claim -->  
+
+<!--  start Content-->
+<div id="content">
+<?php if ($messages):?>
+<div class="clearfix">
+<?php print $messages;?>
+</div>
+<?php endif;?>
+<?php print render($page['content']);?>
+</div>    
+
+
+<!--
+
+ 
+<img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly">
+ 
+</div>
+-->
+
+<!-- Ende Content -->           
+
+</div></body>
