@@ -1000,7 +1000,7 @@ function theme($hook, $variables = array()) {
     // theme() was called with. This allows the preprocess/process step to
     // route to a more specific theme hook. For example, a function may call
     // theme('node', ...), but a preprocess function can add 'node__article' as
-    // a suggestion, enabling a theme to have an alternate template file for
+    // a suggestio	n, enabling a theme to have an alternate template file for
     // article nodes. Suggestions are checked in the following order:
     // - The 'theme_hook_suggestion' variable is checked first. It overrides
     //   all others.
@@ -1015,7 +1015,7 @@ function theme($hook, $variables = array()) {
       $suggestions[] = $variables['theme_hook_suggestion'];
     }
     foreach (array_reverse($suggestions) as $suggestion) {
-      if (isset($hooks[$suggestion])) {
+      if (isset($hooks[$suggestion])) {	
         $info = $hooks[$suggestion];
         break;
       }

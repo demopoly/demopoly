@@ -197,6 +197,10 @@ function demopoly_common_views_default_views() {
   $handler->display->display_options['fields']['pid']['id'] = 'pid';
   $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
   $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  /* Field: Protest: Image */
+  $handler->display->display_options['fields']['field_protest_image']['id'] = 'field_protest_image';
+  $handler->display->display_options['fields']['field_protest_image']['table'] = 'field_data_field_protest_image';
+  $handler->display->display_options['fields']['field_protest_image']['field'] = 'field_protest_image';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -213,6 +217,7 @@ function demopoly_common_views_default_views() {
     t('Protest ID'),
     t('.'),
     t(','),
+    t('Image'),
     t('Page'),
   );
   $export['protest_frontpage'] = $view;

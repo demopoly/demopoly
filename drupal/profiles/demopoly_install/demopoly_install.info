@@ -26,8 +26,10 @@ dependencies[] = views_ui
 dependencies[] = context
 dependencies[] = context_ui
 dependencies[] = features
+dependencies[] = colorbox
 dependencies[] = demopoly_common
-
+dependencies[] = demopoly_registration
+dependencies[] = demopoly_profile
 
 ; ships with locale modules
 dependencies[] = locale

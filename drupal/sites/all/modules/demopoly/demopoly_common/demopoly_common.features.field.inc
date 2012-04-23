@@ -46,11 +46,11 @@ function demopoly_common_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'above',
@@ -132,7 +132,7 @@ function demopoly_common_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'above',
@@ -224,7 +224,7 @@ function demopoly_common_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'above',
@@ -294,11 +294,11 @@ function demopoly_common_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'above',
@@ -371,12 +371,9 @@ function demopoly_common_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => 'thumbnail',
-          ),
-          'type' => 'image',
+          'module' => 'demopoly_imagestyle',
+          'settings' => array(),
+          'type' => 'demopoly_imagestyle',
           'weight' => '0',
         ),
         'full' => array(
@@ -391,12 +388,9 @@ function demopoly_common_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
+          'module' => 'demopoly_imagestyle',
+          'settings' => array(),
+          'type' => 'demopoly_imagestyle',
           'weight' => '0',
         ),
       ),

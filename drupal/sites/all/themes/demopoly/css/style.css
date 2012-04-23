@@ -80,9 +80,6 @@ img {
     margin: 40px 0 0 0;	
 }
 
-#content img {
-    height: 150px;
-}
 
 #block-user-login {
 	position:absolute;
@@ -90,6 +87,7 @@ img {
 	display:none;
 	top:40px;
 	background:white;
-	
-	
+}
+.not-front #content { 
+	width:831px;
 }

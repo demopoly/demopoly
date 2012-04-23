@@ -5,13 +5,11 @@ class ProtestController extends EntityAPIControllerExportable{
 			$protest->created=time();
 		}
 		$protest->changed=time();
-		kpr($protest);
 		drupal_write_record('demopoly_protest', $protest);
 		field_attach_insert('protest', $protest);
 		module_invoke_all('entity_insert', 'protest', $protest);
 		return $protest;
 	}
-	
 }
 function demopoly_protest_entity_info(){
 	$protest_info['protest'] = array(
@@ -56,7 +54,6 @@ function demopoly_protest_uri($protest){
 	);
 }
 
-
 function demopoly_protest_menu(){
 	$items['admin/structure/protest/manage'] = array(
     'title' => 'Protest Admin',
@@ -83,13 +80,12 @@ function demopoly_protest_menu(){
 	$items['protest/add'] = array(
 	    'title' => 'Add an Protest!',
 	    'page callback' => 'demopoly_protest_add',
-	    'access arguments' => array('create protest'),
+	    'access arguments' => array('add protests'),
 	);
 	return $items;
 }
 function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
-	
 }
 function demopoly_protest_permission(){
 	return array(

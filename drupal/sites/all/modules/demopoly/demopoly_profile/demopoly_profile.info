@@ -1,0 +1,8 @@
+name = "demopoly_profile"
+description = "Provides views and blocks for the demopoly profile"
+core = "7.x"
+package = "Features"
+dependencies[] = "ctools"
+dependencies[] = "views"
+features[ctools][] = "views:views_default:3.0"
+features[views_view][] = "my_images"

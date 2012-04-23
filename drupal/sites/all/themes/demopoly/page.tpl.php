@@ -20,7 +20,9 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 
 <div id="navigation">
     <ul>
+    <?php if ($user->uid==0):?>
     	<li><a class="active" href="javascript:jQuery('#block-user-login').toggle()" target="_self" title="Login">Login</a></li>
+    <?php endif;?>
     	<li><a href="#" target="_self" title="Expressum">Expressum</a></li>
     	<li><a href="#" target="_self" title="Contact">Contact</a></li>
     	<li><a href="#" target="_self" title="Privacy">Privacy</a></li>

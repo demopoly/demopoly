@@ -3492,6 +3492,7 @@ function _user_mail_notify($op, $account, $language = NULL) {
     $params['account'] = $account;
     $language = $language ? $language : user_preferred_language($account);
     $mail = drupal_mail('user', $op, $account->mail, $language, $params);
+    dsm($mail);
     if ($op == 'register_pending_approval') {
       // If a user registered requiring admin approval, notify the admin, too.
       // We use the site default language for this.

@@ -3,7 +3,6 @@
  * @file
  * Code for the demopoly_common feature.
  */
-
 include_once('demopoly_registration.features.inc');
 /**
  * implements hook_form_alter()
@@ -15,6 +14,26 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 		$form['youth_protection']['youth_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I am 14 years old or older');
 		$form['agree']=array('#type'=>'fieldset','#title'=>'terms and conditions','#weight'=>10);
 		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions <a href="/terms" class="terms-link">LEGALS / PRIVACY</a>');
+		$form['#submit'][]='_demopoly_registration_submit';
 	}
 }
+function demopoly_registration_menu() {
+	$items['user/register/thanks'] = array(
+			'title' => 'Thank you for participatin',
+			'description' => "",
+			'page callback' => '_demopoly_registration_thanks',
+			'access callback' => true,
+			'type' => MENU_CALLBACK,
+	);
+	return $items;
+}
+function _demopoly_registration_thanks() {
+	//$messages = &drupal_get_messages();
+	//unset($messages); 
+	return 'thanks';
+}
+function _demopoly_registration_submit($form, &$form_state) {
+	$form_state['redirect']='user/register/thanks';	
+}
+
 ?>

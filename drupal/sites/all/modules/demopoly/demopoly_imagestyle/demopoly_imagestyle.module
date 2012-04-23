@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * Code for the demopoly_imagestyle feature.
+ */
+
+include_once('demopoly_imagestyle.features.inc');
+
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function demopoly_imagestyle_field_formatter_info() {
+	return array(
+			'demopoly_imagestyle' => array(
+					'label' => t('Demopoly random imagestyle'),
+					'field types' => array('image'),
+					'settings' => array(
+					),
+			),
+	);
+}
+/**
+ * Implements hook_field_formatter_view().
+ */
+function demopoly_imagestyle_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+	$element = array();
+	$fields = field_get_items('protest', $entity, 'field_protest_image');
+	$field = isset($fields[0])?$fields[0]:null;
+	if ($field==null) { 
+		return ;
+	}
+	$width = $field['width'];
+	$height = $field['height'];
+	$uri  = $field['uri'];
+	$type = $width>$height?'land':'sky';
+	$style = 'img_style_'.$type.'_'.rand(1, 3); 
+	$style_uri = image_style_url($style, $uri);	
+	foreach ($items as $delta => $item) {
+		$element[$delta] = array(
+				'#markup' => '<img src="'.$style_uri.'" alt=""/>',
+				'#item' => $item,
+				'#node' => $entity,
+				'#field' => $field
+		);
+	}
+
+	return $element;
+}
