@@ -1,7 +1,7 @@
 
 CONTENTS OF THIS FILE
 ---------------------
-
+xxx
  * About Drupal
  * Configuration and features
  * Appearance
