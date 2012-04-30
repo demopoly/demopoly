@@ -77,6 +77,14 @@ function demopoly_protest_menu(){
     'access arguments' => array('edit protests'),
     'type' => MENU_CALLBACK,
 	);
+	$items['protest/close_callback'] = array(
+			'title' => 'Demopoly',
+			'page callback' => 'demopoly_protest_close_callback',
+			'page arguments' => array(),
+			'access callback' => true,
+			'type' => MENU_CALLBACK,
+	);
+	//
 	$items['protest/add'] = array(
 	    'title' => 'Add an Protest!',
 	    'page callback' => 'demopoly_protest_add',
@@ -86,6 +94,10 @@ function demopoly_protest_menu(){
 }
 function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
+}
+function demopoly_protest_close_callback() {
+	drupal_add_js("console.log(top.jQuery('.demopoly-my-images-reload'));top.jQuery('.demopoly-my-images-reload').click();top.jQuery('#cboxClose').click();",'inline'); 
+	return 'close';
 }
 function demopoly_protest_permission(){
 	return array(
@@ -141,6 +153,7 @@ function demopoly_protest_add_form($form, &$form_state, $protest) {
 	$form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
+	'#weight'=>100
 );
 	field_attach_form('protest', $protest, $form, $form_state);
 	return $form;
@@ -157,7 +170,7 @@ function demopoly_protest_add_form_submit($form, &$form_state) {
 	field_attach_submit('protest', $protest_submission, $form, $form_state);
 	$protest_submission->uid = $user->uid; 
 	$protest = demopoly_protest_save($protest_submission);
-	$form_state['redirect'] = "protest/$protest->pid";
+	$form_state['redirect'] = "protest/close_callback";
 }
 function demopoly_protest_save(&$protest) {
 	return entity_get_controller('protest')->save($protest);

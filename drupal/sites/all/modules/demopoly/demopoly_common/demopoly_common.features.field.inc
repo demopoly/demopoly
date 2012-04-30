@@ -479,7 +479,7 @@ function demopoly_common_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '3',
       ),
     ),
   );
@@ -542,7 +542,7 @@ function demopoly_common_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '5',
       ),
     ),
   );

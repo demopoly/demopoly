@@ -32,8 +32,13 @@
  * @see template_preprocess_user_profile()
  */
 ?>
+<?php 
+drupal_add_library('system', 'drupal.ajax');
+drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
+?>
 <div class="profile"<?php print $attributes; ?>>
 <?php print views_embed_view('my_images','default',array($user->uid))?>
-<a href="<?php print url('protest/add',array('query'=>array('width'=>800,'height'=>500,'iframe'=>true)));?>" class="colorbox-load">Neues Bild hinzufügen</a>
+<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload">Reload images</a>
+<a href="<?php print url('protest/add',array('query'=>array('width'=>800,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load">Neues Bild hinzufügen</a>
   <?php print render($user_profile); ?>
 </div>

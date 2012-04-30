@@ -5,3 +5,27 @@
  */
 
 include_once('demopoly_profile.features.inc');
+/**
+ * implements hook_menu()
+ */
+function demopoly_profile_menu() {
+	$items['user/my_images/reload'] = array(
+			'title' => 'Reload',
+			'description' => "",
+			'page callback' => '_demopoly_menu_reload',
+			'access callback' => true,
+			'type' => MENU_CALLBACK,
+			'#ajax' => array(
+					'method' => 'html',
+			),
+	);
+	return $items;
+}
+function _demopoly_menu_reload() {
+	global $user;
+	$commands = array();
+	$view = views_embed_view('my_images','default',array($user->uid));
+	$commands[] = ajax_command_replace('.view-my-images', $view);
+	$page = array('#type' => 'ajax', '#commands' => $commands);
+	ajax_deliver($page);
+}

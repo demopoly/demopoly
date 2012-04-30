@@ -6,10 +6,7 @@ core = 7.x
 
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/zoomer.css
-scripts[] = js/jquery.masonry.min.js
-scripts[] = js/modernizr-transitions.js
 
-scripts[] = js/main.js
 
 
 regions[header] = Header
