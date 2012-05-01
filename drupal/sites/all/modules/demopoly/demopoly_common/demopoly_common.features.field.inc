@@ -529,7 +529,7 @@ function demopoly_common_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_firstname',
-      'label' => 'Firstname',
+      'label' => 'Firstnameeeee',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -553,6 +553,7 @@ function demopoly_common_field_default_fields() {
   t('Context');
   t('Datum');
   t('Firstname');
+  t('Firstnameeeee');
   t('Image');
 
   return $fields;
