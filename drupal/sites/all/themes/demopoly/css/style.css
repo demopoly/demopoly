@@ -85,10 +85,59 @@ img {
 #block-user-login {
 	position:absolute;
 	right:210px;
-	display:none;
+	display:block;
 	top:40px;
 	background:white;
 }
 .not-front #content { 
 	width:831px;
 }
+
+/* Login Box */
+
+#block-user-login {
+	
+    -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;
+        
+    box-shadow:  1px 1px 10px 1px #dfdfdf;
+		
+    -webkit-border-radius: 15px;
+    
+    border-radius: 15px;
+	padding: 20px;
+	border: 1px solid #dfdfdf
+    
+        }
+
+#edit-submit {
+	background-image: url("../img/loginbox/login-btn.png");
+    border: none;
+    float: right;
+    height: 38px;
+    width: 113px;
+	box-shadow:none;
+	cursor:pointer;
+	}
+	
+#edit-submit:hover {
+	background-image: url("../img/loginbox/login-btn-hover.png");
+	
+	}
+	
+#edit-name {
+	float:left;}
+
+
+.form-type-textfield {
+	float:left;}	
+	
+
+.form-type-password {
+	float:left;}
+	
+input {
+	border: 0px;
+	-webkit-box-shadow: inset 1px 1px 8px 1px #dfdfdf;
+	box-shadow: inset 1px 1px 8px 1px #dfdfdf; 
+	padding: 3px;
+	margin: 3px;}
