@@ -19,6 +19,14 @@ img {
     padding: 0;
 }
 
+/* Allgemein */
+
+.demopoly-green {
+	color:#76b828}
+	
+.demopoly-blue {
+	color:#009ee2}
+
 /* Wrapper */
 
 #wrapper {
@@ -136,8 +144,33 @@ img {
 	float:left;}
 	
 input {
-	border: 0px;
-	-webkit-box-shadow: inset 1px 1px 8px 1px #dfdfdf;
-	box-shadow: inset 1px 1px 8px 1px #dfdfdf; 
-	padding: 3px;
-	margin: 3px;}
+	padding: 3px 3px;
+	font-size: 1.2em;
+	color: #787878;
+	letter-spacing: -0.02em;
+	text-shadow: 0px 1px 0px #fff;
+	outline: none;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
+	background: -moz-linear-gradient(top,  #e0e0e0,  #ffffff);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #717171;
+	margin-right: 5px;
+	-webkit-box-shadow: 1px 1px 0px #efefef;
+	-moz-box-shadow: 1px 1px 0px #efefef;
+	box-shadow:  1px 1px 0px #efefef;
+	margin: 3px 5px 3px 0px;}
+	
+input:focus { -webkit-box-shadow: 0px 0px 5px #76b828; -moz-box-shadow: 0px 0px 5px #76b828; box-shadow: 0px 0px 5px #76b828; }
+
+/* Take Part */
+
+#edit-youth-protection {
+	color: #000000;}
+	
+#edit-youth-protection span{
+	color: #76b828;}
+	
+#edit-agree-checkbox span{
+	color: #76b828;}
