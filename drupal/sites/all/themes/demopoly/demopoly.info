@@ -8,6 +8,8 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/zoomer.css
 scripts[] = js/main.js
 
+
+
 regions[header] = Header
 regions[navigation] = Navigation
 regions[content] = Content Area

@@ -6,79 +6,91 @@
 	display:none;
 }
 html, body {
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 14px;
-	background-color:#ffffff;
-	color:black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    background-color:#ffffff;
+    color:black;
 }
 img {
-	border: 0 none;
+    border: 0 none;
 }
+
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 /* Allgemein */
 
 .demopoly-green {
-	color:#76b828
-}
+	color:#76b828}
+	
 .demopoly-blue {
-	color:#009ee2
-}
+	color:#009ee2}
+
 /* Wrapper */
 
 #wrapper {
-	margin: 60px 30px 40px 40px;
-	padding: 0;
-	position: relative;
-	width: 95%;
+    margin: 60px 30px 40px 40px;
+    padding: 0;
+    position: relative;
+    width: 95%;
 }
+
 /* Logo */
 
 #logo {
-	float: left;
+    float: left;
 }
+
 /* Navi top right */
 
 #navigation {
-	float: right;
+    float: right;
 }
+
 #navigation ul li {
-	display: inline;
+    display: inline;
 }
+
 #navigation ul li a {
-	font-family: 'Josefin Sans', sans-serif;
-	color: #000;
-	text-transform:uppercase;
-	text-decoration: none;
-	margin: 0 10px 0 0;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #000;
+    text-transform:uppercase;
+    text-decoration: none;
+    margin: 0 10px 0 0;
 }
+
 /* Second Navi left */
 
 #information {
-	clear: both;
-	margin: 30px 0 0 0;
-	float: left;
+    clear: both;
+    margin: 30px 0 0 0;
+    float: left;
 }
+
 #information ul li {
-	display: inline;
+    display: inline;
 }
+    
 /* Claim */
 	
 #claim {
-	float: right;
-	margin: 45px 10px 0 0;
-	font-size: 20px;
-	font-weight: 700;
+    float: right;
+    margin: 45px 10px 0 0;
+    font-size: 20px;
+    font-weight: 700;
 }
+
 /* Content */
 
 #content {
-	clear: both;
-	float: left;
-	margin: 40px 0 0 0;
+    clear: both;
+    float: left;
+    margin: 40px 0 0 0;	
 }
+
+
 #block-user-login {
 	position:absolute;
 	right:210px;
@@ -86,27 +98,34 @@ img {
 	top:40px;
 	background:white;
 }
-.not-front #content {
+.not-front #content { 
 	width:831px;
 }
+
 /* Login Box */
 
 #block-user-login {
-	-webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;
-	box-shadow:  1px 1px 10px 1px #dfdfdf;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
+	
+    -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;
+        
+    box-shadow:  1px 1px 10px 1px #dfdfdf;
+		
+    -webkit-border-radius: 15px;
+    
+    border-radius: 15px;
 	padding: 20px;
 	border: 1px solid #dfdfdf;
 	display:none;
-	
-}
-#user-login-form #edit-submit {
+	border: 1px solid #dfdfdf
+    
+       }
+
+#edit-submit {
 	background-image: url("../img/loginbox/login-btn.png");
-	border: none;
-	float: right;
-	height: 38px;
-	width: 113px;
+    border: none;
+    float: right;
+    height: 38px;
+    width: 113px;
 	box-shadow:none;
 	cursor:pointer;
 	font-size:0px;
@@ -124,21 +143,24 @@ img {
 #user-login-form ul li.last {
 	display:none;
 }
-	
-#user-login-form ul li a {
-	color: #000;
-	text-decoration:none;
 	}
-
+	
+#edit-submit:hover {
+	background-image: url("../img/loginbox/login-btn-hover.png");
+	
+	}
+	
 #edit-name {
-	float:left;
-}
+	float:left;}
+
+
 .form-type-textfield {
-	float:left;
-}
+	float:left;}	
+	
+
 .form-type-password {
-	float:left;
-}
+	float:left;}
+	
 input {
 	padding: 3px 3px;
 	font-size: 1.2em;
@@ -147,7 +169,7 @@ input {
 	text-shadow: 0px 1px 0px #fff;
 	outline: none;
 	background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
-	background: -moz-linear-gradient(top, #e0e0e0, #ffffff);
+	background: -moz-linear-gradient(top,  #e0e0e0,  #ffffff);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -156,26 +178,17 @@ input {
 	-webkit-box-shadow: 1px 1px 0px #efefef;
 	-moz-box-shadow: 1px 1px 0px #efefef;
 	box-shadow:  1px 1px 0px #efefef;
-	margin: 3px 5px 3px 0px;
-}
-input:focus {
-	-webkit-box-shadow: 0px 0px 5px #76b828;
-	-moz-box-shadow: 0px 0px 5px #76b828;
-	box-shadow: 0px 0px 5px #76b828;
-}
+	margin: 3px 5px 3px 0px;}
+	
+input:focus { -webkit-box-shadow: 0px 0px 5px #76b828; -moz-box-shadow: 0px 0px 5px #76b828; box-shadow: 0px 0px 5px #76b828; }
+
 /* Take Part */
 
 #edit-youth-protection {
-	color: #000000;
-}
-
-#edit-youth-protection {
-	color: #000000;
-}
-
-#edit-youth-protection span {
-	color: #76b828;
-}
-#edit-agree-checkbox span {
-	color: #76b828;
-}
+	color: #000000;}
+	
+#edit-youth-protection span{
+	color: #76b828;}
+	
+#edit-agree-checkbox span{
+	color: #76b828;}
