@@ -10,7 +10,7 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 <!-- Start Logo-->    
 
 <div id="logo">
-<a class="logoLink" href="<?php print url('<front>')?>"  title="demopoly"><img src="<?php print $base_path;?>img/logo-demopoly.jpg" alt="demopoly"></a>
+<a class="logoLink" href="<?php print url('<front>')?>"  title="demopoly"><img src="<?php print $base_path;?>img/logo-demopoly.png" alt="demopoly"></a>
 </div>
 
 <!-- Ende Logo-->    
