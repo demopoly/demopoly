@@ -82,7 +82,6 @@ margin: 40px 0 0 0;
 #block-user-login {
 position:absolute;
 right:210px;
-display:block;
 top:40px;
 background:white;
 }
@@ -102,6 +101,7 @@ width:831px;
     border-radius: 15px;
 	padding: 20px;
 	border: 1px solid #dfdfdf;
+	display:none;
 	border: 1px solid #dfdfdf
     
        }
