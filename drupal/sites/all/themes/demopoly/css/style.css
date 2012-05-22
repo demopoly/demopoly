@@ -1,179 +1,409 @@
+GitHub GitHub
+
+    Explore
+    Gist
+    Blog
+    Help
+
+Ammerseekind
+
+    5
+
+    3
+    0
+
+public demopoly / demopoly
+
+    Code
+    Network
+    Pull Requests 0
+    Issues 17
+    Wiki
+    Graphs
+
+    Tags
+    Downloads
+
+    Files
+    Commits
+    Branches 2
+
+demopoly / drupal / sites / all / themes / demopoly / css / style.css
+Ammerseekind 12 minutes ago
+Text für Registrierung/ Styling
+
+3 contributors
+100644 185 lines (166 sloc) 3.002 kb
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+
+	
+
 @charset "UTF-8";
 /* CSS Document */
 
 /* Global */
-#edit-timezone { 
-	display:none;
+#edit-timezone {
+display:none;
 }
 html, body {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px;
-    background-color:#ffffff;
-    color:black;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 14px;
+background-color:#ffffff;
+color:black;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Text für Registrierung/ Styling
 img {
-    border: 0 none;
+border: 0 none;
 }
-
 * {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 }
-
 /* Allgemein */
 
 .demopoly-green {
-	color:#76b828}
-	
+color:#76b828
+}
 .demopoly-blue {
-	color:#009ee2}
-
+color:#009ee2
+}
 /* Wrapper */
 
 #wrapper {
-    margin: 60px 30px 40px 40px;
-    padding: 0;
-    position: relative;
-    width: 95%;
+margin: 60px 30px 40px 40px;
+padding: 0;
+position: relative;
+width: 95%;
 }
-
 /* Logo */
 
 #logo {
-    float: left;
+float: left;
 }
-
 /* Navi top right */
 
 #navigation {
-    float: right;
+float: right;
 }
-
 #navigation ul li {
-    display: inline;
+display: inline;
 }
-
 #navigation ul li a {
-    font-family: 'Josefin Sans', sans-serif;
-    color: #000;
-    text-transform:uppercase;
-    text-decoration: none;
-    margin: 0 10px 0 0;
+font-family: 'Josefin Sans', sans-serif;
+color: #000;
+text-transform:uppercase;
+text-decoration: none;
+margin: 0 10px 0 0;
 }
-
 /* Second Navi left */
 
 #information {
-    clear: both;
-    margin: 30px 0 0 0;
-    float: left;
+clear: both;
+margin: 30px 0 0 0;
+float: left;
 }
-
 #information ul li {
-    display: inline;
+display: inline;
 }
-    
 /* Claim */
-	
-#claim {
-    float: right;
-    margin: 45px 10px 0 0;
-    font-size: 20px;
-    font-weight: 700;
-}
 
+#claim {
+float: right;
+margin: 45px 10px 0 0;
+font-size: 20px;
+font-weight: 700;
+}
 /* Content */
 
 #content {
-    clear: both;
-    float: left;
-    margin: 40px 0 0 0;	
+clear: both;
+float: left;
+margin: 40px 0 0 0;
 }
-
-
 #block-user-login {
-	position:absolute;
-	right:210px;
-	display:block;
-	top:40px;
-	background:white;
+position:absolute;
+right:210px;
+display:block;
+top:40px;
+background:white;
 }
-.not-front #content { 
-	width:831px;
+.not-front #content {
+width:831px;
 }
-
 /* Login Box */
 
 #block-user-login {
-	
-    -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;
-        
-    box-shadow:  1px 1px 10px 1px #dfdfdf;
-		
-    -webkit-border-radius: 15px;
-    
-    border-radius: 15px;
-	padding: 20px;
-	border: 1px solid #dfdfdf
-    
-        }
+-webkit-box-shadow: 1px 1px 10px 1px #dfdfdf;
+box-shadow: 1px 1px 10px 1px #dfdfdf;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+padding: 20px;
+border: 1px solid #dfdfdf
+}
+#user-login-form #edit-submit {
+background-image: url("../img/loginbox/login-btn.png");
+border: none;
+float: right;
+height: 38px;
+width: 113px;
+box-shadow:none;
+cursor:pointer;
+font-size:0px;
+}
+#user-login-form #edit-submit:hover {
+background-image: url("../img/loginbox/login-btn-hover.png");
+}
 
-#edit-submit {
-	background-image: url("../img/loginbox/login-btn.png");
-    border: none;
-    float: right;
-    height: 38px;
-    width: 113px;
-	box-shadow:none;
-	cursor:pointer;
-	}
-	
-#edit-submit:hover {
-	background-image: url("../img/loginbox/login-btn-hover.png");
-	
-	}
-	
+#user-login-form ul li {
+list-style-image: url("../img/loginbox/listenpunkt.png");
+float:left;
+padding-top: 15px;
+}
+
+#user-login-form ul li.last {
+display:none;
+}
+
+#user-login-form ul li a {
+color: #000;
+text-decoration:none;
+}
+
 #edit-name {
-	float:left;}
-
-
+float:left;
+}
 .form-type-textfield {
-	float:left;}	
-	
-
+float:left;
+}
 .form-type-password {
-	float:left;}
-	
+float:left;
+}
 input {
-	padding: 3px 3px;
-	font-size: 1.2em;
-	color: #787878;
-	letter-spacing: -0.02em;
-	text-shadow: 0px 1px 0px #fff;
-	outline: none;
-	background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
-	background: -moz-linear-gradient(top,  #e0e0e0,  #ffffff);
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 1px solid #717171;
-	margin-right: 5px;
-	-webkit-box-shadow: 1px 1px 0px #efefef;
-	-moz-box-shadow: 1px 1px 0px #efefef;
-	box-shadow:  1px 1px 0px #efefef;
-	margin: 3px 5px 3px 0px;}
-	
-input:focus { -webkit-box-shadow: 0px 0px 5px #76b828; -moz-box-shadow: 0px 0px 5px #76b828; box-shadow: 0px 0px 5px #76b828; }
-
+padding: 3px 3px;
+font-size: 1.2em;
+color: #787878;
+letter-spacing: -0.02em;
+text-shadow: 0px 1px 0px #fff;
+outline: none;
+background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
+background: -moz-linear-gradient(top, #e0e0e0, #ffffff);
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: 1px solid #717171;
+margin-right: 5px;
+-webkit-box-shadow: 1px 1px 0px #efefef;
+-moz-box-shadow: 1px 1px 0px #efefef;
+box-shadow: 1px 1px 0px #efefef;
+margin: 3px 5px 3px 0px;
+}
+input:focus {
+-webkit-box-shadow: 0px 0px 5px #76b828;
+-moz-box-shadow: 0px 0px 5px #76b828;
+box-shadow: 0px 0px 5px #76b828;
+}
 /* Take Part */
 
 #edit-youth-protection {
-	color: #000000;}
-	
-#edit-youth-protection span{
-	color: #76b828;}
-	
-#edit-agree-checkbox span{
-	color: #76b828;}
+color: #000000;
+}
+
+#edit-youth-protection {
+color: #000000;
+}
+
+#edit-youth-protection span {
+color: #76b828;
+}
+#edit-agree-checkbox span {
+color: #76b828;
+}
+
