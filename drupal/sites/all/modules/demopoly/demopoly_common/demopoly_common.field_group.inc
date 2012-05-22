@@ -19,7 +19,7 @@ function demopoly_common_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'firstname & emailaddress',
+    'label' => 'First name & Email address',
     'weight' => '0',
     'children' => array(
       0 => 'field_firstname',
@@ -27,7 +27,7 @@ function demopoly_common_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'firstname & emailaddress',
+      'label' => 'First name & Email address',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',

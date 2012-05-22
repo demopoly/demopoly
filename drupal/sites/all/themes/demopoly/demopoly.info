@@ -15,4 +15,3 @@ regions[content] = Content Area
 regions[login] = Loginbox
 regions[footer] = Footer
 regions[search] = Search
-

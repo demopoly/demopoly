@@ -27,11 +27,9 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Protest: Protest ID */
@@ -60,7 +58,7 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
-  /* Field: Field: Firstname */
+  /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
@@ -140,6 +138,11 @@ function demopoly_profile_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image']['field_api_classes'] = 0;
+  /* Sort criterion: Protest: Created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'demopoly_protest';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Protest: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'demopoly_protest';
@@ -159,14 +162,11 @@ function demopoly_profile_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
     t('Protest ID'),
     t('.'),
     t(','),
     t('City'),
-    t('Firstname'),
+    t('First name'),
     t('Datum'),
     t('All'),
   );

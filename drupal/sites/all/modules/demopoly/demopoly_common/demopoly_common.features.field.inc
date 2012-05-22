@@ -81,7 +81,7 @@ function demopoly_common_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '1',
       ),
     ),
   );
@@ -179,7 +179,7 @@ function demopoly_common_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -217,7 +217,7 @@ function demopoly_common_field_default_fields() {
       'bundle' => 'protest',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier die könnten auch mehr namen erscheinen ',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -243,18 +243,19 @@ function demopoly_common_field_default_fields() {
       'entity_type' => 'protest',
       'field_name' => 'field_firstname',
       'label' => 'Firstname',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'text_processing' => 0,
+        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '0',
       ),
     ),
   );
@@ -416,7 +417,7 @@ function demopoly_common_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '0',
+        'weight' => '4',
       ),
     ),
   );
@@ -529,7 +530,7 @@ function demopoly_common_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_firstname',
-      'label' => 'Firstnameeeee',
+      'label' => 'First name',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -552,8 +553,9 @@ function demopoly_common_field_default_fields() {
   t('City');
   t('Context');
   t('Datum');
+  t('First name');
   t('Firstname');
-  t('Firstnameeeee');
+  t('Hier die könnten auch mehr namen erscheinen ');
   t('Image');
 
   return $fields;
