@@ -1,5 +1,6 @@
 <?php 
 $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
+
 ?>
 <?php if ($user->uid==1):?>
 <?php print render($tabs);?>
@@ -19,6 +20,7 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 <!-- Start Navigation-->    
 
 <div id="navigation">
+<?php echo render(  menu_tree('main-menu'));?>
     <ul>
     <?php if ($user->uid==0):?>
     	<li><a class="active login-button" href="#" target="_self" title="Login">Login</a></li>
@@ -48,7 +50,7 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 <!-- Start Claim -->    
 
 <div id="claim">
-    <p>this is a democratic art project...</p>
+    <p>this is a democratic art project</p>
 </div>
 
 <!-- Ende Claim -->  
