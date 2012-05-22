@@ -11,11 +11,6 @@ html, body {
 	background-color:#ffffff;
 	color:black;
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> Text für Registrierung/ Styling
 img {
 	border: 0 none;
 }
@@ -102,7 +97,9 @@ img {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	padding: 20px;
-	border: 1px solid #dfdfdf
+	border: 1px solid #dfdfdf;
+	display:none;
+	
 }
 #user-login-form #edit-submit {
 	background-image: url("../img/loginbox/login-btn.png");
@@ -122,11 +119,11 @@ img {
 	list-style-image: url("../img/loginbox/listenpunkt.png");	
 	float:left;
 	padding-top: 15px;
-	}
+}
 	
 #user-login-form ul li.last {
 	display:none;
-	}
+}
 	
 #user-login-form ul li a {
 	color: #000;
