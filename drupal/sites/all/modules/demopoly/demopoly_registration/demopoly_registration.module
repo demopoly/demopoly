@@ -23,7 +23,7 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 		
 	}
 	if ($form_id=='user_register_form') {
-		$form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
+$form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
 				Do you want to participate? <br>Please note that your participation requires the indication of some data. It contains the following two steps:
 				<br>1. Email confirmation
 				<br>2. Participation and optional picture upload
