@@ -82,7 +82,6 @@ margin: 40px 0 0 0;
 #block-user-login {
 position:absolute;
 right:210px;
-display:block;
 top:40px;
 background:white;
 }
@@ -135,8 +134,7 @@ width:831px;
 #user-login-form ul li.last {
 	display:none;
 }
-	}
-	
+
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
 	
