@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Disable password strength checker.
+ *
+ * Disable Drupal's built in password strength checker on the user
+ * registration and user edit forms. Coder originally taken from
+ * http://www.drupalcoder.com/story/409-disabling-password-check-in-drupal-6
+ *
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function disablepwstrength_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  disablepwstrength_add_js();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function disablepwstrength_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  disablepwstrength_add_js();
+}
+
+/**
+ * Add the JavaScript to disable Drupal's password strength checker.
+ */
+function disablepwstrength_add_js() {
+  drupal_add_js('Drupal.behaviors.password = function () {};', array('type' => 'inline', 'scope' => 'footer'));
+}
