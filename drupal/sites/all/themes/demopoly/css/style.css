@@ -6,8 +6,6 @@
 display:none;
 }
 html, body {
-font-family: 'Josefin Sans', sans-serif;
-font-size: 14px;
 background-color:#ffffff;
 color:black;
 }
@@ -48,7 +46,6 @@ float: right;
 display: inline;
 }
 #navigation ul li a {
-font-family: 'Josefin Sans', sans-serif;
 color: #000;
 text-transform:uppercase;
 text-decoration: none;
@@ -69,8 +66,6 @@ display: inline;
 #claim {
 float: right;
 margin: 45px 10px 0 0;
-font-size: 20px;
-font-weight: 700;
 }
 /* Content */
 
@@ -118,7 +113,6 @@ width:831px;
 	
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
-	
 	font-size:0px;
 }
 #user-login-form #edit-submit:hover {
@@ -137,7 +131,6 @@ width:831px;
 
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
-	
 	}
 	
 #edit-name {
@@ -215,16 +208,17 @@ box-shadow: 0px 0px 5px #76b828;
 /* Take Part */
 
 #edit-youth-protection {
-color: #000000;
+     color: #000000;
 }
 
 #edit-youth-protection {
-color: #000000;
+     color: #000000;
 }
 
 #edit-youth-protection span {
-color: #76b828;
+     color: #76B828;
 }
+
 #edit-agree-checkbox span {
-color: #76b828;
+     color: #76B828;
 }
