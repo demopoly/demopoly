@@ -1,3 +1,4 @@
+
 <?php 
 $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 
@@ -66,14 +67,17 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 </div>    
 
 
-<!--
-
- 
-<img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly"><img src="./demopoly_files/01.jpg" alt="demopoly"><img src="./demopoly_files/02.jpg" alt="demopoly"><img src="./demopoly_files/03.jpg" alt="demopoly"><img src="./demopoly_files/04.jpg" alt="demopoly"><img src="./demopoly_files/05.jpg" alt="demopoly"><img src="./demopoly_files/06.jpg" alt="demopoly"><img src="./demopoly_files/07.jpg" alt="demopoly">
- 
-</div>
--->
-
 <!-- Ende Content -->           
 
-</div></body>
+</div>
+<script>
+$(function(){
+  $('#image-container').masonry({
+    // options
+    itemSelector : '.views-row',
+    columnWidth : 140
+  });
+});
+</script>
+
+</body>

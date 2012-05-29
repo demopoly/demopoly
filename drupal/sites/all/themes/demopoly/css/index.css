@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Index */
+
+
+.page-frontpage .field-name-field-date {display:none;}
+
+.page-frontpage .field-name-field-firstname{ display:none;}
+
+.page-frontpage.field-name-field-city{ display:none;}
+
+.page-frontpage.field-name-field-protest-context {display:none}

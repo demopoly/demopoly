@@ -6,8 +6,6 @@
 display:none;
 }
 html, body {
-font-family: 'Josefin Sans', sans-serif;
-font-size: 14px;
 background-color:#ffffff;
 color:black;
 }
@@ -48,7 +46,6 @@ float: right;
 display: inline;
 }
 #navigation ul li a {
-font-family: 'Josefin Sans', sans-serif;
 color: #000;
 text-transform:uppercase;
 text-decoration: none;
@@ -69,8 +66,6 @@ display: inline;
 #claim {
 float: right;
 margin: 45px 10px 0 0;
-font-size: 20px;
-font-weight: 700;
 }
 /* Content */
 
@@ -84,6 +79,7 @@ position:absolute;
 right:210px;
 top:40px;
 background:white;
+z-index: 1000
 }
 .not-front #content {
 width:831px;
@@ -92,12 +88,9 @@ width:831px;
 
 #block-user-login {
 	
-    -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;
-        
-    box-shadow:  1px 1px 10px 1px #dfdfdf;
-		
-    -webkit-border-radius: 15px;
-    
+    -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;        
+    box-shadow:  1px 1px 10px 1px #dfdfdf;		
+    -webkit-border-radius: 15px;    
     border-radius: 15px;
 	padding: 20px;
 	border: 1px solid #dfdfdf;
@@ -118,7 +111,6 @@ width:831px;
 	
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
-	
 	font-size:0px;
 }
 #user-login-form #edit-submit:hover {
@@ -137,17 +129,14 @@ width:831px;
 
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
-	
 	}
 	
-#edit-name {
-	float:left;
--webkit-box-shadow: 1px 1px 10px 1px #dfdfdf;
-box-shadow: 1px 1px 10px 1px #dfdfdf;
--webkit-border-radius: 15px;
-border-radius: 15px;
-padding: 20px;
-border: 1px solid #dfdfdf
+#edit-name #edit-pass{
+	 border: 1px solid #DFDFDF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px 5px 1px #DFDFDF;
+    float: left;
+    padding: 3px;
 }
 #user-login-form #edit-submit {
 background-image: url("../img/loginbox/login-btn.png");
@@ -162,7 +151,6 @@ font-size:0px;
 #user-login-form #edit-submit:hover {
 background-image: url("../img/loginbox/login-btn-hover.png");
 }
->>>>>>> ee391332ebec99fc67d82e61db1c903a58407325
 
 #user-login-form ul li {
 list-style-image: url("../img/loginbox/listenpunkt.png");
@@ -212,19 +200,5 @@ input:focus {
 -moz-box-shadow: 0px 0px 5px #76b828;
 box-shadow: 0px 0px 5px #76b828;
 }
-/* Take Part */
 
-#edit-youth-protection {
-color: #000000;
-}
 
-#edit-youth-protection {
-color: #000000;
-}
-
-#edit-youth-protection span {
-color: #76b828;
-}
-#edit-agree-checkbox span {
-color: #76b828;
-}

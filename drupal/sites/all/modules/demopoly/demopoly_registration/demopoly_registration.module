@@ -31,18 +31,17 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	}
 	if ($form_id=='user_register_form') {
 $form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
-				Do you want to participate? <br>Please note that your participation requires the indication of some data. It contains the following two steps:
+				<br>Do you want to participate? <br>Please note that your participation requires the indication of some data. It contains the following two steps:<br>
 				<br>1. Email confirmation
-				<br>2. Participation and optional picture upload
-				After having sent the below data, you\'ll get an Email including a link. Please copy/paste that link in order to come back and to proceed. Please note first that your participation is conditioned by age. 
-				For more information see the info-boxes and 
+				<br>2. Participation and optional picture upload<br><br>
+				After having sent the below data, you\'ll get an Email including a link. <br>Please copy/paste that link in order to come back and to proceed. <br>Please note first that your participation is conditioned by age.<br>For more information see the info-boxes and 
 				<a href="privacy">privacy</a>
 				<br><br><br>','#weight'=>-20);
 		//$form['account']['mail']['#title']='HANS';
 		$form['youth_protection']=array('#type'=>'fieldset','#title'=>'youth protection','#weight'=>-10);
 		$form['youth_protection']['youth_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I am 13 years old or older');
 		$form['agree']=array('#type'=>'fieldset','#title'=>'terms and conditions','#weight'=>10);
-		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions <a href="/terms" class="terms-link">LEGALS / PRIVACY</a>');
+		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions (<a href="/terms" class="terms-link"><span class="listenpunkt"></span>LEGALS / <span class="listenpunkt"></span>PRIVACY</a>)');
 		$form['#submit'][]='_demopoly_registration_submit';
 	}
 }
@@ -50,6 +49,7 @@ $form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
  * implements hook_menu()
  */
 function demopoly_registration_menu() {
+<<<<<<< HEAD
 	$items['user/register/thanks'] = array(
 			'title' => 'Thank you for participatin',
 			'description' => "",
@@ -60,6 +60,26 @@ function demopoly_registration_menu() {
 	return $items;
 }
 function _demopoly_profile_thanks() {
+=======
+	$items['user/register/thanks'] = array(
+			'title' => 'Thank you for participatin',
+			'description' => "",
+			'page callback' => '_demopoly_registration_thanks',
+			'access callback' => true,
+			'type' => MENU_CALLBACK,
+	);
+	return $items;
+}
+function anangu_registration_save_user(){
+	global $user;
+	$edit = array();
+	$edit['access']=true;
+	$user->access=true;
+	$edit['signature'] = 'registration_complete';
+	user_save($user,$edit);
+}
+function _demopoly_registration_thanks() {
+>>>>>>> 35e4f22f1d2e50fd88d53528437e57a49592d878
 	//$messages = &drupal_get_messages();
 	//unset($messages); 
 	return '<h1>...Take part...</h1><h2>Hello</h2><div class="thanks-flow">thank you for taking part. 
@@ -84,6 +104,7 @@ function demopoly_registration_init(){
 function _demopoly_registration_submit($form, &$form_state) {
 	$form_state['redirect']='user/register/thanks';	
 }
+<<<<<<< HEAD
 function _demopoly_profile_edit_submit_forward($form, &$form_state) {
 	
 	$form_state['values']['signature'] = 'registration_complete';
@@ -93,6 +114,13 @@ function _demopoly_profile_edit_submit_forward($form, &$form_state) {
 function _demopoly_profile_edit_submit($form, &$form_state) {
 	$form_state['values']['signature'] = 'registration_complete';
 		
+=======
+function _demopoly_profile_edit_submit_forward($form, &$form_state) {
+	anangu_registration_save_user();
+	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
+}
+function _demopoly_profile_edit_submit($form, &$form_state) {
+	anangu_registration_save_user();
 }
 
 function demopoly_registration_menu_alter(&$items) {
@@ -171,6 +199,7 @@ function demopoly_registration_pass_reset($form, &$form_state, $uid, $timestamp,
 			drupal_access_denied();
 		}
 	}
+>>>>>>> 35e4f22f1d2e50fd88d53528437e57a49592d878
 }
 
 ?>

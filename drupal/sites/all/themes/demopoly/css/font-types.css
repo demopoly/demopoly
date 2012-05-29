@@ -1,0 +1,103 @@
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/lubgrhm.eot?#iefix") format("embedded-opentype"), url("../fonts//lubgrhm.woff") format("woff"), url("../fonts/lubgrhm.ttf") format("truetype"), url("../fonts/lubgrhm.svg#lubgrhm") format("svg");
+}
+
+@font-face {
+  font-family: "FuturaStd-Book";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/futurastd-book.eot?#iefix") format("embedded-opentype"), url("../fonts/futurastd-book.woff") format("woff"), url("../fonts/futurastd-book.ttf") format("truetype"), url("../fonts/futurastd-book.svg#futurastd-book") format("svg");
+}
+
+@font-face {
+  font-family: "FuturaStd-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/futurastd-light.eot?#iefix") format("embedded-opentype"), url("../fonts/futurastd-light.woff") format("woff"), url("../fonts/futurastd-light.ttf") format("truetype"), url("../fonts/futurastd-light.svg#futurastd-light") format("svg");
+}
+
+html {
+    font-family: 'FuturaStd-Book';
+}
+
+body {
+     line-height: 1;
+     font: 400 100%/1.5em 'FuturaStd-Book';
+}
+
+p {
+    font-family: 'FuturaStd-Book';
+}
+
+
+a {
+     font-size: 100%;
+	 font-family: 'FuturaStd-Book';
+     margin: 0pt;
+     padding: 0pt;
+     vertical-align: baseline;
+}
+
+a:link, a:visited, a:hover, a:focus, a:active {
+     text-decoration: none;
+}
+
+a:hover, a:focus {
+     text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, dl, ol, ul, p, blockquote, pre {
+     margin-bottom: 1em;
+     margin-top: 1em;
+     font-family: 'FuturaStd-Book';	 
+}
+
+ol ol, ol ul, ul ol, ul ul {
+     margin-left: 1.5em;
+}
+
+li {
+     display: list-item;
+     list-style-position: inside;
+}
+
+h1 {
+     font-size: 1.5em;
+}
+
+h2 {
+     font-size: 1.3125em;
+}
+
+h3 {
+     font-size: 1.125em;
+}
+
+h4 {
+     font-size: 1em;
+}
+
+h5 {
+     font-size: 1em;
+}
+
+h6 {
+     font-size: 1em;
+}
+
+#content {
+     font-family: 'FuturaStd-Book';
+}
+
+#claim p {
+    font-family: 'LubalinGraphITCbyBT-Medium';
+    font-weight: 700;
+    font-size: 1.5em;
+    
+}

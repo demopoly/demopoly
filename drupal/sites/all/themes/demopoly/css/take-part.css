@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/* Take Part */
+
+legend {border-bottom: 2px solid #e4e4e4;width: 700px;padding-bottom: 5px;}
+
+fieldset {
+	border:none;}
+	
+#edit-youth-checkbox {background-image: url("../img/take-part/radio-button.png");}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection span {
+     color: #76B828;
+	 font-weight: bold;
+}
+
+#user_user_form_group_main span {
+     color: #76B828;
+	 font-weight: bold;
+}
+
+#edit-agree span {
+     color: #76B828;
+	 font-weight: bold;
+}
+
+#edit-agree-checkbox span {
+     color: #76B828;
+}
+
+.page-user-register #content {width: 700px;}
+
+.listenpunkt  {
+	background-image: url("../img/loginbox/listenpunkt.png");
+    display: inline-table;
+    height: 7px;
+    width: 9px;
+	margin-right: 5px;
+}
+
+a.terms-link {
+	color:#009ee2;
+	text-decoration:none;
+	font-size: 11px;
+	font-weight: bold;
+	
+	}
