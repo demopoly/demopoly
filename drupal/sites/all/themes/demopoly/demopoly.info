@@ -9,6 +9,7 @@ stylesheets[all][] = css/font-types.css
 stylesheets[all][] = css/zoomer.css
 stylesheets[all][] = css/masonry.css
 stylesheets[all][] = css/take-part.css
+stylesheets[all][] = css/index.css
 
 scripts[] = js/main.js
 scripts[] = js/grid/jquery.min.js
