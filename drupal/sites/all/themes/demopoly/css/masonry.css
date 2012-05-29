@@ -1,9 +1,19 @@
 @charset "UTF-8";
 /* Masonry Grid System Startseite*/
 
-.field-item {
+.views-row{
   width: 220px;
   margin: 10px;
   float: left;
+  position:relative !important;
+  border: 10px solid: #ff00bb;
 }
+
+.field-name-field-date {display:none;}
+
+.field-name-field-firstname{ display:none;}
+
+.field-name-field-city{ display:none;}
+
+.field-name-field-protest-context {display:none}
 

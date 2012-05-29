@@ -24,18 +24,17 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	}
 	if ($form_id=='user_register_form') {
 $form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
-				Do you want to participate? <br>Please note that your participation requires the indication of some data. It contains the following two steps:
+				<br>Do you want to participate? <br>Please note that your participation requires the indication of some data. It contains the following two steps:<br>
 				<br>1. Email confirmation
-				<br>2. Participation and optional picture upload
-				After having sent the below data, you\'ll get an Email including a link. Please copy/paste that link in order to come back and to proceed. Please note first that your participation is conditioned by age. 
-				For more information see the info-boxes and 
+				<br>2. Participation and optional picture upload<br><br>
+				After having sent the below data, you\'ll get an Email including a link. <br>Please copy/paste that link in order to come back and to proceed. <br>Please note first that your participation is conditioned by age.<br>For more information see the info-boxes and 
 				<a href="privacy">privacy</a>
 				<br><br><br>','#weight'=>-20);
 		//$form['account']['mail']['#title']='HANS';
 		$form['youth_protection']=array('#type'=>'fieldset','#title'=>'youth protection','#weight'=>-10);
 		$form['youth_protection']['youth_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I am 13 years old or older');
 		$form['agree']=array('#type'=>'fieldset','#title'=>'terms and conditions','#weight'=>10);
-		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions <a href="/terms" class="terms-link">LEGALS / PRIVACY</a>');
+		$form['agree']['agree_checkbox']=array('#type'=>'checkbox','#required'=>true,'#title'=>'I agree to all terms and conditions (<a href="/terms" class="terms-link"><span class="listenpunkt"></span>LEGALS / <span class="listenpunkt"></span>PRIVACY</a>)');
 		$form['#submit'][]='_demopoly_registration_submit';
 	}
 }
