@@ -10,16 +10,23 @@ include_once('demopoly_registration.features.inc');
 function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	global $user;
 	if ($form_id=='user_profile_form') {
-		$form['#submit'][]='_demopoly_profile_edit_submit';
+		
+		$f = &$form['#submit'];
+		array_unshift($f, "_demopoly_profile_edit_submit");
+		//$form['#submit'][]='_demopoly_profile_edit_submit';
+		unset($form['account']['current_pass']);
+		$form['account']['current_pass_required_values']['#value']=array();
 		$form['save_and_go']=array(
 				'#type'=>'submit',
 				'#value'=>'Save and go',
 				'#submit'=>array('_demopoly_profile_edit_submit_forward'),
 				'#weight'=>100
-				
-				);
-		unset($form['account']['current_pass']);
-		$form['account']['current_pass_required_values']['#value']=array();
+		
+		);
+		
+		return ;
+		
+		
 		
 	}
 	if ($form_id=='user_register_form') {
@@ -46,21 +53,13 @@ function demopoly_registration_menu() {
 	$items['user/register/thanks'] = array(
 			'title' => 'Thank you for participatin',
 			'description' => "",
-			'page callback' => '_demopoly_registration_thanks',
+			'page callback' => '_demopoly_profile_thanks',
 			'access callback' => true,
 			'type' => MENU_CALLBACK,
 	);
 	return $items;
 }
-function anangu_registration_save_user(){
-	global $user;
-	$edit = array();
-	$edit['access']=true;
-	$user->access=true;
-	$edit['signature'] = 'registration_complete';
-	user_save($user,$edit);
-}
-function _demopoly_registration_thanks() {
+function _demopoly_profile_thanks() {
 	//$messages = &drupal_get_messages();
 	//unset($messages); 
 	return '<h1>...Take part...</h1><h2>Hello</h2><div class="thanks-flow">thank you for taking part. 
@@ -86,11 +85,14 @@ function _demopoly_registration_submit($form, &$form_state) {
 	$form_state['redirect']='user/register/thanks';	
 }
 function _demopoly_profile_edit_submit_forward($form, &$form_state) {
-	anangu_registration_save_user();
+	
+	$form_state['values']['signature'] = 'registration_complete';
+	user_profile_form_submit($form, $form_state);
 	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
 }
 function _demopoly_profile_edit_submit($form, &$form_state) {
-	anangu_registration_save_user();
+	$form_state['values']['signature'] = 'registration_complete';
+		
 }
 
 function demopoly_registration_menu_alter(&$items) {

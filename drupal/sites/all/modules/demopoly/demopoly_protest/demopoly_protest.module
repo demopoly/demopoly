@@ -1,7 +1,7 @@
 <?php 
 class ProtestController extends EntityAPIControllerExportable{
 	public function save($protest) {
-		if (empty($protest->pid)) { 
+		if (empty($protest->pid)) {
 			$protest->created=time();
 		}
 		$protest->changed=time();
@@ -13,69 +13,69 @@ class ProtestController extends EntityAPIControllerExportable{
 }
 function demopoly_protest_entity_info(){
 	$protest_info['protest'] = array(
-    'label' => t('Protest'),
-    'controller class' => 'ProtestController',
-    'base table' => 'demopoly_protest',
-    'uri callback' => 'demopoly_protest_uri',
-	'save callback'=>'demopoly_protest_save',
-	'views controller class' => 'EntityDefaultViewsController',
-	
-    'fieldable' => TRUE,
-    'entity keys' => array(
-      'id' => 'pid',
-	),
-    'static cache' => TRUE,
-    'bundles' => array(
-      'protest'=> array(
-        'label' => 'Protest',
-        'admin' => array(
-          'path' => 'admin/structure/protest/manage',
-          'access arguments' => array('administer protest'),
-	),
-	),
-	),
-    'view modes' => array(
-      'full' => array(
-        'label' => t('Full Protest'),
-        'custom settings' =>  FALSE,
-	),
-	'teaser' => array(
-	        'label' => t('Protest teaser'),
-	        'custom settings' =>  FALSE,
-	),
-	)
+			'label' => t('Protest'),
+			'controller class' => 'ProtestController',
+			'base table' => 'demopoly_protest',
+			'uri callback' => 'demopoly_protest_uri',
+			'save callback'=>'demopoly_protest_save',
+			'views controller class' => 'EntityDefaultViewsController',
+
+			'fieldable' => TRUE,
+			'entity keys' => array(
+					'id' => 'pid',
+			),
+			'static cache' => TRUE,
+			'bundles' => array(
+					'protest'=> array(
+							'label' => 'Protest',
+							'admin' => array(
+									'path' => 'admin/structure/protest/manage',
+									'access arguments' => array('administer protest'),
+							),
+					),
+			),
+			'view modes' => array(
+					'full' => array(
+							'label' => t('Full Protest'),
+							'custom settings' =>  FALSE,
+					),
+					'teaser' => array(
+							'label' => t('Protest teaser'),
+							'custom settings' =>  FALSE,
+					),
+			)
 	);
 
 	return $protest_info;
 }
 function demopoly_protest_uri($protest){
 	return array(
-    'path' => 'protest/' . $protest->pid,
+			'path' => 'protest/' . $protest->pid,
 	);
 }
 
 function demopoly_protest_menu(){
 	$items['admin/structure/protest/manage'] = array(
-    'title' => 'Protest Admin',
-    'description' => 'Manage Protest structure',
-    'page callback' => 'demopoly_protest_info',
-    'access arguments' => array('administer protests'),
+			'title' => 'Protest Admin',
+			'description' => 'Manage Protest structure',
+			'page callback' => 'demopoly_protest_info',
+			'access arguments' => array('administer protests'),
 	);
 	$items['protest/%demopoly_protest'] = array(
-    'title callback' => 'demopoly_protest_page_title',
-    'title arguments' => array(1),
-    'page callback' => 'demopoly_protest_page_view',
-    'page arguments' => array(1),
-    'access arguments' => array('view protests'),
-    'type' => MENU_CALLBACK,
+			'title callback' => 'demopoly_protest_page_title',
+			'title arguments' => array(1),
+			'page callback' => 'demopoly_protest_page_view',
+			'page arguments' => array(1),
+			'access arguments' => array('view protests'),
+			'type' => MENU_CALLBACK,
 	);
 	$items['protest/%demopoly_protest/edit'] = array(
-    'title callback' => 'demopoly_protest_page_title',
-    'title arguments' => array(1),
-    'page callback' => 'demopoly_protest_edit',
-    'page arguments' => array(1),
-    'access arguments' => array('edit protests'),
-    'type' => MENU_CALLBACK,
+			'title callback' => 'demopoly_protest_page_title',
+			'title arguments' => array(1),
+			'page callback' => 'demopoly_protest_edit',
+			'page arguments' => array(1),
+			'access arguments' => array('edit protests'),
+			'type' => MENU_CALLBACK,
 	);
 	$items['protest/close_callback'] = array(
 			'title' => 'Demopoly',
@@ -86,9 +86,9 @@ function demopoly_protest_menu(){
 	);
 	//
 	$items['protest/add'] = array(
-	    'title' => 'Add an Protest!',
-	    'page callback' => 'demopoly_protest_add',
-	    'access arguments' => array('add protests'),
+			'title' => 'Add an Protest!',
+			'page callback' => 'demopoly_protest_add',
+			'access arguments' => array('add protests'),
 	);
 	return $items;
 }
@@ -96,24 +96,27 @@ function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
 }
 function demopoly_protest_close_callback() {
-	drupal_add_js("console.log(top.jQuery('.demopoly-my-images-reload'));top.jQuery('.demopoly-my-images-reload').click();top.jQuery('#cboxClose').click();",'inline'); 
+	drupal_add_js("console.log(top.jQuery('.demopoly-my-images-reload'));top.jQuery('.demopoly-my-images-reload').click();top.jQuery('#cboxClose').click();",'inline');
 	return 'close';
 }
 function demopoly_protest_permission(){
 	return array(
-    'administer protests' =>  array(
-      'title' => t('Administer protests'),
-      'restrict access' => TRUE,
-	),
-    'view protests' => array(
-      'title' => t('View protests'),
-	),
-	'add protests' => array(
-      'title' => t('Add protests'),
-	),
-	'edit protests' => array(
-      'title' => t('Edit protests'),
-	)
+			'administer protests' =>  array(
+					'title' => t('Administer protests'),
+					'restrict access' => TRUE,
+			),
+			'view protests' => array(
+					'title' => t('View protests'),
+			),
+			'add protests' => array(
+					'title' => t('Add protests'),
+			),
+			'edit protests' => array(
+					'title' => t('Edit protests'),
+			),
+			'delete protests' => array(
+					'title' => t('Delete protests'),
+			)
 	);
 }
 
@@ -141,8 +144,8 @@ function demopoly_protest_edit($protest) {
 function demopoly_protest_add() {
 	global $user;
 	$protest = (object) array (
-    'pid' => '',
-    'type' => 'protest',
+			'pid' => '',
+			'type' => 'protest',
 	);
 
 	return drupal_get_form('demopoly_protest_add_form', $protest);
@@ -151,10 +154,10 @@ function demopoly_protest_add() {
 
 function demopoly_protest_add_form($form, &$form_state, $protest) {
 	$form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save'),
-	'#weight'=>100
-);
+			'#type' => 'submit',
+			'#value' => t('Save'),
+			'#weight'=>100
+	);
 	field_attach_form('protest', $protest, $form, $form_state);
 	return $form;
 }
@@ -168,7 +171,7 @@ function demopoly_protest_add_form_submit($form, &$form_state) {
 	global $user;
 	$protest_submission = (object) $form_state['values'];
 	field_attach_submit('protest', $protest_submission, $form, $form_state);
-	$protest_submission->uid = $user->uid; 
+	$protest_submission->uid = $user->uid;
 	$protest = demopoly_protest_save($protest_submission);
 	$form_state['redirect'] = "protest/close_callback";
 }
