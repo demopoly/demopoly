@@ -7,7 +7,10 @@ core = 7.x
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/font-types.css
 stylesheets[all][] = css/zoomer.css
+stylesheets[all][] = css/masonry.css
 scripts[] = js/main.js
+scripts[] = //ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js
+scripts[] = js/grid/jquery.masonry.js
 
 regions[header] = Header
 regions[navigation] = Navigation

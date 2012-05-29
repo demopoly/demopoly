@@ -76,4 +76,17 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 
 <!-- Ende Content -->           
 
-</div></body>
+</div>
+<script>
+$(function(){
+  $('#image-container').masonry({
+    // options
+    itemSelector : '.views-row',
+    columnWidth : 240
+  });
+});
+
+
+</script>
+
+</body>
