@@ -36,12 +36,12 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 
 <div id="information">
     <ul>
-    	<li><a class="active" href="./demopoly_files/demopoly.html" target="_self" title="Information"><img src="<?php print $base_path?>img/informationen.jpg" alt="demopoly"></a></li>
+    	<li><a class="info" href="./demopoly_files/demopoly.html" target="_self" title="Information"></a></li>
     	<?php if ($user->uid==0):?>
-    	<li><a href="<?php print url('user/register')?>" target="_self" title="Take Part"><img src="<?php print $base_path?>img/take-part.jpg" alt="demopoly"></a></li>
+    	<li><a class="take-part" href="<?php print url('user/register')?>" target="_self" title="Take Part"></a></li>
     	<?php endif;?>
     	<?php if ($user->uid!=0):?>
-    	<li><a href="<?php print url('user/logout')?>" target="_self" title="Leave"><img src="<?php print $base_path?>img/leave.jpg" alt="demopoly"></a></li>
+    	<li><a class="leave" href="<?php print url('user/logout')?>" target="_self" title="Leave"></a></li>
     	<?php endif;?>
     </ul>
 </div>

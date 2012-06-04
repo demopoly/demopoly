@@ -6,6 +6,7 @@ core = 7.x
 
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/font-types.css
+stylesheets[all][] = css/buttons.css
 stylesheets[all][] = css/zoomer.css
 stylesheets[all][] = css/masonry.css
 stylesheets[all][] = css/take-part.css
