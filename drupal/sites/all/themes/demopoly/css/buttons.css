@@ -1,0 +1,216 @@
+#information ul li {
+    float:left;
+    margin-right: 10px;
+}
+
+#information ul li a.info {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     display: block;
+     height: 48px;
+     width: 183px;
+}
+
+#information ul li a.info:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 183px;
+}
+
+#information ul li a.info .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 183px;
+}
+
+#information ul li a.take-part {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-repeat: no-repeat;
+     background-position: -182px 0px;
+     display: block;
+     height: 48px;
+     width: 156px;
+}
+
+#information ul li a.take-part:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -182px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 156px;
+}
+
+#information ul li a.take-part .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -182px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 156px;
+}
+
+#information ul li a.leave {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-repeat: no-repeat;
+     background-position: -337px 0px;
+     display: block;
+     height: 48px;
+     width: 124px;
+}
+
+#information ul li a.leave:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -337px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 124px;
+}
+
+#information ul li a.leave .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -337px -47px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 48px;
+     width: 124px;
+}
+
+#login ul li a {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -95px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 112px;
+}
+
+#login ul li a:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 112px;
+}
+
+#login ul li a .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 112px;
+}
+
+#moreinfo ul li a {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -112px -95px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 211px;
+}
+
+#moreinfo ul li a:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -112px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 211px;
+}
+
+#moreinfo ul li a.active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -112px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 211px;
+}
+
+#deleteprofile ul li a {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -323px -95px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 173px;
+}
+
+#deleteprofile ul li a:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -323px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 173px;
+}
+
+#deleteprofile ul li a.active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -323px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 173px;
+}
+
+#upload ul li a {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -168px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 201px;
+}
+
+#upload ul li a:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -205px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 201px;
+}
+#upload ul li a .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: 0px -205px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 201px;
+}
+
+#change ul li a {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -201px -168px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 197px;
+}
+
+#change ul li a:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -201px -205px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 197px;
+}
+#change ul li a .active {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -201px -205px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 197px;
+}
