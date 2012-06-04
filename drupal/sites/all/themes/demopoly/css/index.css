@@ -14,13 +14,13 @@
 /* Masonry Grid System Startseite*/
 
 .views-row{
+	width: 300px;
   margin: 10px;
   float: left;
-  position:relative !important;
   border: 10px solid: #ff00bb;
 }
 
-/* Mouseover Zoom CSS */
+/* Mouseover Zoom CSS 
 
 .views-row {
     -moz-transition: all 0.4s ease-in-out 0s;
@@ -46,4 +46,4 @@
 	
 	z-index: 1000;
 	cursor: pointer;
-}
+}*/
