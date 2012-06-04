@@ -8,13 +8,14 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/font-types.css
 stylesheets[all][] = css/buttons.css
 stylesheets[all][] = css/zoomer.css
-stylesheets[all][] = css/masonry.css
 stylesheets[all][] = css/take-part.css
 stylesheets[all][] = css/index.css
 
 scripts[] = js/main.js
-scripts[] = js/grid/jquery.min.js
-scripts[] = js/grid/jquery.masonry.js
+scripts[] = js/grid/jquery-1.7.min.js
+scripts[] = js/grid/jquery.masonry.min.js
+scripts[] = js/grid/jquery.infinitescroll.min.js
+scripts[] = js/grid/modernizr-transitions.js
 
 regions[header] = Header
 regions[navigation] = Navigation
