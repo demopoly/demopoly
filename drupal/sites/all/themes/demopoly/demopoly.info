@@ -5,6 +5,7 @@ version = 7.0
 core = 7.x
 
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/information.css
 stylesheets[all][] = css/font-types.css
 stylesheets[all][] = css/buttons.css
 stylesheets[all][] = css/zoomer.css
