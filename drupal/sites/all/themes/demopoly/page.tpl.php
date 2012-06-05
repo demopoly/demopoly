@@ -36,7 +36,7 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 
 <div id="information">
     <ul>
-    	<li><a class="info" href="./demopoly_files/demopoly.html" target="_self" title="Information"></a></li>
+    	<li><a class="info" href="/information" target="_self" title="Information"></a></li>
     	<?php if ($user->uid==0):?>
     	<li><a class="take-part" href="<?php print url('user/register')?>" target="_self" title="Take Part"></a></li>
     	<?php endif;?>
