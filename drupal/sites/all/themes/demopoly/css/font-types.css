@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 
 @font-face {
@@ -23,22 +22,20 @@
 }
 
 html {
-    font-family: 'FuturaStd-Book';
+     font-family: 'FuturaStd-Book';
 }
 
 body {
-     line-height: 1;
      font: 400 100%/1.5em 'FuturaStd-Book';
 }
 
 p {
-    font-family: 'FuturaStd-Book';
+     font-family: 'FuturaStd-Book';
 }
 
-
 a {
+     font-family: 'FuturaStd-Book';
      font-size: 100%;
-	 font-family: 'FuturaStd-Book';
      margin: 0pt;
      padding: 0pt;
      vertical-align: baseline;
@@ -52,10 +49,16 @@ a:hover, a:focus {
      text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6, dl, ol, ul, p, blockquote, pre {
+h1, h2, h3, h4, h5, h6 {
+     font-family: "LubalinGraphITCbyBT-Medium";
      margin-bottom: 1em;
      margin-top: 1em;
-     font-family: 'FuturaStd-Book';	 
+}
+
+dl, ol, ul, p, blockquote, pre {
+     font-family: 'FuturaStd-Book';
+     margin-bottom: 1em;
+     margin-top: 1em;
 }
 
 ol ol, ol ul, ul ol, ul ul {
@@ -96,8 +99,7 @@ h6 {
 }
 
 #claim p {
-    font-family: 'LubalinGraphITCbyBT-Medium';
-    font-weight: 700;
-    font-size: 1.5em;
-    
+     font-family: 'LubalinGraphITCbyBT-Medium';
+     font-size: 1.5em;
+     font-weight: 700;
 }

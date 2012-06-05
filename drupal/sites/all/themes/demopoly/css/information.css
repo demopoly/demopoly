@@ -2,7 +2,6 @@
      width: 900px;
 }
 
-
 .howitfirst {
      background: none repeat scroll 0% 0% #EEEEEE;
      border-radius: 10px 10px 10px 10px;
@@ -19,9 +18,10 @@
 
 .howitfirst p:first-letter {
      background: none repeat scroll 0% 0% #FFFFFF;
-     border: 1px solid #999999;
+     border-radius: 10px;
      color: #009EE5;
-     font-size: 200%;
+     font-family: "LubalinGraphITCbyBT-Medium";
+     font-size: 1.6em;
      padding: 5px;
 }
 
@@ -41,9 +41,10 @@
 
 .howitsecond p:first-letter {
      background: none repeat scroll 0% 0% #FFFFFF;
-     border: 1px solid #999999;
+     border-radius: 10px;
      color: #009EE5;
-     font-size: 200%;
+     font-family: "LubalinGraphITCbyBT-Medium";
+     font-size: 1.6em;
      padding: 5px;
 }
 
