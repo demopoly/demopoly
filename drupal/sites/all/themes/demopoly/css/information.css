@@ -1,0 +1,48 @@
+
+#howitfirst {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     border-radius: 10px 10px 10px 10px;
+     float: left;
+     height: 250px;
+     margin: 10px;
+     padding: 40px 20px 40px 60px;
+     width: 200px;
+}
+
+#howitfirst p {
+     text-indent: -40px;
+}
+
+#howitfirst p:first-letter {
+     background: none repeat scroll 0% 0% #FFFFFF;
+     border: 1px solid #999999;
+     color: #009EE5;
+     font-size: 200%;
+     padding: 5px;
+}
+
+#howitsecond {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     border-radius: 10px 10px 10px 10px;
+     float: left;
+     height: 250px;
+     margin: 10px;
+     padding: 40px 20px 40px 60px;
+     width: 200px;
+}
+
+#howitsecond p {
+     text-indent: -40px;
+}
+
+#howitsecond p:first-letter {
+     background: none repeat scroll 0% 0% #FFFFFF;
+     border: 1px solid #999999;
+     color: #009EE5;
+     font-size: 200%;
+     padding: 5px;
+}
+
+#howspacer {
+     clear: left;
+}
