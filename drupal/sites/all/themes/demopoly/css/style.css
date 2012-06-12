@@ -30,7 +30,7 @@ color:#009ee2
 margin: 60px 30px 40px 40px;
 padding: 0;
 position: relative;
-width: 95%;
+width: 97%;
 }
 /* Logo */
 
@@ -74,7 +74,11 @@ margin: 45px 10px 0 0;
 #content {
 clear: both;
 float: left;
-margin: 40px 0 0 0;
+margin: 40px 0px 0px 0px;
+
+}
+#image-container img {
+	margin-right:8px;
 }
 #block-user-login {
 position:absolute;
