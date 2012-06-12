@@ -68,6 +68,9 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 <?php print $messages;?>
 </div>
 <?php endif;?>
+<?php if ($title):?>
+<h1><?php print $title;?></h1>
+<?php endif;?>
 <?php print render($page['content']);?>
 </div>    
 

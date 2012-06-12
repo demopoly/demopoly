@@ -77,6 +77,9 @@ float: left;
 margin: 40px 0px 0px 0px;
 
 }
+.front h1 { 
+	display:none;
+}
 #image-container img {
 	margin-right:8px;
 }

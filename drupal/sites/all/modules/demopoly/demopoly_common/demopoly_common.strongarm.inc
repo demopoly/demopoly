@@ -158,7 +158,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'colorbox_style';
-  $strongarm->value = 'default';
+  $strongarm->value = 'stockholmsyndrome';
   $export['colorbox_style'] = $strongarm;
 
   $strongarm = new stdClass;
