@@ -21,13 +21,18 @@ $base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 <!-- Start Navigation-->    
 
 <div id="navigation">
-<?php echo render(  menu_tree('main-menu'));?>
+
     <ul>
     <?php if ($user->uid==0):?>
     	<li><a class="active login-button" href="#" target="_self" title="Login">Login</a></li>
+    	<?php else:?>
+    	<li><a class="active profile-button" href="<?php print url('user')?>" target="_self" title="Logout">profile-settings</a></li>
+    	<li><a class="active logout-button" href="<?php print url('user/logout')?>" target="_self" title="Logout">Logout</a></li>
+    	
     <?php endif;?>
     
     </ul>
+    <?php echo render(  menu_tree('main-menu'));?>
 </div>
 
 <!-- Ende Navigation-->    

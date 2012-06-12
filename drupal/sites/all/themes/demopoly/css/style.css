@@ -62,7 +62,9 @@ float: left;
 display: inline;
 }
 /* Claim */
-
+#navigation ul {
+	float:left;
+}
 #claim {
 float: right;
 margin: 45px 10px 0 0;
