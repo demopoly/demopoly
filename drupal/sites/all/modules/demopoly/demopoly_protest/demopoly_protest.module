@@ -77,6 +77,14 @@ function demopoly_protest_menu(){
 			'access arguments' => array('edit protests'),
 			'type' => MENU_CALLBACK,
 	);
+	$items['protest/%demopoly_protest/delete'] = array(
+			'title callback' => 'demopoly_protest_page_title',
+			'title arguments' => array(1),
+			'page callback' => 'drupal_get_form',
+			'page arguments' => array('demopoly_protest_delete_form',1),
+			'access arguments' => array('delete protests'),
+			'type' => MENU_CALLBACK,
+	);
 	$items['protest/close_callback'] = array(
 			'title' => 'Demopoly',
 			'page callback' => 'demopoly_protest_close_callback',
@@ -92,12 +100,34 @@ function demopoly_protest_menu(){
 	);
 	return $items;
 }
+function demopoly_protest_delete($id) {
+	return entity_delete('protest', $id);
+}
 function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
 }
 function demopoly_protest_close_callback() {
-	drupal_add_js("console.log(top.jQuery('.demopoly-my-images-reload'));top.jQuery('.demopoly-my-images-reload').click();top.jQuery('#cboxClose').click();",'inline');
+//drupal_add_js("Drupal.behaviors.demopoly_close = {attach: function(context){console.log(top.jQuery('#cboxClose').click());top.jQuery('.demopoly-my-images-reload').mousedown();top.jQuery('#cboxClose').click();}}",'inline');
+	drupal_add_js("top.closeIframe();",'inline');
 	return 'close';
+}
+function demopoly_protest_delete_form_submit($form,&$form_state) {
+	$pid=$form_state['storage']['pid'];
+	if (!empty($pid)) { 
+		entity_delete('protest', $pid);
+	}
+	$form_state['redirect']='protest/close_callback';
+}
+function demopoly_protest_delete_form($form,&$form_state,$protest) {
+	$form_state['storage']=array('pid'=>$protest->pid);
+	$form['text']=array('#type'=>'markup'
+			,'#markup'=>t('Do you relay like to delete this image')
+			);
+	$form['submit']=array(
+			'#type'=>'submit',
+			'#value'=>t('delete')
+			);
+	return $form;
 }
 function demopoly_protest_permission(){
 	return array(

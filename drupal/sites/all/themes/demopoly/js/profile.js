@@ -9,4 +9,9 @@
 		}
 	}
 	
-})(jQuery)
+})(jQuery);
+function closeIframe() {
+	console.log(jQuery('#cboxClose'));
+	jQuery('#cboxClose').click();
+	console.log('exit');
+}

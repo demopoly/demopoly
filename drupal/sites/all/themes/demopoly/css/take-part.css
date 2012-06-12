@@ -44,7 +44,9 @@ fieldset {
     width: 9px;
 	margin-right: 5px;
 }
-
+.page-user-register .form-item-mail .description{ 
+	display:none;
+}
 a.terms-link {
 	color:#009ee2;
 	text-decoration:none;
