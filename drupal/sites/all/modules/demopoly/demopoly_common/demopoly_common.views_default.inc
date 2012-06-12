@@ -140,6 +140,31 @@ function demopoly_common_views_default_views() {
   $handler->display->display_options['fields']['pid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['pid']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['pid']['format_plural'] = 0;
+  /* Field: Protest: Protest ID */
+  $handler->display->display_options['fields']['pid_1']['id'] = 'pid_1';
+  $handler->display->display_options['fields']['pid_1']['table'] = 'demopoly_protest';
+  $handler->display->display_options['fields']['pid_1']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid_1']['label'] = 'Delete';
+  $handler->display->display_options['fields']['pid_1']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['pid_1']['alter']['text'] = 'Delete';
+  $handler->display->display_options['fields']['pid_1']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['pid_1']['alter']['path'] = 'protest/[pid_1]/delete';
+  $handler->display->display_options['fields']['pid_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['pid_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['pid_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['pid_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['pid_1']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['pid_1']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['pid_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['pid_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['pid_1']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['pid_1']['format_plural'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -166,6 +191,8 @@ function demopoly_common_views_default_views() {
     t('protest/[pid]/edit'),
     t('.'),
     t(','),
+    t('Delete'),
+    t('protest/[pid_1]/delete'),
     t('Page'),
   );
   $export['protest_content'] = $view;
@@ -182,7 +209,7 @@ function demopoly_common_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'protest frontpage';
+  $handler->display->display_options['title'] = 'frontpage';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -207,7 +234,7 @@ function demopoly_common_views_default_views() {
   $handler->display->display_options['path'] = 'frontpage';
   $translatables['protest_frontpage'] = array(
     t('Master'),
-    t('protest frontpage'),
+    t('frontpage'),
     t('more'),
     t('Apply'),
     t('Reset'),
