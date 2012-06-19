@@ -29,6 +29,16 @@ function demopoly_common_user_default_permissions() {
     'module' => 'demopoly_protest',
   );
 
+  // Exported permission: delete protests
+  $permissions['delete protests'] = array(
+    'name' => 'delete protests',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'demopoly_protest',
+  );
+
   // Exported permission: edit protests
   $permissions['edit protests'] = array(
     'name' => 'edit protests',
@@ -44,6 +54,7 @@ function demopoly_common_user_default_permissions() {
     'name' => 'view protests',
     'roles' => array(
       0 => 'administrator',
+      1 => 'authenticated user',
     ),
     'module' => 'demopoly_protest',
   );
