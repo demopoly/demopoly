@@ -11,7 +11,6 @@
 	
 })(jQuery);
 function closeIframe() {
-	console.log(jQuery('#cboxClose'));
 	jQuery('#cboxClose').click();
-	console.log('exit');
+	top.jQuery('.demopoly-my-images-reload').click();
 }

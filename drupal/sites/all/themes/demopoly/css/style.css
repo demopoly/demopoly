@@ -70,7 +70,9 @@ float: right;
 margin: 45px 10px 0 0;
 }
 /* Content */
-
+#image-container{
+	display:none;
+}
 #content {
 clear: both;
 float: left;

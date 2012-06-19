@@ -3,11 +3,15 @@ class ProtestController extends EntityAPIControllerExportable{
 	public function save($protest) {
 		if (empty($protest->pid)) {
 			$protest->created=time();
+			drupal_write_record('demopoly_protest', $protest);
+			field_attach_insert('protest', $protest);
+			module_invoke_all('entity_insert', 'protest', $protest);
+		}else {
+			$protest->changed=time();
+			drupal_write_record('demopoly_protest', $protest,'pid');
+			field_attach_update('protest', $protest);
+			module_invoke_all('entity_update', 'protest', $protest);
 		}
-		$protest->changed=time();
-		drupal_write_record('demopoly_protest', $protest);
-		field_attach_insert('protest', $protest);
-		module_invoke_all('entity_insert', 'protest', $protest);
 		return $protest;
 	}
 }
@@ -187,6 +191,11 @@ function demopoly_protest_add_form($form, &$form_state, $protest) {
 			'#type' => 'submit',
 			'#value' => t('Save'),
 			'#weight'=>100
+	);
+	$form['pid'] = array(
+			'#type' => 'hidden',
+			'#value' => $protest->pid,
+			'#weight'=>1000
 	);
 	field_attach_form('protest', $protest, $form, $form_state);
 	return $form;
