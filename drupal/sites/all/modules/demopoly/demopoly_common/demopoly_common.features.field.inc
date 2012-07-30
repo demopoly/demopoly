@@ -10,7 +10,7 @@
 function demopoly_common_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'protest-protest-field_city'
+  // Exported field: 'protest-protest-field_city'.
   $fields['protest-protest-field_city'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function demopoly_common_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '40',
@@ -86,7 +87,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'protest-protest-field_date'
+  // Exported field: 'protest-protest-field_date'.
   $fields['protest-protest-field_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -96,6 +97,7 @@ function demopoly_common_field_default_fields() {
       'field_name' => 'field_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'granularity' => array(
@@ -170,6 +172,7 @@ function demopoly_common_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
+          'display_all_day' => 0,
           'increment' => '15',
           'input_format' => 'm/d/Y - H:i:s',
           'input_format_custom' => '',
@@ -184,7 +187,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'protest-protest-field_firstname'
+  // Exported field: 'protest-protest-field_firstname'.
   $fields['protest-protest-field_firstname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -205,6 +208,7 @@ function demopoly_common_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '20',
@@ -260,7 +264,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'protest-protest-field_protest_context'
+  // Exported field: 'protest-protest-field_protest_context'.
   $fields['protest-protest-field_protest_context'] = array(
     'field_config' => array(
       'active' => '1',
@@ -281,6 +285,7 @@ function demopoly_common_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -335,7 +340,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'protest-protest-field_protest_image'
+  // Exported field: 'protest-protest-field_protest_image'.
   $fields['protest-protest-field_protest_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -356,6 +361,7 @@ function demopoly_common_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -401,6 +407,7 @@ function demopoly_common_field_default_fields() {
       'required' => 1,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -422,7 +429,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_city'
+  // Exported field: 'user-user-field_city'.
   $fields['user-user-field_city'] = array(
     'field_config' => array(
       'active' => '1',
@@ -443,6 +450,7 @@ function demopoly_common_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '40',
@@ -485,7 +493,7 @@ function demopoly_common_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_firstname'
+  // Exported field: 'user-user-field_firstname'.
   $fields['user-user-field_firstname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -506,6 +514,7 @@ function demopoly_common_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '20',

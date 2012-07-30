@@ -10,7 +10,7 @@
 function demopoly_common_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: add protests
+  // Exported permission: add protests.
   $permissions['add protests'] = array(
     'name' => 'add protests',
     'roles' => array(
@@ -20,7 +20,7 @@ function demopoly_common_user_default_permissions() {
     'module' => 'demopoly_protest',
   );
 
-  // Exported permission: administer protests
+  // Exported permission: administer protests.
   $permissions['administer protests'] = array(
     'name' => 'administer protests',
     'roles' => array(
@@ -29,7 +29,7 @@ function demopoly_common_user_default_permissions() {
     'module' => 'demopoly_protest',
   );
 
-  // Exported permission: delete protests
+  // Exported permission: delete protests.
   $permissions['delete protests'] = array(
     'name' => 'delete protests',
     'roles' => array(
@@ -39,7 +39,7 @@ function demopoly_common_user_default_permissions() {
     'module' => 'demopoly_protest',
   );
 
-  // Exported permission: edit protests
+  // Exported permission: edit protests.
   $permissions['edit protests'] = array(
     'name' => 'edit protests',
     'roles' => array(
@@ -49,7 +49,7 @@ function demopoly_common_user_default_permissions() {
     'module' => 'demopoly_protest',
   );
 
-  // Exported permission: view protests
+  // Exported permission: view protests.
   $permissions['view protests'] = array(
     'name' => 'view protests',
     'roles' => array(

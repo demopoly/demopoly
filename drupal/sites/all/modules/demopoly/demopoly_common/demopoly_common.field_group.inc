@@ -10,7 +10,8 @@
 function demopoly_common_field_group_info() {
   $export = array();
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_main|user|user|form';
   $field_group->group_name = 'group_main';
