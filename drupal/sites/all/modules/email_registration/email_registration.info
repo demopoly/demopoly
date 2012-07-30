@@ -1,12 +1,11 @@
 name = Email Registration
-description = For registration process without a username.
-files[] = email_registration.module
+description = Allows users to register with an e-mail address as their username.
 files[] = email_registration.test
 core = 7.x
 
-; Information added by drupal.org packaging script on 2011-02-25
+; Information added by drupal.org packaging script on 2011-11-10
 version = "7.x-1.x-dev"
 core = "7.x"
 project = "email_registration"
-datestamp = "1298619192"
+datestamp = "1320884408"
 

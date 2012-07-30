@@ -1,0 +1,11 @@
+name = "Date Picker"
+description = "Allows date popups to be displayed as inline datepickers."
+package = Date/Time
+core = 7.x
+dependencies[] = date_popup
+; Information added by drupal.org packaging script on 2012-06-27
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "datepicker"
+datestamp = "1340799116"
+

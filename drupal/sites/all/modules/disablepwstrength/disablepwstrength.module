@@ -11,22 +11,11 @@
  */
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_element_info_alter().
  */
-function disablepwstrength_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  disablepwstrength_add_js();
+function disablepwstrength_element_info_alter(&$types) {
+  if (isset($types['password_confirm']['#process']) && (($position = array_search('user_form_process_password_confirm', $types['password_confirm']['#process'])) !== FALSE)) {
+    unset($types['password_confirm']['#process'][$position]);
+  }
 }
 
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function disablepwstrength_form_user_register_form_alter(&$form, &$form_state, $form_id) {
-  disablepwstrength_add_js();
-}
-
-/**
- * Add the JavaScript to disable Drupal's password strength checker.
- */
-function disablepwstrength_add_js() {
-  drupal_add_js('Drupal.behaviors.password = function () {};', array('type' => 'inline', 'scope' => 'footer'));
-}
