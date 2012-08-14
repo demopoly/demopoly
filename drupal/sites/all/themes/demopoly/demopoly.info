@@ -11,6 +11,7 @@ stylesheets[all][] = css/buttons.css
 stylesheets[all][] = css/zoomer.css
 stylesheets[all][] = css/take-part.css
 stylesheets[all][] = css/index.css
+stylesheets[all][] = css/profiles.css
 
 scripts[] = js/main.js
 scripts[] = js/grid/jquery.masonry.min.js

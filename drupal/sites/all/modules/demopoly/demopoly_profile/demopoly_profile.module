@@ -21,6 +21,7 @@ function demopoly_profile_menu() {
 	);
 	return $items;
 }
+
 function _demopoly_menu_reload() {
 	global $user;
 	$commands = array();

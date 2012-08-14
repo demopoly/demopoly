@@ -1,4 +1,4 @@
-<?php 
+<?php
 class ProtestController extends EntityAPIControllerExportable{
 	public function save($protest) {
 		if (empty($protest->pid)) {
@@ -27,7 +27,7 @@ function demopoly_protest_entity_info(){
 			'fieldable' => TRUE,
 			'entity keys' => array(
 					'id' => 'pid',
-			),
+	),
 			'static cache' => TRUE,
 			'bundles' => array(
 					'protest'=> array(
@@ -35,19 +35,19 @@ function demopoly_protest_entity_info(){
 							'admin' => array(
 									'path' => 'admin/structure/protest/manage',
 									'access arguments' => array('administer protest'),
-							),
-					),
-			),
+	),
+	),
+	),
 			'view modes' => array(
 					'full' => array(
 							'label' => t('Full Protest'),
 							'custom settings' =>  FALSE,
-					),
+	),
 					'teaser' => array(
 							'label' => t('Protest teaser'),
 							'custom settings' =>  FALSE,
-					),
-			)
+	),
+	)
 	);
 
 	return $protest_info;
@@ -102,7 +102,17 @@ function demopoly_protest_menu(){
 			'page callback' => 'demopoly_protest_add',
 			'access arguments' => array('add protests'),
 	);
-	return $items;
+
+	$items['protest/%demopoly_protest/activate'] = array(
+			'title' => 'Activate Protest',
+			'access callback' => true,
+			'page arguments' => array(1),
+			'page callback' => 'demopoly_protest_is_frontpage_activate',
+			'#ajax' => array(
+					'method' => 'html',
+			)
+			);
+			return $items;
 }
 function demopoly_protest_delete($id) {
 	return entity_delete('protest', $id);
@@ -111,13 +121,13 @@ function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
 }
 function demopoly_protest_close_callback() {
-//drupal_add_js("Drupal.behaviors.demopoly_close = {attach: function(context){console.log(top.jQuery('#cboxClose').click());top.jQuery('.demopoly-my-images-reload').mousedown();top.jQuery('#cboxClose').click();}}",'inline');
+	//drupal_add_js("Drupal.behaviors.demopoly_close = {attach: function(context){console.log(top.jQuery('#cboxClose').click());top.jQuery('.demopoly-my-images-reload').mousedown();top.jQuery('#cboxClose').click();}}",'inline');
 	drupal_add_js("top.closeIframe();",'inline');
 	return 'close';
 }
 function demopoly_protest_delete_form_submit($form,&$form_state) {
 	$pid=$form_state['storage']['pid'];
-	if (!empty($pid)) { 
+	if (!empty($pid)) {
 		entity_delete('protest', $pid);
 	}
 	$form_state['redirect']='protest/close_callback';
@@ -125,12 +135,12 @@ function demopoly_protest_delete_form_submit($form,&$form_state) {
 function demopoly_protest_delete_form($form,&$form_state,$protest) {
 	$form_state['storage']=array('pid'=>$protest->pid);
 	$form['text']=array('#type'=>'markup'
-			,'#markup'=>t('Do you relay like to delete this image')
-			);
+	,'#markup'=>t('Do you relay like to delete this image')
+	);
 	$form['submit']=array(
 			'#type'=>'submit',
 			'#value'=>t('delete')
-			);
+	);
 	return $form;
 }
 function demopoly_protest_permission(){
@@ -138,19 +148,19 @@ function demopoly_protest_permission(){
 			'administer protests' =>  array(
 					'title' => t('Administer protests'),
 					'restrict access' => TRUE,
-			),
+	),
 			'view protests' => array(
 					'title' => t('View protests'),
-			),
+	),
 			'add protests' => array(
 					'title' => t('Add protests'),
-			),
+	),
 			'edit protests' => array(
 					'title' => t('Edit protests'),
-			),
+	),
 			'delete protests' => array(
 					'title' => t('Delete protests'),
-			)
+	)
 	);
 }
 
@@ -216,6 +226,31 @@ function demopoly_protest_add_form_submit($form, &$form_state) {
 }
 function demopoly_protest_save(&$protest) {
 	return entity_get_controller('protest')->save($protest);
+}
+
+
+function demopoly_protest_is_frontpage_activate($protest){
+	$uid = $protest->uid;
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'protest');
+	$query->propertyCondition('uid', $uid);
+	$query->fieldCondition('field_protest_is_frontpage','value','1');
+	$result = $query->execute();
+	$array = array();
+	foreach ( $result['protest'] as $active){
+		$array[] = $active->pid;
+	}
+	$protests = entity_load('protest',$array);
+	foreach($protests as $active){
+		$active->field_protest_is_frontpage[LANGUAGE_NONE][0]['value']=0;
+		entity_save('protest', $active);
+	}
+	$protest->field_protest_is_frontpage[LANGUAGE_NONE][0]['value']=1;
+	entity_save('protest', $protest);
+	$commands = array();
+	$commands[] = ajax_command_invoke('.demopoly-my-images-reload', 'click');
+	$page = array('#type' => 'ajax', '#commands' => $commands);
+	ajax_deliver($page);
 }
 
 ?>

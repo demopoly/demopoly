@@ -39,53 +39,71 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 
 <!-- start profile -->    
 
-<div class="profile"<?php print $attributes; ?>>
+<div class="profile"<?php //print $attributes; ?>>
 
-<h2>Welcome <?php print render($user_profile['firstname'])?>,<br>
-and thank you for participating.
-</h2>
-
-<h4>Please note:</h4>
-<ul>
-<li>In your profile settings you can change or delete your settings.</li>
-<li>Please logout before closing the page.</li>
-<li>Use your Emailadress and your password to login again. You have to be logged in to reach your profile settings.</li>
-</ul>
-
-<h2 style="margin-top:40px">Profile Settings</h2>
-
-
-<fieldset>
-
-<p>In your private profile settings you can change your profile and your picture information or add a new picture. You can also delete a single picture or your whole account.</p>
-
-</fieldset>
-
-<fieldset class="delete">
-
-<h5>If you want to delete your account and leave Demopoly:</h5>
-
-<a class="button" href="<?php url('user/delete')?>">DELETE</a>
-
-<p>
-Please note that all pictures and all information will be deleted.
-For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.</p>
-
-</fieldset>
-
-<div style="clear: left"></div>
-
-<?php print render($user_profile); ?>
-
-<!-- my images -->  
-
-<?php print views_embed_view('my_images','default',array($user->uid))?>
-
-<!-- re- und upload images -->  
-
-<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload">Reload images</a>
-<a href="<?php print url('protest/add',array('query'=>array('width'=>900,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load">Neues Bild hinzufügen</a>
-
-<!-- end profile -->  
-
+	<h2>Welcome <?php print render($user_profile['firstname'])?>,<br>
+	and thank you for participating.
+	</h2>
+	
+	<h4>Please note:</h4>
+	<ul>
+	<li>In your profile settings you can change or delete your settings.</li>
+	<li>Please logout before closing the page.</li>
+	<li>Use your Emailadress and your password to login again. You have to be logged in to reach your profile settings.</li>
+	</ul>
+	
+	<h2 style="margin-top:40px">Profile Settings</h2>
+	
+	<fieldset class="floatLeft">
+		<p>
+			In your private profile settings you can change your profile and your picture information or add a new picture.
+			You can also delete a single picture or your whole account.
+		</p>
+	</fieldset>
+	
+	<fieldset class="floatRight delete">
+		<h5>If you want to delete your account and leave Demopoly:</h5>
+		<a class="button" href="<?php url('user/delete')?>">DELETE</a>
+		<p>
+			Please note that all pictures and all information will be deleted.
+			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.
+		</p>
+	
+	</fieldset>
+	
+	<div style="clear: both"></div>
+	
+	<!--<?php print render($user_profile); ?>-->
+	
+	<div class="floatLeft">
+		<fieldset>
+			<legend><span class="fieldset-legend">private profile</span></legend>
+			<div class="floatLeft"><h5>First Name:</h5><span class="value"><?php print $user_firstname?></span></div>
+			<div class="floatRight"><h5>E-Mail:</h5><span class="value"><?php print $user_mail?></span></div>
+			<hr class="dashed" />
+			<div class="floatLeft fullwidth"><h5>Country/Autonomous Region/Stateless:</h5>
+				<span class="value"><?php print $user_country?></span></div>
+			<hr class="dashed" />
+			<div class="floatLeft"><h5>City:</h5><span class="value"><?php print $user_city?></span></div>
+			<div class="floatRight"><h5>Password:</h5><span class="value"><?php print $user_pass?></span></div>
+			<hr class="dashed" />
+		</fieldset>
+	</div>
+	<div class="floatRight">
+		<fieldset>
+			<legend><span class="fieldset-legend">expressum</span></legend>
+		</fieldset>
+	</div>
+	
+	<div style="clear: both"></div>
+	<!-- my images -->  
+	
+	<?php print views_embed_view('my_images','default',array($user->uid))?>
+	
+	<!-- re- und upload images -->  
+	
+	<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload">Reload images</a>
+	<a href="<?php print url('protest/add',array('query'=>array('width'=>900,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load">Neues Bild hinzufügen</a>
+	
+	<!-- end profile -->  
 </div>

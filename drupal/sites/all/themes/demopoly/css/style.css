@@ -122,7 +122,6 @@ width:831px;
 	
 #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
-	font-size:0px;
 }
 #user-login-form #edit-submit:hover {
 	background-image: url("../img/loginbox/login-btn-hover.png");
@@ -188,28 +187,28 @@ float:left;
 float:left;
 }
 input {
-padding: 3px 3px;
-font-size: 1.2em;
-color: #787878;
-letter-spacing: -0.02em;
-text-shadow: 0px 1px 0px #fff;
-outline: none;
-background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
-background: -moz-linear-gradient(top, #e0e0e0, #ffffff);
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-border: 1px solid #717171;
-margin-right: 5px;
--webkit-box-shadow: 1px 1px 0px #efefef;
--moz-box-shadow: 1px 1px 0px #efefef;
-box-shadow: 1px 1px 0px #efefef;
-margin: 3px 5px 3px 0px;
+	padding: 3px 3px;
+	font-size: 1.2em;
+	color: #787878;
+	letter-spacing: -0.02em;
+	text-shadow: 0px 1px 0px #fff;
+	outline: none;
+	background: -webkit-gradient(linear, left bottom, left top, from(#e0e0e0), to(#ffffff));
+	background: -moz-linear-gradient(bottom, #e0e0e0, #ffffff);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 0px solid #717171;
+	margin-right: 5px;
+	-webkit-box-shadow: 1px 1px 0px #efefef;
+	-moz-box-shadow: 1px 1px 0px #efefef;
+	box-shadow: 1px 1px 0px #efefef;
+	margin: 3px 5px 3px 0px;
 }
 input:focus {
--webkit-box-shadow: 0px 0px 5px #76b828;
--moz-box-shadow: 0px 0px 5px #76b828;
-box-shadow: 0px 0px 5px #76b828;
+	-webkit-box-shadow: 0px 0px 5px #76b828;
+	-moz-box-shadow: 0px 0px 5px #76b828;
+	box-shadow: 0px 0px 5px #76b828;
 }
 
 

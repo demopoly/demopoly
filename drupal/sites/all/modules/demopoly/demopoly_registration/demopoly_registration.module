@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @file
  * Code for the demopoly_common feature.
@@ -9,28 +9,45 @@ include_once('demopoly_registration.features.inc');
  */
 function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	global $user;
+	$full_user = user_load($user->uid);
+	$user_firstname = field_get_items('user', $full_user, 'field_firstname');
+	drupal_set_title('Welcome '.$user_firstname[0]['value']);
 	if ($form_id=='user_profile_form') {
-		
-		$f = &$form['#submit'];
-		array_unshift($f, "_demopoly_profile_edit_submit");
-		//$form['#submit'][]='_demopoly_profile_edit_submit';
-		unset($form['account']['current_pass']);
-		$form['account']['current_pass_required_values']['#value']=array();
-		$form['save_and_go']=array(
-				'#type'=>'submit',
-				'#value'=>'Save and go',
-				'#submit'=>array('_demopoly_profile_edit_submit_forward'),
-				'#weight'=>100
-		
-		);
-		
-		return ;
-		
-		
-		
+		//unset($user->data['has_already_logged_in']);
+		$form['account']['current_pass']['#weight'] = 0;
+		$form['actions']['submit']['#weight'] = 2;
+		if(isset($user->data['has_already_logged_in'])){
+			// IS SECOND VISIT
+			$headline='Edit your private profile';
+		} else {
+			$form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
+			$form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
+			// IS FIRST VISIT
+			$headline='Take Part';
+			$edit = array(
+			  'data' => array(
+			        'has_already_logged_in' => true
+				)
+			);
+			user_save($user, $edit);
+			$f = &$form['#submit'];
+			array_unshift($f, "_demopoly_profile_edit_submit");
+			//$form['#submit'][]='_demopoly_profile_edit_submit';
+			unset($form['account']['current_pass']);
+			$form['account']['current_pass_required_values']['#value']=array();
+			$form['actions']['save_and_go']=array(
+					'#type'=>'submit',
+					'#value'=>'Save and go',
+					'#submit'=>array('_demopoly_profile_edit_submit_forward'),
+					'#weight'=>1
+
+			);
+			return ;
+		}
 	}
+
 	if ($form_id=='user_register_form') {
-$form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
+		$form['text']=array('#type'=>'markup','#markup'=>'<h1>Take part</h1>
 				Do you want to take part? <br>Please note that your participation requires the indication of some data. It contains the following two steps:
 				<br><br>1. Email confirmation
 				<br>2. Participation and optional picture upload<br><br>
@@ -62,38 +79,40 @@ function demopoly_registration_menu() {
 }
 function _demopoly_profile_thanks() {
 	//$messages = &drupal_get_messages();
-	//unset($messages); 
+	global $user;
+	dsm ($user);
+	//unset($messages);
 	return '<h1>...Take part...</h1><h2>Hello</h2><div class="thanks-flow">thank you for taking part. You\'ve received an Email. Please click on the link in your Email in order to come back and to go on.
 	';
 }
 function demopoly_registration_init(){
 	global $user;
-	
+
 	if($user->uid > 1){
 		if($user->signature != 'registration_complete'
-				&& arg(0) != 'file'
-				&& arg(0) != 'system'
-				&& arg(0) != 'profilepicture'
-				&& arg(0) != 'files'
-				&& (arg(0) == 'user' && arg(2) != 'edit')
-				&& (arg(0) == 'user' && arg(1) != 'logout')
-				&& arg(0) != 'sites') {
+		&& arg(0) != 'file'
+		&& arg(0) != 'system'
+		&& arg(0) != 'profilepicture'
+		&& arg(0) != 'files'
+		&& (arg(0) == 'user' && arg(2) != 'edit')
+		&& (arg(0) == 'user' && arg(1) != 'logout')
+		&& arg(0) != 'sites') {
 			drupal_goto('user/'.$user->uid.'/edit');
 		}
 	}
 }
 function _demopoly_registration_submit($form, &$form_state) {
-	$form_state['redirect']='user/register/thanks';	
+	$form_state['redirect']='user/register/thanks';
 }
 function _demopoly_profile_edit_submit_forward($form, &$form_state) {
-	
+
 	$form_state['values']['signature'] = 'registration_complete';
 	user_profile_form_submit($form, $form_state);
 	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
 }
 function _demopoly_profile_edit_submit($form, &$form_state) {
 	$form_state['values']['signature'] = 'registration_complete';
-		
+
 }
 
 function demopoly_registration_menu_alter(&$items) {
@@ -115,7 +134,7 @@ function demopoly_registration_pass_reset($form, &$form_state, $uid, $timestamp,
 			$reset_link_account = user_load($uid);
 			if (!empty($reset_link_account)) {
 				drupal_set_message(t('Another user (%other_user) is already logged into the site on this computer, but you tried to use a one-time link for user %resetting_user. Please <a href="!logout">logout</a> and try using the link again.',
-						array('%other_user' => $user->name, '%resetting_user' => $reset_link_account->name, '!logout' => url('user/logout'))));
+				array('%other_user' => $user->name, '%resetting_user' => $reset_link_account->name, '!logout' => url('user/logout'))));
 			} else {
 				// Invalid one-time link specifies an unknown user.
 				drupal_set_message(t('The one-time login link you clicked is invalid.'));

@@ -68,3 +68,14 @@
      padding: 40px 20px 40px 60px;
      width: 200px;
 }
+
+/** BUTTONS **/
+
+.button-edit {	
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+    background-position: -201px -168px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 37px;
+    width: 197px;
+}

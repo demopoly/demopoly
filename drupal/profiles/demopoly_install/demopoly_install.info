@@ -33,7 +33,6 @@ dependencies[] = demopoly_profile
 
 ; ships with locale modules
 dependencies[] = locale
-dependencies[] = l10n_update
 
 files[] = demopoly_install.profile
 
