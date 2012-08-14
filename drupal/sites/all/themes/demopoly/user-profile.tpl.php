@@ -40,10 +40,8 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 <!-- start profile -->    
 
 <div class="profile"<?php //print $attributes; ?>>
-
-	<h2>Welcome <?php print render($user_profile['firstname'])?>,<br>
-	and thank you for participating.
-	</h2>
+	
+	<h2>Welcome <?php print $user_firstname; ?>,<br /> and thank you for participating</h2>
 	
 	<h4>Please note:</h4>
 	<ul>
@@ -63,7 +61,7 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	
 	<fieldset class="floatRight delete">
 		<h5>If you want to delete your account and leave Demopoly:</h5>
-		<a class="button" href="<?php url('user/delete')?>">DELETE</a>
+		<a class="button delete" href="<?php url('user/delete')?>">DELETE</a>
 		<p>
 			Please note that all pictures and all information will be deleted.
 			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.
@@ -71,15 +69,16 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	
 	</fieldset>
 	
-	<div style="clear: both"></div>
+	<div style="clear: both"><br /><br /></div>
 	
-	<!--<?php print render($user_profile); ?>-->
-	
-	<div class="floatLeft">
+	<div class="floatLeft main">
 		<fieldset>
-			<legend><span class="fieldset-legend">private profile</span></legend>
+			<legend><span class="fieldset-legend">Private Profile</span></legend>
 			<div class="floatLeft"><h5>First Name:</h5><span class="value"><?php print $user_firstname?></span></div>
-			<div class="floatRight"><h5>E-Mail:</h5><span class="value"><?php print $user_mail?></span></div>
+			<div class="floatRight user_mail"><h5>E-Mail:</h5>
+				<span class="value noshow"><?php print $short_user_mail?></span>
+				<span class="value show"><?php print $full_user_mail?></span>
+			</div>
 			<hr class="dashed" />
 			<div class="floatLeft fullwidth"><h5>Country/Autonomous Region/Stateless:</h5>
 				<span class="value"><?php print $user_country?></span></div>
@@ -89,13 +88,29 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 			<hr class="dashed" />
 		</fieldset>
 	</div>
-	<div class="floatRight">
+	
+	<div class="floatRight main">
 		<fieldset>
-			<legend><span class="fieldset-legend">expressum</span></legend>
+			<legend><span class="fieldset-legend">Expressum</span></legend>
+			<div id="expressum">
+				<?php print $user_exp?>
+			</div>
+		</fieldset>
+	</div>
+	<div class="floatRight main">
+		<fieldset>
+			<legend><span class="fieldset-legend">Newsletter</span></legend>
+			<div id="newsletter">
+				<?php print $user_news?>
+			</div>
 		</fieldset>
 	</div>
 	
+	<div class="floatRight main">
+		<a class="button change-settings" href="<?php url('user/'.$user->uid.'/edit')?>">Change Settings</a>
+	</div>
 	<div style="clear: both"></div>
+
 	<!-- my images -->  
 	
 	<?php print views_embed_view('my_images','default',array($user->uid))?>

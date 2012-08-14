@@ -151,10 +151,11 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['pid_1']['alter']['external'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['pid_1']['alter']['link_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['pid_1']['alter']['link_class'] = 'colorbox-inline button-edit';
   $handler->display->display_options['fields']['pid_1']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['pid_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['pid_1']['alter']['more_link'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['pid_1']['alter']['html'] = 0;
@@ -190,6 +191,38 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['pid_2']['empty_zero'] = 0;
   $handler->display->display_options['fields']['pid_2']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['pid_2']['format_plural'] = 0;
+  /* Field: Protest: Frontpage Picture */
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['id'] = 'field_protest_is_frontpage';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['table'] = 'field_data_field_protest_is_frontpage';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['field'] = 'field_protest_is_frontpage';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['label'] = '';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['text'] = '<div class="protest-is-activated-1">Frontpage Picture</div>';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['path'] = 'protest/[pid]/activate';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['link_class'] = 'protest-is-activated-[field_protest_is_frontpage-value]';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['empty'] = '<a href="/protest/[pid]/activate" class="use-ajax protest-is-activated-0">Frontpage Picture</a>';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_first_last'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['field_api_classes'] = 0;
   /* Sort criterion: Protest: Created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'demopoly_protest';
@@ -224,6 +257,9 @@ function demopoly_profile_views_default_views() {
     t('protest/[pid]/edit?iframe=true&width=900&height=500'),
     t('delete'),
     t('protest/[pid]/delete?iframe=true&width=900&height=500'),
+    t('<div class="protest-is-activated-1">Frontpage Picture</div>'),
+    t('protest/[pid]/activate'),
+    t('<a href="/protest/[pid]/activate" class="use-ajax protest-is-activated-0">Frontpage Picture</a>'),
     t('All'),
   );
   $export['my_images'] = $view;

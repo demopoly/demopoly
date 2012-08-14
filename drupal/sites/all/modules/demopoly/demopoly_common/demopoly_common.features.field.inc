@@ -131,7 +131,6 @@ function demopoly_common_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
-            'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
           'weight' => '2',
@@ -488,7 +487,7 @@ function demopoly_common_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '8',
       ),
     ),
   );
@@ -552,7 +551,7 @@ function demopoly_common_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );

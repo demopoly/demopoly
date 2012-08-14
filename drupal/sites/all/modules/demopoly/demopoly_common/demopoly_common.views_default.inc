@@ -227,6 +227,13 @@ function demopoly_common_views_default_views() {
   $handler->display->display_options['fields']['field_protest_image']['id'] = 'field_protest_image';
   $handler->display->display_options['fields']['field_protest_image']['table'] = 'field_data_field_protest_image';
   $handler->display->display_options['fields']['field_protest_image']['field'] = 'field_protest_image';
+  /* Filter criterion: Protest: Frontpage Picture (field_protest_is_frontpage) */
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['id'] = 'field_protest_is_frontpage_value';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['table'] = 'field_data_field_protest_is_frontpage';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['field'] = 'field_protest_is_frontpage_value';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

@@ -20,19 +20,20 @@ function demopoly_common_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'First name & Email address',
+    'label' => 'private profile',
     'weight' => '0',
     'children' => array(
-      0 => 'field_firstname',
-      1 => 'account',
+      0 => 'field_city',
+      1 => 'field_firstname',
+      2 => 'account',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'First name & Email address',
+      'label' => 'private profile',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',
-        'description' => '',
+        'description' => '<a href="#info" name="show_info" id="show_info">Info</a>',
       ),
       'formatter' => 'open',
     ),
