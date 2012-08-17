@@ -100,6 +100,8 @@ function demopoly_common_field_default_fields() {
       'locked' => '0',
       'module' => 'date',
       'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
         'granularity' => array(
           'day' => 'day',
           'hour' => 0,
@@ -158,7 +160,7 @@ function demopoly_common_field_default_fields() {
       ),
       'entity_type' => 'protest',
       'field_name' => 'field_date',
-      'label' => 'Datum',
+      'label' => 'Date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -171,12 +173,10 @@ function demopoly_common_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'display_all_day' => 0,
           'increment' => '15',
-          'input_format' => 'm/d/Y - H:i:s',
-          'input_format_custom' => '',
+          'input_format' => 'custom',
+          'input_format_custom' => 'd-F-Y',
           'label_position' => 'above',
-          'repeat_collapsed' => 0,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -220,7 +220,7 @@ function demopoly_common_field_default_fields() {
       'bundle' => 'protest',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Hier die könnten auch mehr namen erscheinen ',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -245,7 +245,7 @@ function demopoly_common_field_default_fields() {
       ),
       'entity_type' => 'protest',
       'field_name' => 'field_firstname',
-      'label' => 'Firstname',
+      'label' => 'First name',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -296,7 +296,7 @@ function demopoly_common_field_default_fields() {
       'bundle' => 'protest',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If you want to add some text, use this box. For instance you can describe the circumstances of your picture or you can set a link which leads to a personal project etc. This text will appear along with your public picture.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -321,7 +321,7 @@ function demopoly_common_field_default_fields() {
       ),
       'entity_type' => 'protest',
       'field_name' => 'field_protest_context',
-      'label' => 'Context',
+      'label' => 'Picture Content Box',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -423,7 +423,7 @@ function demopoly_common_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '7',
       ),
     ),
   );
@@ -463,7 +463,7 @@ function demopoly_common_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
       'entity_type' => 'protest',
@@ -478,7 +478,7 @@ function demopoly_common_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '8',
       ),
     ),
   );
@@ -734,15 +734,14 @@ function demopoly_common_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('City');
-  t('Context');
-  t('Datum');
+  t('Date');
   t('Expressum');
   t('First name');
-  t('Firstname');
   t('Frontpage Picture');
-  t('Hier die könnten auch mehr namen erscheinen ');
+  t('If you want to add some text, use this box. For instance you can describe the circumstances of your picture or you can set a link which leads to a personal project etc. This text will appear along with your public picture.');
   t('Image');
   t('Newsletter');
+  t('Picture Content Box');
 
   return $fields;
 }
