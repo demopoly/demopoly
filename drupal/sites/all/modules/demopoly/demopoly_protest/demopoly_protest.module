@@ -241,6 +241,7 @@ function demopoly_protest_is_frontpage_activate($protest){
 		$array[] = $active->pid;
 	}
 	$protests = entity_load('protest',$array);
+	
 	foreach($protests as $active){
 		$active->field_protest_is_frontpage[LANGUAGE_NONE][0]['value']=0;
 		entity_save('protest', $active);
@@ -253,4 +254,22 @@ function demopoly_protest_is_frontpage_activate($protest){
 	ajax_deliver($page);
 }
 
+function demopoly_protest_form_alter(&$form, &$form_state, $form_id){
+	if($form_id == "demopoly_protest_add_form"){
+		$form['#theme'] = array('demopoly_protest_add_form');
+		$form['#attached']['js'][] = drupal_get_path('module','demopoly_protest').'/demopoly_protest.js';
+		$form['field_protest_context']['und'][0]['value']['#default_value'] = $form['field_protest_context']['und'][0]['#description'];
+		$form['field_protest_context']['und'][0]['value']['#resizable'] = FALSE;
+		$form['submit']['#value'] = 'Take Part';
+		kpr($form);
+	}
+}
+function demopoly_protest_theme(){
+	return array(
+		'demopoly_protest_add_form' => array(
+			'render element' => 'form',
+			'template' => 'demopoly_protest_add_form'  	
+		)
+	);
+}
 ?>

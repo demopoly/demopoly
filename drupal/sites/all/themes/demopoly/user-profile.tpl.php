@@ -45,9 +45,9 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	
 	<h4>Please note:</h4>
 	<ul>
-	<li>In your profile settings you can change or delete your settings.</li>
-	<li>Please logout before closing the page.</li>
-	<li>Use your Emailadress and your password to login again. You have to be logged in to reach your profile settings.</li>
+		<li><span>In your profile settings you can change or delete your settings.</span></li>
+		<li><span>Please logout before closing the page.</span></li>
+		<li><span>Use your Emailadress and your password to login again. You have to be logged in to reach your profile settings.</span></li>
 	</ul>
 	
 	<h2 style="margin-top:40px">Profile Settings</h2>
@@ -110,15 +110,21 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 		<a class="button change-settings" href="<?php url('user/'.$user->uid.'/edit')?>">Change Settings</a>
 	</div>
 	<div style="clear: both"></div>
-
-	<!-- my images -->  
-	
-	<?php print views_embed_view('my_images','default',array($user->uid))?>
 	
 	<!-- re- und upload images -->  
 	
-	<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload">Reload images</a>
-	<a href="<?php print url('protest/add',array('query'=>array('width'=>900,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load">Neues Bild hinzufügen</a>
-	
-	<!-- end profile -->  
+	<!-- my images -->
+	<fieldset>
+		<legend>
+			<span class="fieldset-legend">Public Picture</span>
+			<span style="float: right">
+				<span class="ajax-progress ajax-progress-throbber hidden"><span class="throbber"></span></span>
+				<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload button-reload">[Reload]</a>
+				<a href="<?php print url('protest/add',array('query'=>array('width'=>900,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load button-upload">[+]</a>
+			</span>
+		</legend>
+		<?php print views_embed_view('my_images','default',array($user->uid))?>
+	</fieldset>
+	<!-- end profile -->
+	<br class="clear" />  
 </div>

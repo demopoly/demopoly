@@ -79,3 +79,113 @@
     height: 37px;
     width: 197px;
 }
+
+.button-delete {	
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+    background-position: -323px -95px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 36px;
+    width: 173px;
+}
+.button-is-frontpage {	
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+    background-position: -167px -243px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 37px;
+    width: 211px;
+}
+.button-is-not-frontpage {	
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+    background-position: -378px -243px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 37px;
+    width: 211px;
+}
+
+.button-upload {
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+	background-position: 0px -168px;
+	background-repeat: no-repeat;
+	display: block;
+	height: 37px;
+	width: 201px;
+}
+
+
+legend .button-upload {
+	display: inline-block;
+	background-position: -8px -175px;
+	margin-bottom: 10px;
+	height: 22px;
+	width: 180px;
+	text-indent:-9999px;
+}
+
+legend .button-reload {
+	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+	background-position: -8px -175px;
+	background-repeat: no-repeat;
+	display: inline-block;	
+	margin-bottom: 10px;
+	height: 22px;
+	width: 80px;
+	text-/indent:-9999px;
+}
+
+/* IMAGE VIEW */
+.page-user .views-row{
+	width: 320px;
+	margin-right: 50px;
+}
+.views-view-fields--my-images-wrapper{
+	width: 100%;
+	display: block;
+}
+.views-view-fields--my-images-header{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.views-view-fields--my-images-header .firstname{
+	font-weight: 700;
+	
+}
+.views-view-fields--my-images-hr {
+	border: solid #e4e4e4;
+	border-width:1px 0 0 0;
+	height:0px;
+	line-height:0px;
+	font-size:0;
+	margin:5px 0 30px 0;
+	padding:0px;
+	clear: both;
+}
+.views-view-fields--my-images-floatLeft{
+	float: left;
+}
+.views-view-fields--my-images-floatLeft div.image-wrapper{
+	height: 125px;
+	width: 100px;
+	display: block;
+	background-position:50% 50%;
+}
+.views-view-fields--my-images-floatRight{
+	float: right;
+}
+.views-view-fields--my-images-footer{
+	clear: both;
+	padding-top: 30px;
+}
+
+.views-row .button-edit, 
+.views-row .button-delete {
+	margin-bottom: 10px;	
+}
+.views-row .button-edit, 
+.views-row .button-delete,
+.views-row .button-is-frontpage, 
+.views-row .button-is-not-frontpage{
+	text-indent:-9999px;
+} 

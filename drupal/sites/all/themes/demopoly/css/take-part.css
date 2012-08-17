@@ -52,7 +52,6 @@ a.terms-link {
 	text-decoration:none;
 	font-size: 11px;
 	font-weight: bold;
-	
 }
 
 
@@ -160,6 +159,7 @@ a.terms-link {
 	width: 45%;
 	margin-bottom:15px;
 	margin-top:15px;
+	padding: 8px;
 }
 .page-user div.floatLeft.main div, .page-user div.floatRight.main div{
 	display: inline-block;
@@ -172,7 +172,6 @@ a.terms-link {
 .page-user .floatRight{
 	float: right;
 }
-
 .page-user .fullwidth{
 	width: 100%!important;
 }
@@ -197,7 +196,20 @@ a.terms-link {
 	font-weight: bold;
 	text-transform: lowercase;
 }
-.page-user .delete, .page-user .delete p {
+
+.page-user legend span.ajax-progress-throbber, .page-user legend div.ajax-progress-throbber{
+	float: left;
+}
+.page-user legend span.ajax-progress-throbber.hidden{
+	display: none;
+}
+
+.page-user .floatRight.delete {
+	margin: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.page-user .floatRight.delete, .page-user .delete p {
 	background-color: #e4e4e4;
 	font-family: "LubalinGraphITCbyBT-Medium";
 }
@@ -277,4 +289,31 @@ a.terms-link {
 	display: inline-block;
 	width:18px; height:18px;
 	margin-right: 5px;
+}
+
+.page-user br.clear{
+	clear: both;
+}
+
+.page-user ul li{
+	font-family: "LubalinGraphITCbyBT-Medium";
+	font-weight: bold;
+	
+	list-style-type: none;
+}
+.page-user ul li span{
+	background-image: url("../img/loginbox/listenpunkt.png");
+	background-repeat: no-repeat;
+	background-position: 0 7.5px; 
+	padding-left: 15px;
+	display: block;
+}
+
+.page-user .field-content div.ajax-progress-throbber{
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
 }
