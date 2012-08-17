@@ -36,78 +36,109 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['pid']['id'] = 'pid';
   $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
   $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['trim_whitespace'] = 1;
+  $handler->display->display_options['fields']['pid']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['pid']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['pid']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['strip_tags'] = 1;
+  $handler->display->display_options['fields']['pid']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['pid']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['pid']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['pid']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['pid']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['pid']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['pid']['format_plural'] = 0;
   /* Field: Field: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
+  $handler->display->display_options['fields']['field_city']['label'] = '';
   $handler->display->display_options['fields']['field_city']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_city']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_city']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_city']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_city']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_city']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_city']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_city']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_city']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_city']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['field_city']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_city']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_city']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_city']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['label'] = '';
   $handler->display->display_options['fields']['field_firstname']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_firstname']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_firstname']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_firstname']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_firstname']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_firstname']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_firstname']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_firstname']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_firstname']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_firstname']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_firstname']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['field_firstname']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_firstname']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_firstname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_firstname']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_firstname']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_firstname']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_firstname']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_firstname']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_firstname']['field_api_classes'] = 0;
-  /* Field: Protest: Datum */
+  /* Field: Protest: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = '';
   $handler->display->display_options['fields']['field_date']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_date']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_date']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_date']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_date']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_date']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['field_date']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_date']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_date']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_date']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-    'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_date']['field_api_classes'] = 0;
   /* Field: Protest: Image */
@@ -120,15 +151,17 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['field_protest_image']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_protest_image']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_protest_image']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_protest_image']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_protest_image']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_protest_image']['alter']['more_link'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_protest_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_protest_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_protest_image']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_protest_image']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_protest_image']['hide_alter_empty'] = 1;
@@ -196,33 +229,59 @@ function demopoly_profile_views_default_views() {
   $handler->display->display_options['fields']['field_protest_is_frontpage']['table'] = 'field_data_field_protest_is_frontpage';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['field'] = 'field_protest_is_frontpage';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['label'] = '';
-  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['text'] = '<div class="protest-is-activated-1">Frontpage Picture</div>';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['path'] = 'protest/[pid]/activate';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['link_class'] = 'protest-is-activated-[field_protest_is_frontpage-value]';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_protest_is_frontpage']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_protest_is_frontpage']['empty'] = '<a href="/protest/[pid]/activate" class="use-ajax protest-is-activated-0">Frontpage Picture</a>';
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['empty'] = '0';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_protest_is_frontpage']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['group_rows'] = 1;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['delta_first_last'] = 0;
   $handler->display->display_options['fields']['field_protest_is_frontpage']['field_api_classes'] = 0;
+  /* Field: Protest: Picture Content Box */
+  $handler->display->display_options['fields']['field_protest_context']['id'] = 'field_protest_context';
+  $handler->display->display_options['fields']['field_protest_context']['table'] = 'field_data_field_protest_context';
+  $handler->display->display_options['fields']['field_protest_context']['field'] = 'field_protest_context';
+  $handler->display->display_options['fields']['field_protest_context']['label'] = '';
+  $handler->display->display_options['fields']['field_protest_context']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['trim_whitespace'] = 1;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['strip_tags'] = 1;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_protest_context']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_protest_context']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_protest_context']['field_api_classes'] = 0;
   /* Sort criterion: Protest: Created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'demopoly_protest';
@@ -247,19 +306,14 @@ function demopoly_profile_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Protest ID'),
     t('.'),
     t(','),
-    t('City'),
-    t('First name'),
-    t('Datum'),
     t('Edit'),
     t('protest/[pid]/edit?iframe=true&width=900&height=500'),
     t('delete'),
     t('protest/[pid]/delete?iframe=true&width=900&height=500'),
     t('<div class="protest-is-activated-1">Frontpage Picture</div>'),
     t('protest/[pid]/activate'),
-    t('<a href="/protest/[pid]/activate" class="use-ajax protest-is-activated-0">Frontpage Picture</a>'),
     t('All'),
   );
   $export['my_images'] = $view;
