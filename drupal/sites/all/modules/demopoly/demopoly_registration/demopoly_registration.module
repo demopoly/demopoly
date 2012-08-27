@@ -80,7 +80,6 @@ function demopoly_registration_menu() {
 function _demopoly_profile_thanks() {
 	//$messages = &drupal_get_messages();
 	global $user;
-	dsm ($user);
 	//unset($messages);
 	return '<h1>...Take part...</h1><h2>Hello</h2><div class="thanks-flow">thank you for taking part. You\'ve received an Email. Please click on the link in your Email in order to come back and to go on.
 	';

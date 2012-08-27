@@ -1,0 +1,370 @@
+<?php
+
+/**
+ * Pull the url of the admin
+ *
+ * Future proofing the admin url and theming functions
+ *
+ * @return string
+ *  the path for context add assets admin page
+ */
+function _context_addassets_admin_path() {
+  if (module_exists('context_ui')) {
+    $core_context_items = context_ui_menu();
+    foreach ($core_context_items as $path => $item) {
+      if (stripos($path,'context/settings') != false) {
+        $addassets_admin_path = str_replace('/settings','',$path).'/add-assets';
+        break;
+      }
+    }
+    if (!isset($addassets_admin_path) or !trim($addassets_admin_path)) {
+      $addassets_admin_path = 'admin/structure/context/add-assets';
+    }
+  }
+  return $addassets_admin_path;
+}
+
+/**
+ *  Implements hook_menu().
+ */
+function context_addassets_menu() {
+  $items[_context_addassets_admin_path()] = array(
+    'title' => 'Assets',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('context_addassets_admin'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  return $items;
+}
+
+/*
+ * Implements hook_uninstall().
+ */
+function context_addassets_uninstall() {
+  // to do
+}
+
+/**
+ * Admin Config Page (admin/build/context/add-assets)
+ */
+function context_addassets_admin() {
+
+  // Add AddAssets Admin Assets (css)
+  $css = drupal_get_path('module', 'context_addassets') . "/css/context_addassets-admin.css";
+  drupal_add_css($css, 'theme', 'all', TRUE);
+
+  $modules = module_list();
+  asort($modules);
+  foreach ($modules as $key => $value) {
+    $index = drupal_get_path('module', $value);
+    $modules[$index] = $value;
+    unset($modules[$key], $index);
+  }
+  $form['description'] = array(
+    '#markup' => t('By default Context Add Assets indexes your active themes, you can increase the locations that are indexed below.')
+  );
+
+  $form['modules'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Index Module Assets',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE
+  );
+
+  $form['modules']['context_addassets_index_modules'] = array(
+    '#type' => 'checkboxes',
+    '#title' => 'Include Selected Module Assets',
+    '#options' => $modules,
+    '#default_value' => variable_get('context_addassets_index_modules', array())
+  );
+
+  $form['paths'] = array(
+   '#type' => 'fieldset',
+   '#title' => 'Index Path Assets',
+   '#description' => t('Add file paths below to have them indexed by Add Assets. Note that paths should be relative to root of Drupal installation and <em>not include a leading/trailing slash</em>.<p><strong>Example:</strong> sites/all/libraries/my-custom-libraries</p>'),
+   '#collapsible' => TRUE,
+   '#collapsed' => TRUE
+  );
+
+  // Initialize path array index at zero.
+  $path_index = 0;
+
+  // Build form elements for existing path_index vars
+  while ($path = variable_get('context_addassets_index_path' . $path_index, NULL)) {
+    $form['paths']['context_addassets_index_path' . $path_index] = array(
+     '#type'   => 'textfield',
+     '#title'  => 'Path',
+     '#default_value' => $path
+    );
+    $path_index += 1;
+  }
+
+  // Set how many empty forms to show
+  $path_add_at_time = 1;
+
+  // Set loop end (based on path_add_at_time)
+  $end = $path_index + $path_add_at_time -1; //-1 for 0 indexed array
+
+  while ($path_index <= $end) {
+    $form['paths']['context_addassets_index_path' . $path_index] = array(
+     '#type'   => 'textfield',
+     '#title'  => 'Path'
+    );
+    $path_index += 1;
+  }
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function context_addassets_ctools_plugin_api($module, $api) {
+  if ($module == 'context' && $api == 'plugins') {
+    return array('version' => 3);
+  }
+}
+
+/**
+ * Implements hook_context_plugins().
+ */
+function context_addassets_context_plugins() {
+  $plugins = array();
+  
+  /** 
+  * Reactions
+  */
+  
+  // Theme Assets
+  // - CSS
+  $plugins['context_reaction_addcss'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addcss.inc',
+      'class' => 'context_reaction_addcss',
+      'parent' => 'context_reaction',
+    ),
+  );
+  // - JS
+  $plugins['context_reaction_addjs'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addjs.inc',
+      'class' => 'context_reaction_addjs',
+      'parent' => 'context_reaction',
+    ),
+  );
+
+  // Module Assets
+  // - CSS
+  $plugins['context_reaction_addcss_module'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addcss_module.inc',
+      'class' => 'context_reaction_addcss_module',
+      'parent' => 'context_reaction',
+    ),
+  );
+
+  // - JS
+  $plugins['context_reaction_addjs_module'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addjs_module.inc',
+      'class' => 'context_reaction_addjs_module',
+      'parent' => 'context_reaction',
+    ),
+  );
+
+  // File Path Assets
+  // - CSS
+  $plugins['context_reaction_addcss_path'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addcss_path.inc',
+      'class' => 'context_reaction_addcss_path',
+      'parent' => 'context_reaction',
+    ),
+  );
+  // - JS
+  $plugins['context_reaction_addjs_path'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_addassets') . '/plugins',
+      'file' => 'context_reaction_addjs_path.inc',
+      'class' => 'context_reaction_addjs_path',
+      'parent' => 'context_reaction',
+    ),
+  );
+  return $plugins;
+}
+
+
+/**
+ * Implements hook_context_registry().
+ */
+function context_addassets_context_registry() {
+  $registry = array();
+
+  $registry['reactions'] = array(
+    // theme
+    'css' => array(
+      'plugin' => 'context_reaction_addcss'
+    ),
+    'js' => array(
+      'plugin' => 'context_reaction_addjs'
+    ),
+
+    // module
+    'css_module' => array(
+      'plugin' => 'context_reaction_addcss_module'
+    ),
+    'js_module' => array(
+      'plugin' => 'context_reaction_addjs_module'
+    ),
+
+    // file path
+    'css_path' => array(
+      'plugin' => 'context_reaction_addcss_path'
+    ),
+    'js_path' => array(
+      'plugin' => 'context_reaction_addjs_path'
+    )
+  );
+  return $registry;
+}
+
+/**
+ * Implements hook_context_page_reaction().
+ */
+function context_addassets_context_page_reaction() {
+  // theme
+  if ($plugin = context_get_plugin('reaction', 'css')) {
+    $plugin->execute();
+  }
+  if ($plugin = context_get_plugin('reaction', 'js')) {
+    $plugin->execute();
+  }
+
+  // module
+  if ($plugin = context_get_plugin('reaction', 'css_module')) {
+    $plugin->execute();
+  }
+  if ($plugin = context_get_plugin('reaction', 'js_module')) {
+    $plugin->execute();
+  }
+
+  // file path
+  if ($plugin = context_get_plugin('reaction', 'css_path')) {
+    $plugin->execute();
+  }
+  if ($plugin = context_get_plugin('reaction', 'js_path')) {
+    $plugin->execute();
+  }
+}
+
+/**
+ *  Scan drupal location for a type of file.
+ *
+ *  @param string $filetype
+ *    extension of the file your looking for.
+ *    Note: No leading period, for filetype use "js" instead of  ".js"
+ *
+ *  @param string $where
+ *    the location function will search.
+ *    Currently Supports: Modules, Themes (Active), and Abitrary File Paths
+ *
+ *  @return Array
+ *    An array indexed by file paths containing strings describing each path "Theme Key - File Name"
+ */
+function _context_addassets_scandir($filetype = NULL, $where='themes') {
+  $file_files = FALSE;
+
+  // If $filetype has leading "." - remove it.
+  if ($filetype[0] == '.') {
+    $filetype = drupal_substr(1, drupal_strlen($filetype));
+  }
+
+  // Future setting to include all themes
+  $include_all = FALSE;
+
+  switch ($where) {
+
+    // If want to find assets in modules.
+    case 'modules':
+
+      // Grab selected modules
+      $modules = variable_get('context_addassets_index_modules', array());
+      foreach ($modules as $path) {
+        if (!$path) continue;
+        $dir = realpath('.') . base_path() . $path;
+        $mask = ".+\." . $filetype;
+        $files_raw[$path] = file_scan_directory($dir, $mask);
+      }
+      break;
+
+    // If want to find assets in file paths.
+    case 'paths':
+      // Initialize path array index at zero.
+      $path_index = 0;
+
+      // Grab every set file path
+      while ($path = variable_get('context_addassets_index_path' . $path_index, NULL)) {
+        $dir = realpath('.') . base_path() . $path;
+				$mask = "/.+\." . $filetype."/";
+        $files_raw[$path] = file_scan_directory($dir, $mask);
+        $path_index += 1;
+      }
+      break;
+
+    // If you want to find assets in themes
+    case 'themes':
+    default:
+      // Setup vars to avoid foreach fails.
+      $selected_themes = array();
+      $files_raw = array();
+
+      // We'll grab active themes
+      $themes = list_themes();
+
+      foreach ($themes as $item) {
+
+        // Only lists the theme if the theme is enabled.
+        // Drupal's list_themes() function returns an array of objects, so we extract an array from each of the objects.
+        $list = get_object_vars($item);
+
+        // Only list the theme if it is enabled.
+        if ($include_all == FALSE and $list['status'] or $include_all == TRUE) {
+          $list = get_object_vars($item);
+          $path = explode('/', $list['filename']);
+          unset($path[count($path)-1]);
+          $path = implode('/', $path);
+          $selected_themes[] = array(
+            'name' => $list['info']['name'],
+            'path' => $path
+          );
+        }
+      }
+      // Scan $selected_themes for css files.
+      foreach ($selected_themes as $theme) {
+        $dir = $theme['path'];
+        $name = $theme['name'];
+        $mask = "/.+\." . $filetype . "/";
+        $files_raw[$name] = file_scan_directory($dir, $mask);
+      }
+      break;
+
+  } // switch $where
+  
+  // No files found.
+  if (isset($files_raw)) {
+    if (is_array($files_raw)) {
+      // Remove the full path.
+      foreach ($files_raw as $key => $value ) {
+        foreach ($value as $value_key => $file ) {
+          $file_files[$file->uri] = $key . ' -- ' . $file->uri;
+        }
+      }
+    }
+  }
+  return $file_files;
+}

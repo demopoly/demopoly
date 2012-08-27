@@ -29,8 +29,22 @@
  */
 ?>
 <?php if ($view_mode=='full') :?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
+
+<script>
+(function($){
+	Drupal.behaviors.demopoly_protest = {
+			attach:function(context){
+				
+			}
+	}
+})(jQuery)
+</script>
+
+<!--
+
+
+<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>>
       <?php if ($url): ?>
@@ -48,5 +62,7 @@
   </div>
 </div>
 <?php else:?>
+
 <?php echo render($content);?>
 <?php endif;?>
+-->

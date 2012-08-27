@@ -1,0 +1,34 @@
+Views Slideshow: Galleria 7.x-3.x, xxxx-xx-xx
+-----------------------
+
+
+Views Slideshow: Galleria 7.x-3.1, 2012-07-28
+-----------------------
+- #1613088 by robertom | dv8withn8: Fixed Could not extract a stage height from the CSS.
+- #1600896 by sgabe | taitai: Fixed Strict warning in _views_slideshow_galleria_library_path().
+- #1598262 by City-busz: Fixed Uninitialized settings (and a small typo).
+
+Views Slideshow: Galleria 7.x-3.0, 2012-04-26
+-----------------------
+- #1529288 by sgabe | calefilm: Fixed Wrong implementation of hook_libraries_info().
+- #1517358 by sgabe | calefilm: Fixed Undefined offset error when the view is empty.
+- #1398750 by sgabe | ZuluWarrior: Fixed Galleria does not work in preview.
+
+Views Slideshow: Galleria 7.x-3.0-alpha3, 2012-03-02
+-----------------------
+- #1451604 by sgabe | coleman.sean.c: Fixed Advanced settings and custom theme
+  options aren't exportable.
+- #1437048 by sgabe: Added Handle version numbers in Galleria file paths.
+- #1443566 by carn1x: Fixed Theme path is wrong when using custom theme.
+- #1412824 by sgabe | mrupal: Fixed No 'Overlay opacity' when Lightbox is used.
+- #1399722 by gateone: Fixed Prepend base path to theme path.
+
+Views Slideshow: Galleria 7.x-3.0-alpha2, 2011-12-31
+-----------------------
+- #936480 by sgabe, mparker17: Fixed Some Galleria options expect JavaScript functions,
+  Drupal.settings gives string.
+- #1066836 by sgabe: Added option to strip images.
+
+Views Slideshow: Galleria 7.x-3.0-alpha1, 2011-12-29
+-----------------------
+- #934828 by vordude, sgabe: Fixed PHP Notices in views_slideshow_galleria.theme.inc.

@@ -38,7 +38,7 @@ function demopoly_imagestyle_field_formatter_view($entity_type, $entity, $field,
 	$style_uri = image_style_url($style, $uri);	
 	foreach ($items as $delta => $item) {
 		$element[$delta] = array(
-				'#markup' => '<img src="'.$style_uri.'" alt=""/>',
+				'#markup' => '<a class="colorbox-inline" href="'.url('protest-detail/'.$entity->uid,array('query'=>array('width'=>'620','height'=>'490','iframe'=>'true'))).'"><img src="'.$style_uri.'" alt=""/></a>',
 				'#item' => $item,
 				'#node' => $entity,
 				'#field' => $field

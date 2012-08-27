@@ -61,7 +61,7 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	
 	<fieldset class="floatRight delete">
 		<h5>If you want to delete your account and leave Demopoly:</h5>
-		<a class="button delete" href="<?php url('user/delete')?>">DELETE</a>
+		<a class="button delete" href="<?php echo url('user/delete')?>">DELETE</a>
 		<p>
 			Please note that all pictures and all information will be deleted.
 			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.
@@ -107,7 +107,7 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	</div>
 	
 	<div class="floatRight main">
-		<a class="button change-settings" href="<?php url('user/'.$user->uid.'/edit')?>">Change Settings</a>
+		<a class="button change-settings" href="<?php echo url('user/'.$user->uid.'/edit')?>">Change Settings</a>
 	</div>
 	<div style="clear: both"></div>
 	

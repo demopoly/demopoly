@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * JavaScript based scrollable containers
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function jscrollpane_menu() {
+  $items['admin/config/jscrollpane'] = array(
+    'title' => 'jScrollPane settings',
+    'description' => 'Administration settings for the jScollPane module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('jscrollpane_settings_form'),
+    'access arguments' => array('administer jscrollpane'),
+    'file' => 'includes/jscrollpane.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function jscrollpane_permission() {
+  return array(
+    'administer jscrollpane' => array(
+      'title' => t('Administer jScrollPane'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_init().
+ */
+function jscrollpane_init() {
+  $path = drupal_get_path('module', 'jscrollpane');
+
+  drupal_add_js(array('jScrollPane' => array('class' => variable_get('jscrollpane_class', '.scroll-pane'))), 'setting');
+  drupal_add_css($path . '/css/jquery.jscrollpane.css');
+  drupal_add_js($path . '/js/jquery.jscrollpane.min.js');
+  drupal_add_js($path . '/js/jquery.mousewheel.js');
+  drupal_add_js($path . '/js/script.js');
+}

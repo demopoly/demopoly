@@ -12,19 +12,20 @@
 						$(this).val(desc);
 					}
 				})
-				if (!$.browser.opera) {
-					$('select.form-select').each(function(){
-						var title = $(this).attr('title');
-						if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
-						$(this)
-							.css({'z-index':0,'opacity':0,'-khtml-appearance':'none'})
-							.after('<span class="select">' + title.toUpperCase() + '</span>')
-							.change(function(){
-								val = $('option:selected',this).text();
-								$(this).next().text(val.toUpperCase());
-						})
-					});
-				};
+				$(function () {
+				    $("div.date-day select, div.date-month select, div.date-year select").selectbox({
+				    	onOpen: function (inst) {
+							console.log("open", inst);
+						},
+						onClose: function (inst) {
+							console.log("close", inst);
+						},
+						onChange: function (val, inst) {
+							console.log("blubb", inst);
+						},
+						effect: "slide"
+				    });
+				});
 			}
 	}
 })(jQuery)

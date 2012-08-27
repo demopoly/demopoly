@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the jScrollPane module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function jscrollpane_install() {
+  variable_set('jscrollpane_class', '.scroll-pane');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function jscrollpane_uninstall() {
+  variable_del('jscrollpane_class');
+}

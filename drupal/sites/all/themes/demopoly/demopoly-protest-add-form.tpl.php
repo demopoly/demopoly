@@ -1,4 +1,4 @@
-<?php kpr($form)?>
+<script type="text/javascript" src="http://select-box.googlecode.com/svn/tags/0.2/jquery.selectbox-0.2.min.js"></script>
 <h1>Upload a picture</h1>
 <h2>Please add some information which is related to your picture.</h2>
 <div id="name-city">

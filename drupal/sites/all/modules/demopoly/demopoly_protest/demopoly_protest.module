@@ -110,9 +110,9 @@ function demopoly_protest_menu(){
 			'page callback' => 'demopoly_protest_is_frontpage_activate',
 			'#ajax' => array(
 					'method' => 'html',
-			)
-			);
-			return $items;
+	)
+	);
+	return $items;
 }
 function demopoly_protest_delete($id) {
 	return entity_delete('protest', $id);
@@ -172,15 +172,56 @@ function demopoly_protest_info() {
 function demopoly_protest_page_title($protest){
 	return $protest->pid;
 }
-
+function demopoly_protest_preprocess_protest(&$variables) {
+	$variables['content']=$variables['element']->content;
+	$variables['view_mode']=$variables['content']['#view_mode'];
+	unset($variables['content']['#theme']);
+}
 function demopoly_protest_page_view($protest, $view_mode = 'full'){
-	$protest->content = array();
-	// Build fields content.
-	field_attach_prepare_view('demo', array($protest->pid => $protest), $view_mode);
-	entity_prepare_view('protest', array($protest->pid => $protest));
-	$protest->content += field_attach_view('protest', $protest, $view_mode);
+	$entity = $protest;
+	/*
+	 * Remove previously built content, if exists
+	 */
+	$entity->content = array();
 
-	return $protest->content;
+	$title = filter_xss($entity->title);
+	/*
+	 * Build the fields content
+	 */
+	field_attach_prepare_view(
+    'protest',
+	array($entity->pid => $entity),
+	$view_mode
+	);
+
+	entity_prepare_view('protest', array($entity->pid => $entity));
+
+	$entity->content += field_attach_view(
+      'protest',
+	$entity, $view_mode
+	);
+
+	/*
+	 * Specify the theme to use and set the #element. Note that the
+	 * key you use to pass the entity object must match the key you
+	 * set in in the variables in entity_theme(). So in the case below,
+	 * we use the key named #element because in entity_theme() we set
+	 * the following code:
+	 *
+	 * array(
+	 *   'entity' => array(
+	 *     'variables' => array('element' => null),
+	 *     'template' => 'entity'
+	 *   ),
+	 * );
+	 */
+	$entity->content += array(
+    '#theme'     => 'protest',
+    '#element'   => $entity,
+    '#view_mode' => 'full',
+    '#language'  => NULL,
+	);
+	return $entity->content;
 }
 function demopoly_protest_edit($protest) {
 	return drupal_get_form('demopoly_protest_add_form', $protest);
@@ -241,7 +282,7 @@ function demopoly_protest_is_frontpage_activate($protest){
 		$array[] = $active->pid;
 	}
 	$protests = entity_load('protest',$array);
-	
+
 	foreach($protests as $active){
 		$active->field_protest_is_frontpage[LANGUAGE_NONE][0]['value']=0;
 		entity_save('protest', $active);
@@ -258,10 +299,11 @@ function demopoly_protest_form_alter(&$form, &$form_state, $form_id){
 	if($form_id == "demopoly_protest_add_form"){
 		$form['#theme'] = array('demopoly_protest_add_form');
 		$form['#attached']['js'][] = drupal_get_path('module','demopoly_protest').'/demopoly_protest.js';
-		$form['field_protest_context']['und'][0]['value']['#default_value'] = $form['field_protest_context']['und'][0]['#description'];
+		if($form['field_protest_context']['und'][0]['value']['#default_value'] == ''){
+			$form['field_protest_context']['und'][0]['value']['#default_value'] = $form['field_protest_context']['und'][0]['#description'];
+		}
 		$form['field_protest_context']['und'][0]['value']['#resizable'] = FALSE;
 		$form['submit']['#value'] = 'Take Part';
-		kpr($form);
 	}
 }
 function demopoly_protest_theme(){
@@ -269,7 +311,16 @@ function demopoly_protest_theme(){
 		'demopoly_protest_add_form' => array(
 			'render element' => 'form',
 			'template' => 'demopoly_protest_add_form'  	
-		)
-	);
+			),'protest' => array(
+      'variables' => array('element' => null),
+      'template' => 'protest'
+      ),
+      );
+}
+
+function demopoly_protest_preprocess_page(&$variables){
+	if(arg(0) == 'protest-detail'){
+		$variables['theme_hook_suggestions'] = array('page__protest');
+	}
 }
 ?>

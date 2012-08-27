@@ -73,7 +73,7 @@
 					}
 				});
 			});
-			$('.button-frontpage').click(function(){
+			$('a.button-frontpage').click(function(){
 				$('.ajax-progress-throbber.hidden').css('display', 'inline-block');
 			});
 			$('.demopoly-my-images-reload').click(function(){

@@ -28,6 +28,7 @@
  * @see template_process()
  */
 ?>
+
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if (!$page): ?>

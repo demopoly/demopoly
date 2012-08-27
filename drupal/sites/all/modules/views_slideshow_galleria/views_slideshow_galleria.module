@@ -1,0 +1,47 @@
+<?php
+
+/**
+ *  @file
+ *  Integrating Galleria with Views Slideshow.
+ */
+
+/**
+ *  Implements hook_theme().
+ */
+function views_slideshow_galleria_theme() {
+  return array(
+    'views_slideshow_galleria_main_frame' => array(
+      'variables' => array('vss_id' => NULL, 'view' => NULL, 'settings' => NULL, 'rows' => NULL),
+      'template' => 'views-slideshow-galleria-main-frame',
+      'file' => 'views_slideshow_galleria.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Gets the path to the Galleria library.
+ *
+ * @return
+ *   The path to the Galleria library js file, or FALSE if not found.
+ */
+function _views_slideshow_galleria_library_path() {
+  $library_path = libraries_get_path('galleria');
+	
+  if (!empty($library_path)) {
+  	
+    // Attempt to use minified version of Galleria plugin.
+    $files = glob($library_path . '/galleria*.min.js');
+    if ($galleria_path = array_shift($files)) {
+      return $galleria_path;
+    }
+    // Otherwise use non-minified version if available.
+    else {
+      $files = glob($library_path . '/galleria*.js');
+      if ($galleria_path = array_shift($files)) {
+        return $galleria_path;
+      }
+    }
+  }
+
+  return FALSE;
+}

@@ -146,7 +146,6 @@ function demopoly_common_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
-            'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
           'weight' => '3',
@@ -387,7 +386,7 @@ function demopoly_common_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'large',
           ),
           'type' => 'image',
           'weight' => '0',
@@ -460,6 +459,18 @@ function demopoly_common_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
