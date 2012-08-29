@@ -22,7 +22,7 @@
         inline: false,
         html: false,
         iframe: false,
-        fastIframe: true,
+        fastIframe: false,
         photo: false,
         href: false,
         title: false,

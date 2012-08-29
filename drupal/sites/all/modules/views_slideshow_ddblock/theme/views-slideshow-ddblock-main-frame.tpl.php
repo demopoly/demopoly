@@ -19,23 +19,21 @@
  * notes: don't change the ID names, they are used by the jQuery script.
  */
 $settings = $views_slideshow_ddblock_slider_settings;
-// add Cascading style sheet
+$thumbnails = array();
+foreach($views_slideshow_ddblock_slider_items as $slider_item){
+	unset($thumb);
+	$img_href = array();
+	$pattern = '/src\=\"(.*)\" w/i';
+	preg_match($pattern, $slider_item['slide_image_thumb'], $img_href);
+	$thumb = $img_href[1];
+	$thumbnails[] = array($thumb, $slider_item['uniqid']);
+}
+$thumbs = null;
+$size = count($thumbnails)*78;
+
 drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/views-slideshow-ddblock-cycle-vsddefault.css', 'module', 'all', FALSE);
 drupal_add_css(drupal_get_path('theme', 'demopoly').'/css/page-protest-detail.css', 'theme', 'all', FALSE);
-
-drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpane.css', 'module', 'all', FALSE);
-
-	$thumbnails = array();
-	foreach($views_slideshow_ddblock_slider_items as $slider_item){
-		unset($thumb);
-		$img_href = array();
-		$pattern = '/src\=\"(.*)\" w/i';
-		preg_match($pattern, $slider_item['slide_image_thumb'], $img_href);
-		$thumb = $img_href[1];
-		$thumbnails[] = array($thumb, $slider_item['uniqid']);
-	}
-	$thumbs = null;
-	$size = count($thumbnails)*78;
+drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpane.css', 'module', 'all', FALSE);	
 ?>
 <div id="views-slideshow-ddblock-<?php print $settings['delta'] ?>" class="views-slideshow-ddblock-cycle-vsd-default clear-block wrap-it-all">
 	<div class="container-slide-prev">
@@ -69,12 +67,12 @@ drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpa
 					<p class="para-report-image"><a href="#REPORT" class="button-report-image">Report Image</a></p>
 				</div>
 			</div>
-			<div class="container-text container-text-<?php print $settings['slide_direction'] ?>">
+			<div class="container-text">
 				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php print $slider_item['slide_city'] ?></p>
 				<p class="para-date"><?php print date("F d Y", $slider_item['slide_date']) ?></p>
 				<div class="para-context">
 					<div class="para-context-inline">
-						<?php print $slider_item['slide_context']; ?>
+						<div class="context-wrapper"><?php print $slider_item['slide_context']; ?></div>
 					</div>
 				</div>
 			</div>
@@ -87,6 +85,36 @@ drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpa
 	<div class="container-slide-next">
 		<a class="next" href="#">Next</a>
 	</div>
-	
-	<div class="container-slider"></div>
+<script type="text/javascript">
+(function ($) {
+	Drupal.behaviors.demopoly_main = {
+			attach: function(context){
+				$('.container-slide-next a').add('.container-slide-prev a').click(function(){
+					//top.jQuery.colorbox.resize({'innerHeight':'0px'});
+				});
+				
+				$(document).bind('iframe-loaded cycle_complete', function () {
+					$(document).ready(function(){
+						$('.container-wrapper').each(function(){
+							resize_cbox(this);
+						})
+					});
+				});
+			
+				var resize_cbox = function(obj){
+					var opac = $(obj).css('opacity');
+					if( opac > 0){
+						var y = $(obj).innerHeight();
+						console.log(y);
+						top.jQuery.colorbox.resize({
+							'innerHeight':y+5
+						});
+					}
+				}
+				
+				$(document).trigger('iframe-loaded');
+			}
+	}
+}) (jQuery);
+</script>
 </div>

@@ -8,8 +8,6 @@
   Drupal.behaviors.viewsSlideshowDdblockCycle = {
     attach: function (context) {
 
-
-
       //helper function to clone the options object
       function CloneObject(inObj) {
         for (i in inObj)
@@ -47,7 +45,7 @@
             .stop(true,true)
             .hide(opts.slideTextEffectBeforeSpeed);
           }
-        }  
+        }
       }
 
       // cycle Plugin onAfter function to add functionality after the next slide shows up
@@ -110,7 +108,6 @@
           $("#views-slideshow-ddblock-"+ opts.ddblocknr + ' div.next-container ' + 'a.next')[index == opts.slideCount - 1 ? 'hide' : 'show']();
         }
       }
-
       i=0;
       for (var base in Drupal.settings.viewsSlideshowDdblockContent) {
         // new options var for every block
@@ -214,7 +211,6 @@
                 options.next = "#views-slideshow-ddblock-"+ ViewsSlideshowDdblockSettings.block + ' ' + contentContainer;
             }
           }
-
           //set expression for selecting slides (if something other than all children is required)
           options.slideExpr = contentContainer;
 
@@ -347,9 +343,7 @@
             $('div.views-slideshow-ddblock-pager', $slideshowContainer).css('display', 'none');
             //hide the pager on the slide
             $('div.views-slideshow-ddblock-prev-next-slide', $slideshowContainer).css('display', 'none');
-          }
-
-          else {
+          } else {
             var $container = $('#views-slideshow-ddblock-' + block + ' ' + contentContainer).parent();
             $container
             .cycle(options)
@@ -372,8 +366,6 @@
           }
         }
       }
-      
-      
     }
   };
 })(jQuery);

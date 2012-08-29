@@ -13,11 +13,12 @@ stylesheets[all][] = css/take-part.css
 stylesheets[all][] = css/index.css
 stylesheets[all][] = css/profiles.css
 
-scripts[] = js/main.js
+scripts[] = js/zoomer.js
 scripts[] = js/grid/jquery.masonry.min.js
 scripts[] = js/grid/jquery.infinitescroll.min.js
 scripts[] = js/grid/modernizr-transitions.js
 scripts[] = js/front.js
+scripts[] = js/main.js
 regions[header] = Header
 regions[navigation] = Navigation
 regions[content] = Content Area

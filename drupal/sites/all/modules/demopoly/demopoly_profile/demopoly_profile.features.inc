@@ -41,8 +41,8 @@ function demopoly_profile_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '430',
-          'height' => '320',
+          'width' => '560',
+          'height' => '420',
           'upscale' => 0,
         ),
         'weight' => '1',

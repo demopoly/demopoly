@@ -990,6 +990,8 @@ $.fn.cycle.custom = function(curr, next, opts, cb, fwd, speedOverride) {
 		$l.css(opts.cssAfter);
 		if (!opts.sync) 
 			fn();
+		
+		$(document).trigger('cycle_complete');
 	});
 	if (opts.sync) fn();
 };

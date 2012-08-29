@@ -6,7 +6,7 @@ Drupal.behaviors.initColorbox = {
       return;
     }
     $('a, area, input', context)
-      .filter('.colorbox')
+      .filter('.colorbox, .colorbox-inline')
       .once('init-colorbox-processed')
       .colorbox(settings.colorbox);
   }
