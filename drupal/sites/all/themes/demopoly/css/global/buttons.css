@@ -1,0 +1,131 @@
+/**
+ *   Buttons
+ * 
+ * +Delete
+ * +Change Settings
+ * +Info
+ * +Take Part
+ * +Leave
+ * +Login
+ * +More Info
+ * +Delete Profile
+ * +Upload
+ * +Change
+ */
+
+.button {
+  background-image: url("/sites/all/themes/demopoly/img/Buttons.png");
+  background-repeat: no-repeat;
+  display: block;
+  height: 0px;
+  overflow: hidden;
+}
+
+.button.large {
+  padding-top: 38px;
+}
+
+.button.medium {
+  padding-top: 48px;
+}
+
+.button.small {
+  
+}
+
+/* DELETE */
+.button.delete {
+  background-position: -323px -95px;
+  width: 173px;
+}
+.button.delete:hover {
+  background-position: -323px -132px;
+}
+
+/* CHANGE SETTINGS */
+.button.change-settings {
+  background-position: -201px -168px;
+}
+.button.change-settings:hover {
+  background-position: -201px -205px;
+}
+
+/* INFO */
+.button.info {
+  background-position: -0px -0px;
+  width: 183px;
+}
+.button.info:hover {
+  background-position: -0px -47px;
+}
+
+/* TAKE PART */
+.button.take-part {
+  background-position: -182px 0px;
+  width: 156px;
+}
+
+.button.take-part:hover {
+  background-position: -182px -47px;
+}
+
+/* LEAVE */
+.button.leave {
+  background-position: -337px 0px;
+  width: 124px;
+}
+
+.button.leave:hover {
+  background-position: -337px -47px;
+}
+
+/* LOGIN */
+.button.login {
+  background-position: 0px -95px;
+  width: 112px;
+}
+.button.login:hover {
+  background-position: 0px -132px;
+}
+
+/* MORE INFO */
+.button.moreinfo {
+  background-position: -112px -95px;
+  width: 211px;
+}
+
+.button.more-info:hover {
+  background-position: -112px -132px;
+}
+
+/* DELETE PROFILE */
+.button.delete-profile {
+  background-position: -323px -95px;
+  width: 173px;
+}
+
+.button.delete-profile:hover {
+  background-position: -323px -132px;
+}
+
+/* UPLOAD */
+.button.upload {
+  background-position: 0px -168px;
+  width: 201px;
+}
+
+.button.upload:hover {
+  background-position: 0px -205px;
+}
+
+/* CHANGE */
+.button.change {
+  background-position: -201px -168px;
+  width: 197px;
+}
+
+.button.change:hover {
+  background-position: -201px -205px;
+}
+
+

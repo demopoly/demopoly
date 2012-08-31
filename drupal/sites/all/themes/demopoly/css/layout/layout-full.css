@@ -1,0 +1,84 @@
+/*
+ * Layout Full *
+ * +Wrapper
+ * +Logo
+ * +Claim
+ * +Navigation Right
+ * +Sub Navigation Left
+ * +Content
+ */
+
+
+/* WRAPPER */
+.wrapper {
+  margin: 60px 30px 40px 40px;
+  padding: 0;
+  position: relative;
+  width: 97%;
+}
+
+/* LOGO */
+.header .logo {
+  float: left;
+}
+
+/* CLAIM */
+.header .claim {
+  font-family: 'LubalinGraphITCbyBT-Medium';
+  float: right;
+  margin: 45px 10px 0 0;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+
+/* NAVIGATION - RIGHT */
+.header .navigation {
+  float: right;
+}
+.header .navigation ul li {
+  display: inline;
+}
+.header .navigation ul li a {
+  color: #000;
+  text-transform:uppercase;
+  text-decoration: none;
+  margin: 0 10px 0 0;
+}
+
+/* SUB NAVIGATION - LEFT */
+.header .subnavigation {
+  clear: both;
+  margin: 30px 0 0 0;
+  float: left;
+}
+.header .subnavigation ul li {
+  display: inline;
+}
+
+/* CONTENT */
+.content {
+  clear: both;
+  float: left;
+  margin: 40px 0px 0px 0px;
+}
+
+#image-container{
+}
+.front h1 { 
+  display:none;
+}
+#image-container img {
+  margin-right:8px;
+}
+
+.not-front #content {
+  width:831px;
+}
+
+/* Masonry Grid System Startseite*/
+.views-row{
+  width: 300px;
+  margin: 10px;
+  float: left;
+}

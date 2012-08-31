@@ -1,0 +1,68 @@
+#block-user-login {
+  position:absolute;
+  right:70px;
+  top:0px;
+  background:white;
+  z-index: 1000;
+  
+  -webkit-box-shadow:  1px 1px 10px 1px #dfdfdf;        
+  box-shadow:  1px 1px 10px 1px #dfdfdf;    
+  -webkit-border-radius: 15px;    
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid #dfdfdf;
+  display:none;
+  border: 1px solid #dfdfdf;
+  font-weight: bold;
+}
+
+#block-user-login h2 {
+  margin:0;
+  padding: 0;
+}
+
+#block-user-login .content{
+  margin: 0;
+  padding: 0;
+}
+
+#edit-submit {
+  background-image: url("../../img/loginbox/login-btn.png");
+  border: none;
+  float: right;
+  height: 38px;
+  width: 113px;
+  box-shadow:none;
+  cursor:pointer;
+  font-size:0px;
+}
+
+#edit-submit:hover {
+  background-image: url("../../img/loginbox/login-btn-hover.png");
+}
+
+#user-login-form ul li {
+  list-style-image: url("../../img/loginbox/listenpunkt.png");
+  padding-top: 15px;
+}
+
+#user-login-form ul li a {
+  color: #000;
+  text-decoration:none;
+}
+
+#user-login-form ul li.last {
+  display:none;
+}
+
+
+#edit-name, #edit-pass, #user-login-form ul li {
+  float:left;
+}
+
+#edit-name #edit-pass{
+  border: 1px solid #DFDFDF;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 1px 5px 1px #DFDFDF;
+  padding: 3px;
+}

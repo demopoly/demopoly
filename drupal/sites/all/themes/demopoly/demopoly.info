@@ -4,21 +4,15 @@ package = demopoly.org
 version = 7.0
 core = 7.x
 
-stylesheets[all][] = css/style.css
-stylesheets[all][] = css/information.css
-stylesheets[all][] = css/font-types.css
-stylesheets[all][] = css/buttons.css
-stylesheets[all][] = css/zoomer.css
-stylesheets[all][] = css/take-part.css
-stylesheets[all][] = css/index.css
-stylesheets[all][] = css/profiles.css
+stylesheets[all][] = "css/global/reset.css"
+stylesheets[all][] = "css/global/fonts.css"
+stylesheets[all][] = "css/global/standard-form.css"
+stylesheets[all][] = "css/global/buttons.css"
 
-scripts[] = js/zoomer.js
-scripts[] = js/grid/jquery.masonry.min.js
-scripts[] = js/grid/jquery.infinitescroll.min.js
-scripts[] = js/grid/modernizr-transitions.js
-scripts[] = js/front.js
+stylesheets[all][] = "css/global/block-login.css"
+
 scripts[] = js/main.js
+
 regions[header] = Header
 regions[navigation] = Navigation
 regions[content] = Content Area

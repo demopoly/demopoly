@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/lubgrhm.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts//lubgrhm.woff") format("woff"),
+  url("../../fonts/lubgrhm.ttf") format("truetype"),
+  url("../../fonts/lubgrhm.svg#lubgrhm") format("svg");
+}
+
+@font-face {
+  font-family: "FuturaStd-Book";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/futurastd-book.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/futurastd-book.woff") format("woff"),
+  url("../../fonts/futurastd-book.ttf") format("truetype"),
+  url("../../fonts/futurastd-book.svg#futurastd-book") format("svg");
+}
+
+@font-face {
+  font-family: "FuturaStd-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/futurastd-light.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/futurastd-light.woff") format("woff"),
+  url("../../fonts/futurastd-light.ttf") format("truetype"),
+  url("../../fonts/futurastd-light.svg#futurastd-light") format("svg");
+}
