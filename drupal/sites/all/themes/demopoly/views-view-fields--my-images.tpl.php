@@ -53,7 +53,6 @@
 	}
 	
 ?>
-<script type="text/javascript" src="<?php print drupal_get_path('theme', 'demopoly')?>/js/jquery.qtip-1.0.0-rc3.js"></script>
 <script type="text/javascript">
 (function($) {
 	Drupal.behaviors.user_profile = {

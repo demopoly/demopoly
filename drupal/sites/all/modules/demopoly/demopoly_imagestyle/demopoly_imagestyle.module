@@ -1,10 +1,4 @@
 <?php
-/**
- * @file
- * Code for the demopoly_imagestyle feature.
- */
-
-include_once('demopoly_imagestyle.features.inc');
 
 
 /**

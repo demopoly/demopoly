@@ -593,6 +593,9 @@ function field_info_bundles($entity_type = NULL) {
 function field_info_fields() {
   $fields = array();
   $info = _field_info_collate_fields();
+  if(!isset($info['fields'])){
+  	print_r($info);
+  }
   foreach ($info['fields'] as $key => $field) {
     if (!$field['deleted']) {
       $fields[$field['field_name']] = $field;

@@ -22,6 +22,9 @@ dependencies[] = shortcut
 dependencies[] = taxonomy
 dependencies[] = toolbar
 dependencies[] = views
+dependencies[] = views_slideshow
+dependencies[] = views_slideshow_ddblock
+dependencies[] = jscrollpane
 dependencies[] = views_ui
 dependencies[] = context
 dependencies[] = context_ui
@@ -30,6 +33,7 @@ dependencies[] = colorbox
 dependencies[] = demopoly_common
 dependencies[] = demopoly_registration
 dependencies[] = demopoly_profile
+dependencies[] = demopoly_protest
 
 ; ships with locale modules
 dependencies[] = locale

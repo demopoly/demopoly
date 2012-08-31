@@ -33,6 +33,7 @@ $size = count($thumbnails)*78;
 
 drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/views-slideshow-ddblock-cycle-vsddefault.css', 'module', 'all', FALSE);
 drupal_add_css(drupal_get_path('theme', 'demopoly').'/css/page-protest-detail.css', 'theme', 'all', FALSE);
+drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/jquery.qtip-1.0.0-rc3.js', 'theme', 'all', FALSE);
 drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpane.css', 'module', 'all', FALSE);	
 ?>
 <div id="views-slideshow-ddblock-<?php print $settings['delta'] ?>" class="views-slideshow-ddblock-cycle-vsd-default clear-block wrap-it-all">

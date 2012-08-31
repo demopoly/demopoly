@@ -1,4 +1,11 @@
 <?php
+/**
+ * @file
+ * Code for the demopoly_protest feature.
+ */
+
+include_once('demopoly_protest.features.inc');
+
 class ProtestController extends EntityAPIControllerExportable{
 	public function save($protest) {
 		if (empty($protest->pid)) {
