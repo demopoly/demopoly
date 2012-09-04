@@ -22,6 +22,11 @@
   float: left;
 }
 
+.header {
+  display: block;
+  width: 100%;
+}
+
 /* CLAIM */
 .header .claim {
   font-family: 'LubalinGraphITCbyBT-Medium';
@@ -52,8 +57,11 @@
   margin: 30px 0 0 0;
   float: left;
 }
+.header .subnavigation ul {
+  
+}
 .header .subnavigation ul li {
-  display: inline;
+  display: inline-block;
 }
 
 /* CONTENT */
@@ -61,24 +69,4 @@
   clear: both;
   float: left;
   margin: 40px 0px 0px 0px;
-}
-
-#image-container{
-}
-.front h1 { 
-  display:none;
-}
-#image-container img {
-  margin-right:8px;
-}
-
-.not-front #content {
-  width:831px;
-}
-
-/* Masonry Grid System Startseite*/
-.views-row{
-  width: 300px;
-  margin: 10px;
-  float: left;
 }

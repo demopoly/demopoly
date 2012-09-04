@@ -1,16 +1,16 @@
 /**
  *   Buttons
  * 
- * +Delete
- * +Change Settings
- * +Info
- * +Take Part
- * +Leave
- * +Login
- * +More Info
- * +Delete Profile
- * +Upload
- * +Change
+ * +Delete - MEDIUM
+ * +Change Settings - MEDIUM
+ * +Info - LARGE
+ * +Take Part - LARGE
+ * +Leave - LARGE
+ * +Login - MEDIUM
+ * +More Info - MEDIUM
+ * +Delete Profile - MEDIUM
+ * +Upload - MEDIUM
+ * +Change - LARGE
  */
 
 .button {
@@ -18,15 +18,16 @@
   background-repeat: no-repeat;
   display: block;
   height: 0px;
+  width: 0px;
   overflow: hidden;
 }
 
 .button.large {
-  padding-top: 38px;
+  padding-top: 48px;
 }
 
 .button.medium {
-  padding-top: 48px;
+  padding-top: 38px;
 }
 
 .button.small {
@@ -34,98 +35,99 @@
 }
 
 /* DELETE */
-.button.delete {
-  background-position: -323px -95px;
+.button.medium.delete {
+  background-position: -343px -104px;
   width: 173px;
 }
-.button.delete:hover {
-  background-position: -323px -132px;
+.button.medium.delete:hover {
+  background-position: -343px -141px;
 }
 
 /* CHANGE SETTINGS */
-.button.change-settings {
-  background-position: -201px -168px;
+.button.medium.change-settings {
+  background-position: -211px -187px;
+  width: 198px;
 }
-.button.change-settings:hover {
-  background-position: -201px -205px;
+.button.medium.change-settings:hover {
+  background-position: -211px -224px;
 }
 
 /* INFO */
-.button.info {
+.button.large.info {
   background-position: -0px -0px;
   width: 183px;
 }
-.button.info:hover {
+.button.large.info:hover {
   background-position: -0px -47px;
 }
 
 /* TAKE PART */
-.button.take-part {
-  background-position: -182px 0px;
-  width: 156px;
+.button.large.take-part {
+  background-position: -190px 0px;
+  width: 158px;
 }
 
-.button.take-part:hover {
-  background-position: -182px -47px;
+.button.large.take-part:hover {
+  background-position: -190px -47px;
 }
 
 /* LEAVE */
-.button.leave {
-  background-position: -337px 0px;
+.button.large.leave {
+  background-position: -357px 0px;
   width: 124px;
 }
 
-.button.leave:hover {
-  background-position: -337px -47px;
+.button.large.leave:hover {
+  background-position: -357px -47px;
 }
 
 /* LOGIN */
-.button.login {
-  background-position: 0px -95px;
+.button.medium.login {
+  background-position: 0px -104px;
   width: 112px;
 }
-.button.login:hover {
-  background-position: 0px -132px;
+.button.medium.login:hover {
+  background-position: 0px -141px;
 }
 
 /* MORE INFO */
-.button.moreinfo {
-  background-position: -112px -95px;
+.button.medium.more-info {
+  background-position: -122px -104px;
   width: 211px;
 }
 
-.button.more-info:hover {
-  background-position: -112px -132px;
+.button.medium.more-info:hover {
+  background-position: -122px -141px;
 }
 
 /* DELETE PROFILE */
-.button.delete-profile {
-  background-position: -323px -95px;
+.button.medium.delete-profile {
+  background-position: -343px -104px;
   width: 173px;
 }
 
-.button.delete-profile:hover {
-  background-position: -323px -132px;
+.button.medium.delete-profile:hover {
+  background-position: -343px -141px;
 }
 
 /* UPLOAD */
-.button.upload {
-  background-position: 0px -168px;
+.button.medium.upload {
+  background-position: 0px -187px;
   width: 201px;
 }
 
-.button.upload:hover {
-  background-position: 0px -205px;
+.button.medium.upload:hover {
+  background-position: 0px -224px;
 }
 
 /* CHANGE */
-.button.change {
-  background-position: -201px -168px;
-  width: 197px;
+.button.large.change {
+  background-position: -246px -270px;
+  width: 226px;
 }
 
-.button.change:hover {
-  background-position: -201px -205px;
+.button.large.change:hover {
+  background-position: -246px -317px;
 }
 
 

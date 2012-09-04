@@ -24,19 +24,19 @@
 				<li><a class="active logout-button" href="<?php print url('user/logout')?>" target="_self" title="Logout">Logout</a></li>
 				<?php }?>
 			</ul>
-			<?php echo render(  menu_tree('main-menu'));?>
+			<?php echo render(menu_tree('main-menu'));?>
 		</div>
 		<!-- Ende Navigation-->
 		
 		<!-- Start Information -->
 		<div class="subnavigation">
 			<ul>
-				<li><a class="info" href="/information" target="_self" title="Information"></a></li>
+				<li><a class="button large info" href="/information" target="_self" title="Information"></a></li>
 				<?php if($user->uid==0){?>
-				<li><a class="take-part" href="<?php print url('user/register')?>" target="_self" title="Take Part"></a></li>
+				<li><a class="button large take-part" href="<?php print url('user/register')?>" target="_self" title="Take Part"></a></li>
 				<?php } ?>
 				<?php if($user->uid!=0){?>
-				<li><a class="leave" href="<?php print url('user/logout')?>" target="_self" title="Leave"></a></li>
+				<li><a class="button large leave" href="<?php print url('user/logout')?>" target="_self" title="Leave"></a></li>
 				<?php }?>
 			</ul>
 		</div>
@@ -50,7 +50,7 @@
 		<!-- Ende Claim -->
 	</div>
 	<!-- Ende Header -->
-	
+	<br class="clearfix" />
 	<!--  Start Content-->
 	<div id="content">
 		<?php if ($messages){?>
@@ -68,6 +68,4 @@
 	<!-- Ende Content -->
 </div>
 <!-- Ende Wrapper -->
-<script>
-</script>
 </body>

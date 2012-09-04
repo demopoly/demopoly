@@ -30,7 +30,7 @@
 ?>
 <?php if ($view_mode=='full') :?>
 
-
+<!-- 
 <script>
 (function($){
 	Drupal.behaviors.demopoly_protest = {
@@ -40,10 +40,6 @@
 	}
 })(jQuery)
 </script>
-
-<!--
-
-
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>>
@@ -61,8 +57,12 @@
     ?>
   </div>
 </div>
+ -->
 <?php else:?>
-
-<?php echo render($content);?>
+<div class="teaser-wrapper">
+	<?php echo render($content['field_protest_image']);?>
+	<div class="info">
+		<strong><?php echo render($content['field_firstname']['#items'][0]['value']);?></strong> - <?php echo render($content['field_city']['#items'][0]['value']);?>
+	</div>
+</div>
 <?php endif;?>
--->
