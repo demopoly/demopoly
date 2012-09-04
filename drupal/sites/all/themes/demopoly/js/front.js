@@ -67,17 +67,6 @@
 					});
 				});
 			});
-//			
-//			$('.views-row').mouseenter(function(){
-//				var wrapper = $(this).children('.teaser-wrapper');
-//				var height = wrapper.height(); 
-//				wrapper.height(height+40);
-//			});
-//			$('.views-row').mouseleave(function(){
-//				var wrapper = $(this).children('.teaser-wrapper');
-//				var height = wrapper.height(); 
-//				wrapper.height(height-40);
-//			});
 		}
 	}
 })(jQuery);
