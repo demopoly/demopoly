@@ -41,7 +41,7 @@
   float: right;
   font-family: 'FuturaStd-Book';
 }
-.header .navigation .menu {
+.header .navigation ul {
   float: right;
 }
 .header .navigation ul li {
