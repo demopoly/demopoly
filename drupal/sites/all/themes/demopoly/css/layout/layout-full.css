@@ -41,6 +41,9 @@
   float: right;
   font-family: 'FuturaStd-Book';
 }
+.header .navigation .menu {
+  float: right;
+}
 .header .navigation ul li {
   display: inline;
 }
