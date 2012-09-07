@@ -10,7 +10,7 @@
 function demopoly_content_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-content-body'
+  // Exported field: 'node-content-body'.
   $fields['node-content-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function demopoly_content_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',

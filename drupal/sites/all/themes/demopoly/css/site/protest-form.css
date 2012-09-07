@@ -1,4 +1,9 @@
 /* Upload A Picture / Edit A Picture*/
+
+#demopoly-protest-add-form, #demopoly-protest-edit-form {
+  margin-left: 30px;
+}
+
 #wrapper {
   margin: 0px 25px 40px 25px;
 }
@@ -47,7 +52,7 @@ div#date .form-type-date-select .date-padding {
   width: 100%;
 }
 div#date .form-type-select{
-  width: 32%;
+  width: 210px;
   padding-right: 0px;
 }
 

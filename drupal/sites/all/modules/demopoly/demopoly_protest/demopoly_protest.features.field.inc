@@ -693,7 +693,7 @@ function demopoly_protest_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
-        'file_directory' => '',
+        'file_directory' => '[current-user:uid]',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',

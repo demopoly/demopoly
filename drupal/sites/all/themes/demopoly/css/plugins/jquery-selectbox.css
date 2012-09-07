@@ -78,9 +78,10 @@
   z-index: 1;
   overflow-y: auto;
   border: solid 1px #f4f4f4;
+  line-height: 0.8;
 }
 .sbOptions li{
-  padding: 0 7px;
+  padding: 0 10px;
 }
 .sbOptions a:link, .sbOptions a:visited{
   color: #000;

@@ -10,6 +10,7 @@ dependencies[] = demopoly_imagestyle
 dependencies[] = entity
 dependencies[] = features
 dependencies[] = list
+dependencies[] = token
 dependencies[] = views
 features[context][] = front
 features[context][] = imagewall

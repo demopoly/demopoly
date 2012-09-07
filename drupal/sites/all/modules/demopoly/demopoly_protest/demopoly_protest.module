@@ -65,7 +65,10 @@ function demopoly_protest_uri($protest){
 	);
 }
 function demopoly_protest_page_alter(&$page) {
-  unset($page['page_top']['toolbar']);
+    if ( arg(0) == 'protest-detail' || arg(0) == 'protest') {
+      unset($page['page_top']['toolbar']);
+    }
+  
 }
 function demopoly_protest_menu(){
 	$items['admin/structure/protest/manage'] = array(
@@ -347,6 +350,13 @@ function demopoly_protest_is_frontpage_activate($protest){
 
 function demopoly_protest_form_alter(&$form, &$form_state, $form_id){
 	if($form_id == "demopoly_protest_add_form"){
+	  
+    global $user;
+    $prot_usr = user_load($user->uid);
+    
+    $form['field_firstname']['und'][0]['value']['#default_value'] = $prot_usr->field_firstname['und'][0]['value'];
+    $form['field_city']['und'][0]['value']['#default_value'] = $prot_usr->field_city['und'][0]['value'];
+    
 		$form['#theme'] = array('demopoly_protest_add_form');
 		$form['#attached']['js'][] = drupal_get_path('module','demopoly_protest').'/demopoly_protest.js';
 		if($form['field_protest_context']['und'][0]['value']['#default_value'] == ''){

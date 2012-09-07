@@ -15,6 +15,9 @@
  * +IsNotFrontpage - LARGE
  * +Protest Delete - MEDIUM
  * +Protest Edit - MEDIUM
+ * +Delete-YES - LARGE
+ * +Delete-NO - LARGE
+ * +Upload - SMALL
  * +radioButtonSet
  */
 
@@ -36,7 +39,7 @@
 }
 
 .button.small {
-  
+  padding-top: 28px;
 }
 
 .button.radio {
@@ -214,6 +217,17 @@
 .button.large.delete-yes:hover {
   background-position: -1px -224px;
 }
+
+/* UPLAOD SMALL */
+.button.small.upload {
+  background-position: -1px -187px;
+  width: 201px;
+}
+
+.button.small.upload:hover {
+  background-position: -1px -224px;
+}
+
 
 /* RADIO BUTTON SET */
 .button.radio.is-set{

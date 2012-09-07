@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.5;
   font-family: 'LubalinGraphITCbyBT-Medium';
 }
 ol, ul {
@@ -51,6 +51,7 @@ table {
 /* BASIC SETTINGS */
 a:link, a:visited, a:hover, a:focus, a:active {
      text-decoration: none;
+     color: #0588c0;
 }
 a:hover, a:focus {
      text-decoration: underline;
