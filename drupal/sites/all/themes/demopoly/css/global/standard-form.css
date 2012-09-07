@@ -58,3 +58,17 @@ legend {
 label {
   font-family: 'FuturaStd-Book';
 }
+
+.show_info{
+  background-image: url("../../img/take-part/infopfeil.png");
+  background-repeat: no-repeat;
+  background-position: 0px 7px;
+  display: block;
+  padding-left: 12px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #d4d4d4;
+  text-transform: uppercase;
+  font-family: "LubalinGraphITCbyBT-Medium";
+}

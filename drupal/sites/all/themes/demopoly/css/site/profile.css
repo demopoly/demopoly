@@ -15,8 +15,8 @@
   font-family: 'FuturaStd-Book';
 }
 .page-user span.show {display:none;}
-.page-user div.user_mail:hover span.show {display:inline;}
-.page-user div.user_mail:hover span.noshow {display:none;}
+.page-user .user_mail:hover span.show {display:inline;}
+.page-user .user_mail:hover span.noshow {display:none;}
 
   
 .page-user .floatLeft h5,
@@ -31,8 +31,8 @@
   margin-bottom:15px;
   padding: 8px;
 }
-.page-user div.floatLeft.main div,
-.page-user div.floatRight.main div{
+.page-user .floatLeft.main ,
+.page-user .floatRight.main {
   display: inline-block;
   width: 45%;
 }
@@ -61,7 +61,7 @@
   clear: both
 }
 
-.page-user legend span.ajax-progress-throbber, .page-user legend div.ajax-progress-throbber{
+.page-user legend span.ajax-progress-throbber, .page-user legend .ajax-progress-throbber{
   float: left;
 }
 .page-user legend span.ajax-progress-throbber.hidden{
@@ -129,7 +129,7 @@
 .views-view-fields--my-images-floatLeft{
   float: left;
 }
-.views-view-fields--my-images-floatLeft div.image-wrapper{
+.views-view-fields--my-images-floatLeft .image-wrapper{
   height: 125px;
   width: 150px;
   display: block;
@@ -193,7 +193,7 @@
   display: block;
 }
 
-.page-user .field-content div.ajax-progress-throbber{
+.page-user .field-content .ajax-progress-throbber{
   display: none;
   margin: 0;
   padding: 0;
@@ -206,3 +206,134 @@
   display: block;
   margin-bottom: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "UTF-8";
+/* Take Part */
+
+legend {border-bottom: 2px solid #e4e4e4;width: 100%;padding-bottom: 5px;}
+
+fieldset {
+  border:none;}
+  
+#edit-youth-checkbox {background-image: url("../img/take-part/radio-button.png");}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#user_user_form_group_main span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#edit-agree span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#edit-agree-checkbox span {
+     color: #76B828;
+}
+
+.page-user-register .demopoly-content {width: 700px;}
+
+.listenpunkt  {
+  background-image: url("../img/loginbox/listenpunkt.png");
+    display: inline-table;
+    height: 7px;
+    width: 9px;
+  margin-right: 5px;
+}
+.page-user-register .form-item-mail .description{ 
+  display:none;
+}
+a.terms-link {
+  color:#009ee2;
+  text-decoration:none;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+/** PAGE USER EDIT **/
+.page-user-edit form {
+  display: inline-block;
+}
+
+.page-user-edit #edit-save-and-go,
+.page-user-edit #edit-submit{
+  float: right;
+  height: 38px;
+  width: 113px;
+}
+.page-user-edit #edit-save-and-go {
+  width: 140px;
+  text-transform: uppercase;
+}
+
+.page-user-edit .field-name-field-firstname,
+.page-user-edit .form-item-current-pass,
+.page-user-edit .form-item-pass-pass1 {
+  float: left;
+  width: 49%;
+}
+.page-user-edit .field-name-field-city,
+.page-user-edit .form-item-mail,
+.page-user-edit .form-item-pass-pass2
+{
+  float: right;
+  width: 49%;
+}
+.page-user-edit fieldset.fullwidth .form-item-mail{
+  float: right;
+  width: 100%;
+}
+
+.page-user-edit input[type=text],
+.page-user-edit input[type=password] {
+  width: 100%;
+}
+.page-user-edit .description{
+  display: none;
+}
+
