@@ -13,6 +13,7 @@
 .sbHolder:focus .sbSelector,
 .sbToggle {
   height: 38px;
+  font-family: 'FuturaStd-Book';
 }
 
 .sbHolder, .sbOptions {

@@ -29,7 +29,6 @@
 
 /* CLAIM */
 .header .claim {
-  font-family: 'LubalinGraphITCbyBT-Medium';
   float: right;
   margin: 45px 10px 0 0;
   font-size: 1.5em;
@@ -40,6 +39,7 @@
 /* NAVIGATION - RIGHT */
 .header .navigation {
   float: right;
+  font-family: 'FuturaStd-Book';
 }
 .header .navigation ul li {
   display: inline;

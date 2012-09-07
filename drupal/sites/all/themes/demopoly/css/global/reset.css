@@ -19,9 +19,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'FuturaStd-Book';
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -31,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  font-family: 'LubalinGraphITCbyBT-Medium';
 }
 ol, ul {
   list-style: none;
@@ -57,7 +56,6 @@ a:hover, a:focus {
      text-decoration: underline;
 }
 h1, h2, h3, h4, h5, h6 {
-     font-family: "LubalinGraphITCbyBT-Medium";
      margin-bottom: 1em;
      margin-top: 1em;
 }

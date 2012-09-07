@@ -116,6 +116,10 @@ div#context #field-protest-context-add-more-wrapper div.description
 {
   display: none;
 }
+.description {
+  font-family: 'FuturaStd-Book';
+  color: #787878;
+}
 
 /* DELETE PROTEST */
 #demopoly-protest-delete-form #edit-submit {

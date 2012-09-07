@@ -29,12 +29,12 @@ input, textarea {
   -webkit-box-shadow: 1px 1px 0px #efefef;
   -moz-box-shadow: 1px 1px 0px #efefef;
   box-shadow: 1px 1px 0px #efefef;
+  font-family: 'FuturaStd-Book';
   font-size: 1.2em;
   color: #787878;
   letter-spacing: -0.02em;
   text-shadow: 0px 1px 0px #fff;
   outline: none;
-  font-family: 'FuturaStd-Book';
 }
 
 input:focus {
@@ -53,7 +53,6 @@ legend {
   color: #76B828;
   font-weight: bold;
   text-transform: lowercase;
-  font-family: 'FuturaStd-Book';
 }
 
 label {
