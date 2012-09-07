@@ -73,7 +73,7 @@ margin: 45px 10px 0 0;
 #image-container{
 	display:none;
 }
-#content {
+.demopoly-content {
 clear: both;
 float: left;
 margin: 40px 0px 0px 0px;
@@ -95,7 +95,7 @@ top:40px;
 background:white;
 z-index: 1000
 }
-.not-front #content {
+.not-front .demopoly-content {
 width:831px;
 }
 

@@ -1,0 +1,136 @@
+/**
+ *   Page Take Part
+ * 
+ * +user/register
+ * +user
+ */
+
+
+/* PAGE USER REGISTER */
+.page-user-register .demopoly-content {
+  width: 700px;
+  font-family: 'LubalinGraphITCbyBT-Medium';
+}
+
+.page-user-register .description {
+  display: none;
+}
+
+.page-user-register .demopoly-content .lightweight {
+  display: block;
+  font-size: 10pt;
+  margin-bottom: 50px;
+}
+
+#edit-account, #edit-field-firstname {
+  display: inline-block;
+  width: 45%;
+}
+#edit-account input, #edit-field-firstname input {
+  float: left;
+  width: 90%;
+}
+#edit-account label, #edit-field-firstname label {
+  text-transform: uppercase;
+  font-size: 11pt;
+}
+.page-user-register .form-type-checkbox .option {
+  display: inline-block;
+  margin-top: 10px;
+  vertical-align: bottom;
+}
+
+#edit-youth-checkbox {
+  background-image: url("../../img/take-part/radio-button.png");
+}
+
+#edit-youth-protection {
+  color: #000000;
+}
+
+#edit-agree-checkbox span {
+  color: #76B828;
+}
+
+/** PAGE USER SETTINGS **/
+.page-user h1 {
+  display: none;
+}
+
+.page-user .floatLeft span.value, .page-user .floatRight span.value{
+  color: #c4c4c4;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.page-user span.show {display:none;}
+.page-user div.user_mail:hover span.show {display:inline;}
+.page-user div.user_mail:hover span.noshow {display:none;}
+
+  
+.page-user .floatLeft h5, .page-user .floatRight h5{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+.page-user .floatLeft, .page-user .floatRight{
+  width: 45%;
+  margin-bottom:15px;
+  margin-top:15px;
+  padding: 8px;
+}
+.page-user div.floatLeft.main div, .page-user div.floatRight.main div{
+  display: inline-block;
+  width: 45%;
+}
+
+.page-user .floatLeft{
+  float: left;
+}
+.page-user .floatRight{
+  float: right;
+}
+.page-user .fullwidth{
+  width: 100%!important;
+}
+.page-user .fullwidth h5{
+  font-size: 12px;
+}
+
+.page-user hr.dashed{
+  border:dotted #e4e4e4;
+  border-width:1px 0 0 0;
+  height:0px;
+  line-height:0px;
+  font-size:0;
+  margin:0px;
+  padding:0px;
+  clear: both
+}
+
+.page-user legend span.fieldset-legend {
+  font-family: "LubalinGraphITCbyBT-Medium";
+    color: #76B828;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.page-user legend span.ajax-progress-throbber, .page-user legend div.ajax-progress-throbber{
+  float: left;
+}
+.page-user legend span.ajax-progress-throbber.hidden{
+  display: none;
+}
+
+.page-user .floatRight.delete {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-user .floatRight.delete, .page-user .delete p {
+  background-color: #e4e4e4;
+  font-family: "LubalinGraphITCbyBT-Medium";
+}
+.page-user .delete p{
+  font-size: 10pt;
+}

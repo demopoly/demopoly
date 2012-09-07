@@ -1,15 +1,16 @@
-<script type="text/javascript" src="http://select-box.googlecode.com/svn/tags/0.2/jquery.selectbox-0.2.min.js"></script>
 <h1>Upload a picture</h1>
 <h2>Please add some information which is related to your picture.</h2>
 <div id="name-city">
 	<fieldset>
 		<legend><span class="fieldset-legend">Name(s)/City - shown on the picture</span></legend>
+		<div class="fieldset-content">
 			<?php print render($form['field_firstname']);?>		
 			<?php print render($form['field_city']);?>
-			<br class="clear" />
+			<div class="clearfix"></div>
 			<div class="description">
 			(you can change the name or the city and add more names. If there's more than 1 name: people from left to right)
 			</div>
+		</div>
 	</fieldset>
 </div>
 
@@ -20,35 +21,45 @@
 <div id="context">
 	<fieldset>
 		<legend><span class="fieldset-legend">Picture Content Box</span></legend>
-		<?php print render($form['field_protest_context']);?>
+		<div class="fieldset-content">
+			<?php print render($form['field_protest_context']);?>
+		</div>
 	</fieldset>
 </div>
 
 <div id="download">
 	<fieldset>
 		<legend><span class="fieldset-legend">Download</span></legend>
-		<?php print render($form['field_download']);?>
+		<div class="fieldset-content">
+			<?php print render($form['field_download']);?>
+		</div>
 	</fieldset>
 </div>
 
 <div id="licence">
 	<fieldset>
 		<legend><span class="fieldset-legend">Licence - Creative Commons</span></legend>
-		<?php print render($form['field_licence']);?>
+		<div class="fieldset-content">
+			<?php print render($form['field_licence']);?>
+		</div>
 	</fieldset>
 </div>
 
 <div id="terms">
 	<fieldset>
 		<legend><span class="fieldset-legend">General Terms and Conditions</span></legend>
-		<?php print render($form['field_terms']);?>
+		<div class="fieldset-content">
+			<?php print render($form['field_terms']);?>
+		</div>
 	</fieldset>
 </div>
 
 <div id="image">
 	<fieldset>
 		<legend><span class="fieldset-legend">&nbsp;</span></legend>
-		<?php print render($form['field_protest_image']);?>
+		<div class="fieldset-content">
+			<?php print render($form['field_protest_image']);?>
+		</div>
 	</fieldset>
 </div>
 
@@ -63,3 +74,29 @@
 		<?php print render($form['submit']);?>
 	</fieldset>
 </div>
+<script type="text/javascript">
+(function ($) {
+	Drupal.behaviors.demopoly_protest_detail = {
+			attach: function(context){
+				$(document).bind('iframe-loaded', function () {
+					$(document).ready(function(){
+						var method = 'resize_cbox("form#demopoly-protest-add-form")';
+						window.setTimeout(method, 100);
+					});
+				});
+				
+				resize_cbox = function(obj){
+					var opac = $(obj).css('opacity');
+					if( opac > 0){
+						var y = $(obj).height();
+						top.jQuery.colorbox.resize({
+							'innerHeight':y+20
+						});
+					}
+				}
+				
+				$(document).trigger('iframe-loaded');
+			}
+	}
+}) (jQuery);
+</script>

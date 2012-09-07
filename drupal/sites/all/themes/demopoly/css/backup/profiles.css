@@ -88,7 +88,7 @@
     height: 36px;
     width: 173px;
 }
-.button-is-frontpage {	
+.button-is-frontpage {
 	background-image: url("/sites/all/themes/demopoly/img/buttons.png");
     background-position: -167px -243px;
     background-repeat: no-repeat;
@@ -189,4 +189,3 @@ legend .button-reload {
 .views-row .button-is-not-frontpage{
 	text-indent:-9999px;
 }
-

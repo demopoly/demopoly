@@ -65,8 +65,13 @@
 }
 
 /* CONTENT */
-.content {
+.demopoly-heading {
+  display: none;
+}
+
+.demopoly-content {
   clear: both;
   float: left;
-  margin: 40px 0px 0px 0px;
+  width: 95%;
+  margin: 0px 0px 0px 0px;
 }

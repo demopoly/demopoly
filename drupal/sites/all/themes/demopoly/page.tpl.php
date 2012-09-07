@@ -2,7 +2,6 @@
 	$base_path = '/'.drupal_get_path('theme', 'demopoly').'/';
 	if($user->uid==1){print render($tabs);}
 ?>
-
 <div class="wrapper">
 	<!-- Start Header -->
 	<div class="header">
@@ -52,14 +51,14 @@
 	<!-- Ende Header -->
 	<br class="clearfix" />
 	<!--  Start Content-->
-	<div id="content">
+	<div class="demopoly-content">
 		<?php if ($messages){?>
 		<div class="clearfix">
 			<?php print $messages;?>
 		</div>
 		<?php } ?>
 		<?php if($title){?>
-		<h1>
+		<h1 class="demopoly-heading">
 			<?php print $title;?>
 		</h1>
 		<?php } ?>

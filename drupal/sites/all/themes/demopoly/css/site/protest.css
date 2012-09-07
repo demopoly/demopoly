@@ -83,6 +83,7 @@
 
 .container-wrapper .container-text .para-context {
   font-size: 10pt;
+  height: 120px;
   display: block;
 }
 
@@ -106,7 +107,7 @@
   left: 0px;
 }
 .container-slide-prev .prev{
-  background: url(../img/ddblock/paging_arrow_back.png) no-repeat;
+  background: url(../../img/ddblock/paging_arrow_back.png) no-repeat;
   display: block;
   height: 0px;
   overflow: hidden;
@@ -128,58 +129,10 @@
   right: 0px;
 }
 .container-slide-next .next{
-  background: url(../img/ddblock/paging_arrow_next.png) no-repeat;
+  background: url(../../img/ddblock/paging_arrow_next.png) no-repeat;
   display: block;
   height: 0px;
   overflow: hidden;
   padding-top: 20px;
   background-position: 35px 2px;
 }
-/** BUTTON START **/
-.button-download-image {
-     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
-     background-position: -201px -168px;
-     background-repeat: no-repeat;
-     display: block;
-     width: 197px;
-     
-     height: 0px;
-     padding-top: 37px;
-     overflow: hidden;
-}
-.button-download-image:hover {
-     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
-     background-position: -201px -205px;
-     background-repeat: no-repeat;
-     display: block;
-     width: 197px;
-     
-     height: 0px;
-     padding-top: 37px;
-     overflow: hidden;
-}
-
-.button-report-image {
-     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
-     background-position: -201px -168px;
-     background-repeat: no-repeat;
-     display: block;
-     width: 197px;
-     
-     height: 0px;
-     padding-top: 37px;
-     overflow: hidden;
-     
-}
-.button-report-image:hover {
-     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
-     background-position: -201px -205px;
-     background-repeat: no-repeat;
-     display: block;
-     width: 197px;
-     
-     height: 0px;
-     padding-top: 37px;
-     overflow: hidden;
-}
-/** BUTTON END **/

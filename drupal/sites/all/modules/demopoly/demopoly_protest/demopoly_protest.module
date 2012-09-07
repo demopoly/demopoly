@@ -64,7 +64,9 @@ function demopoly_protest_uri($protest){
 			'path' => 'protest/' . $protest->pid,
 	);
 }
-
+function demopoly_protest_page_alter(&$page) {
+  unset($page['page_top']['toolbar']);
+}
 function demopoly_protest_menu(){
 	$items['admin/structure/protest/manage'] = array(
 			'title' => 'Protest Admin',
@@ -141,13 +143,52 @@ function demopoly_protest_delete_form_submit($form,&$form_state) {
 }
 function demopoly_protest_delete_form($form,&$form_state,$protest) {
 	$form_state['storage']=array('pid'=>$protest->pid);
-	$form['text']=array('#type'=>'markup'
-	,'#markup'=>t('Do you relay like to delete this image')
+  $form['markup-wrap-start']=array(
+    '#type'=>'markup',
+    '#markup'=>t('<div class="markup-wrap">')
+  );
+	$form['text']=array(
+	 '#type'=>'markup',
+	 '#markup'=>t('<h2>Do you really like to delete this image?</h2>')
 	);
-	$form['submit']=array(
-			'#type'=>'submit',
-			'#value'=>t('delete')
+  $form['submit']=array(
+      '#type'=>'submit',
+      '#value'=>t('Yes')
+  );
+  $form['button-wrap-start']=array(
+    '#type'=>'markup',
+    '#markup'=>t('<div class="button-wrap">')
+  );
+	$form['yes']=array(
+			'#type'=>'markup',
+			'#markup'=>t('<a href="#Yes" class="button large delete-yes">Yes</a>')
 	);
+  $form['no']=array(
+      '#type'=>'markup',
+      '#markup'=>t('<a href="#No" class="button large delete-no">No</a>')
+  );
+  $form['markup-wrap-end']=array(
+    '#type'=>'markup',
+    '#markup'=>t('</div></div>')
+  );
+  $form['script']=array(
+      '#type'=>'markup',
+      '#markup'=>t('
+        <script type="text/javascript">
+          (function($){
+            Drupal.behaviors.demopoly_protest = {
+              attach:function(context){
+                $(".button.delete-yes").click(function() {
+                  $("form").submit();      
+                });
+                $(".button.delete-no").click(function() {
+                  top.jQuery.colorbox.close();
+                });
+              }}
+          })(jQuery);
+        </script>
+      ')
+  );
 	return $form;
 }
 function demopoly_protest_permission(){
@@ -284,13 +325,15 @@ function demopoly_protest_is_frontpage_activate($protest){
 	$query->propertyCondition('uid', $uid);
 	$query->fieldCondition('field_protest_is_frontpage','value','1');
 	$result = $query->execute();
+    
 	$array = array();
 	foreach ( $result['protest'] as $active){
 		$array[] = $active->pid;
 	}
 	$protests = entity_load('protest',$array);
-
+    
 	foreach($protests as $active){
+	  $active->field_protest_is_frontpage[LANGUAGE_NONE]=array();
 		$active->field_protest_is_frontpage[LANGUAGE_NONE][0]['value']=0;
 		entity_save('protest', $active);
 	}

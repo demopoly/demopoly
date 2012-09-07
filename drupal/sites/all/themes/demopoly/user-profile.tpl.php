@@ -35,8 +35,10 @@
 <?php 
 drupal_add_library('system', 'drupal.ajax');
 drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
-?>
 
+$add_image_url = url('protest/add',array('query'=>array('width'=>'900', 'iframe'=>'true')));
+$reload_image_url = url('user/my_images/reload');
+?>
 <!-- start profile -->    
 
 <div class="profile"<?php //print $attributes; ?>>
@@ -61,7 +63,7 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	
 	<fieldset class="floatRight delete">
 		<h5>If you want to delete your account and leave Demopoly:</h5>
-		<a class="button delete" href="<?php echo url('user/delete')?>">DELETE</a>
+		<a class="button medium delete" href="<?php echo url('user/delete')?>">DELETE</a>
 		<p>
 			Please note that all pictures and all information will be deleted.
 			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.
@@ -74,17 +76,17 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	<div class="floatLeft main">
 		<fieldset>
 			<legend><span class="fieldset-legend">Private Profile</span></legend>
-			<div class="floatLeft"><h5>First Name:</h5><span class="value"><?php print $user_firstname?></span></div>
-			<div class="floatRight user_mail"><h5>E-Mail:</h5>
+			<div class="floatLeft"><span class="user-profile-label">First Name:</span><span class="value"><?php print $user_firstname?></span></div>
+			<div class="floatRight user_mail"><span class="user-profile-label">E-Mail:</span>
 				<span class="value noshow"><?php print $short_user_mail?></span>
 				<span class="value show"><?php print $full_user_mail?></span>
 			</div>
 			<hr class="dashed" />
-			<div class="floatLeft fullwidth"><h5>Country/Autonomous Region/Stateless:</h5>
+			<div class="floatLeft fullwidth"><span class="user-profile-label">Country/Autonomous Region/Stateless:</span>
 				<span class="value"><?php print $user_country?></span></div>
 			<hr class="dashed" />
-			<div class="floatLeft"><h5>City:</h5><span class="value"><?php print $user_city?></span></div>
-			<div class="floatRight"><h5>Password:</h5><span class="value"><?php print $user_pass?></span></div>
+			<div class="floatLeft"><span class="user-profile-label">City:</span><span class="value"><?php print $user_city?></span></div>
+			<div class="floatRight"><span class="user-profile-label">Password:</span><span class="value"><?php print $user_pass?></span></div>
 			<hr class="dashed" />
 		</fieldset>
 	</div>
@@ -107,9 +109,9 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 	</div>
 	
 	<div class="floatRight main">
-		<a class="button change-settings" href="<?php echo url('user/'.$user->uid.'/edit')?>">Change Settings</a>
+		<a class="button medium change-settings" href="<?php echo url('user/'.$user->uid.'/edit')?>">Change Settings</a>
 	</div>
-	<div style="clear: both"></div>
+	<div class="clearfix"></div>
 	
 	<!-- re- und upload images -->  
 	
@@ -119,12 +121,12 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 			<span class="fieldset-legend">Public Picture</span>
 			<span style="float: right">
 				<span class="ajax-progress ajax-progress-throbber hidden"><span class="throbber"></span></span>
-				<a href="<?php print url('user/my_images/reload');?>" class="use-ajax demopoly-my-images-reload button-reload">[Reload]</a>
-				<a href="<?php print url('protest/add',array('query'=>array('width'=>900,'height'=>500,'iframe'=>'true')));?>" id="demopoly-add-image" class="colorbox-load button-upload">[+]</a>
+				<a href="<?php print $reload_image_url;?>" class="use-ajax">[Reload]</a>
+				<a href="<?php print $add_image_url; ?>" id="demopoly-add-image" class="colorbox-load">[add image]</a>
 			</span>
 		</legend>
 		<?php print views_embed_view('my_images','default',array($user->uid))?>
 	</fieldset>
 	<!-- end profile -->
-	<br class="clear" />  
+	<br class="clearfix" />  
 </div>

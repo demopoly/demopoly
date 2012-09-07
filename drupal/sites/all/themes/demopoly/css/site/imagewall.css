@@ -5,7 +5,7 @@
 .front h1 { 
   display:none;
 }
-.not-front #content {
+.not-front .demopoly-content {
   width:831px;
 }
 

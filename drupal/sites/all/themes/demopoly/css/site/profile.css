@@ -1,0 +1,557 @@
+/**
+ *   PROFILE PAGES
+ */
+.page-user .demopoly-content {
+  width: 850px;
+  font-family: 'LubalinGraphITCbyBT-Medium';
+}
+
+.page-user .floatLeft .value,
+.page-user .floatRight .value{
+  color: #c4c4c4;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.page-user span.show {display:none;}
+.page-user div.user_mail:hover span.show {display:inline;}
+.page-user div.user_mail:hover span.noshow {display:none;}
+
+  
+.page-user .floatLeft h5,
+.page-user .floatRight h5{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+.page-user .floatLeft,
+.page-user .floatRight{
+  width: 45%;
+  margin-bottom:15px;
+  padding: 8px;
+}
+.page-user div.floatLeft.main div,
+.page-user div.floatRight.main div{
+  display: inline-block;
+  width: 45%;
+}
+
+.page-user .floatLeft{
+  float: left;
+}
+.page-user .floatRight{
+  float: right;
+}
+.page-user .fullwidth{
+  width: 100%!important;
+}
+.page-user .fullwidth h5{
+  font-size: 12px;
+}
+
+.page-user hr.dashed{
+  border:dotted #e4e4e4;
+  border-width:1px 0 0 0;
+  height:0px;
+  line-height:0px;
+  font-size:0;
+  margin:0px;
+  padding:0px;
+  clear: both
+}
+
+.page-user legend span.fieldset-legend {
+  font-family: "LubalinGraphITCbyBT-Medium";
+    color: #76B828;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.page-user legend span.ajax-progress-throbber, .page-user legend div.ajax-progress-throbber{
+  float: left;
+}
+.page-user legend span.ajax-progress-throbber.hidden{
+  display: none;
+}
+
+.page-user .floatRight.delete {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-user .floatRight.delete, .page-user .delete p {
+  background-color: #e4e4e4;
+  font-family: "LubalinGraphITCbyBT-Medium";
+}
+.page-user .delete p{
+  font-size: 10pt;
+}
+
+/* IMAGE VIEW */
+.page-user .views-row{
+  width: 400px;
+  margin-top: 10px;
+  padding: 3px;
+  overflow: hidden;
+  float: left;
+  border: 1px dotted #e4e4e4;
+}
+
+.views-row-odd {
+  margin-right: 15px;
+}
+
+.views-row-even {
+  margin-left: 15px;
+}
+
+.page-user .views-row:hover{
+  border: 1px solid #d4d4d4;
+  background: #EFEFEF;
+}
+
+.views-view-fields--my-images-wrapper{
+  width: 100%;
+  display: block;
+}
+.views-view-fields--my-images-header{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.views-view-fields--my-images-header .firstname{
+  font-weight: 700;
+  
+}
+.views-view-fields--my-images-hr {
+  border: solid #e4e4e4;
+  border-width:1px 0 0 0;
+  height:0px;
+  line-height:0px;
+  font-size:0;
+  margin:5px 0 30px 0;
+  padding:0px;
+  clear: both;
+}
+.views-view-fields--my-images-floatLeft{
+  float: left;
+}
+.views-view-fields--my-images-floatLeft div.image-wrapper{
+  height: 125px;
+  width: 150px;
+  display: block;
+  background-position:50% 50%;
+}
+.views-view-fields--my-images-floatRight{
+  float: right;
+}
+.views-view-fields--my-images-footer{
+  clear: both;
+  padding-top: 30px;
+}
+
+.views-row .button-edit, 
+.views-row .button-delete {
+  margin-bottom: 10px;  
+}
+
+
+.page-user .delete a.terms-link{
+  background-image: url("../../img/loginbox/listenpunkt.png");
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  display: inline-block;
+  padding-left: 12px;
+}
+.page-user .delete h5{
+  color: red;
+}
+.page-user .expressum-is-set span, .page-user .newsletter-is-set span,
+.page-user .expressum-is-not-set span, .page-user .newsletter-is-not-set span {
+  background-image: url("../../img/take-part/radio-button.png");
+  background-repeat: no-repeat;
+  width:18px; height:18px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.page-user .expressum-is-set span, .page-user .newsletter-is-set span {background-position: 0px -389px;}
+.page-user .expressum-is-not-set span, .page-user .newsletter-is-not-set span {background-position: 0px 0px;}
+
+.page-user #expressum,
+.page-user #newsletter {
+  display: inline-block;
+  width: 100%;
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-size: 9pt;
+  margin-top: 5px;
+}
+.page-user #expressum .setting,
+.page-user #newsletter .setting {
+  vertical-align: middle;
+  height: 20px;
+  display: inline-block;
+}
+
+.page-user ul li{
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-weight: bold;
+  
+  list-style-type: none;
+}
+.page-user ul li span{
+  background-image: url("../../img/loginbox/listenpunkt.png");
+  background-repeat: no-repeat;
+  background-position: 0 7.5px; 
+  padding-left: 15px;
+  display: block;
+}
+
+.page-user .field-content div.ajax-progress-throbber{
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  line-height: 0;
+}
+
+.user-profile-label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "UTF-8";
+/* Take Part */
+
+legend {border-bottom: 2px solid #e4e4e4;width: 100%;padding-bottom: 5px;}
+
+fieldset {
+  border:none;}
+  
+#edit-youth-checkbox {background-image: url("../img/take-part/radio-button.png");}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection {
+     color: #000000;
+}
+
+#edit-youth-protection span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#user_user_form_group_main span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#edit-agree span {
+     color: #76B828;
+   font-weight: bold;
+}
+
+#edit-agree-checkbox span {
+     color: #76B828;
+}
+
+.page-user-register .demopoly-content {width: 700px;}
+
+.listenpunkt  {
+  background-image: url("../img/loginbox/listenpunkt.png");
+    display: inline-table;
+    height: 7px;
+    width: 9px;
+  margin-right: 5px;
+}
+.page-user-register .form-item-mail .description{ 
+  display:none;
+}
+a.terms-link {
+  color:#009ee2;
+  text-decoration:none;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+/** PAGE USER EDIT **/
+
+.page-user-edit legend {
+  font-family: "LubalinGraphITCbyBT-Medium";
+}
+
+.page-user-edit form div{
+  display: inline-block;
+}
+
+.page-user-edit form div div{
+  display: block;
+}
+
+.page-user-edit .form-actions {
+  display: block;
+  width: 100%;
+}
+.page-user-edit fieldset{
+  position: relative;
+  width: 100%;
+}
+
+.page-user-edit a#show_info{
+  background-image: url("../img/take-part/infopfeil.png");
+  background-repeat: no-repeat;
+  background-position: 0px 7px;
+  display: block;
+  padding-left: 12px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #d4d4d4;
+  text-transform: uppercase;
+  font-family: "LubalinGraphITCbyBT-Medium";
+}
+
+.page-user-edit #edit-save-and-go,
+.page-user-edit #edit-submit
+{
+  float: right;
+  height: 38px;
+  width: 113px;
+}
+.page-user-edit #edit-save-and-go {
+  width: 140px;
+  font-family: "FuturaStd-Light"!important;
+  text-transform: uppercase;
+}
+
+.page-user-edit div.field-name-field-firstname,
+.page-user-edit div.form-item-current-pass,
+.page-user-edit div.form-item-pass-pass1
+{
+  float: left;
+  width: 49%;
+}
+.page-user-edit div.field-name-field-city,
+.page-user-edit div.form-item-mail,
+.page-user-edit div.form-item-pass-pass2
+{
+  float: right;
+  width: 49%;
+}
+.page-user-edit fieldset.fullwidth div.form-item-mail{
+  float: right;
+  width: 100%;
+}
+
+.page-user-edit label, .page-user-edit input
+{
+  font-family: "LubalinGraphITCbyBT-Medium";
+  width: 100%;
+}
+.page-user-edit .description{
+  display: none;
+}
+
+
+/** PAGE USER SETTINGS **/
+.page-user h1 {
+  display: none;
+}
+
+.page-user .floatLeft span.value, .page-user .floatRight span.value{
+  color: #c4c4c4;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.page-user span.show {display:none;}
+.page-user div.user_mail:hover span.show {display:inline;}
+.page-user div.user_mail:hover span.noshow {display:none;}
+
+  
+.page-user .floatLeft h5, .page-user .floatRight h5{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+.page-user .floatLeft, .page-user .floatRight{
+  width: 45%;
+  margin-bottom:15px;
+  margin-top:15px;
+  padding: 8px;
+}
+.page-user div.floatLeft.main div, .page-user div.floatRight.main div{
+  display: inline-block;
+  width: 45%;
+}
+
+.page-user .floatLeft{
+  float: left;
+}
+.page-user .floatRight{
+  float: right;
+}
+.page-user .fullwidth{
+  width: 100%!important;
+}
+.page-user .fullwidth h5{
+  font-size: 12px;
+}
+
+.page-user hr.dashed{
+  border:dotted #e4e4e4;
+  border-width:1px 0 0 0;
+  height:0px;
+  line-height:0px;
+  font-size:0;
+  margin:0px;
+  padding:0px;
+  clear: both
+}
+
+.page-user legend span.fieldset-legend {
+  font-family: "LubalinGraphITCbyBT-Medium";
+    color: #76B828;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.page-user legend span.ajax-progress-throbber, .page-user legend div.ajax-progress-throbber{
+  float: left;
+}
+.page-user legend span.ajax-progress-throbber.hidden{
+  display: none;
+}
+
+.page-user .floatRight.delete {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-user .floatRight.delete, .page-user .delete p {
+  background-color: #e4e4e4;
+  font-family: "LubalinGraphITCbyBT-Medium";
+}
+.page-user .delete p{
+  font-size: 10pt;
+}
+/** BUTTONS START **/
+.page-user a.button.delete {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -323px -95px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 173px;
+     text-indent:-9999px;
+}
+.page-user a.button.delete:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -323px -132px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 36px;
+     width: 173px;
+}
+.page-user a.button.change-settings {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -201px -168px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 197px;
+     text-indent:-9999px;
+}
+.page-user a.button.change-settings:hover {
+     background-image: url("/sites/all/themes/demopoly/img/buttons.png");
+     background-position: -201px -205px;
+     background-repeat: no-repeat;
+     display: block;
+     height: 37px;
+     width: 197px;
+}
+/** BUTTONS END **/
+.page-user .delete a.terms-link{
+  background-image: url("../img/loginbox/listenpunkt.png");
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  display: inline-block;
+  padding-left: 12px;
+}
+.page-user .delete h5{
+  color: red;
+}
+
+
+.page-user .expressum-is-set span, .page-user .newsletter-is-set span{
+  background-image: url("../img/take-part/radio-button.png");
+  background-repeat: no-repeat;
+  background-position: -18px 0;
+  display: inline-block;
+  width:18px; height:18px;
+  margin-right: 5px;
+}
+.page-user #expressum, .page-user #newsletter {
+  display: inline-block;
+  width: 100%;
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-size: 12px;
+}
+.page-user .expressum-is-not-set, .page-user .newsletter-is-not-set,
+.page-user .expressum-is-set, .page-user .newsletter-is-set {
+  vertical-align: top;
+}
+.page-user .expressum-is-not-set span, .page-user .newsletter-is-not-set span {
+  background-image: url("../img/take-part/radio-button.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: inline-block;
+  width:18px; height:18px;
+  margin-right: 5px;
+}
+
+.page-user br.clear{
+  clear: both;
+}
+
+.page-user ul li{
+  font-family: "LubalinGraphITCbyBT-Medium";
+  font-weight: bold;
+  
+  list-style-type: none;
+}
+.page-user ul li span{
+  background-image: url("../img/loginbox/listenpunkt.png");
+  background-repeat: no-repeat;
+  background-position: 0 7.5px; 
+  padding-left: 15px;
+  display: block;
+}
+
+.page-user .field-content div.ajax-progress-throbber{
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  line-height: 0;
+} 

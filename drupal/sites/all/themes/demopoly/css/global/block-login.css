@@ -14,6 +14,7 @@
   display:none;
   border: 1px solid #dfdfdf;
   font-weight: bold;
+  width: 385px;
 }
 
 #block-user-login h2 {
@@ -55,9 +56,14 @@
   display:none;
 }
 
+#user-login-form .form-type-textfield,
+#user-login-form .form-type-password {
+  float:left;
+}
+
 
 #edit-name, #edit-pass, #user-login-form ul li {
-  float:left;
+  float: left;
 }
 
 #edit-name #edit-pass{

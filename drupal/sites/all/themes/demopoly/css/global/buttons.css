@@ -11,6 +11,11 @@
  * +Delete Profile - MEDIUM
  * +Upload - MEDIUM
  * +Change - LARGE
+ * +IsFrontpage - LARGE
+ * +IsNotFrontpage - LARGE
+ * +Protest Delete - MEDIUM
+ * +Protest Edit - MEDIUM
+ * +radioButtonSet
  */
 
 .button {
@@ -34,6 +39,14 @@
   
 }
 
+.button.radio {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
 /* DELETE */
 .button.medium.delete {
   background-position: -343px -104px;
@@ -54,11 +67,11 @@
 
 /* INFO */
 .button.large.info {
-  background-position: -0px -0px;
+  background-position: -1px 0px;
   width: 183px;
 }
 .button.large.info:hover {
-  background-position: -0px -47px;
+  background-position: -1px -47px;
 }
 
 /* TAKE PART */
@@ -68,7 +81,7 @@
 }
 
 .button.large.take-part:hover {
-  background-position: -190px -47px;
+  background-position: -19-1px -47px;
 }
 
 /* LEAVE */
@@ -83,11 +96,11 @@
 
 /* LOGIN */
 .button.medium.login {
-  background-position: 0px -104px;
+  background-position: -1px -104px;
   width: 112px;
 }
 .button.medium.login:hover {
-  background-position: 0px -141px;
+  background-position: -1px -141px;
 }
 
 /* MORE INFO */
@@ -112,12 +125,12 @@
 
 /* UPLOAD */
 .button.medium.upload {
-  background-position: 0px -187px;
+  background-position: -1px -187px;
   width: 201px;
 }
 
 .button.medium.upload:hover {
-  background-position: 0px -224px;
+  background-position: -1px -224px;
 }
 
 /* CHANGE */
@@ -130,4 +143,83 @@
   background-position: -246px -317px;
 }
 
+/* IS FRONTPAGE no-hover */
+.button.large.is-frontpage {
+  background-position: -1px -317px;
+  width: 237px;
+}
 
+/* IS NOT FRONTPAGE */
+.button.large.is-not-frontpage {  
+  background-position: -1px -270px;
+  width: 237px;
+}
+.button.large.is-not-frontpage:hover {  
+  background-position: -1px -317px;
+}
+
+/* PROTEST EDIT */
+.button.medium.protest-edit {  
+  background-position: -211px -187px;
+  width: 198px;
+}
+.button.medium.protest-edit:hover {
+  background-position: -211px -224px;
+}
+/* PROTEST DELETE */
+.button.medium.protest-delete {  
+  background-position: -517px -103px;
+  width: 176px;
+}
+.button.medium.protest-delete:hover {
+  background-position: -517px -140px;
+}
+
+/* DOWNLOAD IMAGE */
+.button.medium.download-image {  
+  background-position: -517px -103px;
+  width: 176px;
+}
+.button.medium.download-image:hover {
+  background-position: -517px -140px;
+}
+
+/* REPORT IMAGE */
+.button.medium.report-image {  
+  background-position: -517px -103px;
+  width: 176px;
+}
+.button.medium.report-image:hover {
+  background-position: -517px -140px;
+}
+
+/* NO */
+.button.large.delete-no {
+  background-position: -343px -104px;
+  width: 173px;
+  display: inline-block
+}
+
+.button.large.delete-no:hover {
+  background-position: -343px -141px;
+}
+
+/* YES */
+.button.large.delete-yes {
+  background-position: -1px -187px;
+  width: 201px;
+  display: inline-block
+}
+
+.button.large.delete-yes:hover {
+  background-position: -1px -224px;
+}
+
+/* RADIO BUTTON SET */
+.button.radio.is-set{
+  background-position: -1px -389px;
+}
+/* RADIO BUTTON NOT SET */
+.button.radio.not-set{
+  background-position: -23px -389px;
+}

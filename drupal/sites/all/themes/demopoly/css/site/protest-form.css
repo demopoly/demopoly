@@ -1,0 +1,136 @@
+/* Upload A Picture / Edit A Picture*/
+#wrapper {
+  margin: 0px 25px 40px 25px;
+}
+.demopoly-content{
+  margin: 0;
+}
+
+fieldset {
+  width: 870px;
+  display: block;
+}
+
+.fieldset-content {
+  display: block;
+  width: 580px!important;
+}
+
+div#name-city,
+div#date,
+div#context {
+  width: 800px;
+  display: block;
+}
+
+div#name-city div#edit-field-firstname {
+  float: left;
+}
+div#name-city div#edit-field-city {
+  float: right;
+}
+
+div#name-city div#edit-field-firstname,
+div#name-city div#edit-field-city {
+  position: relative;
+  left: 0px; top: 0px;
+  width: 45%;
+}
+div#name-city div#edit-field-firstname input, div#name-city div#edit-field-city input,
+div#name-city div#edit-field-firstname label, div#name-city div#edit-field-city label {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+div#date .form-type-date-select,
+div#date .form-type-date-select .date-padding {
+  width: 100%;
+}
+div#date .form-type-select{
+  width: 32%;
+  padding-right: 0px;
+}
+
+div#date .form-type-select select{
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+div#date span.select{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+  display: block;
+  
+  padding: 0px 10px;
+  width:85%;
+  font-size: 15px;
+  color: #787878;
+  text-shadow: 0px 1px 0px #fff;
+  outline: none;
+  background: -webkit-gradient(linear, left bottom, left top, from(#e0e0e0), to(#ffffff));
+  background: -moz-linear-gradient(bottom, #e0e0e0, #ffffff);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: 0px solid #717171;
+  margin-right: 5px;
+  -webkit-box-shadow: 1px 1px 0px #efefef;
+  -moz-box-shadow: 1px 1px 0px #efefef;
+  box-shadow: 1px 1px 0px #efefef;
+  margin: 3px 5px 3px 0px;
+}
+
+div#context label,
+div#download label,
+div#licence label,
+div#terms label,
+div#image label{
+  display: none;
+}
+
+label.option{
+  display: inline!important;
+}
+
+div#download #edit-field-download .form-type-radios{
+  width: 100%;
+}
+
+div#download #edit-field-download #edit-field-download-und .form-item-field-download-und{
+  float: right;
+  width: 45%;
+}
+
+div#download #edit-field-download #edit-field-download-und .form-item-field-download-und:first-child {
+  float: left;
+  width: 45%; 
+}
+
+div#context #field-protest-context-add-more-wrapper textarea{
+  border: 0px;
+  /*border: 1px solid #e4e4e4;*/
+}
+div#context #field-protest-context-add-more-wrapper div.description
+{
+  display: none;
+}
+
+/* DELETE PROTEST */
+#demopoly-protest-delete-form #edit-submit {
+  display: none!important;
+}
+
+#demopoly-protest-delete-form .markup-wrap {
+  margin: auto;
+  width: 420px;
+}
+#demopoly-protest-delete-form .button-wrap {
+  margin: auto;
+  width: 374px;
+}
+
+#demopoly-protest-delete-form .button-wrap .button{
+  text-align: center;
+}

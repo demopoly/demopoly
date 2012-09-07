@@ -24,33 +24,43 @@
  */
 ?>
 <?php
-
+///src\=\"(.*)\" w/i
 	$content = array();
 
 	$field_firstname	= $fields['field_firstname']->content;
 	$field_city			= $fields['field_city']->content;
 	$field_date			= date('Y',$fields['field_date']->content);
-	$field_image		= $fields['field_protest_image']->content;
+	
+	
+	$field_image['background']['fid']  = file_load($fields['field_protest_image_1']->content);
+	$field_image['background']['path'] = file_create_url($field_image['background']['fid']->uri);
+	$field_image['background']['styled']  = image_style_url('img_style_land_2', $field_image['background']['fid']->uri);
+	
+	$field_image['preview']['fid'] 		 = file_load($fields['field_protest_image']->content);
+	$field_image['preview']['path'] 	 = file_create_url($field_image['preview']['fid']->uri);
+	$field_image['preview']['styled']  = image_style_url('img_style_land_2', $field_image['preview']['fid']->uri);
+	
 	$field_pid			= strip_tags($fields['pid']->content);
 	$field_protest_is_frontpage = strip_tags($fields['field_protest_is_frontpage']->content);
 	$field_protest_context = strip_tags($fields['field_protest_context']->content);
 	
-	$img_href = array();
-	$pattern = '/src\=\"(.*)\" w/i';
-	preg_match($pattern, $field_image, $img_href);
-	
 	$content['header'] = '<span class="firstname">'.$field_firstname.'</span>, <span class="city">'.$field_city.'</span> (<span class="date">'.$field_date.'</span>)';
-	$content['left'] = '<div class="image-wrapper" image="'.$img_href[1].'" style="background-image:url('.$img_href[1].');">&nbsp;</div>';
+	$content['left'] = '<div class="image-wrapper" image="'.$field_image['preview']['styled'].'" style="background-image:url('.$field_image['background']['styled'].');">&nbsp;</div>';
 	$content['right'] = '';
 	$length = 40;
 	$ending = strlen($field_protest_context) > $length?' [...]':'';
 	$content['footer'] = substr($field_protest_context, 0, $length).$ending;
 	
 	if($field_protest_is_frontpage == false){
-		$field_protest_is_frontpage_content = '<a class="button-frontpage use-ajax button-is-not-frontpage protest-is-activated-0" href="/protest/'.$field_pid.'/activate">Frontpage Picture</a>';
+		$field_protest_is_frontpage_content = '<a class="use-ajax button large is-not-frontpage" href="/protest/'.$field_pid.'/activate">Frontpage Picture</a>';
 	} else {
-		$field_protest_is_frontpage_content = '<span class="button-frontpage protest-is-activated-1 button-is-frontpage">Frontpage Picture</span>';
+		$field_protest_is_frontpage_content = '<span class="button large is-frontpage">Frontpage Picture</span>';
 	}
+	
+	
+	
+	$delete_image_url = url('protest/'.$field_pid.'/delete',array('query'=>array('width'=>'450', 'height' => '150', 'iframe'=>'true')));
+	$edit_image_url = url('protest/'.$field_pid.'/edit',array('query'=>array('width'=>'900', 'iframe'=>'true')));
 	
 ?>
 <script type="text/javascript">
@@ -82,6 +92,7 @@
 	}
 })(jQuery)
 </script>
+<!--  style="background-image:url(<?php print $field_image['background']['path']; ?>);" -->
 <div class="views-view-fields--my-images-wrapper">
 	<div class="views-view-fields--my-images-header">
 		<?php print $content['header']; ?>
@@ -92,10 +103,10 @@
 	</div>
 	<div class="views-view-fields--my-images-floatRight">
 		<!-- DELETE --><span class="field-content">
-			<a class="colorbox-inline button-delete cboxElement" href="/protest/<?php print $field_pid?>/delete?iframe=true&width=900&height=500">Delete</a>
+			<a class="colorbox-inline cboxElement button medium protest-delete" href="<?php print $delete_image_url; ?>">Delete</a>
 		</span>
 		<!-- EDIT --><span class="field-content">
-			<a class="colorbox-inline button-edit cboxElement" href="/protest/<?php print $field_pid?>/edit?iframe=true&width=900&height=500">Edit</a>
+			<a class="colorbox-inline cboxElement button medium protest-edit" href="<?php print $edit_image_url; ?>">Edit</a>
 		</span>
 		<!-- FRONTPAGE --><span class="field-content">
 			<?php print $field_protest_is_frontpage_content; ?>
@@ -105,5 +116,4 @@
 	<div class="views-view-fields--my-images-footer">
 		<?php print $content['footer']; ?>
 	</div>
-	<hr class="views-view-fields--my-images-hr" />
 </div>

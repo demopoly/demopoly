@@ -35,7 +35,7 @@ fieldset {
      color: #76B828;
 }
 
-.page-user-register #content {width: 700px;}
+.page-user-register .demopoly-content {width: 700px;}
 
 .listenpunkt  {
 	background-image: url("../img/loginbox/listenpunkt.png");
