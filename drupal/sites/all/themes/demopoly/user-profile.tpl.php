@@ -63,7 +63,7 @@ $reload_image_url = url('user/my_images/reload');
 	
 	<fieldset class="floatRight delete">
 		<h5>If you want to delete your account and leave Demopoly:</h5>
-		<a class="button medium delete" href="<?php echo url('user/delete')?>">DELETE</a>
+		<a class="button medium delete-profile" href="<?php echo url('user/delete')?>">DELETE</a>
 		<p>
 			Please note that all pictures and all information will be deleted.
 			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.
