@@ -13,10 +13,10 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	$user_firstname = field_get_items('user', $full_user, 'field_firstname');
 	drupal_set_title('Welcome '.$user_firstname[0]['value']);
 	if ($form_id=='user_profile_form') {
-		//unset($user->data['has_already_logged_in']);
+//		unset($user->data['has_already_logged_in']);
 		$form['account']['current_pass']['#weight'] = 0;
 		$form['actions']['submit']['#weight'] = 2;
-		if(isset($user->data['has_already_logged_in'])){
+		if(isset($user->data['has_already_logged_in']) && $user->data['has_already_logged_in'] == TRUE){
 			// IS SECOND VISIT
 			$headline='Edit your private profile';
 		} else {
@@ -26,10 +26,11 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 			$headline='Take Part';
 			$edit = array(
 			  'data' => array(
-			        'has_already_logged_in' => true
+			        'has_already_logged_in' => TRUE
 				)
 			);
 			user_save($user, $edit);
+      kpr($user);
 			$f = &$form['#submit'];
 			array_unshift($f, "_demopoly_profile_edit_submit");
 			//$form['#submit'][]='_demopoly_profile_edit_submit';
@@ -38,9 +39,8 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 			$form['actions']['save_and_go']=array(
 					'#type'=>'submit',
 					'#value'=>'Save and go',
-					'#submit'=>array('_demopoly_profile_edit_submit_forward'),
+					//'#submit'=>array('_demopoly_profile_edit_submit_forward'),
 					'#weight'=>1
-
 			);
 			return ;
 		}
@@ -90,7 +90,7 @@ function demopoly_registration_init(){
 	global $user;
 
 	if($user->uid > 1){
-		if($user->signature != 'registration_complete'
+		if(!isset($user->data['has_already_logged_in'])
 		&& arg(0) != 'file'
 		&& arg(0) != 'system'
 		&& arg(0) != 'profilepicture'
@@ -106,8 +106,14 @@ function _demopoly_registration_submit($form, &$form_state) {
 	$form_state['redirect']='user/register/thanks';
 }
 function _demopoly_profile_edit_submit_forward($form, &$form_state) {
-
+  global $user;
 	$form_state['values']['signature'] = 'registration_complete';
+	$edit = array(
+	 'data' => array(
+	   'has_already_logged_in' => TRUE
+   )
+  );
+  user_save($user, $edit);
 	user_profile_form_submit($form, $form_state);
 	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
 }

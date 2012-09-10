@@ -122,7 +122,7 @@ function demopoly_protest_menu(){
 			'page callback' => 'demopoly_protest_is_frontpage_activate',
 			'#ajax' => array(
 					'method' => 'html',
-	)
+      )
 	);
 	return $items;
 }
@@ -135,7 +135,7 @@ function demopoly_protest_load($id) {
 function demopoly_protest_close_callback() {
 	//drupal_add_js("Drupal.behaviors.demopoly_close = {attach: function(context){console.log(top.jQuery('#cboxClose').click());top.jQuery('.demopoly-my-images-reload').mousedown();top.jQuery('#cboxClose').click();}}",'inline');
 	drupal_add_js("top.closeIframe();",'inline');
-	return 'close';
+	return '';
 }
 function demopoly_protest_delete_form_submit($form,&$form_state) {
 	$pid=$form_state['storage']['pid'];
@@ -379,7 +379,11 @@ function demopoly_protest_theme(){
 }
 
 function demopoly_protest_preprocess_page(&$variables){
-	if(arg(0) == 'protest-detail'){
+	if(
+	 arg(0) == 'protest-detail'
+	 || (arg(0) == 'user' && arg(1) == 'delete')
+   || arg(1) == 'close_callback'
+  ){
 		$variables['theme_hook_suggestions'] = array('page__protest');
 	}
 }

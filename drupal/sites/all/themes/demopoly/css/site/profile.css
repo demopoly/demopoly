@@ -248,45 +248,37 @@ fieldset {
   
 #edit-youth-checkbox {background-image: url("../img/take-part/radio-button.png");}
 
-#edit-youth-protection {
-     color: #000000;
-}
+#edit-youth-protection {color: #000000;}
 
-#edit-youth-protection {
-     color: #000000;
-}
+#edit-youth-protection {color: #000000;}
 
 #edit-youth-protection span {
-     color: #76B828;
-   font-weight: bold;
+  color: #76B828;
+  font-weight: bold;
 }
 
 #user_user_form_group_main span {
-     color: #76B828;
-   font-weight: bold;
+  color: #76B828;
+  font-weight: bold;
 }
 
 #edit-agree span {
-     color: #76B828;
-   font-weight: bold;
+  color: #76B828;
+  font-weight: bold;
 }
 
-#edit-agree-checkbox span {
-     color: #76B828;
-}
+#edit-agree-checkbox span {color: #76B828;}
 
 .page-user-register .demopoly-content {width: 700px;}
 
 .listenpunkt  {
   background-image: url("../img/loginbox/listenpunkt.png");
-    display: inline-table;
-    height: 7px;
-    width: 9px;
+  display: inline-table;
+  height: 7px;
+  width: 9px;
   margin-right: 5px;
 }
-.page-user-register .form-item-mail .description{ 
-  display:none;
-}
+.page-user-register .form-item-mail .description{display:none;}
 a.terms-link {
   color:#009ee2;
   text-decoration:none;
@@ -296,9 +288,7 @@ a.terms-link {
 
 
 /** PAGE USER EDIT **/
-.page-user-edit form {
-  display: inline-block;
-}
+.page-user-edit form {display: inline-block;}
 
 .page-user-edit #edit-save-and-go,
 .page-user-edit #edit-submit{
@@ -337,3 +327,7 @@ a.terms-link {
   display: none;
 }
 
+.page-user-edit #edit-timezone,
+#-demopoly-profile-delete-form #edit-submit {
+  display: none;
+}

@@ -22,9 +22,7 @@
  *
  * @ingroup views_templates
  */
-?>
-<?php
-///src\=\"(.*)\" w/i
+
 	$content = array();
 
 	$field_firstname	= $fields['field_firstname']->content;
@@ -103,10 +101,10 @@
 	</div>
 	<div class="views-view-fields--my-images-floatRight">
 		<!-- DELETE --><span class="field-content">
-			<a class="colorbox-inline cboxElement button medium protest-delete" href="<?php print $delete_image_url; ?>">Delete</a>
+			<a class="colorbox-inline button medium protest-delete" href="<?php print $delete_image_url; ?>">Delete</a>
 		</span>
 		<!-- EDIT --><span class="field-content">
-			<a class="colorbox-inline cboxElement button medium protest-edit" href="<?php print $edit_image_url; ?>">Edit</a>
+			<a class="colorbox-inline button medium protest-edit" href="<?php print $edit_image_url; ?>">Edit</a>
 		</span>
 		<!-- FRONTPAGE --><span class="field-content">
 			<?php print $field_protest_is_frontpage_content; ?>

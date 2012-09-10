@@ -36,6 +36,7 @@
 drupal_add_library('system', 'drupal.ajax');
 drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 
+$delete_profile_url = url('user/delete',array('query'=>array('width'=>'450', 'height' => '150', 'iframe'=>'true')));
 $add_image_url = url('protest/add',array('query'=>array('width'=>'900', 'iframe'=>'true')));
 $reload_image_url = url('user/my_images/reload');
 ?>
@@ -63,7 +64,7 @@ $reload_image_url = url('user/my_images/reload');
 	
 	<fieldset class="floatRight delete">
 		<h5>If you want to delete your account and leave Demopoly:</h5>
-		<a class="button medium delete-profile" href="<?php echo url('user/delete')?>">DELETE</a>
+		<a class="colorbox-inline button medium delete-profile" href="<?php print $delete_profile_url; ?>">DELETE</a>
 		<p>
 			Please note that all pictures and all information will be deleted.
 			For more information see <a href="/privacy" class="terms-link">PRIVACY</a>.

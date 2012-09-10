@@ -16,6 +16,7 @@ features[context][] = front
 features[context][] = imagewall
 features[context][] = layout-empty
 features[context][] = layout-full
+features[context][] = profile-delete
 features[context][] = protest-add-edit
 features[context][] = protest-detail
 features[ctools][] = context:context:3

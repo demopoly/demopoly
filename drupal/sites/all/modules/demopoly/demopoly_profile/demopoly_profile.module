@@ -17,8 +17,21 @@ function demopoly_profile_menu() {
 			'type' => MENU_CALLBACK,
 			'#ajax' => array(
 					'method' => 'html',
-			),
+			)
 	);
+  $items['user/delete'] = array(
+      'title' => 'Delete Profile!',      
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('_demopoly_profile_delete_form'),
+      'access callback' => true
+  );
+  $items['profile/close_callback'] = array(
+      'title' => 'Demopoly',
+      'page callback' => 'demopoly_profile_close_callback',
+      'page arguments' => array(),
+      'access callback' => true,
+      'type' => MENU_CALLBACK,
+  );
 	return $items;
 }
 
@@ -29,4 +42,66 @@ function _demopoly_menu_reload() {
 	$commands[] = ajax_command_replace('.view-my-images', $view);
 	$page = array('#type' => 'ajax', '#commands' => $commands);
 	ajax_deliver($page);
+}
+
+function demopoly_profile_close_callback() {
+  drupal_add_js('window.top.location = "/";', 'inline');
+  drupal_add_js("top.jQuery.fn.colorbox.close();",'inline');
+  return '';
+}
+
+function _demopoly_profile_delete_form_submit($form,&$form_state) {
+  global $user;
+  //user_delete($user->uid); // Uncomment to Delete User by ID
+  $form_state['redirect']='profile/close_callback';
+}
+
+function _demopoly_profile_delete_form() {
+  $form['markup-wrap-start']=array(
+    '#type'=>'markup',
+    '#markup'=>t('<div class="markup-wrap">')
+  );
+  $form['text']=array(
+   '#type'=>'markup',
+   '#markup'=>t('<h2>Do you really like to delete your profile?</h2>')
+  );
+  $form['submit']=array(
+      '#type'=>'submit',
+      '#value'=>t('Yes')
+  );
+  $form['button-wrap-start']=array(
+    '#type'=>'markup',
+    '#markup'=>t('<div class="button-wrap">')
+  );
+  $form['yes']=array(
+      '#type'=>'markup',
+      '#markup'=>t('<a href="#Yes" class="button large delete-yes">Yes</a>')
+  );
+  $form['no']=array(
+      '#type'=>'markup',
+      '#markup'=>t('<a href="#No" class="button large delete-no">No</a>')
+  );
+  $form['markup-wrap-end']=array(
+    '#type'=>'markup',
+    '#markup'=>t('</div></div>')
+  );
+  $form['script']=array(
+      '#type'=>'markup',
+      '#markup'=>t('
+        <script type="text/javascript">
+          (function($){
+            Drupal.behaviors.demopoly_protest = {
+              attach:function(context){
+                $(".button.delete-yes").click(function() {
+                  $("form").submit();
+                });
+                $(".button.delete-no").click(function() {
+                  top.jQuery.colorbox.close();
+                });
+              }}
+          })(jQuery);
+        </script>
+      ')
+  );
+  return $form;
 }
