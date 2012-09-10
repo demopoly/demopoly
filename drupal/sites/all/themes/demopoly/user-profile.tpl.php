@@ -50,7 +50,7 @@ $reload_image_url = url('user/my_images/reload');
 	<ul>
 		<li><span>In your profile settings you can change or delete your settings.</span></li>
 		<li><span>Please logout before closing the page.</span></li>
-		<li><span>Use your Emailadress and your password to login again. You have to be logged in to reach your profile settings.</span></li>
+		<li><span>Use your Emailaddress and your password to login again. You have to be logged in to reach your profile settings.</span></li>
 	</ul>
 	
 	<h2 style="margin-top:40px">Profile Settings</h2>
