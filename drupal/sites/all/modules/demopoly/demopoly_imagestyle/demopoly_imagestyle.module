@@ -30,7 +30,9 @@ function demopoly_imagestyle_field_formatter_view($entity_type, $entity, $field,
 	$type = $width>$height?'land':'sky';
 	$style = 'img_style_'.$type.'_'.rand(1, 3);
   $style = 'img_style_'.$type.'_1';
-  $style = 'pager-user-settings-my_protest-thumb';
+  
+  $style = 'frontpage_thumb';
+  
 	$style_uri = image_style_url($style, $uri);	
 	foreach ($items as $delta => $item) {
 		$element[$delta] = array(
