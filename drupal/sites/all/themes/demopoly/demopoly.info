@@ -12,9 +12,6 @@ stylesheets[all][] = "css/global/buttons.css"
 stylesheets[all][] = "css/global/block-login.css"
 
 scripts[] = js/main.js
-scripts[] = js/grid/jquery.masonry.min.js
-scripts[] = js/grid/jquery.infinitescroll.min.js
-scripts[] = js/grid/modernizr-transitions.js
 
 regions[header] = Header
 regions[navigation] = Navigation

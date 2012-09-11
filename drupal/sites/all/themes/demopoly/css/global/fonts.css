@@ -27,3 +27,9 @@
   url("../../fonts/futurastd-light.ttf") format("truetype"),
   url("../../fonts/futurastd-light.svg#futurastd-light") format("svg");
 }
+
+.footnote {
+  font-size: 8pt;
+  text-align: center;
+  display: block;
+}

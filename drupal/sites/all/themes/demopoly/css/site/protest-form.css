@@ -125,21 +125,3 @@ div#context #field-protest-context-add-more-wrapper div.description
   font-family: 'FuturaStd-Book';
   color: #787878;
 }
-
-/* DELETE PROTEST */
-#demopoly-protest-delete-form #edit-submit {
-  display: none!important;
-}
-
-#demopoly-protest-delete-form .markup-wrap {
-  margin: auto;
-  width: 420px;
-}
-#demopoly-protest-delete-form .button-wrap {
-  margin: auto;
-  width: 374px;
-}
-
-#demopoly-protest-delete-form .button-wrap .button{
-  text-align: center;
-}

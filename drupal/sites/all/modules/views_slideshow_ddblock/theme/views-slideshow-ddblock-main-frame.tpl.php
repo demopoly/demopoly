@@ -29,7 +29,7 @@ foreach($views_slideshow_ddblock_slider_items as $slider_item){
 	$thumbnails[] = array($thumb, $slider_item['uniqid']);
 }
 $thumbs = null;
-$size = count($thumbnails)*78;
+$size = (count($thumbnails)*78)+5;
 
 drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/views-slideshow-ddblock-cycle-vsddefault.css', 'module', 'all', FALSE);
 // drupal_add_css(drupal_get_path('theme', 'demopoly').'/css/page-protest-detail.css', 'theme', 'all', FALSE);
@@ -50,14 +50,15 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		<div class="container-div">
 			<div class="container-right">
 				<div class="container-thumbs">
-					<div class="container-thumbs-inline" style="width: <?php print $size;?>px">
+					<div class="container-thumbs-i$thumbnailsnline" style="width: <?php print $size;?>px">
 						<?php
 							foreach($thumbnails as $thumbnagl){
-								$active = '';
+								unset($active);
+								$active = null;
 								if($thumbnagl[1] == $slider_item['uniqid']){
 									$active = ' active';
 								}
-								print '<div class="image-wrapper'.$active.'" image="'.$thumbnagl[0].'" style="background-image:url('.$thumbnagl[0].');">&nbsp;</div>'.PHP_EOL;		
+								print '<div title="'.$thumbnagl[1].'--'.$slider_item['uniqid'].'" class="image-wrapper'.$active.'" image="'.$thumbnagl[0].'" style="background-image:url('.$thumbnagl[0].');">&nbsp;</div>'.PHP_EOL;		
 							}
 						?>
 					</div>

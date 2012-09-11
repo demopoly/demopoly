@@ -30,7 +30,7 @@
 ?>
 <?php if ($view_mode=='full') :?>
 
-<!-- 
+ 
 <script>
 (function($){
 	Drupal.behaviors.demopoly_protest = {
@@ -57,7 +57,7 @@
     ?>
   </div>
 </div>
- -->450
+
 <?php else:?>
 <div class="teaser-wrapper">
 	<?php echo render($content['field_protest_image']);?>

@@ -2,71 +2,83 @@
 	Drupal.behaviors.demopoly_mansonary = {
 		attach : function(context) {
 			
-			var $container = $('#image-container');
+			var $container = $('.view-protest-frontpage-');
 			$container.imagesLoaded(function() {
 				$container.show();
 				$container.masonry({
 					itemSelector : '.views-row',
-					columnWidth : 1,
-					animationOptions : {
-						queue : true,
-						duration : 500
-					},
-					isAnimated : true,
+					isAnimated: false
 
 				});
 				
 			});
-			/*
+			wrapped($container);
 			$container.infinitescroll({
-				navSelector : '#page-nav', // selector for the paged navigation
-				nextSelector : '#page-nav a', // selector for the NEXT link
-												// (to page
-				// 2)
-				itemSelector : '.field-item', // selector for all items you'll
-				// retrieve
-				loading : {
-					finishedMsg : 'No more pages to load.',
-					img : 'http://i.imgur.com/6RMhx.gif'
-				}
-			},
-			// trigger Masonry as a callback
-			function(newElements) {
-				// hide new items while they are loading
+				navSelector  : ".item-list",
+				nextSelector : ".pager-next a",
+				itemSelector : ".view-content",
+				donetext     : "Looks like you saw all the protests!",
+				loadingImg   : "http://i.imgur.com/6RMhx.gif",
+				loadingText  : "Loading new posts...",
+				bufferPx     : 100
+			}, function(newElements){
 				var $newElems = $(newElements).css({
 					opacity : 0
-				});
-				// ensure that images load before adding to masonry layout
+					});
 				$newElems.imagesLoaded(function() {
-					// show elems now they're ready
 					$newElems.animate({
 						opacity : 1
-					});
+						});
 					$container.masonry('appended', $newElems, true);
 				});
+				wrapped($container);
 			});
-			*/
 			
-			var $container = $('#image-container');
-			$container.imagesLoaded(function() {
-				$('.views-row').each(function(){
-//					var res = 640 / 480;
-//					var bW = 40; 
-//					var bH = bW*res;
-					
-					var iHeight = 40;
-					var tWrap = $(this).children('.teaser-wrapper');
-					var fWrap = $(this).children('.teaser-wrapper').children('.field');
-					var bHeight = fWrap.height();
-					
-					$(this).hover(function(){
-						tWrap.height(bHeight);
-						tWrap.height(bHeight + iHeight);
-					}, function(){
-						tWrap.height(bHeight);
+			function wrapped($cont){
+				var opac = function(obj, opac){
+					if(opac != false){
+						var opac = opac;
+						var opac2 = opac;
+						if(opac < 1){
+							opac2 = opac * 10;
+						} else {
+							opac2 = opac;
+							opac = opac / 100;
+						}
+						$(obj).attr('style', ''
+								+'filter: alpha(opacity='+opac2+');'
+								+'opacity: '+opac+';'
+								+'-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity='+opac2+')"; /*--IE8 Specific--*/');
+					} else {
+						obj.attr('style', '');
+					}
+				}
+				
+				$cont.imagesLoaded(function() {
+					$('.views-row').each(function(){
+	//					var res = 640 / 480;
+	//					var bW = 40; 
+	//					var bH = bW*res;
+						
+						var iHeight = 40;
+						var tWrap = $(this).children('.teaser-wrapper');
+						var fWrap = $(this).children('.teaser-wrapper').children('.field');
+						var bHeight = fWrap.height();
+						
+						$(this).hover(function(){
+//							opac($('.views-row .teaser-wrapper'), 70);
+//							opac(tWrap, 100);
+							tWrap.height(bHeight);
+							tWrap.height(bHeight + iHeight);
+							
+							
+						}, function(){
+							tWrap.height(bHeight);
+							//opac($('.views-row .teaser-wrapper'), false);
+						});
 					});
 				});
-			});
+			}
 		}
 	}
 })(jQuery);

@@ -48,6 +48,7 @@
 	$length = 40;
 	$ending = strlen($field_protest_context) > $length?' [...]':'';
 	$content['footer'] = substr($field_protest_context, 0, $length).$ending;
+	$content['footer'] = $field_protest_context;
 	
 	if($field_protest_is_frontpage == false){
 		$field_protest_is_frontpage_content = '<a class="use-ajax button large is-not-frontpage" href="/protest/'.$field_pid.'/activate">Frontpage Picture</a>';

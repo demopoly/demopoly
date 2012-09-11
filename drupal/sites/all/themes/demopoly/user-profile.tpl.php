@@ -36,7 +36,7 @@
 drupal_add_library('system', 'drupal.ajax');
 drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 
-$delete_profile_url = url('user/delete',array('query'=>array('width'=>'450', 'height' => '150', 'iframe'=>'true')));
+$delete_profile_url = url('user/delete',array('query'=>array('width'=>'480', 'height' => '150', 'iframe'=>'true')));
 $add_image_url = url('protest/add',array('query'=>array('width'=>'900', 'iframe'=>'true')));
 $reload_image_url = url('user/my_images/reload');
 ?>

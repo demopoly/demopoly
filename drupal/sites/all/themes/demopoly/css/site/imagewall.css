@@ -1,5 +1,5 @@
 
-#image-container{
+.view-protest-frontpage- {
   display:none;
 }
 .front h1 { 
@@ -10,7 +10,7 @@
 }
 
 
-#image-container .views-row {
+.views-row {
   float: left;
   display: inline;
   position: relative;
@@ -18,11 +18,7 @@
   z-index: 1;
 }
 
-#image-container .views-row .teaser-wrapper {
-  filter: alpha(opacity=70);
-  opacity: 0.7;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /*--IE8 Specific--*/  
- 
+.views-row .teaser-wrapper {
   position: relative;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -30,24 +26,28 @@
   z-index: 1;
 }
 
-#image-container .views-row .teaser-wrapper .info {
+.views-row .teaser-wrapper .info {
   display: none;
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
 
-#image-container .views-row:hover .teaser-wrapper .info {display: block;}
-#image-container .views-row:hover .teaser-wrapper {
-  filter: alpha(opacity=100);
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  
+.views-row:hover .teaser-wrapper .info {display: block;}
+.views-row:hover .teaser-wrapper {
   background: #FFF;
   overflow: hidden;
   border: 1px solid #000000;
 }
-#image-container .views-row:hover {
+.views-row:hover {
   z-index: 99;
   padding: 0px;
+}
+
+.item-list {
+  display: none;
+}
+
+#infscr-loading {
+  display: none;
 }

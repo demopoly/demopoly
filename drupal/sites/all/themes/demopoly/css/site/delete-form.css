@@ -1,0 +1,28 @@
+/**
+ *   DELETE
+ */
+  
+#edit-submit {
+  display: none!important;
+}
+
+.markup-wrap {
+  margin: auto;
+  width: 450px;
+}
+.button-wrap {
+  margin: auto;
+  width: 374px;
+}
+
+.button-wrap .button{
+  text-align: center;
+}
+
+.delete-success {
+  color: red;
+}
+
+.delete-warn {
+  color: red;
+}

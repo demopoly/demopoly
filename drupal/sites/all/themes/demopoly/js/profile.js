@@ -8,12 +8,13 @@
 			}
 		}
 	}
-	
-	function closeIframe() {
-		$('#cboxClose').click();
-		top.$('.demopoly-my-images-reload').click();
-	}
 })(jQuery);
+
+function closeIframe() {
+	$('#cboxClose').click();
+	top.jQuery('.demopoly-my-images-reload').click();
+}
+
 (function($){
 	if(Drupal.ajax != null){
 		Drupal.ajax.prototype.error = function (response, uri) {

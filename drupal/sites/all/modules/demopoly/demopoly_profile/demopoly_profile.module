@@ -45,14 +45,22 @@ function _demopoly_menu_reload() {
 }
 
 function demopoly_profile_close_callback() {
-  drupal_add_js('window.top.location = "/";', 'inline');
-  drupal_add_js("top.jQuery.fn.colorbox.close();",'inline');
-  return '';
+  drupal_add_js('
+  window.setTimeout("closeIt()", 10000);
+  closeIt = function(){
+    window.top.location = "/";
+    top.jQuery.fn.colorbox.close();
+  }', 'inline');
+  return '
+  <div class="markup-wrap">
+    <h2 class="delete-success">Your account was successfully deleted!</h2>
+    <span>This message will close in about 10 seconds and redirect you to our frontpage.</span>
+  </div>';
 }
 
 function _demopoly_profile_delete_form_submit($form,&$form_state) {
   global $user;
-  //user_delete($user->uid); // Uncomment to Delete User by ID
+  user_delete($user->uid); // Uncomment to Delete User by ID
   $form_state['redirect']='profile/close_callback';
 }
 
@@ -83,7 +91,7 @@ function _demopoly_profile_delete_form() {
   );
   $form['markup-wrap-end']=array(
     '#type'=>'markup',
-    '#markup'=>t('</div></div>')
+    '#markup'=>t('</div><span class="footnote delete-warn">WARNING: This action can not be reverted!</span></div>')
   );
   $form['script']=array(
       '#type'=>'markup',

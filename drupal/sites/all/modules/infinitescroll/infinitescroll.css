@@ -1,0 +1,17 @@
+.infinitescroll-empty {
+  display: block;
+  padding: 10px 15px;
+  background-color: #EDEFF4;
+  border: 1px solid #D8DFEA;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+#infinitescroll-loader div {
+  width: 16px;
+  height: 11px;
+  background: url(ajax-loader.gif) left top no-repeat;
+  margin: 0 auto;
+}
