@@ -107,6 +107,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 						top.jQuery.colorbox.resize({
 							'innerHeight':y+5
 						});
+						console.log($(obj).innerHeight());
 					}
 				}
 				

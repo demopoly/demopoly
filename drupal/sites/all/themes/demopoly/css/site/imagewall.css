@@ -14,16 +14,14 @@
   float: left;
   display: inline;
   position: relative;
-  padding:1px;
+  padding:0px;
   z-index: 1;
 }
 
 .views-row .teaser-wrapper {
   position: relative;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   z-index: 1;
+  height: 125px;
 }
 
 .views-row .teaser-wrapper .info {
@@ -37,7 +35,6 @@
 .views-row:hover .teaser-wrapper {
   background: #FFF;
   overflow: hidden;
-  border: 1px solid #000000;
 }
 .views-row:hover {
   z-index: 99;

@@ -2,7 +2,8 @@
 	Drupal.behaviors.demopoly_main = {
 		attach: function(context){
 			$('.login-button').click(function (event){
-				$('#block-user-login').toggle();
+				$('#block-user-login').show();
+				return false;
 			}) ;
 			
 			/*$('.field-item.masonry-brick').Zoomer({
