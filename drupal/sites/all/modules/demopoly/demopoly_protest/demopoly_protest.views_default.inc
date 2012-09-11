@@ -269,14 +269,16 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_protest_context']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['field_protest_context']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_protest_context']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['max_length'] = '40';
   $handler->display->display_options['fields']['field_protest_context']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_protest_context']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_protest_context']['alter']['more_link'] = 0;
   $handler->display->display_options['fields']['field_protest_context']['alter']['strip_tags'] = 1;
-  $handler->display->display_options['fields']['field_protest_context']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['alter']['trim'] = 1;
   $handler->display->display_options['fields']['field_protest_context']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_protest_context']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_protest_context']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_protest_context']['empty'] = '<span class="footnote">No description given</span>';
   $handler->display->display_options['fields']['field_protest_context']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_protest_context']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_protest_context']['hide_alter_empty'] = 1;
@@ -346,6 +348,7 @@ function demopoly_protest_views_default_views() {
     t('protest/[pid]/delete?iframe=true&width=900&height=500'),
     t('<div class="protest-is-activated-1">Frontpage Picture</div>'),
     t('protest/[pid]/activate'),
+    t('<span class="footnote">No description given</span>'),
     t('[field_protest_image_1-fid]'),
     t('All'),
   );
@@ -555,11 +558,9 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_ddblock';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
@@ -1009,9 +1010,6 @@ function demopoly_protest_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
     t('First name'),
     t('.'),
     t(','),
@@ -1038,8 +1036,11 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '40';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '11';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
@@ -1060,7 +1061,8 @@ function demopoly_protest_views_default_views() {
   );
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'frontpage';
   $translatables['protest_frontpage'] = array(
     t('Master'),
@@ -1071,6 +1073,9 @@ function demopoly_protest_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
     t('Protest ID'),
     t('.'),
     t(','),
@@ -1078,6 +1083,66 @@ function demopoly_protest_views_default_views() {
     t('Page'),
   );
   $export['protest_frontpage'] = $view;
+
+  $view = new view;
+  $view->name = 'protest_frontpage_';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'demopoly_protest';
+  $view->human_name = 'protest-frontpage-';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Frontpage';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '88';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Field: Protest: Protest ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  /* Filter criterion: Protest: Frontpage Picture (field_protest_is_frontpage) */
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['id'] = 'field_protest_is_frontpage_value';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['table'] = 'field_data_field_protest_is_frontpage';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['field'] = 'field_protest_is_frontpage_value';
+  $handler->display->display_options['filters']['field_protest_is_frontpage_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'frontpage';
+  $translatables['protest_frontpage_'] = array(
+    t('Master'),
+    t('Frontpage'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Protest ID'),
+    t('.'),
+    t(','),
+    t('Page'),
+  );
+  $export['protest_frontpage_'] = $view;
 
   return $export;
 }
