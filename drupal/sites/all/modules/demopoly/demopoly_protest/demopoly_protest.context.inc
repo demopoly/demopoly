@@ -106,7 +106,7 @@ function demopoly_protest_context_default_contexts() {
       'demopoly.org' => array(
         'sites/all/themes/demopoly/js/plugins/infinitescroll/jquery.infinitescroll.js' => 'sites/all/themes/demopoly/js/plugins/infinitescroll/jquery.infinitescroll.js',
         'sites/all/themes/demopoly/js/plugins/infinitescroll/jquery.infinitescroll.min.js' => 0,
-        'sites/all/themes/demopoly/js/plugins/qtip/jquery.qtip-1.0.0-rc3.js' => 0,
+        'sites/all/themes/demopoly/js/plugins/qtip/jquery.qtip-1.0.0-rc3.js' => 'sites/all/themes/demopoly/js/plugins/qtip/jquery.qtip-1.0.0-rc3.js',
         'sites/all/themes/demopoly/js/plugins/selectbox/jquery.selectbox-0.2.js' => 0,
         'sites/all/themes/demopoly/js/plugins/selectbox/jquery.selectbox-0.2.min.js' => 0,
         'sites/all/themes/demopoly/js/grid/jquery.min.js' => 0,
@@ -216,6 +216,7 @@ function demopoly_protest_context_default_contexts() {
         'protest/add' => 'protest/add',
         'protest/*/edit' => 'protest/*/edit',
         'user/delete*' => 'user/delete*',
+        'qtip*' => 'qtip*',
       ),
     ),
   );
@@ -238,6 +239,7 @@ function demopoly_protest_context_default_contexts() {
         'sites/all/themes/demopoly/css/site/protest.css' => 0,
         'sites/all/themes/demopoly/css/site/profile.css' => 0,
         'sites/all/themes/demopoly/css/site/take-part.css' => 0,
+        'sites/all/themes/demopoly/css/site/delete-form.css' => 0,
         'sites/all/themes/demopoly/css/site/protest-form.css' => 0,
         'sites/all/themes/demopoly/css/site/imagewall.css' => 0,
         'sites/all/themes/demopoly/css/layout/layout-full.css' => 0,
