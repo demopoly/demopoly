@@ -59,10 +59,18 @@
 </div>
 
 <?php else:?>
-<div class="teaser-wrapper">
+<?php
+	$file = file_load($content['field_protest_image']['#object']->field_protest_image['und'][0]['fid']);
+	$filepath = file_create_url($file->uri);
+	
+	$style = 'qtip_preview';
+	$filepath = image_style_url($style, $file->uri);
+	
+?>
+<div class="teaser-wrapper" img="<?php echo $filepath; ?>">
 	<?php echo render($content['field_protest_image']);?>
 	<div class="info">
-		<strong><?php echo render($content['field_firstname']['#items'][0]['value']);?></strong> - <?php echo render($content['field_city']['#items'][0]['value']);?>
+		<span style="font-style: italic; font-size: 8pt; text-transform: uppercase; text-align: center; display: block;"><?php echo render($content['field_firstname']['#items'][0]['value']);?> - <?php echo render($content['field_city']['#items'][0]['value']);?></span>
 	</div>
 </div>
 <?php endif;?>

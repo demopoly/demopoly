@@ -9,9 +9,10 @@
   width:831px;
 }
 
-
+a.cboxElement {
+  display:block;
+}
 .views-row {
-  float: left;
   display: inline;
   position: relative;
   padding:0px;
@@ -21,7 +22,6 @@
 .views-row .teaser-wrapper {
   position: relative;
   z-index: 1;
-  height: 102px;
 }
 
 .views-row .teaser-wrapper .info {
@@ -31,7 +31,11 @@
   left: 10px;
 }
 
-.views-row:hover .teaser-wrapper .info {display: block;}
+.views-row .teaser-wrapper img {
+  display: block;
+}
+
+.views-row:hover .teaser-wrapper .info {display: none;}
 .views-row:hover .teaser-wrapper {
   background: #FFF;
   overflow: hidden;

@@ -3,36 +3,95 @@
 		attach : function(context) {
 			
 			var $container = $('.view-protest-frontpage-');
-			$container.imagesLoaded(function() {
-				$container.show();
-				$container.masonry({
-					itemSelector : '.views-row',
-					isAnimated: false
-
+			window.setTimeout('changeEverything()', 500);
+			
+			changeEverything = function(){
+				$('.views-row .teaser-wrapper').each(function(){
+//					tWidth = $(this).find('img').width();
+//					tHeight = $(this).find('img').height();
+					//$(this).height(tHeight);
+					var imageUrl = $(this).attr('img')
+					console.log(imageUrl);
+					$(this).qtip({
+						content: {
+							text: '<div style="text-align: center;"><img src="'+imageUrl+'"/></div>',
+							title: $(this).find('div.info').html()
+						},
+						position: {
+							target: 'mouse',
+							corner: {
+								target: 'bottomRight',
+								tooltip: 'topLeft'
+							}
+						},
+						style: {
+							width: 450
+						}
+						
+					});
+					
 				});
 				
-			});
-			wrapped($container);
-			$container.infinitescroll({
-				navSelector  : ".item-list",
-				nextSelector : ".pager-next a",
-				itemSelector : ".view-content",
-				donetext     : "Looks like you saw all the protests!",
-				loadingImg   : "http://i.imgur.com/6RMhx.gif",
-				loadingText  : "Loading new posts...",
-				bufferPx     : 100
-			}, function(newElements){
-				var $newElems = $(newElements).css({
-					opacity : 0
+				$container.imagesLoaded(function() {
+					$container.show();
+					$container.masonry({
+						itemSelector : '.views-row',
+						isAnimated: false,
 					});
-				$newElems.imagesLoaded(function() {
-					$newElems.animate({
-						opacity : 1
-						});
-					$container.masonry('appended', $newElems, true);
 				});
-				wrapped($container);
-			});
+				
+			}
+//			
+//			
+//			$container.imagesLoaded(function() {
+//				$container.show();
+//				$container.masonry({
+//					itemSelector : '.views-row',
+//					isAnimated: false
+//				});
+//				
+//			});
+//			window.setTimeout('changeEverything()', 5000);
+//			
+//			changeEverything = function(){
+//				$('.views-row .teaser-wrapper').each(function(){
+//					tWidth = $(this).width();
+//					$(this).find('img').width(tWidth);
+//					console.log('width changed');
+//				});
+//				
+//				$container.imagesLoaded(function() {
+//					$container.show();
+//					$container.masonry({
+//						itemSelector : '.views-row',
+//						isAnimated: false
+//					});
+//					console.log('masonried');
+//				});
+//			};
+			
+			wrapped($container);
+			
+//			$container.infinitescroll({
+//				navSelector  : ".item-list",
+//				nextSelector : ".pager-next a",
+//				itemSelector : ".view-content",
+//				donetext     : "Looks like you saw all the protests!",
+//				loadingImg   : "http://i.imgur.com/6RMhx.gif",
+//				loadingText  : "Loading new posts...",
+//				bufferPx     : 100
+//			}, function(newElements){
+//				var $newElems = $(newElements).css({	
+//					opacity : 0
+//					});
+//				$newElems.imagesLoaded(function() {
+//					$newElems.animate({
+//						opacity : 1
+//						});
+//					$container.masonry('appended', $newElems, true);
+//				});
+//				wrapped($container);
+//			});
 			
 			function wrapped($cont){
 				var opac = function(obj, opac){
