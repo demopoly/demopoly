@@ -64,7 +64,7 @@ function demopoly_protest_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '200',
+          'width' => '100',
           'height' => '',
           'upscale' => 0,
         ),
@@ -87,7 +87,7 @@ function demopoly_protest_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '100',
+          'width' => '200',
           'height' => '',
           'upscale' => 0,
         ),
