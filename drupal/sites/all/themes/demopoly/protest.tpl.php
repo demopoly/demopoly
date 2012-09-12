@@ -70,7 +70,7 @@
 <div class="teaser-wrapper" img="<?php echo $filepath; ?>">
 	<?php echo render($content['field_protest_image']);?>
 	<div class="info">
-		<span style="font-style: italic; font-size: 8pt; text-transform: uppercase; text-align: center; display: block;"><?php echo render($content['field_firstname']['#items'][0]['value']);?> - <?php echo render($content['field_city']['#items'][0]['value']);?></span>
+		<span style="font-size: 8pt; text-transform: uppercase; text-align: center; display: block;"><?php echo render($content['field_firstname']['#items'][0]['value']);?> - <?php echo render($content['field_city']['#items'][0]['value']);?></span>
 	</div>
 </div>
 <?php endif;?>
