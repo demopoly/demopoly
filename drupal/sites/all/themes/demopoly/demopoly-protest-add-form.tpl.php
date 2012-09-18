@@ -5,7 +5,7 @@
 		<legend><span class="fieldset-legend">Name(s)/City - shown on the picture</span></legend>
 		<div class="fieldset-content">
 			<?php print render($form['field_firstname']);?>		
-			<?php print render($form['field_city']);?>
+			<?php print render($form['field_location']);?>
 			<div class="clearfix"></div>
 			<div class="description">
 			(you can change the name or the city and add more names. If there's more than 1 name: people from left to right)
@@ -67,7 +67,7 @@
 <?php print render($form['form_token']);?>
 <?php print render($form['form_id']);?>
 <?php print render($form['pid']);?>
-
+<?php  kpr($form);?>
 <div id="submit">
 	<fieldset>
 		<legend><span class="fieldset-legend">&nbsp;</span></legend>

@@ -12,23 +12,40 @@
 					//$(this).height(tHeight);
 					var imageUrl = $(this).attr('img')
 					console.log(imageUrl);
-					$(this).qtip({
-						content: {
-							text: '<div style="text-align: center;"><img src="'+imageUrl+'"/></div>',
-							title: $(this).find('div.info').html()
-						},
-						position: {
-							target: 'mouse',
-							corner: {
-								target: 'bottomRight',
-								tooltip: 'topLeft'
+					
+					
+					var options = {
+							content: {
+								text: '<div style="text-align: center;"><img src="'+imageUrl+'"/></div>',
+								title: {
+									text: $(this).find('div.info').clone().html()
+								}
+							},
+							position: {
+								at: "bottom right",
+								my: "top left",
+								viewport: $(window),
+								adjust: {
+									method: 'shift',
+									resize: true,
+								}
+							},
+							show: {
+								event: 'mouseenter'
+							},
+							hide: {
+								event: 'mouseleave'
+							},
+							style: {
+								classes: "ui-tooltip-blue",
+								width: 450,
+								tip: {
+									corner: false
+								},
 							}
-						},
-						style: {
-							width: 450
-						}
-						
-					});
+						};
+					
+					$(this).qtip(options);
 					
 				});
 				

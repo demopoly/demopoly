@@ -137,9 +137,12 @@ function demopoly_protest_load($id) {
 	return entity_load_single('protest', $id) ;
 }
 function demopoly_protest_close_callback() {
-	//drupal_add_js("Drupal.behaviors.demopoly_close = {attach: function(context){console.log(top.jQuery('#cboxClose').click());top.jQuery('.demopoly-my-images-reload').mousedown();top.jQuery('#cboxClose').click();}}",'inline');
-	drupal_add_js("top.closeIframe();",'inline');
-	return '';
+  drupal_add_js('
+  window.setTimeout("closeIt()", 1);
+  closeIt = function(){
+    top.jQuery.fn.colorbox.close();
+  }', 'inline');
+  return 'close';
 }
 function demopoly_protest_delete_form_submit($form,&$form_state) {
 	$pid=$form_state['storage']['pid'];
