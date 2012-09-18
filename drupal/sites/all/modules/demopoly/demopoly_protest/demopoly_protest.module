@@ -360,9 +360,10 @@ function demopoly_protest_form_alter(&$form, &$form_state, $form_id){
 	  
     global $user;
     $prot_usr = user_load($user->uid);
-    
+    if (isset($prot_usr->field_firstname['und'])) { 
     $form['field_firstname']['und'][0]['value']['#default_value'] = $prot_usr->field_firstname['und'][0]['value'];
-    $form['field_city']['und'][0]['value']['#default_value'] = $prot_usr->field_city['und'][0]['value'];
+    }
+    //$form['field_city']['und'][0]['value']['#default_value'] = $prot_usr->field_city['und'][0]['value'];
     
 		$form['#theme'] = array('demopoly_protest_add_form');
 		$form['#attached']['js'][] = drupal_get_path('module','demopoly_protest').'/demopoly_protest.js';
