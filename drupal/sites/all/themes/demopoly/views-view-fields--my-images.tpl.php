@@ -24,7 +24,6 @@
  */
 
 	$content = array();
-kpr($fields);
 	$field_firstname	= $fields['field_firstname']->content;
 	$field_city			= $fields['field_city']->content;
 	$field_city			= $fields['field_location']->content;
