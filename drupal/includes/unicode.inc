@@ -426,6 +426,9 @@ function _mime_header_decode($matches) {
  *   The input $text, with all HTML entities decoded once.
  */
 function decode_entities($text) {
+	if (is_array($text)) { 
+		$x ='ASDF';
+	}
   return html_entity_decode($text, ENT_QUOTES, 'UTF-8');
 }
 

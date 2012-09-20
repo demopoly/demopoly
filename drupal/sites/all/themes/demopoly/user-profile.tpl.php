@@ -126,7 +126,7 @@ $reload_image_url = url('user/my_images/reload');
 				<a href="<?php print $add_image_url; ?>" id="demopoly-add-image" class="colorbox-load">[add image]</a>
 			</span>
 		</legend>
-		<?php print views_embed_view('my_images','default',array($user->uid))?>
+		<?php print views_embed_view('my_images','default',$user->uid)?>
 	</fieldset>
 	<!-- end profile -->
 	<br class="clearfix" />  

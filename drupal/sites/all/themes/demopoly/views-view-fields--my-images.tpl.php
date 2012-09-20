@@ -24,9 +24,10 @@
  */
 
 	$content = array();
-
+kpr($fields);
 	$field_firstname	= $fields['field_firstname']->content;
 	$field_city			= $fields['field_city']->content;
+	$field_city			= $fields['field_location']->content;
 	$field_date			= date('Y',$fields['field_date']->content);
 	
 	
@@ -51,9 +52,9 @@
 	$content['footer'] = $field_protest_context;
 	
 	if($field_protest_is_frontpage == false){
-		$field_protest_is_frontpage_content = '<a class="use-ajax button large is-not-frontpage" href="/protest/'.$field_pid.'/activate">Frontpage Picture</a>';
+		$field_protest_is_frontpage_content = '<a class="use-ajax button medium is-not-frontpage" href="/protest/'.$field_pid.'/activate">Frontpage Picture</a>';
 	} else {
-		$field_protest_is_frontpage_content = '<span class="button large is-frontpage">Frontpage Picture</span>';
+		$field_protest_is_frontpage_content = '<span class="button medium is-frontpage">Frontpage Picture</span>';
 	}
 	
 	

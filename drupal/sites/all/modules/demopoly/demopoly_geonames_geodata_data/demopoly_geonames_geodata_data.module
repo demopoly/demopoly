@@ -9,6 +9,7 @@ function demopoly_geonames_geodata_data($keys){
     
   $result = array();
   $population = 100000;
+  
   foreach ($api['obj'] as $data) {
     if ((string)$data->population > $population){
       $result[] = array(

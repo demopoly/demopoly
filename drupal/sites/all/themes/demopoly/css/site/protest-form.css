@@ -129,6 +129,11 @@ div#context #field-protest-context-add-more-wrapper div.description
 .form-item-field-location-und-0-province,
 .form-item-field-location-und-0-postal-code,
 .form-item-field-location-und-0-name,
-#edit-field-location {
+#edit-field-location,
+#edit-field-protest-image-und-0-upload-button {
   display: none;
+}
+
+#edit-field-location {
+  display: block
 }

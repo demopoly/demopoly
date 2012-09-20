@@ -95,6 +95,8 @@
 					}
 				}
 				$(".form-item-field-location-und-0-city").appendTo("#edit-field-city");
+				$("#edit-submit").addClass('button medium upload');
+				$('#edit-field-protest-image-und-0-upload').customFileInput();
 				$(document).trigger('iframe-loaded');
 			}
 	}

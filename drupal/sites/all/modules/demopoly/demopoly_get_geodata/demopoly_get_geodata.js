@@ -22,6 +22,11 @@
 								}
 							})
 						},
+						search: function(){
+							$('#edit-field-location-und-0-locpick-user-latitude').val('')
+							$('#edit-field-location-und-0-locpick-user-longitude').val('')
+							$("#edit-field-location-und-0-country option[value=xx]").attr('selected', true);
+						},
 						select: function(event, ui) {
 							$('#edit-field-location-und-0-locpick-user-latitude').val(ui.item.lati)
 							$('#edit-field-location-und-0-locpick-user-longitude').val(ui.item.longi)
