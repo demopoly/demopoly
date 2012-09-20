@@ -1,0 +1,27 @@
+<?php
+function demopoly_geonames_geodata_data($keys){
+  $keys = str_replace(' ', '%20', $keys);
+  $keys = str_replace('+', '%20', $keys);
+  $api['user'] = 'clandestino';
+  $api['url'] = 'http://api.geonames.org/search?name_startsWith='.$keys.'&maxRows=10&orderby=relevance&style=LONG&lang=en&username='.$api['user'];
+  $api['xml'] = file_get_contents($api['url']);
+  $api['obj'] = new SimpleXMLElement($api['xml']);
+    
+  $result = array();
+  $population = 100000;
+  
+  foreach ($api['obj'] as $data) {
+    if ((string)$data->population > $population){
+      $result[] = array(
+          'label'=> (string)$data->name.' ('.(string)$data->countryName.')',
+          'value'=> (string)$data->name,
+          'id' => (string)$data->geonameId,
+          'lati' => (string)$data->lat,
+          'longi' => (string)$data->lng,
+          'country' => (string)$data->countryName,
+          'countryID' => strtolower((string)$data->countryCode),
+        );
+    }
+  }
+  return $result;
+}

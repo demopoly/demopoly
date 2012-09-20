@@ -1,0 +1,51 @@
+<?php
+class demopoly_get_Location_Item {
+  private $name;
+  function __construct($name) {
+    $this->name=$name;
+  }
+  public function getName() {
+    return $this->name;
+  } 
+}
+
+function demopoly_get_geodata_init(){
+  drupal_add_library('system','ui.autocomplete',TRUE);
+  drupal_add_js(drupal_get_path('module', 'demopoly_get_geodata').'/demopoly_get_geodata.js');
+}
+
+function demopoly_get_geodata_menu(){
+  $items['demopoly_get_geodata/autocomplete/%'] = array(
+      'title' => 'Get Geodata',
+      'page callback' => 'demopoly_get_geodata_autocomplete_callback',
+      'access callback' => true,
+      'page arguments' => array(2)
+  );
+  
+  return $items;
+}
+function demopoly_get_geodata_get_data($key) {
+  $cache_key = 'demopoly_geodata_'.$key;
+  $cache = cache_get($cache_key);
+    
+  if ($cache->created) {
+    return $cache->data;
+  } else {
+   $data = module_invoke_all('geodata_data',$key);
+   cache_set($cache_key,$data);
+   return $data;
+  }
+}
+
+function demopoly_get_geodata_autocomplete_callback($keys){
+  $result = demopoly_get_geodata_get_data($keys);
+  if ($result==null) {
+    $result = array();
+  }
+  echo drupal_json_output($result);
+  
+  exit();
+}
+
+
+?>
