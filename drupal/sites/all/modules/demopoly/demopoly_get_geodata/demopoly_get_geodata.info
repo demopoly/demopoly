@@ -1,0 +1,3 @@
+name = "demopoly_get_geodata"
+description = "Looks for the Geodata of given input"
+core = "7.x"

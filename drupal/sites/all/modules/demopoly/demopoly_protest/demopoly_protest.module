@@ -396,4 +396,11 @@ function demopoly_protest_preprocess_page(&$variables){
 		$variables['theme_hook_suggestions'] = array('page__protest');
 	}
 }
+
+function returnArray($array){
+  echo '<pre>';
+  print_r($array);
+  echo '</pre>';
+}
+
 ?>

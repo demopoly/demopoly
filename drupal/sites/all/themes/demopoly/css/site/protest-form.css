@@ -125,3 +125,10 @@ div#context #field-protest-context-add-more-wrapper div.description
   font-family: 'FuturaStd-Book';
   color: #787878;
 }
+
+.form-item-field-location-und-0-province,
+.form-item-field-location-und-0-postal-code,
+.form-item-field-location-und-0-name,
+#edit-field-location {
+  display: none;
+}
