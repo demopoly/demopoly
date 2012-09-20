@@ -32,7 +32,6 @@ function demopoly_get_geodata_get_data($keys) {
     // return $cache->data;
   // } else {
    $data = module_invoke_all('geodata_data',$keys);
-   returnArray($data);
    cache_set($cache_key,$data);
    return $data;
   // }
