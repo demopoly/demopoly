@@ -12,16 +12,32 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	$full_user = user_load($user->uid);
 	$user_firstname = field_get_items('user', $full_user, 'field_firstname');
 	drupal_set_title('Welcome '.$user_firstname[0]['value']);
+  drupal_add_js('
+  (function ($) {
+    Drupal.behaviors.demopoly_register = {
+        attach: function(context){
+          var cityForm = $(".form-item-field-location-und-0-city");
+          cityForm.appendTo("#edit-field-location");
+          $("#field-location-add-more-wrapper").hide();
+        }
+    }
+  })(jQuery)
+  ','inline');  
 	if ($form_id=='user_profile_form') {
-//		unset($user->data['has_already_logged_in']);
-		$form['account']['current_pass']['#weight'] = 0;
+	  
+    unset($form['account']['current_pass']);
+    $form['account']['current_pass_required_values']['#value'] = array();
+    
+		$form['account']['pass']['#weight'] = 0;
 		$form['actions']['submit']['#weight'] = 2;
+    $form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
+    $form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
+    
 		if(isset($user->data['has_already_logged_in']) && $user->data['has_already_logged_in'] == TRUE){
 			// IS SECOND VISIT
 			$headline='Edit your private profile';
+      
 		} else {
-			$form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
-			$form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
 			// IS FIRST VISIT
 			$headline='Take Part';
 			$edit = array(
@@ -33,13 +49,9 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
       kpr($user);
 			$f = &$form['#submit'];
 			array_unshift($f, "_demopoly_profile_edit_submit");
-			//$form['#submit'][]='_demopoly_profile_edit_submit';
-			unset($form['account']['current_pass']);
-			$form['account']['current_pass_required_values']['#value']=array();
 			$form['actions']['save_and_go']=array(
 					'#type'=>'submit',
 					'#value'=>'Save and go',
-					//'#submit'=>array('_demopoly_profile_edit_submit_forward'),
 					'#weight'=>1
 			);
 			return ;
@@ -80,9 +92,7 @@ function demopoly_registration_menu() {
 	return $items;
 }
 function _demopoly_profile_thanks() {
-	//$messages = &drupal_get_messages();
 	global $user;
-	//unset($messages);
 	return '<h1>...Take part...</h1><h2>Hello</h2><div class="thanks-flow">thank you for taking part. You\'ve received an Email. Please click on the link in your Email in order to come back and to go on.
 	';
 }

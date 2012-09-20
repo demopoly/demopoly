@@ -308,6 +308,7 @@ a.terms-link {
   width: 49%;
 }
 .page-user-edit .field-name-field-city,
+.page-user-edit .field-name-field-location,
 .page-user-edit .form-item-mail,
 .page-user-edit .form-item-pass-pass2
 {
@@ -331,3 +332,4 @@ a.terms-link {
 #-demopoly-profile-delete-form #edit-submit {
   display: none;
 }
+
