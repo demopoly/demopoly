@@ -46,7 +46,6 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 				)
 			);
 			user_save($user, $edit);
-      kpr($user);
 			$f = &$form['#submit'];
 			array_unshift($f, "_demopoly_profile_edit_submit");
 			$form['actions']['save_and_go']=array(
