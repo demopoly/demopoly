@@ -22,7 +22,7 @@
  */
 
 .button {
-  background-image: url("/sites/all/themes/demopoly/img/Buttons.png");
+  background-image: url("/sites/all/themes/demopoly/img/Buttons.Ekki.png")!important;
   background-repeat: no-repeat;
   display: block;
   height: 0px;
@@ -56,7 +56,7 @@
   width: 173px;
 }
 .button.medium.delete:hover {
-  background-position: -343px -141px;
+  background-position: -343px -143px;
 }
 
 /* CHANGE SETTINGS */
@@ -65,7 +65,7 @@
   width: 198px;
 }
 .button.medium.change-settings:hover {
-  background-position: -211px -224px;
+  background-position: -211px -226px;
 }
 
 /* INFO */
@@ -74,7 +74,7 @@
   width: 183px;
 }
 .button.large.info:hover {
-  background-position: -1px -47px;
+  background-position: -1px -49px;
 }
 
 /* TAKE PART */
@@ -84,7 +84,7 @@
 }
 
 .button.large.take-part:hover {
-  background-position: -19-1px -47px;
+  background-position: -19-1px -49px;
 }
 
 /* LEAVE */
@@ -94,7 +94,7 @@
 }
 
 .button.large.leave:hover {
-  background-position: -357px -47px;
+  background-position: -357px -49px;
 }
 
 /* LOGIN */
@@ -103,7 +103,7 @@
   width: 112px;
 }
 .button.medium.login:hover {
-  background-position: -1px -141px;
+  background-position: -1px -143px;
 }
 
 /* MORE INFO */
@@ -113,7 +113,7 @@
 }
 
 .button.medium.more-info:hover {
-  background-position: -122px -141px;
+  background-position: -122px -143px;
 }
 
 /* DELETE PROFILE */
@@ -123,17 +123,17 @@
 }
 
 .button.medium.delete-profile:hover {
-  background-position: -343px -141px;
+  background-position: -343px -143px;
 }
 
-/* UPLOAD */
+/* UPLOAD MEDIUM */
 .button.medium.upload {
-  background-position: -1px -187px;
+  background-position: -490px -1px;
   width: 201px;
 }
 
 .button.medium.upload:hover {
-  background-position: -1px -224px;
+  background-position: -490px -1px;
 }
 
 /* CHANGE */
@@ -147,18 +147,18 @@
 }
 
 /* IS FRONTPAGE no-hover */
-.button.large.is-frontpage {
-  background-position: -1px -317px;
+.button.medium.is-frontpage {
+  background-position: -481px -271px;
   width: 237px;
 }
 
 /* IS NOT FRONTPAGE */
-.button.large.is-not-frontpage {  
-  background-position: -1px -270px;
+.button.medium.is-not-frontpage {  
+  background-position: -481px -310px;
   width: 237px;
 }
-.button.large.is-not-frontpage:hover {  
-  background-position: -1px -317px;
+.button.medium.is-not-frontpage:hover {  
+  background-position: -481px -271px;
 }
 
 /* PROTEST EDIT */
@@ -167,15 +167,15 @@
   width: 198px;
 }
 .button.medium.protest-edit:hover {
-  background-position: -211px -224px;
+  background-position: -211px -226px;
 }
 /* PROTEST DELETE */
 .button.medium.protest-delete {  
-  background-position: -517px -103px;
-  width: 176px;
+  background-position: -688px -187px;
+  width: 198px;
 }
 .button.medium.protest-delete:hover {
-  background-position: -517px -140px;
+  background-position: -688px -226px;
 }
 
 /* DOWNLOAD IMAGE */
@@ -204,7 +204,7 @@
 }
 
 .button.large.delete-no:hover {
-  background-position: -343px -141px;
+  background-position: -343px -143px;
 }
 
 /* YES */
@@ -215,19 +215,28 @@
 }
 
 .button.large.delete-yes:hover {
-  background-position: -1px -224px;
+  background-position: -1px -226px;
 }
 
-/* UPLAOD SMALL */
+/* UPLOAD SMALL */
 .button.small.upload {
   background-position: -1px -187px;
   width: 201px;
 }
 
 .button.small.upload:hover {
-  background-position: -1px -224px;
+  background-position: -1px -226px;
 }
 
+/* CHOOSE A FILE TO UPLOAD */
+.button.medium.choose-upload {
+  background-position: -418px -187px;
+  width: 261px;
+}
+
+.button.medium.choose-upload:hover {
+  background-position: -418px -226px;
+}
 
 /* RADIO BUTTON SET */
 .button.radio.is-set{

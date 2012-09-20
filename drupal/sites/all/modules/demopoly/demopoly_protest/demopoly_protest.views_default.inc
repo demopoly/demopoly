@@ -56,7 +56,7 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['pid']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['pid']['separator'] = '';
   $handler->display->display_options['fields']['pid']['format_plural'] = 0;
-  /* Field: Field: City */
+  /* Field: Protest: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -319,6 +319,30 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image_1']['field_api_classes'] = 0;
+  /* Field: Field: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_location']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_location']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_location']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_location']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_location']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_location']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_location']['field_api_classes'] = 0;
   /* Sort criterion: Protest: Created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'demopoly_protest';
@@ -438,7 +462,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image']['field_api_classes'] = 0;
-  /* Field: Field: City */
+  /* Field: Protest: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -902,7 +926,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image_1']['field_api_classes'] = 0;
-  /* Field: Field: City */
+  /* Field: Protest: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1146,7 +1170,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image']['field_api_classes'] = 0;
-  /* Field: Field: City */
+  /* Field: Protest: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1252,7 +1276,7 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['pid']['id'] = 'pid';
   $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
   $handler->display->display_options['fields']['pid']['field'] = 'pid';
-  /* Field: Field: City */
+  /* Field: Protest: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';

@@ -10,9 +10,7 @@
 //					tWidth = $(this).find('img').width();
 //					tHeight = $(this).find('img').height();
 					//$(this).height(tHeight);
-					var imageUrl = $(this).attr('img')
-					console.log(imageUrl);
-					
+					var imageUrl = $(this).attr('img')					
 					
 					var options = {
 							content: {
@@ -27,6 +25,8 @@
 								viewport: $(window),
 								adjust: {
 									method: 'shift',
+									x: 10,
+									y: 0,
 									resize: true,
 								}
 							},
@@ -44,7 +44,6 @@
 								},
 							}
 						};
-					
 					$(this).qtip(options);
 					
 				});

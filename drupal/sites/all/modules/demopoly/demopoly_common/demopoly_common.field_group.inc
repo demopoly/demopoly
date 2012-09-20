@@ -23,8 +23,8 @@ function demopoly_common_field_group_info() {
     'label' => 'private profile',
     'weight' => '0',
     'children' => array(
-      0 => 'field_city',
-      1 => 'field_firstname',
+      0 => 'field_firstname',
+      1 => 'field_location',
       2 => 'account',
     ),
     'format_type' => 'fieldset',

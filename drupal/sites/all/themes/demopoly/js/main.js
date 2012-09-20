@@ -6,13 +6,37 @@
 				return false;
 			}) ;
 			
-			/*$('.field-item.masonry-brick').Zoomer({
-				speedView:200,
-				speedRemove:400,
-				altAnim:true,
-				speedTitle:400,
-				debug:false
-			});*/
+			var options = {
+					content: {
+						text: 'Coming soon...',
+						title: 'Information',
+					},
+					position: {
+						at: "top right",
+						my: "top left",
+						viewport: $(window),
+						adjust: {
+							method: 'shift',
+							x: 10,
+							y: 0,
+							resize: true,
+						}
+					},
+					show: {
+						event: 'click'
+					},
+					hide: {
+						event: 'click'
+					},
+					style: {
+						classes: "ui-tooltip-blue",
+						width: 450,
+						tip: {
+							corner: false
+						},
+					}
+				};
+			$('#show_info').qtip(options);
 			
 		}
 	}

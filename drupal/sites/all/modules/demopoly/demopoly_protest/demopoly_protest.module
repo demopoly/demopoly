@@ -69,6 +69,7 @@ function demopoly_protest_page_alter(&$page) {
       arg(0) == 'protest-detail'
       || arg(0) == 'protest'
       || arg(0) == 'qtip-preview'
+      || (arg(0) == 'user' && arg(1) == 'delete')
       ) {
       unset($page['page_top']['toolbar']);
     }
@@ -141,6 +142,7 @@ function demopoly_protest_close_callback() {
   window.setTimeout("closeIt()", 1);
   closeIt = function(){
     top.jQuery.fn.colorbox.close();
+    top.jQuery(".demopoly-my-images-reload").click();
   }', 'inline');
   return 'close';
 }
@@ -396,6 +398,13 @@ function demopoly_protest_preprocess_page(&$variables){
 		$variables['theme_hook_suggestions'] = array('page__protest');
 	}
 }
+
+function returnArray($array){
+  echo '<pre>';
+  print_r($array);
+  echo '</pre>';
+}
+
 ?>
 
 

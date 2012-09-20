@@ -329,7 +329,7 @@ function demopoly_protest_image_default_styles() {
   $styles['qtip_preview'] = array(
     'name' => 'qtip_preview',
     'effects' => array(
-      7 => array(
+      1 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -339,8 +339,8 @@ function demopoly_protest_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '400',
-          'height' => '',
+          'width' => '800',
+          'height' => '600',
           'upscale' => 0,
         ),
         'weight' => '1',

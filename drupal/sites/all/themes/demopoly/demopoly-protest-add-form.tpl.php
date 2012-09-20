@@ -4,7 +4,8 @@
 	<fieldset>
 		<legend><span class="fieldset-legend">Name(s)/City - shown on the picture</span></legend>
 		<div class="fieldset-content">
-			<?php print render($form['field_firstname']);?>		
+			<?php print render($form['field_firstname']);?>	
+			<div id="edit-field-city"></div>
 			<?php print render($form['field_location']);?>
 			<div class="clearfix"></div>
 			<div class="description">
@@ -67,7 +68,6 @@
 <?php print render($form['form_token']);?>
 <?php print render($form['form_id']);?>
 <?php print render($form['pid']);?>
-<?php  kpr($form);?>
 <div id="submit">
 	<fieldset>
 		<legend><span class="fieldset-legend">&nbsp;</span></legend>
@@ -94,7 +94,9 @@
 						});
 					}
 				}
-				
+				$(".form-item-field-location-und-0-city").appendTo("#edit-field-city");
+				$("#edit-submit").addClass('button medium upload');
+				$('#edit-field-protest-image-und-0-upload').customFileInput();
 				$(document).trigger('iframe-loaded');
 			}
 	}

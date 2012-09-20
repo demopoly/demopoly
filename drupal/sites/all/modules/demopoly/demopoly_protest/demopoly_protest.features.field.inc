@@ -71,7 +71,7 @@ function demopoly_protest_field_default_fields() {
       'entity_type' => 'protest',
       'field_name' => 'field_city',
       'label' => 'City',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,

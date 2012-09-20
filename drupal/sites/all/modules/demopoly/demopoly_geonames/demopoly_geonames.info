@@ -1,3 +1,0 @@
-name = "demopoly_geonames"
-description = "Provides cities and countries for demopoly."
-core = "7.x"
