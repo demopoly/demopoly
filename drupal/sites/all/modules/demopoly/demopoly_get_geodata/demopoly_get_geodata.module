@@ -24,24 +24,25 @@ function demopoly_get_geodata_menu(){
   
   return $items;
 }
-function demopoly_get_geodata_get_data($key) {
-  $cache_key = 'demopoly_geodata_'.$key;
+function demopoly_get_geodata_get_data($keys) {
+  $cache_key = 'demopoly_geodata_'.$keys;
   $cache = cache_get($cache_key);
-    
-  if ($cache->created) {
-    return $cache->data;
-  } else {
-   $data = module_invoke_all('geodata_data',$key);
+  
+  // if ($cache->created) {
+    // return $cache->data;
+  // } else {
+   $data = module_invoke_all('geodata_data',$keys);
+   returnArray($data);
    cache_set($cache_key,$data);
    return $data;
-  }
+  // }
 }
 
 function demopoly_get_geodata_autocomplete_callback($keys){
   $result = demopoly_get_geodata_get_data($keys);
-  if ($result==null) {
-    $result = array();
-  }
+  // if ($result==null) {
+    // $result = array();
+  // }
   echo drupal_json_output($result);
   
   exit();
