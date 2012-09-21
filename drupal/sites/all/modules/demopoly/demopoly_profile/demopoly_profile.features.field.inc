@@ -236,9 +236,9 @@ function demopoly_profile_field_default_fields() {
       'entity_type' => 'user',
       'field_name' => 'field_location',
       'label' => 'Location',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 0,
