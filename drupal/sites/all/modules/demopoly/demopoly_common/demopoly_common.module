@@ -9,6 +9,8 @@ include_once('demopoly_common.features.inc');
 function demopoly_common_init(){
   global $user;
   
+  print_r($user);
+  
   if(
     arg(0) != 'user'
     && arg(2) != 'edit'
