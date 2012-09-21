@@ -246,6 +246,7 @@ function demopoly_profile_context_default_contexts() {
         'sites/all/themes/demopoly/js/front.js' => 0,
         'sites/all/themes/demopoly/js/active.colorbox.js' => 0,
         'sites/all/themes/demopoly/js/zoomer.js' => 0,
+        'sites/all/themes/demopoly/js/hide.location.js' => 'sites/all/themes/demopoly/js/hide.location.js',
       ),
     ),
   );

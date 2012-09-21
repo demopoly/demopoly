@@ -11,25 +11,14 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	global $user;
 	$full_user = user_load($user->uid);
 	$user_firstname = field_get_items('user', $full_user, 'field_firstname');
-	drupal_set_title('Welcome '.$user_firstname[0]['value']);
-  drupal_add_js('
-  (function ($) {
-    Drupal.behaviors.demopoly_register = {
-        attach: function(context){
-          var cityForm = $(".form-item-field-location-und-0-city");
-          cityForm.attr("autocomplete","off");
-          cityForm.appendTo("#edit-field-location");
-          $("#field-location-add-more-wrapper").hide();
-        }
-    }
-  })(jQuery)
-  ','inline');
+	drupal_set_title('Welcome '.$user_firstname[0]['value']);  
 	if ($form_id=='user_profile_form') {
 	  
     unset($form['account']['current_pass']);
     $form['account']['current_pass_required_values']['#value'] = array();
     
 		$form['account']['pass']['#weight'] = 0;
+		$form['account']['pass']['#required'] = true;
 		$form['actions']['submit']['#weight'] = 2;
     $form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
     $form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
@@ -37,15 +26,16 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 		if(isset($user->data['has_already_logged_in']) && $user->data['has_already_logged_in'] == TRUE){
 			// IS SECOND VISIT
 			$headline='Edit your private profile';
-      
 		} else {
 			// IS FIRST VISIT
 			$headline='Take Part';
 			$f = &$form['#submit'];
-			array_unshift($f, "_demopoly_profile_edit_submit");
+			$f[]= "_demopoly_profile_edit_submit";
+			//array_unshift($f, "_demopoly_profile_edit_submit");
 			$form['actions']['save_and_go']=array(
 					'#type'=>'submit',
-					'#value'=>'Save and go',
+					'#value'=>'Continue',
+					'#name' => 'alternateClick',
 					'#weight'=>1
 			);
 			return ;
@@ -117,16 +107,16 @@ function _demopoly_profile_edit_submit_forward($form, &$form_state) {
 }
 function _demopoly_profile_edit_submit($form, &$form_state) {
 	global $user;
-  
   $edit = array(
    'data' => array(
      'has_already_logged_in' => TRUE
    )
   );
-  user_save($user, $edit);
-  global $user;
-  print_r($user);
+  $user = user_save($user, $edit);
   
+  if($form_state['clicked_button']['#name'] == 'alternateClick'){
+  	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
+  }  
 	$form_state['values']['signature'] = 'registration_complete';
 }
 
@@ -156,8 +146,7 @@ function demopoly_registration_pass_reset($form, &$form_state, $uid, $timestamp,
 			}
 		}
 		drupal_goto();
-	}
-	else {
+	}	else {
 		// Time out, in seconds, until login URL expires. 24 hours = 86400 seconds.
 		$timeout = 86400;
 		$current = REQUEST_TIME;

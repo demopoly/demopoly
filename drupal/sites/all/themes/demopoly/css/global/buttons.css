@@ -180,20 +180,20 @@
 
 /* DOWNLOAD IMAGE */
 .button.medium.download-image {  
-  background-position: -517px -103px;
-  width: 176px;
+  background-position: -395px -384px;
+  width: 26px;
 }
 .button.medium.download-image:hover {
-  background-position: -517px -140px;
+  background-position: -395px -384px;
 }
 
 /* REPORT IMAGE */
 .button.medium.report-image {  
-  background-position: -517px -103px;
-  width: 176px;
+  background-position: -369px -384px;
+  width: 26px;
 }
 .button.medium.report-image:hover {
-  background-position: -517px -140px;
+  background-position: -369px -384px;
 }
 
 /* NO */

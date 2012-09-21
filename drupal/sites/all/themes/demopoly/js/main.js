@@ -9,7 +9,10 @@
 			var options = {
 					content: {
 						text: 'Coming soon...',
-						title: 'Information',
+						title: {
+							 text: 'Information',
+							 button: 'Close'
+						}
 					},
 					position: {
 						at: "top right",
