@@ -41,12 +41,6 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 		} else {
 			// IS FIRST VISIT
 			$headline='Take Part';
-			$edit = array(
-			  'data' => array(
-			        'has_already_logged_in' => TRUE
-				)
-			);
-			user_save($user, $edit);
 			$f = &$form['#submit'];
 			array_unshift($f, "_demopoly_profile_edit_submit");
 			$form['actions']['save_and_go']=array(
