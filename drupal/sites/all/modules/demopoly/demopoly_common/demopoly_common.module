@@ -8,7 +8,12 @@ include_once('demopoly_common.features.inc');
 
 function demopoly_common_init(){
   global $user;
-  if(arg(0) != 'user' && arg(2) != 'edit'){
+  
+  if(
+    arg(0) != 'user'
+    && arg(2) != 'edit'
+    && arg(0) != 'demopoly_get_geodata'
+  ){
     if($user->uid > 1){
       if(!isset($user->data['has_already_logged_in'])){
         drupal_goto('user/'.$user->uid.'/edit');
