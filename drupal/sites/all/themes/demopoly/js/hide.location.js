@@ -1,4 +1,4 @@
-(function ($) {
+he(function ($) {
 	Drupal.behaviors.demopoly_register = {
 		attach: function(context){
 			var cityForm = $(".form-item-field-location-und-0-city");

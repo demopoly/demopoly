@@ -219,12 +219,14 @@
 }
 
 /* UPLOAD SMALL */
-.button.small.upload {
+.button.medium.upload-one {
   background-position: -1px -187px;
   width: 201px;
+  position: relative;
+  bottom: 10px;
 }
 
-.button.small.upload:hover {
+.button.medium.upload-one:hover {
   background-position: -1px -226px;
 }
 

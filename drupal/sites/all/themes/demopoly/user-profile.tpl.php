@@ -123,7 +123,7 @@ $reload_image_url = url('user/my_images/reload');
 			<span style="float: right">
 				<span class="ajax-progress ajax-progress-throbber hidden"><span class="throbber"></span></span>
 				<a href="<?php print $reload_image_url;?>" class="use-ajax demopoly-my-images-reload" style="display: none">[Reload]</a>
-				<a href="<?php print $add_image_url; ?>" id="demopoly-add-image" class="colorbox-load">[add image]</a>
+				<a href="<?php print $add_image_url; ?>" id="demopoly-add-image" class="colorbox-load button medium upload-one">[add image]</a>
 			</span>
 		</legend>
 		<?php print views_embed_view('my_images','default',$user->uid)?>
