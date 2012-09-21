@@ -25,10 +25,13 @@
 
 	$content = array();
 	$field_firstname	= $fields['field_firstname']->content;
-	$field_city			= $fields['field_city']->content;
 	$field_city			= $fields['field_location']->content;
 	$field_date			= date('Y',$fields['field_date']->content);
+		
+	$field_city_explode = explode('>', $field_city);
 	
+	$field_city_city = strstr($field_city_explode[4], '<', true);
+	$field_city_country = strstr($field_city_explode[6], '<', true);
 	
 	$field_image['background']['fid']  = file_load($fields['field_protest_image_1']->content);
 	$field_image['background']['path'] = file_create_url($field_image['background']['fid']->uri);
@@ -42,7 +45,10 @@
 	$field_protest_is_frontpage = strip_tags($fields['field_protest_is_frontpage']->content);
 	$field_protest_context = strip_tags($fields['field_protest_context']->content);
 	
-	$content['header'] = '<span class="firstname">'.$field_firstname.'</span>, <span class="city">'.$field_city.'</span> (<span class="date">'.$field_date.'</span>)';
+	$content['header'] = '<span class="firstname">'.$field_firstname.'</span>,'
+											.' <span class="city" title="City: '.$field_city_city.' in '.$field_city_country.'">'.$field_city_city.'</span>'
+											.' <span class="country">'.$field_city_country.'</span>'
+											.' (<span class="date">'.$field_date.'</span>)';
 	$content['left'] = '<div class="image-wrapper" image="'.$field_image['preview']['styled'].'" style="background-image:url('.$field_image['background']['styled'].');">&nbsp;</div>';
 	$content['right'] = '';
 	$length = 40;

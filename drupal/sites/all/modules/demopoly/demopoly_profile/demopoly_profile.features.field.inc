@@ -178,13 +178,13 @@ function demopoly_profile_field_default_fields() {
                 'weight' => '6',
               ),
               'city' => array(
-                'collect' => '1',
+                'collect' => '2',
                 'default' => '',
                 'weight' => '8',
               ),
               'country' => array(
                 'collect' => '1',
-                'default' => 'us',
+                'default' => '',
                 'weight' => '14',
               ),
               'locpick' => array(
@@ -208,7 +208,7 @@ function demopoly_profile_field_default_fields() {
                 'widget' => 'autocomplete',
               ),
               'street' => array(
-                'collect' => '0',
+                'collect' => '1',
                 'default' => '',
                 'weight' => '4',
               ),
@@ -236,9 +236,9 @@ function demopoly_profile_field_default_fields() {
       'entity_type' => 'user',
       'field_name' => 'field_location',
       'label' => 'Location',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
-        'user_register_form' => 0,
+        'user_register_form' => 1,
       ),
       'widget' => array(
         'active' => 0,

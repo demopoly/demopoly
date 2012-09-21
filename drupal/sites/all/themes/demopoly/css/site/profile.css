@@ -113,8 +113,11 @@
   letter-spacing: 2px;
 }
 .views-view-fields--my-images-header .firstname{
-  font-weight: 700;
-  
+  font-weight: 700;  
+}
+
+.views-view-fields--my-images-header .country{
+  font-size: 8pt;
 }
 .views-view-fields--my-images-hr {
   border: solid #e4e4e4;

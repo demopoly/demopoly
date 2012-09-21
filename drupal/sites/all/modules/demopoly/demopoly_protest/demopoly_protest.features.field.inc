@@ -524,13 +524,13 @@ function demopoly_protest_field_default_fields() {
                 'weight' => '6',
               ),
               'city' => array(
-                'collect' => '1',
+                'collect' => '2',
                 'default' => '',
                 'weight' => '8',
               ),
               'country' => array(
                 'collect' => '1',
-                'default' => 'us',
+                'default' => '',
                 'weight' => '14',
               ),
               'locpick' => array(
@@ -554,7 +554,7 @@ function demopoly_protest_field_default_fields() {
                 'widget' => 'autocomplete',
               ),
               'street' => array(
-                'collect' => '0',
+                'collect' => '1',
                 'default' => '',
                 'weight' => '4',
               ),
@@ -567,7 +567,144 @@ function demopoly_protest_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'protest',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'location_settings' => array(
+            'display' => array(
+              'hide' => array(
+                'additional' => 0,
+                'city' => 0,
+                'coords' => 0,
+                'country' => 0,
+                'country_name' => 0,
+                'locpick' => 0,
+                'map_link' => 0,
+                'name' => 0,
+                'postal_code' => 0,
+                'province' => 0,
+                'province_name' => 0,
+                'street' => 0,
+              ),
+            ),
+            'form' => array(
+              'fields' => array(
+                'additional' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '6',
+                ),
+                'city' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => 1,
+                  'default' => '',
+                  'weight' => '8',
+                ),
+                'country' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => 1,
+                  'default' => '',
+                  'weight' => '14',
+                ),
+                'delete_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                ),
+                'is_primary' => array(
+                  'default' => 0,
+                ),
+                'latitude' => array(
+                  'default' => 0,
+                ),
+                'lid' => array(
+                  'default' => FALSE,
+                ),
+                'locpick' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => 1,
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                  'weight' => '20',
+                ),
+                'longitude' => array(
+                  'default' => 0,
+                ),
+                'name' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '2',
+                ),
+                'postal_code' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '12',
+                ),
+                'province' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '10',
+                  'widget' => 'autocomplete',
+                ),
+                'source' => array(
+                  'default' => 0,
+                ),
+                'street' => array(
+                  '#parents' => array(
+                    0 => 'field_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '4',
+                ),
+              ),
+            ),
+          ),
+          'name' => '',
+          'street' => '',
+          'additional' => '',
+          'city' => 'München',
+          'province' => '',
+          'postal_code' => '',
+          'country' => 'de',
+          'locpick' => array(
+            'user_latitude' => '48.13743',
+            'user_longitude' => '11.57549',
+          ),
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -578,23 +715,11 @@ function demopoly_protest_field_default_fields() {
           'type' => 'location_default',
           'weight' => 12,
         ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
       ),
       'entity_type' => 'protest',
       'field_name' => 'field_location',
       'label' => 'Location',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),

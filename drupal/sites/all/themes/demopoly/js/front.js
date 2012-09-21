@@ -38,7 +38,6 @@
 							},
 							style: {
 								classes: "ui-tooltip-blue",
-								width: 450,
 								tip: {
 									corner: false
 								},
