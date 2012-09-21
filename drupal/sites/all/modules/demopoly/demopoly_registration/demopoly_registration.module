@@ -124,7 +124,7 @@ function _demopoly_profile_edit_submit($form, &$form_state) {
    )
   );
   user_save($user, $edit);
-  
+  global $user;
   print_r($user);
   
 	$form_state['values']['signature'] = 'registration_complete';
