@@ -112,18 +112,18 @@ function _demopoly_registration_submit($form, &$form_state) {
 function _demopoly_profile_edit_submit_forward($form, &$form_state) {
   global $user;
 	$form_state['values']['signature'] = 'registration_complete';
-	$edit = array(
-	 'data' => array(
-	   'has_already_logged_in' => TRUE
-   )
-  );
-  user_save($user, $edit);
 	user_profile_form_submit($form, $form_state);
 	$form_state['redirect']=array('user',array('fragment'=>'add-protest'));
 }
 function _demopoly_profile_edit_submit($form, &$form_state) {
+	global $user;
+  $edit = array(
+   'data' => array(
+     'has_already_logged_in' => TRUE
+   )
+  );
+  user_save($user, $edit);
 	$form_state['values']['signature'] = 'registration_complete';
-
 }
 
 function demopoly_registration_menu_alter(&$items) {
