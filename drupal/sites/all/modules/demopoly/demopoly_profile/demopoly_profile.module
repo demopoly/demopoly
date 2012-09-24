@@ -60,6 +60,14 @@ function demopoly_profile_close_callback() {
 
 function _demopoly_profile_delete_form_submit($form,&$form_state) {
   global $user;
+  $uid = $user->uid;
+  
+  $result = db_select('demopoly_protest', 'd')
+  ->condition('d.uid', $uid,'=')
+  ->fields('d', array('pid'));
+  foreach($result->execute() as $prot){
+  	entity_delete('protest', $prot->pid);
+  }
   user_delete($user->uid); // Uncomment to Delete User by ID
   $form_state['redirect']='profile/close_callback';
 }
