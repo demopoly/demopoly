@@ -53,7 +53,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		if($show != false){
 			$city = $slider_item['slide_city'];
 			$city_explode = explode('>', $city);
-			
+			if(isset($city_explode[3])){
 			$city_city = strstr($city_explode[3], '<', true);
 			$city_country = strstr($city_explode[5], '<', true);
 		
@@ -103,6 +103,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 	</div>
 	<br class="clear" />
 <?php
+			}
 		}
 	}
 ?>

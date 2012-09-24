@@ -29,7 +29,7 @@
 	$field_date			= date('Y',$fields['field_date']->content);
 		
 	$field_city_explode = explode('>', $field_city);
-	
+	if(isset($field_city_explode[4])){
 	$field_city_city = strstr($field_city_explode[4], '<', true);
 	$field_city_country = strstr($field_city_explode[6], '<', true);
 	
@@ -121,3 +121,4 @@
 		<?php print $content['footer']; ?>
 	</div>
 </div>
+<?php } ?>

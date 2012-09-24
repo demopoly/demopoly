@@ -3,8 +3,11 @@
   display: block;
   padding: 0;
   width: 600px;
-  height: auto; 
+  max-height: 600px!important;
   margin: auto;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
 }
 
 .horizontal-rule {
