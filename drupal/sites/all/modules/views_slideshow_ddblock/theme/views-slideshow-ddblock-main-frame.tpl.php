@@ -86,7 +86,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 					</p>
 					<?php if($slider_item['download'] != 0){?>
 						<p class="horizontal-rule">&nbsp;</p>
-						<p class="para-download-image"><a href="#DOWNLOAD"><span class="button_ download-image"></span>Download</a></p>
+						<p class="para-download-image"><a class="use-ajax" href="/protest/<?php echo $slider_item['uniqid']; ?>/download"><span class="button_ download-image"></span>Download</a></p>
 					<?php } ?>
 				</div>
 			</div>

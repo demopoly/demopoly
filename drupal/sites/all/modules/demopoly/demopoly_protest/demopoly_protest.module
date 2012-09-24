@@ -129,6 +129,17 @@ function demopoly_protest_menu(){
 					'method' => 'html',
       )
 	);
+	
+	$items['protest/%demopoly_protest/download'] = array(
+			'title' => 'Download Protest',
+			'access callback' => true,
+			'page arguments' => array(1),
+			'page callback' => 'demopoly_protest_download',
+			'#ajax' => array(
+					'method' => 'html',
+      )
+	);
+	
 	return $items;
 }
 function demopoly_protest_delete($id) {
@@ -357,6 +368,26 @@ function demopoly_protest_is_frontpage_activate($protest){
 	ajax_deliver($page);
 }
 
+function demopoly_protest_download($protest){
+	$file['type'] = $protest->field_protest_image['und'][0]['filemime'];
+	$file['uri'] = $protest->field_protest_image['und'][0]['uri'];
+	$file['url'] =  file_create_url($protest->field_protest_image['und'][0]['uri']);
+	$file['name'] = $protest->field_protest_image['und'][0]['filename'];
+	$file['path'] = '/sites/default/files';
+	$file['path'] .= substr($file['uri'], 8);
+	$file['size'] = $protest->field_protest_image['und'][0]['filesize'];	
+	
+	if($protest->field_download['und'][0]['value'] == 1){
+		//drupal_goto($file['url']);
+		$headers = array(
+				'Content-Type' => $file['type'],
+				'Content-disposition' => 'attachment; filename='.$file['name']
+		);
+		file_transfer($file['uri'], $headers);
+	} else {
+		drupal_access_denied();
+	}
+}
 function demopoly_protest_form_alter(&$form, &$form_state, $form_id){
 	if($form_id == "demopoly_protest_add_form"){
 	  
