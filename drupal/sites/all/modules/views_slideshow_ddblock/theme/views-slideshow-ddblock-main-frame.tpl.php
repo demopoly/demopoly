@@ -51,9 +51,9 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 ?>
 	<div class="container-wrapper">
 		<div class="container-image">
-			<div class="vertical-align">
+			<span class="vertical-align">
 				<?php print $slider_item['slide_image']; ?>
-			</div>
+			</span>
 		</div>
 		<div class="container-div">
 			<div class="container-right">

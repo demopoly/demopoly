@@ -36,10 +36,13 @@
 
 .container-wrapper .container-image {
   height: 430px;
+  line-height: 430px;
+  display: inline-block;
 }
 
-.container-wrapper .container-image .vertical-align {
-  vertical-align: bottom;
+.container-wrapper .container-image .vertical-align,
+.container-wrapper .container-image .vertical-align img {
+  vertical-align: middle;
 }
 
 .container-wrapper .container-text {
