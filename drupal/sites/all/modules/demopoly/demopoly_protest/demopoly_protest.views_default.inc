@@ -611,6 +611,7 @@ function demopoly_protest_views_default_views() {
     'field_date' => 0,
     'pid_1' => 0,
     'field_location' => 0,
+    'field_download' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -628,6 +629,7 @@ function demopoly_protest_views_default_views() {
     'field_date' => 0,
     'pid_1' => 0,
     'field_location' => 0,
+    'field_download' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -678,8 +680,8 @@ function demopoly_protest_views_default_views() {
           'source' => 'pid_1',
         ),
         10 => array(
-          'target' => '',
-          'source' => '',
+          'target' => 'download',
+          'source' => 'field_download',
         ),
         11 => array(
           'target' => '',
@@ -1033,6 +1035,32 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_location']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_location']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_location']['field_api_classes'] = 0;
+  /* Field: Protest: Download */
+  $handler->display->display_options['fields']['field_download']['id'] = 'field_download';
+  $handler->display->display_options['fields']['field_download']['table'] = 'field_data_field_download';
+  $handler->display->display_options['fields']['field_download']['field'] = 'field_download';
+  $handler->display->display_options['fields']['field_download']['label'] = '';
+  $handler->display->display_options['fields']['field_download']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_download']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_download']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['strip_tags'] = 1;
+  $handler->display->display_options['fields']['field_download']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_download']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_download']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_download']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_download']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_download']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_download']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_download']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_download']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_download']['field_api_classes'] = 0;
   /* Sort criterion: Protest: Frontpage Picture (field_protest_is_frontpage) */
   $handler->display->display_options['sorts']['field_protest_is_frontpage_value']['id'] = 'field_protest_is_frontpage_value';
   $handler->display->display_options['sorts']['field_protest_is_frontpage_value']['table'] = 'field_data_field_protest_is_frontpage';

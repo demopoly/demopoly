@@ -69,6 +69,17 @@
 	$firstname = $content['field_firstname']['#items'][0]['value'];
 	$city = $content['field_location'][0]['#location']['city'];
 	
+	global $user;
+	
+	$show = true;
+	$flag = flag_get_flag('flag_protest');
+	if($user->uid > 1){
+		if($flag->is_flagged($content['field_protest_image']['#object']->pid)){
+		#	$show = false;
+		}
+	}
+	
+	if($show == true){
 ?>
 <div class="teaser-wrapper" img="<?php echo $filepath; ?>">
 	<?php echo render($content['field_protest_image']);?>
@@ -78,4 +89,7 @@
 		</span>
 	</div>
 </div>
+<?php } else { ?>
+
+<?php } ?>
 <?php endif;?>

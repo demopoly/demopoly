@@ -70,8 +70,20 @@
   text-align: left;
   line-height: 23px;
 }
+
 .container-wrapper .para-download-image a {color:#76B828;}
-.container-wrapper .para-report-image a {color:#cd0b0b;}
+.container-wrapper .para-report-image a,
+.container-wrapper .para-report-image .flag-flag-protest .flag-link-toggle {
+  position: relative;
+  top: 3px;
+  color:#cd0b0b;
+}
+
+.container-wrapper .para-report-image .flag-message {
+  position: absolute;
+  top: 23px;
+  left: -100px;
+}
 
 .container-wrapper .container-thumbs .image-wrapper {
   width: 70px;

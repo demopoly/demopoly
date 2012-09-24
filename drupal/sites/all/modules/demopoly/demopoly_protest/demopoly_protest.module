@@ -394,6 +394,7 @@ function demopoly_protest_preprocess_page(&$variables){
 	 || arg(0) == 'qtip-preview'
 	 || (arg(0) == 'user' && arg(1) == 'delete')
    || arg(1) == 'close_callback'
+	 || arg(0) == 'flag' 
   ){
 		$variables['theme_hook_suggestions'] = array('page__protest');
 	}

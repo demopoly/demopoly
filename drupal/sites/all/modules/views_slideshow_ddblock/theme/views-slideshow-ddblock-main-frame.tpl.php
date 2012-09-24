@@ -41,13 +41,22 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 	</div>
 <?php
 	foreach ($views_slideshow_ddblock_slider_items as $slider_item){
+		global $user;
+		$show = true;
+		$flag = flag_get_flag('flag_protest');
+		if($user->uid > 1){
+			if($flag->is_flagged($slider_item['uniqid'])){
+				#$show = false;
+			}
+		}
 		
-		$city = $slider_item['slide_city'];
-		$city_explode = explode('>', $city);
+		if($show != false){
+			$city = $slider_item['slide_city'];
+			$city_explode = explode('>', $city);
+			
+			$city_city = strstr($city_explode[3], '<', true);
+			$city_country = strstr($city_explode[5], '<', true);
 		
-		$city_city = strstr($city_explode[3], '<', true);
-		$city_country = strstr($city_explode[5], '<', true);
-				
 ?>
 	<div class="container-wrapper">
 		<div class="container-image">
@@ -72,9 +81,13 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 					</div>
 				</div>
 				<div class="container-control">
-					<p class="para-download-image"><a href="#DOWNLOAD"><span class="button_ download-image"></span>Download</a></p>
-					<p class="horizontal-rule">&nbsp;</p>
-					<p class="para-report-image"><a href="#REPORT"><span class="button_ report-image"></span>Report Image</a></p>
+					<p class="para-report-image">
+					<span class="button_ report-image"></span><?php print flag_create_link('flag_protest', $slider_item['uniqid']); ?>
+					</p>
+					<?php if($slider_item['download'] != 0){?>
+						<p class="horizontal-rule">&nbsp;</p>
+						<p class="para-download-image"><a href="#DOWNLOAD"><span class="button_ download-image"></span>Download</a></p>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="container-text">
@@ -89,7 +102,8 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		</div>
 	</div>
 	<br class="clear" />
-<?php 
+<?php
+		}
 	}
 ?>
 	<div class="container-slide-next">

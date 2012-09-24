@@ -22,6 +22,50 @@ function demopoly_protest_views_api() {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function demopoly_protest_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Flag Protest".
+  $flags['flag_protest'] = array(
+    'content_type' => 'protest',
+    'title' => 'Flag Protest',
+    'global' => '1',
+    'types' => array(
+      0 => 'protest',
+    ),
+    'flag_short' => 'Report Image',
+    'flag_long' => 'Report this Image as inappropriate, offensive or abusive.',
+    'flag_message' => 'Successfully reported. Thank you.',
+    'unflag_short' => 'Unflag Image',
+    'unflag_long' => 'This Image has been reported as either inappropriate, offensive or abusive. Revert this action now.',
+    'unflag_message' => 'The image has been unflagged.',
+    'unflag_denied_text' => 'Reported Image',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => '2',
+        1 => '3',
+      ),
+      'unflag' => array(
+        0 => '3',
+      ),
+    ),
+    'weight' => 0,
+    'show_on_entity' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'api_version' => 2,
+    'module' => 'demopoly_protest',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function demopoly_protest_image_default_styles() {
