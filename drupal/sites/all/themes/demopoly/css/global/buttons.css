@@ -30,6 +30,18 @@
   overflow: hidden;
 }
 
+.button_ {
+  background-image: url("/sites/all/themes/demopoly/img/Buttons.Ekki.png")!important;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
 .button.large {
   padding-top: 48px;
 }
@@ -92,7 +104,7 @@
   background-position: -357px 0px;
   width: 124px;
 }
-
+d83535
 .button.large.leave:hover {
   background-position: -357px -49px;
 }
@@ -179,21 +191,23 @@
 }
 
 /* DOWNLOAD IMAGE */
-.button.medium.download-image {  
-  background-position: -395px -384px;
-  width: 26px;
+.button_.download-image {
+  background-position: -398px -385px;
+  width: 23px;
+  height: 23px;
 }
-.button.medium.download-image:hover {
-  background-position: -395px -384px;
+.button_.download-image:hover {
+  background-position: -398px -385px;
 }
 
 /* REPORT IMAGE */
-.button.medium.report-image {  
-  background-position: -369px -384px;
-  width: 26px;
+.button_.report-image {  
+  background-position: -369px -385px;
+  width: 23px;
+  height: 23px;
 }
-.button.medium.report-image:hover {
-  background-position: -369px -384px;
+.button_.report-image:hover {
+  background-position: -369px -385px;
 }
 
 /* NO */

@@ -72,9 +72,9 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 					</div>
 				</div>
 				<div class="container-control">
-					<p class="para-download-image"><a href="#DOWNLOAD" class="button medium download-image">Download</a></p>
+					<p class="para-download-image"><a href="#DOWNLOAD"><span class="button_ download-image"></span>Download</a></p>
 					<p class="horizontal-rule">&nbsp;</p>
-					<p class="para-report-image"><a href="#REPORT" class="button medium report-image">Report Image</a></p>
+					<p class="para-report-image"><a href="#REPORT"><span class="button_ report-image"></span>Report Image</a></p>
 				</div>
 			</div>
 			<div class="container-text">

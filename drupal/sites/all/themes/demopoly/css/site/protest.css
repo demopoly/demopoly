@@ -67,7 +67,11 @@
 .container-wrapper .para-download-image,
 .container-wrapper .para-report-image {
   padding-left: 20px;
+  text-align: left;
+  line-height: 23px;
 }
+.container-wrapper .para-download-image a {color:#76B828;}
+.container-wrapper .para-report-image a {color:#cd0b0b;}
 
 .container-wrapper .container-thumbs .image-wrapper {
   width: 70px;
