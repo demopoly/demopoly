@@ -14,10 +14,12 @@
   font-size: 12px;
   font-family: 'FuturaStd-Book';
 }
+
 .page-user span.show {display:none;}
+/*
 .page-user .user_mail:hover span.show {display:inline;}
 .page-user .user_mail:hover span.noshow {display:none;}
-
+*/
   
 .page-user .floatLeft h5,
 .page-user .floatRight h5{

@@ -6,14 +6,40 @@
 				location.hash='';
 				//.click();
 			}
+			
+			var options = {
+					content: {
+						text: $('span.show').html(),
+					},
+					position: {
+						at: "top left",
+						my: "middle left",
+					},
+					show: {
+						event: 'mouseenter'
+					},
+					hide: {
+						fixed: true,
+						event: 'mouseleave',
+					},
+					style: {
+						classes: "ui-tooltip-blue",
+						tip: {
+							corner: false
+						},
+					}
+				};
+			$('.noshow').qtip(options);
 		}
 	}
 })(jQuery);
 
 function closeIframe() {
-	$('#cboxClose').click();
+	jQuery('#cboxClose').click();
 	top.jQuery('.demopoly-my-images-reload').click();
 }
+
+
 
 (function($){
 	if(Drupal.ajax != null){

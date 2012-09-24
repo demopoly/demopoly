@@ -34,7 +34,7 @@
 								event: 'mouseenter'
 							},
 							hide: {
-								event: 'mouseleave'
+								event: 'click mouseleave'
 							},
 							style: {
 								classes: "ui-tooltip-blue",

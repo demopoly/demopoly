@@ -97,7 +97,6 @@
 	}
 })(jQuery)
 </script>
-<!--  style="background-image:url(<?php print $field_image['background']['path']; ?>);" -->
 <div class="views-view-fields--my-images-wrapper">
 	<div class="views-view-fields--my-images-header">
 		<?php print $content['header']; ?>

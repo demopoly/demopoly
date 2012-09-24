@@ -30,7 +30,6 @@ foreach($views_slideshow_ddblock_slider_items as $slider_item){
 }
 $thumbs = null;
 $size = (count($thumbnails)*78)+5;
-
 drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/views-slideshow-ddblock-cycle-vsddefault.css', 'module', 'all', FALSE);
 // drupal_add_css(drupal_get_path('theme', 'demopoly').'/css/page-protest-detail.css', 'theme', 'all', FALSE);
 // drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/jquery.qtip-1.0.0-rc3.js', 'theme', 'all', FALSE);
@@ -42,15 +41,24 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 	</div>
 <?php
 	foreach ($views_slideshow_ddblock_slider_items as $slider_item){
+		
+		$city = $slider_item['slide_city'];
+		$city_explode = explode('>', $city);
+		
+		$city_city = strstr($city_explode[3], '<', true);
+		$city_country = strstr($city_explode[5], '<', true);
+				
 ?>
 	<div class="container-wrapper">
 		<div class="container-image">
-			<?php print $slider_item['slide_image']; ?>
+			<div class="vertical-align">
+				<?php print $slider_item['slide_image']; ?>
+			</div>
 		</div>
 		<div class="container-div">
 			<div class="container-right">
 				<div class="container-thumbs">
-					<div class="container-thumbs-i$thumbnailsnline" style="width: <?php print $size;?>px">
+					<div class="container-thumbs-inline" style="width: <?php print $size;?>px">
 						<?php
 							foreach($thumbnails as $thumbnagl){
 								unset($active);
@@ -70,7 +78,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 				</div>
 			</div>
 			<div class="container-text">
-				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php print $slider_item['slide_city'] ?></p>
+				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php echo $city_city; ?> (<?php ECHO $city_country?>)</p>
 				<p class="para-date"><?php print date("F d Y", $slider_item['slide_date']) ?></p>
 				<div class="para-context">
 					<div class="para-context-inline">

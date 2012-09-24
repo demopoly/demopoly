@@ -34,6 +34,14 @@
   position: relative;
 }
 
+.container-wrapper .container-image {
+  height: 430px;
+}
+
+.container-wrapper .container-image .vertical-align {
+  vertical-align: bottom;
+}
+
 .container-wrapper .container-text {
   float: left;
   width: 354px;
@@ -72,10 +80,12 @@
   border: 1px solid blue;
   opacity: 1;
 }
+
 .container-wrapper .container-text .para-name-city {
-  font-size: 10pt;
+  font-family: 'FuturaStd-Light';
 }
 
+.container-wrapper .container-text .para-name-city,
 .container-wrapper .container-text .para-date {
   font-size: 10pt;
   text-transform: uppercase;
