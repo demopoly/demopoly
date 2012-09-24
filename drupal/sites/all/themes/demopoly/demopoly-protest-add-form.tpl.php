@@ -80,12 +80,13 @@
 			attach: function(context){
 				$(document).bind('iframe-loaded', function () {
 					$(document).ready(function(){
-						var method = 'resize_cbox("form#demopoly-protest-add-form")';
+						var method = 'resize_cbox("body")';
 						window.setTimeout(method, 100);
 					});
 				});
 				
 				resize_cbox = function(obj){
+					console.log($(obj));
 					var opac = $(obj).css('opacity');
 					if( opac > 0){
 						var y = $(obj).height();
@@ -98,6 +99,7 @@
 				$("#edit-submit").addClass('button medium upload');
 				$('#edit-field-protest-image-und-0-upload').customFileInput();
 				$('#field-location-add-more-wrapper').show();
+				
 				$(document).trigger('iframe-loaded');
 			}
 	}

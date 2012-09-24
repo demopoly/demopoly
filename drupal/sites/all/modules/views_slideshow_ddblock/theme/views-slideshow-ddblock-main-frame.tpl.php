@@ -133,7 +133,6 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 						console.log($(obj).innerHeight());
 					}
 				}
-				
 				$(document).trigger('iframe-loaded');
 			}
 	}
