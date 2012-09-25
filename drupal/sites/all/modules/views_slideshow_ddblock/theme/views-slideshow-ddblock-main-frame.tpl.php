@@ -89,11 +89,21 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 				</div>
 				<div class="container-control">
 					<p class="para-report-image">
-					<span class="button_ report-image"></span><?php print flag_create_link('flag_protest', $slider_item['uniqid']); ?>
+					<span class="button_ report-image"></span>
+					<?php if($user->uid){ ?>
+						<?php print flag_create_link('flag_protest', $slider_item['uniqid']);?> 
+					<?php } else { ?>
+						<span>Login to flag</span>
+					<?php } ?>
 					</p>
 					<?php if($slider_item['download'] != 0){?>
-						<p class="horizontal-rule">&nbsp;</p>
-						<p class="para-download-image"><a class="use-ajax" href="/protest/<?php echo $slider_item['uniqid']; ?>/download"><span class="button_ download-image"></span>Download</a></p>
+						<?php if($user->uid){ ?>
+							<p class="horizontal-rule">&nbsp;</p>
+							<p class="para-download-image"><a class="use-ajax" href="/protest/<?php echo $slider_item['uniqid']; ?>/download"><span class="button_ download-image"></span>Download</a></p>
+						<?php } else {?>
+							<p class="horizontal-rule">&nbsp;</p>
+							<p class="para-download-image"><span class="button_ download-image"></span>Login to Download</a></p>
+						<?php }?>
 					<?php } ?>
 				</div>
 			</div>
