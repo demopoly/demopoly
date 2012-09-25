@@ -3,7 +3,18 @@ function demopoly_geonames_geodata_data($keys){
   $keys = str_replace(' ', '%20', $keys);
   $keys = str_replace('+', '%20', $keys);
   $api['user'] = 'clandestino';
-  $api['url'] = 'http://api.geonames.org/search?name_startsWith='.$keys.'&maxRows=10&orderby=relevance&style=LONG&lang=en&username='.$api['user'];
+  $api['url'] = 'http://api.geonames.org/search?'
+  .'name_startsWith='.$keys.''
+  .'&isNameRequired=true'
+  .'&maxRows=10'
+  .'&orderby=relevance'
+  .'&style=LONG'
+  .'&lang=en'
+  .'&featureClass=P'
+  .'&featureCode=PPL'
+  .'&featureCode=PPLA'
+  .'&featureCode=PPLC'
+  .'&username='.$api['user'];
   $api['xml'] = file_get_contents($api['url']);
   $api['obj'] = new SimpleXMLElement($api['xml']);
     
@@ -13,7 +24,7 @@ function demopoly_geonames_geodata_data($keys){
   foreach ($api['obj'] as $data) {
     if ((string)$data->population > $population){
       $result[] = array(
-          'label'=> (string)$data->name.' ('.(string)$data->countryName.')',
+          'label'=> (string)$data->toponymName.' ('.(string)$data->countryName.')',
           'value'=> (string)$data->toponymName,
           'id' => (string)$data->geonameId,
           'lati' => (string)$data->lat,

@@ -144,11 +144,9 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 					var opac = $(obj).css('opacity');
 					if( opac > 0){
 						var y = $(obj).innerHeight();
-						console.log(y);
 						top.jQuery.colorbox.resize({
 							'innerHeight':y+5
 						});
-						console.log($(obj).innerHeight());
 					}
 				}
 				$(document).trigger('iframe-loaded');

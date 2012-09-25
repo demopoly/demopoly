@@ -86,7 +86,6 @@
 				});
 				
 				resize_cbox = function(obj){
-					console.log($(obj));
 					var opac = $(obj).css('opacity');
 					if( opac > 0){
 						var y = $(obj).height();

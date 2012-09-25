@@ -4,7 +4,6 @@
 			attach: function(){
 				$('input#edit-field-location-und-0-city').bind('keyup', function(){
 					$(this).autocomplete({
-						autoFocus: true,
 						delay: 0,
 						minLength: 3,
 						source:function(request,response){
