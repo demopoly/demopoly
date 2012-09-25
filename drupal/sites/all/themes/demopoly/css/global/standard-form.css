@@ -72,3 +72,39 @@ label {
   text-transform: uppercase;
   font-family: "LubalinGraphITCbyBT-Medium";
 }
+
+
+
+/* FORMS */
+#user-register-form #edit-submit {
+  padding-top: 46px;
+  background-position: -190px 0px;
+  width: 158px;
+}
+#user-register-form #edit-submit:hover {
+  background-position: -190px -49px;
+}
+
+#demopoly-protest-add-form #edit-submit,
+#demopoly-protest-edit-form #edit-submit {
+  padding-top: 37px;
+  background-position: -490px -1px;
+  width: 116px;
+}
+#demopoly-protest-add-form #edit-submit:hover,
+#demopoly-protest-edit-form #edit-submit:hover {
+  background-position: -490px -1px;
+}
+
+/*
+#demopoly-protest-add-form #edit-field-protest-image-und-0-remove-button,
+#demopoly-protest-edit-form #edit-field-protest-image-und-0-remove-button {
+  padding-top: 47px;
+  background-position: -246px -268px;
+  width: 226px;
+}
+
+#demopoly-protest-add-form #edit-field-protest-image-und-0-remove-button:hover,
+#demopoly-protest-edit-form #edit-field-protest-image-und-0-remove-button:hover {
+  background-position: -246px -318px;
+}*/

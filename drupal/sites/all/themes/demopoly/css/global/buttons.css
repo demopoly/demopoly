@@ -21,7 +21,7 @@
  * +radioButtonSet
  */
 
-.button {
+.button, .button_, #edit-submit, submit {
   background-image: url("/sites/all/themes/demopoly/img/Buttons.Ekki.png")!important;
   background-repeat: no-repeat;
   display: block;
@@ -31,12 +31,6 @@
 }
 
 .button_ {
-  background-image: url("/sites/all/themes/demopoly/img/Buttons.Ekki.png")!important;
-  background-repeat: no-repeat;
-  display: inline-block;
-  height: 0px;
-  width: 0px;
-  overflow: hidden;
   vertical-align: middle;
   margin-right: 10px;
 }
@@ -61,6 +55,21 @@
   margin-right: 5px;
 }
 
+/* DEFAULT */
+#edit-submit {
+  border: none;
+  box-shadow:none;
+  cursor:pointer;
+  font-size:0px;
+  float: right;
+  
+  padding-top: 37px;
+  background-position: -701px -103px;
+  width: 92px;
+}
+#edit-submit:hover {
+  background-position: -701px -142px;
+}
 
 /* DELETE */
 .button.medium.delete {
@@ -104,7 +113,7 @@
   background-position: -357px 0px;
   width: 124px;
 }
-d83535
+
 .button.large.leave:hover {
   background-position: -357px -49px;
 }

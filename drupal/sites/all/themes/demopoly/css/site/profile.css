@@ -298,11 +298,10 @@ a.terms-link {
 .page-user-edit #edit-save-and-go,
 .page-user-edit #edit-submit{
   float: right;
-  height: 38px;
-  width: 113px;
 }
 .page-user-edit #edit-save-and-go {
   width: 140px;
+  cursor: hand;
   text-transform: uppercase;
 }
 

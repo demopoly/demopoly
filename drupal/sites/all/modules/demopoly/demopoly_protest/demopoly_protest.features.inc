@@ -55,11 +55,11 @@ function demopoly_protest_flag_default_flags() {
     'show_on_entity' => 0,
     'show_on_form' => 0,
     'access_author' => '',
-    'api_version' => 2,
     'module' => 'demopoly_protest',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 

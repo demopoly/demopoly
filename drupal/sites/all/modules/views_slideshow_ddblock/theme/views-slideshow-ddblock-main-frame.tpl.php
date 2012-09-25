@@ -28,6 +28,11 @@ foreach($views_slideshow_ddblock_slider_items as $slider_item){
 	$thumb = $img_href[1];
 	$thumbnails[] = array($thumb, $slider_item['uniqid']);
 }
+if(count($views_slideshow_ddblock_slider_items) > 1){
+	$prevNext = true;
+} else {
+	$prevNext = false;
+}
 $thumbs = null;
 $size = (count($thumbnails)*78)+5;
 drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/views-slideshow-ddblock-cycle-vsddefault.css', 'module', 'all', FALSE);
@@ -36,9 +41,11 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 // drupal_add_css(drupal_get_path('module', 'jscrollpane') . '/css/jquery.jscrollpane.css', 'module', 'all', FALSE);	
 // ?>
 <div id="views-slideshow-ddblock-<?php print $settings['delta'] ?>" class="views-slideshow-ddblock-cycle-vsd-default clear-block wrap-it-all">
+	
 	<div class="container-slide-prev">
-		<a class="prev" href="#">Prev</a>
+		<?php if($prevNext){?><a class="prev" href="#">Prev</a>&nbsp;<?php }?>
 	</div>
+	
 <?php
 	foreach ($views_slideshow_ddblock_slider_items as $slider_item){
 		global $user;
@@ -107,8 +114,9 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		}
 	}
 ?>
+	
 	<div class="container-slide-next">
-		<a class="next" href="#">Next</a>
+		<?php if($prevNext){?><a class="next" href="#">Next</a>&nbsp;<?php }?>
 	</div>
 <script type="text/javascript">
 (function ($) {

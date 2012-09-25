@@ -28,18 +28,11 @@
 }
 
 #edit-submit {
-  background-image: url("../../img/loginbox/login-btn.png");
-  border: none;
-  float: right;
-  height: 38px;
+  background-position: -1px -103px;
   width: 113px;
-  box-shadow:none;
-  cursor:pointer;
-  font-size:0px;
 }
-
 #edit-submit:hover {
-  background-image: url("../../img/loginbox/login-btn-hover.png");
+  background-position: -1px -142px;
 }
 
 #user-login-form ul li {
