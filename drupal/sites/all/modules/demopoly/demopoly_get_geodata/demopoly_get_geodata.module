@@ -28,13 +28,13 @@ function demopoly_get_geodata_get_data($keys) {
   $cache_key = 'demopoly_geodata_'.$keys;
   $cache = cache_get($cache_key);
   
-//   if ($cache->created) {
-//     return $cache->data;
-//   } else {
+  if ($cache->created) {
+    return $cache->data;
+  } else {
    $data = module_invoke_all('geodata_data',$keys);
    cache_set($cache_key,$data);
    return $data;
-//   }
+  }
 }
 
 function demopoly_get_geodata_autocomplete_callback($keys){
