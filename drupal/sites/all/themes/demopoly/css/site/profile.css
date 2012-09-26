@@ -92,6 +92,10 @@
   border: 1px dotted #e4e4e4;
 }
 
+.field-type-geofield, .field-type-addressfield {
+  display: none;
+}
+
 .views-row-odd {
   margin-right: 15px;
 }
@@ -304,13 +308,13 @@ a.terms-link {
   cursor: hand;
   text-transform: uppercase;
 }
-
-.page-user-edit .field-name-field-firstname,
+.form-item-field-firstname-und-0-value,
 .page-user-edit .form-item-current-pass,
 .page-user-edit .form-item-pass-pass1 {
   float: left;
   width: 49%;
 }
+.form-item-field-firstname-und-1-value,
 .page-user-edit .field-name-field-city,
 .page-user-edit .field-name-field-location,
 .page-user-edit .form-item-mail,

@@ -64,7 +64,8 @@
   overflow: scroll;
 }
 
-.container-wrapper .container-thumbs .container-control {
+.container-wrapper .container-thumbs,
+.container-wrapper .container-control {
   margin-top: 10px;
 }
 .container-wrapper .para-download-image,

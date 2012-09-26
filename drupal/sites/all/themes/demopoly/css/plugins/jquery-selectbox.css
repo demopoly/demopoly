@@ -45,7 +45,7 @@
 }
 
 .sbToggle, .sbToggleOpen{
-  background-image: url(../../img/Buttons.png);
+  background-image: url('/sites/all/themes/demopoly/img/Buttons.Ekki.png');
   background-repeat: no-repeat;
   width: 30px;
   display: block;
@@ -56,10 +56,10 @@
 }
 
 .sbToggle, .sbToggleOpen{
-  background-position: -272px -377px;
+  background-position: -272px -378px;
 }
 .sbToggle:hover, .sbToggleOpen:hover{
-  background-position: -272px -377px;
+  background-position: -272px -378px; /*64*/
 }
 
 .sbHolderDisabled{

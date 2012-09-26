@@ -42,7 +42,6 @@
 			$('#show_info').qtip(options);
 			
 			$('form, input').attr('autocomplete', 'off');
-			
 		}
 	}
 	

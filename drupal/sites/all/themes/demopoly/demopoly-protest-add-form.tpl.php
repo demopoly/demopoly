@@ -14,10 +14,9 @@
 			<?php print render($form['field_firstname']);?>	
 			<div id="edit-field-city">
 			<div class="form-item form-type-textfield form-item-field-firstname-und-0-value">
-				<label for="edit-field-city-und-0-value">City </label>
+				<label for="edit-field-city-und-0-value">City <span class="form-required">*</span></label>
 				<input class="text-full form-text" type="text" id="edit-field-city-und-0-value" name="field_city[und][0][value]" value="" size="60" maxlength="20">
 			</div>
-			
 			</div>
 			<div class="clearfix"></div>
 			<div class="description">

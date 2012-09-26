@@ -26,6 +26,19 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
     $form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
     $form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
     
+    $form['field_firstname']['und'][1] = $form['field_firstname']['und'][0];
+    $form['field_firstname']['und'][1]['#field_name'] = null;
+    $form['field_firstname']['und'][1]['#title'] = 'City';
+    $form['field_firstname']['und'][1]['#weight'] = '2';
+    $form['field_firstname']['und'][1]['value'] = array(
+    		'#type' => 'textfield',
+    		'#title' => t('City'),
+    		'#default_value' => 'City Of No Return',
+    		'#maxlength' => 60,
+    		'#required' => false,
+    		'#attributes' => array('class' => array('city')),
+    );
+    
 		if(isset($user->data['has_already_logged_in']) && $user->data['has_already_logged_in'] == TRUE){
 			// IS SECOND VISIT
 			$headline='Edit your private profile';

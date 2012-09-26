@@ -155,7 +155,7 @@
 }
 
 .button.medium.upload:hover {
-  background-position: -490px -1px;
+  background-position: -490px -40px;
 }
 
 /* CHANGE */
@@ -171,13 +171,13 @@
 /* IS FRONTPAGE no-hover */
 .button.medium.is-frontpage {
   background-position: -481px -271px;
-  width: 237px;
+  width: 200px;
 }
 
 /* IS NOT FRONTPAGE */
 .button.medium.is-not-frontpage {  
   background-position: -481px -310px;
-  width: 237px;
+  width: 200px;
 }
 .button.medium.is-not-frontpage:hover {  
   background-position: -481px -271px;
@@ -221,25 +221,25 @@
 }
 
 /* NO */
-.button.large.delete-no {
-  background-position: -343px -104px;
-  width: 173px;
+.button.medium.delete-no {
+  background-position: -755px -270px;
+  width: 61px;
   display: inline-block
 }
 
-.button.large.delete-no:hover {
-  background-position: -343px -143px;
+.button.medium.delete-no:hover {
+  background-position: -755px -310px;
 }
 
 /* YES */
-.button.large.delete-yes {
-  background-position: -1px -187px;
-  width: 201px;
+.button.medium.delete-yes {
+  background-position: -688px -270px;
+  width: 61px;
   display: inline-block
 }
 
-.button.large.delete-yes:hover {
-  background-position: -1px -226px;
+.button.medium.delete-yes:hover {
+  background-position: -688px -310px;
 }
 
 /* UPLOAD SMALL */

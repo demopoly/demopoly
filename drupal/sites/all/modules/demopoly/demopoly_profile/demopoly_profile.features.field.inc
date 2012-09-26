@@ -10,6 +10,129 @@
 function demopoly_profile_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'user-user-field_address_geo'.
+  $fields['user-user-field_address_geo'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_address_geo',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'geofield',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'geofield',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'geofield',
+          'settings' => array(
+            'data' => 'full',
+          ),
+          'type' => 'geofield_wkt',
+          'weight' => 3,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_address_geo',
+      'label' => 'address-geo',
+      'required' => 0,
+      'settings' => array(
+        'local_solr' => array(
+          'enabled' => FALSE,
+          'lat_field' => 'lat',
+          'lng_field' => 'lng',
+        ),
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'geofield',
+        'settings' => array(),
+        'type' => 'geofield_latlon',
+        'weight' => '13',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_address_postal'.
+  $fields['user-user-field_address_postal'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_address_postal',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'addressfield',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'addressfield',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => array(
+        0 => array(
+          'element_key' => 'user|user|field_address_postal|und|0',
+          'thoroughfare' => '',
+          'premise' => '',
+          'locality' => '',
+          'country' => 'AF',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'addressfield',
+          'settings' => array(
+            'format_handlers' => array(
+              0 => 'address',
+            ),
+            'use_widget_handlers' => 1,
+          ),
+          'type' => 'addressfield_default',
+          'weight' => 4,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_address_postal',
+      'label' => 'address-postal',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'addressfield',
+        'settings' => array(
+          'available_countries' => array(),
+          'format_handlers' => array(
+            'address' => 'address',
+            'address-hide-country' => 0,
+            'organisation' => 0,
+            'name-full' => 0,
+            'name-oneline' => 0,
+          ),
+        ),
+        'type' => 'addressfield_standard',
+        'weight' => '15',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_expressum'.
   $fields['user-user-field_expressum'] = array(
     'field_config' => array(
@@ -134,122 +257,6 @@ function demopoly_profile_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_location'.
-  $fields['user-user-field_location'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_location',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'lid' => array(
-          0 => 'lid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'location_cck',
-      'settings' => array(
-        'gmap_macro' => '[gmap ]',
-        'gmap_marker' => 'drupal',
-        'location_settings' => array(
-          'display' => array(
-            'hide' => array(
-              'additional' => 0,
-              'city' => 0,
-              'coords' => 0,
-              'country' => 0,
-              'country_name' => 0,
-              'locpick' => 0,
-              'map_link' => 0,
-              'name' => 0,
-              'postal_code' => 0,
-              'province' => 0,
-              'province_name' => 0,
-              'street' => 0,
-            ),
-          ),
-          'form' => array(
-            'fields' => array(
-              'additional' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '6',
-              ),
-              'city' => array(
-                'collect' => '2',
-                'default' => '',
-                'weight' => '8',
-              ),
-              'country' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '14',
-              ),
-              'locpick' => array(
-                'collect' => '1',
-                'weight' => '20',
-              ),
-              'name' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '2',
-              ),
-              'postal_code' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '12',
-              ),
-              'province' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '10',
-                'widget' => 'autocomplete',
-              ),
-              'street' => array(
-                'collect' => '1',
-                'default' => '',
-                'weight' => '4',
-              ),
-            ),
-          ),
-        ),
-      ),
-      'translatable' => '0',
-      'type' => 'location',
-    ),
-    'field_instance' => array(
-      'bundle' => 'user',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'location_cck',
-          'settings' => array(),
-          'type' => 'location_default',
-          'weight' => '3',
-        ),
-      ),
-      'entity_type' => 'user',
-      'field_name' => 'field_location',
-      'label' => 'Location',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => 0,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'location_cck',
-        'settings' => array(),
-        'type' => 'location',
-        'weight' => '-8',
-      ),
-    ),
-  );
-
   // Exported field: 'user-user-field_newsletter'.
   $fields['user-user-field_newsletter'] = array(
     'field_config' => array(
@@ -314,8 +321,9 @@ function demopoly_profile_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Expressum');
   t('First name');
-  t('Location');
   t('Newsletter');
+  t('address-geo');
+  t('address-postal');
 
   return $fields;
 }

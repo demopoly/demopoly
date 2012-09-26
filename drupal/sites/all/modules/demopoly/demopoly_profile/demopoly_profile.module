@@ -91,11 +91,11 @@ function _demopoly_profile_delete_form() {
   );
   $form['yes']=array(
       '#type'=>'markup',
-      '#markup'=>t('<a href="#Yes" class="button large delete-yes">Yes</a>')
+      '#markup'=>t('<a href="#Yes" class="button medium delete-yes">Yes</a>')
   );
   $form['no']=array(
       '#type'=>'markup',
-      '#markup'=>t('<a href="#No" class="button large delete-no">No</a>')
+      '#markup'=>t('<a href="#No" class="button medium delete-no">No</a>')
   );
   $form['markup-wrap-end']=array(
     '#type'=>'markup',

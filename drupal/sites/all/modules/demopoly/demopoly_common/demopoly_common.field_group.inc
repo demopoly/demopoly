@@ -24,8 +24,7 @@ function demopoly_common_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_firstname',
-      1 => 'field_location',
-      2 => 'account',
+      1 => 'account',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
