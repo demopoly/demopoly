@@ -8,7 +8,7 @@
 				address['longi'] 	= $('#edit-field-address-geo-und-0-lon');
 //				address['country'] 	= $("#edit-field-address-postal-und-0-country option");
 				address['city'] 	= $("#edit-field-address-postal-und-0-locality");
-				address['dummy']	= $("#edit-field-city-und-0-value, #edit-field-firstname-und-1-value");
+				address['dummy']	= $("#edit-field-city-und-0-value");
 				
 				address['dummy'].val(address['city'].val());
 				
@@ -43,6 +43,7 @@
 							address['longi'].val(ui.item.longi)
 							address['city'].val(ui.item.value)
 							$("#edit-field-address-postal-und-0-country option[value="+ui.item.countryID.toUpperCase()+"]").attr('selected', true);
+							$("#edit-field-address-postal-und-0-country").change();
 						}
 					})
 				})

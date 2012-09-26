@@ -308,14 +308,14 @@ a.terms-link {
   cursor: hand;
   text-transform: uppercase;
 }
-.form-item-field-firstname-und-0-value,
+#field-firstname-add-more-wrapper,
 .page-user-edit .form-item-current-pass,
 .page-user-edit .form-item-pass-pass1 {
   float: left;
   width: 49%;
 }
-.form-item-field-firstname-und-1-value,
-.page-user-edit .field-name-field-city,
+
+#field-city-add-more-wrapper,
 .page-user-edit .field-name-field-location,
 .page-user-edit .form-item-mail,
 .page-user-edit .form-item-pass-pass2
@@ -335,7 +335,6 @@ a.terms-link {
 .page-user-edit .description{
   display: none;
 }
-
 .page-user-edit #edit-timezone,
 #-demopoly-profile-delete-form #edit-submit {
   display: none;

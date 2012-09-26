@@ -28,9 +28,6 @@ div#context {
   width: 800px;
   display: block;
 }
-.form-item-field-firstname-und-0-value {
-  width: 100%!important;
-}
 div#name-city div#edit-field-firstname {
   float: left;
 }
