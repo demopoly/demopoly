@@ -1,12 +1,24 @@
 <h1>Upload a picture</h1>
 <h2>Please add some information which is related to your picture.</h2>
+<div class="location_hide">
+	<?php
+		print render($form['field_address_geo']);
+		print render($form['field_address_postal']);
+		print render($form['field_location']);
+	?>
+</div>
 <div id="name-city">
 	<fieldset>
 		<legend><span class="fieldset-legend">Name(s)/City - shown on the picture</span></legend>
 		<div class="fieldset-content">
 			<?php print render($form['field_firstname']);?>	
-			<div id="edit-field-city"></div>
-			<?php print render($form['field_location']);?>
+			<div id="edit-field-city">
+			<div class="form-item form-type-textfield form-item-field-firstname-und-0-value">
+				<label for="edit-field-city-und-0-value">City </label>
+				<input class="text-full form-text" type="text" id="edit-field-city-und-0-value" name="field_city[und][0][value]" value="" size="60" maxlength="20">
+			</div>
+			
+			</div>
 			<div class="clearfix"></div>
 			<div class="description">
 			(you can change the name or the city and add more names. If there's more than 1 name: people from left to right)

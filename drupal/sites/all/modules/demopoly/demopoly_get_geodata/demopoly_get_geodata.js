@@ -2,7 +2,18 @@
 	
 	Drupal.behaviors.demopoly_geonames = {
 			attach: function(){
-				$('input#edit-field-location-und-0-city').bind('keyup', function(){
+				var address = new Array();
+				
+				address['lati'] 	= $('#edit-field-address-geo-und-0-lat');
+				address['longi'] 	= $('#edit-field-address-geo-und-0-lon');
+//				address['country'] 	= $("#edit-field-address-postal-und-0-country option");
+				address['city'] 	= $("#edit-field-address-postal-und-0-locality");
+				address['dummy']	= $("#edit-field-city-und-0-value");
+				
+				address['dummy'].val(address['city'].val());
+				
+				address['dummy'].bind('keyup', function(){
+					
 					$(this).autocomplete({
 						delay: 0,
 						minLength: 3,
@@ -16,21 +27,22 @@
 						},
 						change: function(event, ui){
 							if(ui.item == undefined){
-								$('#edit-field-location-und-0-locpick-user-latitude').val('')
-								$('#edit-field-location-und-0-locpick-user-longitude').val('')
-								$('#edit-field-location-und-0-city').val('')
-								$("#edit-field-location-und-0-country option[value=xx]").attr('selected', true);
+								address['lati'].val('')
+								address['longi'].val('')
+								address['city'].val('')
+								$("#edit-field-address-postal-und-0-country option[value=AF]").attr('selected', true);
 							}
 						},
 						search: function(){
-							$('#edit-field-location-und-0-locpick-user-latitude').val('')
-							$('#edit-field-location-und-0-locpick-user-longitude').val('')
-							$("#edit-field-location-und-0-country option[value=xx]").attr('selected', true);
+							address['lati'].val('')
+							address['longi'].val('')
+							address['city'].val('')
 						},
 						select: function(event, ui) {
-							$('#edit-field-location-und-0-locpick-user-latitude').val(ui.item.lati)
-							$('#edit-field-location-und-0-locpick-user-longitude').val(ui.item.longi)
-							$("#edit-field-location-und-0-country option[value="+ui.item.countryID+"]").attr('selected', true);
+							address['lati'].val(ui.item.lati)
+							address['longi'].val(ui.item.longi)
+							address['city'].val(ui.item.value)
+							$("#edit-field-address-postal-und-0-country option[value="+ui.item.countryID.toUpperCase()+"]").attr('selected', true);
 						}
 					})
 				})

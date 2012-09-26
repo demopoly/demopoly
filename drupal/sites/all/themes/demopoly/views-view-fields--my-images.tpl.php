@@ -25,13 +25,28 @@
 
 	$content = array();
 	$field_firstname	= $fields['field_firstname']->content;
-	$field_city			= $fields['field_location']->content;
-	$field_date			= date('Y',$fields['field_date']->content);
+	$field_city			  = $fields['field_city']->content;
+	$field_country		= $fields['field_address_postal']->content;
+	$field_date			  = date('Y',$fields['field_date']->content);
 		
-	$field_city_explode = explode('>', $field_city);
-	if(isset($field_city_explode[4])){
-	$field_city_city = strstr($field_city_explode[4], '<', true);
-	$field_city_country = strstr($field_city_explode[6], '<', true);
+	foreach($fields['field_address_postal']->handler->view->result as $view_result){
+		if($view_result->pid == $fields['field_address_postal']->raw){
+			$countryCode = $view_result->field_field_address_postal[0]['raw']['country'];
+		}
+	}
+	
+	//<div><div class="addressfield-container-inline locality-block country-DE">  <span class="locality">München</span></div><span class="country">Germany</span></div>
+	
+	if(strlen($field_country) > 0){
+		$pattern = '/country">(.*)<\/span/i';
+		preg_match_all($pattern, $field_country, $matches);
+		$field_country_name = (string)$matches[1][0];
+	}
+
+	$field_country_icon = theme('countryicons_icon', array('code' =>  $countryCode, 'iconset' =>  'shiny'));
+	
+	if(strlen($field_city) < 1){$field_city = 'No City Given';}
+	if(strlen($field_country_name) < 1){$field_country_name = 'No Country Given';}
 	
 	$field_image['background']['fid']  = file_load($fields['field_protest_image_1']->content);
 	$field_image['background']['path'] = file_create_url($field_image['background']['fid']->uri);
@@ -46,8 +61,8 @@
 	$field_protest_context = strip_tags($fields['field_protest_context']->content);
 	
 	$content['header'] = '<span class="firstname">'.$field_firstname.'</span>,'
-											.' <span class="city" title="City: '.$field_city_city.' in '.$field_city_country.'">'.$field_city_city.'</span>'
-											.' <span class="country">'.$field_city_country.'</span>'
+											.' <span class="country">'.$field_country_icon.'</span>'
+											.' <span class="city" title="City: '.$field_city.' in '.$field_country_name.'">'.$field_city.'</span>'
 											.' (<span class="date">'.$field_date.'</span>)';
 	$content['left'] = '<div class="image-wrapper" image="'.$field_image['preview']['styled'].'" style="background-image:url('.$field_image['background']['styled'].');">&nbsp;</div>';
 	$content['right'] = '';
@@ -121,4 +136,3 @@
 		<?php print $content['footer']; ?>
 	</div>
 </div>
-<?php } ?>

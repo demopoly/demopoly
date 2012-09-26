@@ -67,7 +67,8 @@
 	$filepath = image_style_url($style, $file->uri);
 	
 	$firstname = $content['field_firstname']['#items'][0]['value'];
-	$city = $content['field_location'][0]['#location']['city'];
+	$city = $content['field_city']['#items'][0]['value'];
+	$country = theme('countryicons_icon', array('code' =>  $content['field_address_postal']['#items'][0]['country'], 'iconset' =>  'shiny'));
 	
 	global $user;
 	
@@ -85,7 +86,7 @@
 	<?php echo render($content['field_protest_image']);?>
 	<div class="info">
 		<span style="font-size: 8pt; text-transform: uppercase; text-align: center; display: block;">
-			<?php echo $firstname; ?> - <?php echo $city;?>
+			<?php echo $firstname; ?> - <?php echo $city;?> <?php echo $country; ?>
 		</span>
 	</div>
 </div>

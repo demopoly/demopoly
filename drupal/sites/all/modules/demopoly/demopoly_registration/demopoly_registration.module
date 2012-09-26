@@ -11,7 +11,12 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	global $user;
 	$full_user = user_load($user->uid);
 	$user_firstname = field_get_items('user', $full_user, 'field_firstname');
-	drupal_set_title('Welcome '.$user_firstname[0]['value']);  
+	drupal_set_title('Welcome '.$user_firstname[0]['value']);
+	
+	$form['#attributes'] = array('autocomplete' => 'off');
+	
+	kpr($form);
+	
 	if ($form_id=='user_profile_form') {
 	  
     unset($form['account']['current_pass']);

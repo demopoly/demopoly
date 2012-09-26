@@ -127,10 +127,8 @@ div#context #field-protest-context-add-more-wrapper div.description
   color: #787878;
 }
 
-.form-item-field-location-und-0-province,
-.form-item-field-location-und-0-postal-code,
-.form-item-field-location-und-0-name,
-#edit-field-location,
-#edit-field-protest-image-und-0-upload-button {
+
+#edit-field-protest-image-und-0-upload-button,
+.location_hide {
   display: none;
 }

@@ -59,10 +59,6 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		
 		if($show != false){
 			$city = $slider_item['slide_city'];
-			$city_explode = explode('>', $city);
-			if(isset($city_explode[3])){
-			$city_city = strstr($city_explode[3], '<', true);
-			$city_country = strstr($city_explode[5], '<', true);
 		
 ?>
 	<div class="container-wrapper">
@@ -102,13 +98,13 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 							<p class="para-download-image"><a class="use-ajax" href="/protest/<?php echo $slider_item['uniqid']; ?>/download"><span class="button_ download-image"></span>Download</a></p>
 						<?php } else {?>
 							<p class="horizontal-rule">&nbsp;</p>
-							<p class="para-download-image"><span class="button_ download-image"></span>Login to Download</a></p>
+							<p class="para-download-image"><span class="button_ download-image"></span>Login to Download</p>
 						<?php }?>
 					<?php } ?>
 				</div>
 			</div>
 			<div class="container-text">
-				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php echo $city_city; ?> (<?php ECHO $city_country?>)</p>
+				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php echo $city; ?> (<?php echo $city?>)</p>
 				<p class="para-date"><?php print date("F d Y", $slider_item['slide_date']) ?></p>
 				<div class="para-context">
 					<div class="para-context-inline">
@@ -120,7 +116,6 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 	</div>
 	<br class="clear" />
 <?php
-			}
 		}
 	}
 ?>
