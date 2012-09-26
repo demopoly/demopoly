@@ -15,8 +15,6 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	
 	$form['#attributes'] = array('autocomplete' => 'off');
 	
-	kpr($form);
-	
 	if ($form_id=='user_profile_form') {
 	  
     unset($form['account']['current_pass']);
