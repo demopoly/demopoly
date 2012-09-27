@@ -67,7 +67,7 @@
 	$filepath = image_style_url($style, $file->uri);
 	
 	$firstname = $content['field_firstname']['#items'][0]['value'];
-	$city = $content['field_city']['#items'][0]['value'];
+	$city = $content['field_address_postal']['#items'][0]['locality'];
 	$country = theme('countryicons_icon', array('code' =>  $content['field_address_postal']['#items'][0]['country'], 'iconset' =>  'shiny'));
 	
 	global $user;
