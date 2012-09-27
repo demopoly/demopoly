@@ -315,6 +315,11 @@ a.terms-link {
   width: 49%;
 }
 
+.page-protest #field-firstname-add-more-wrapper {
+  width: 100%;
+}
+
+
 #field-city-add-more-wrapper,
 .page-user-edit .field-name-field-location,
 .page-user-edit .form-item-mail,

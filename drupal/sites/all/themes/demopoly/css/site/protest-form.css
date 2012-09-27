@@ -41,11 +41,12 @@ div#name-city div#edit-field-city {
   left: 0px; top: 0px;
   width: 45%;
 }
-div#name-city div#edit-field-firstname input, div#name-city div#edit-field-city input,
-div#name-city div#edit-field-firstname label, div#name-city div#edit-field-city label {
+#edit-field-firstname input, #edit-field-city input,
+#edit-field-firstname label, #edit-field-city label {
   width: 100%;
   text-transform: uppercase;
 }
+
 
 div#date .form-type-date-select,
 div#date .form-type-date-select .date-padding {
