@@ -40,7 +40,6 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
     		(function($){
 					Drupal.behaviors.demopoly_profile = {
 						attach: function(context){
-			    		console.log('asdf');
 			    		var jQueryCity = jQuery('#field-city-add-more-wrapper');
 			    		var jQueryName = jQuery('#field-firstname-add-more-wrapper')
 			    		var jQueryWrap = jQuery('#edit-field-firstname')
