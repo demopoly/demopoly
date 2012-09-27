@@ -932,29 +932,6 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image_1']['field_api_classes'] = 0;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
-  $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
-  $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
-  $handler->display->display_options['fields']['field_city']['label'] = '';
-  $handler->display->display_options['fields']['field_city']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['trim_whitespace'] = 1;
-  $handler->display->display_options['fields']['field_city']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_city']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_city']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['strip_tags'] = 1;
-  $handler->display->display_options['fields']['field_city']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_city']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_city']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
   /* Field: Protest: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
@@ -1084,11 +1061,12 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_address_postal']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_address_postal']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_address_postal']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_address_postal']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_address_postal']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_address_postal']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_address_postal']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_address_postal']['element_type'] = '0';
   $handler->display->display_options['fields']['field_address_postal']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address_postal']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_address_postal']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_address_postal']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_address_postal']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_address_postal']['hide_alter_empty'] = 1;
