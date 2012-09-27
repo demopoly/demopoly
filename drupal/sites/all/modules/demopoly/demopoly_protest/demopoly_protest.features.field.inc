@@ -446,91 +446,6 @@ function demopoly_protest_field_default_fields() {
     ),
   );
 
-  // Exported field: 'protest-protest-field_city'.
-  $fields['protest-protest-field_city'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_city',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '40',
-        'profile2_private' => 0,
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'protest',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '4',
-        ),
-        'teaser' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_plain',
-          'weight' => '4',
-        ),
-        'token' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
-        ),
-      ),
-      'entity_type' => 'protest',
-      'field_name' => 'field_city',
-      'label' => 'City',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '1',
-      ),
-    ),
-  );
-
   // Exported field: 'protest-protest-field_date'.
   $fields['protest-protest-field_date'] = array(
     'field_config' => array(
@@ -1376,7 +1291,6 @@ function demopoly_protest_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('City');
   t('Date');
   t('Download');
   t('Expressum');

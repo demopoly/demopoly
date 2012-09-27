@@ -30,7 +30,6 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[field][] = protest-protest-field_address_geo
 features[field][] = protest-protest-field_address_postal
-features[field][] = protest-protest-field_city
 features[field][] = protest-protest-field_date
 features[field][] = protest-protest-field_download
 features[field][] = protest-protest-field_expressum

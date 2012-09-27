@@ -56,7 +56,7 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['pid']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['pid']['separator'] = '';
   $handler->display->display_options['fields']['pid']['format_plural'] = 0;
-  /* Field: Protest: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -80,8 +80,6 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_city']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
@@ -467,7 +465,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image']['field_api_classes'] = 0;
-  /* Field: Protest: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -489,7 +487,6 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Protest: Protest ID */
   $handler->display->display_options['fields']['pid']['id'] = 'pid';
   $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
@@ -935,7 +932,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image_1']['field_api_classes'] = 0;
-  /* Field: Protest: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -958,8 +955,6 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_city']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Protest: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
@@ -1267,7 +1262,7 @@ function demopoly_protest_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_protest_image']['field_api_classes'] = 0;
-  /* Field: Protest: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1290,8 +1285,6 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_city']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
@@ -1373,7 +1366,7 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['pid']['id'] = 'pid';
   $handler->display->display_options['fields']['pid']['table'] = 'demopoly_protest';
   $handler->display->display_options['fields']['pid']['field'] = 'pid';
-  /* Field: Protest: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1398,8 +1391,6 @@ function demopoly_protest_views_default_views() {
   $handler->display->display_options['fields']['field_city']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_city']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_city']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_city']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_city']['field_api_classes'] = 0;
   /* Field: Field: First name */
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
