@@ -12,6 +12,7 @@ function demopoly_common_init(){
     arg(0) != 'user'
     && arg(2) != 'edit'
     && arg(0) != 'demopoly_get_geodata'
+  	&& arg(1) != 'ajax'
   ){
     if($user->uid > 1){
     	$user = user_load($user->uid);

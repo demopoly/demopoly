@@ -25,30 +25,20 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 		$form['actions']['submit']['#weight'] = 2;
     $form['#groups']['group_main']->format_settings['instance_settings']['classes'] = 'fullwidth';
     $form['account']['mail']['#attributes']['classes'][0] = 'fullwidth';
-    
+       
     $form['field_city'] = array(
     		'#type' => 'markup',
     		'#markup' => '
-    		<div id="field-city-add-more-wrapper"><div class="form-item form-type-textfield form-item-field-city-und-0-value">
-				  <label for="edit-field-city-und-0-value">City <span class="form-required" title="This field is required.">*</span></label>
-				 <input class="text-full form-text required" id="edit-field-city-und-0-value" type="text" value="'.$form['#user']->field_address_postal['und'][0]['locality'].'" size="60" maxlength="20" autocomplete="off">
-				</div>
-				</div>
+	    		<div id="edit-field-city" style="width: 49%; float: right;">
+		    		<div class="form-item form-type-textfield form-item-field-firstname-und-0-value">
+							<label for="edit-field-city-und-0-value">City <span class="form-required">*</span></label>
+							<input class="text-full form-text" type="text" id="edit-field-city-und-0-value" name="field_city[und][0][value]" value="" size="60" maxlength="20" autocomplete="off">
+						</div>
+					</div>
     		'
     );
-    drupal_add_js("
-    		(function($){
-					Drupal.behaviors.demopoly_profile = {
-						attach: function(context){
-			    		var jQueryCity = jQuery('#field-city-add-more-wrapper');
-			    		var jQueryName = jQuery('#field-firstname-add-more-wrapper')
-			    		var jQueryWrap = jQuery('#edit-field-firstname')
-			    		
-			    		jQuery(jQueryCity).appendTo(jQueryWrap);
-    				}
-    			}
-    		})(jQuery)
-    		",'inline');
+    $form['#group_children']['field_city']='group_main';
+   
     
 		if(isset($user->data['has_already_logged_in']) && $user->data['has_already_logged_in'] == TRUE){
 			// IS SECOND VISIT
