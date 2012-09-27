@@ -64,7 +64,6 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		
 		if($show != false){
 			$cityCountry = splitAtUpperCase($slider_item['add_postal']);
-			kpr($cityCountry);
 // 			$countryCode = $slider_item->field_field_address_postal[0]['raw']['country'];
 // 			$field_city  = $slider_item->field_field_address_postal[0]['raw']['locality'];
 			
