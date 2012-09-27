@@ -25,13 +25,14 @@
 
 	$content = array();
 	$field_firstname	= $fields['field_firstname']->content;
-	$field_city			  = $fields['field_city']->content;
 	$field_country		= $fields['field_address_postal']->content;
 	$field_date			  = date('Y',$fields['field_date']->content);
-		
+	
+	
 	foreach($fields['field_address_postal']->handler->view->result as $view_result){
 		if($view_result->pid == $fields['field_address_postal']->raw){
 			$countryCode = $view_result->field_field_address_postal[0]['raw']['country'];
+			$field_city  = $view_result->field_field_address_postal[0]['raw']['locality'];
 		}
 	}
 	
