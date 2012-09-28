@@ -27,11 +27,11 @@
   padding: 0;
 }
 
-#edit-submit {
+#block-user-login #edit-submit {
   background-position: -1px -103px;
   width: 113px;
 }
-#edit-submit:hover {
+#block-user-login #edit-submit:hover {
   background-position: -1px -142px;
 }
 

@@ -53,7 +53,7 @@ div#date .form-type-date-select .date-padding {
   width: 100%;
 }
 div#date .form-type-select{
-  width: 210px;
+  width: 195px;
   padding-right: 0px;
 }
 
@@ -131,4 +131,9 @@ div#context #field-protest-context-add-more-wrapper div.description
 #edit-field-protest-image-und-0-upload-button,
 .location_hide {
   display: none;
+}
+
+.page-protest-add #edit-submit,
+.page-protest-edit #edit-submit {
+  margin-right: 25px;
 }

@@ -30,7 +30,7 @@ function demopoly_imagestyle_field_formatter_view($entity_type, $entity, $field,
 	$type = $width>$height?'land':'sky';
 	$style = 'img_style_'.$type.'_'.rand(1, 3);
   $style = 'img_style_'.$type.'_1';
-  $style = $width > $height ? 'frontpage_thumb_land' : 'frontpage_thumb_sky';
+  $style = $width>$height ? 'frontpage_thumb_land' : 'frontpage_thumb_sky';
     
 	$style_uri = image_style_url($style, $uri);	
 	foreach ($items as $delta => $item) {
