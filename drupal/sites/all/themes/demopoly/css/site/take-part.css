@@ -21,13 +21,16 @@
   margin-bottom: 50px;
 }
 
+#edit-account { float: left;}
+#edit-field-firstname { float: right;}
+
 #edit-account, #edit-field-firstname {
   display: inline-block;
-  width: 45%;
+  width: 49%;
 }
 #edit-account input, #edit-field-firstname input {
   float: left;
-  width: 90%;
+  width: 98%;
 }
 #edit-account label, #edit-field-firstname label {
   text-transform: uppercase;
