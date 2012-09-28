@@ -14,7 +14,7 @@ function demopoly_registration_form_alter(&$form,&$form_state,$form_id) {
 	drupal_set_title('Welcome '.$user_firstname[0]['value']);
 	
 	$form['#attributes'] = array('autocomplete' => 'off');
-	
+	unset($user->data['has_already_logged_in']);
 	if ($form_id=='user_profile_form') {
 	  
     unset($form['account']['current_pass']);

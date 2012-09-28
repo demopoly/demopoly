@@ -21,7 +21,7 @@
  * +radioButtonSet
  */
 
-.button, .button_, #edit-submit, submit {
+.button, .button_, #edit-submit, submit, #edit-save-and-go {
   background-image: url("/sites/all/themes/demopoly/img/Buttons.Ekki.png")!important;
   background-repeat: no-repeat;
   display: block;
@@ -271,4 +271,12 @@
 /* RADIO BUTTON NOT SET */
 .button.radio.not-set{
   background-position: -23px -389px;
+}
+
+/* SAVE AND UPLOAD *** */
+#edit-save-and-go {
+  cursor: pointer;
+  background-position: -482px -352px!important;
+  width: 246px!important;
+  padding-top: 36px;
 }
