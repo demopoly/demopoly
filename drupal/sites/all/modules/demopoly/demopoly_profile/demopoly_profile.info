@@ -12,7 +12,6 @@ dependencies[] = features
 dependencies[] = geofield
 dependencies[] = image
 dependencies[] = list
-dependencies[] = location
 dependencies[] = strongarm
 dependencies[] = views
 features[context][] = profile-css

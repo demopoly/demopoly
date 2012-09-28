@@ -40,7 +40,7 @@ $delete_profile_url = url('user/delete',array('query'=>array('width'=>'480', 'he
 $add_image_url = url('protest/add',array('query'=>array('width'=>'900', 'iframe'=>'true')));
 $reload_image_url = url('user/my_images/reload');
 
-$countries = _country_get_predefined_list();
+$countries = country_get_list();
 $user_country = $countries[$user_postal[0]['country']];
 $user_country_icon = theme('countryicons_icon', array('code' =>  $user_postal[0]['country'], 'iconset' =>  'shiny'));
 $user_city = $user_postal[0]['locality'];
