@@ -168,7 +168,7 @@ function demopoly_protest_delete_form($form,&$form_state,$protest) {
 	$form_state['storage']=array('pid'=>$protest->pid);
   $form['markup-wrap-start']=array(
     '#type'=>'markup',
-    '#markup'=>t('<div class="markup-wrap">')
+    '#markup'=>t('<div class="markup-wrap" style="text-align: center">')
   );
 	$form['text']=array(
 	 '#type'=>'markup',
@@ -180,15 +180,15 @@ function demopoly_protest_delete_form($form,&$form_state,$protest) {
   );
   $form['button-wrap-start']=array(
     '#type'=>'markup',
-    '#markup'=>t('<div class="button-wrap">')
+    '#markup'=>t('<div class="button-wrap" style="margin: auto; text-align: center">')
   );
 	$form['yes']=array(
 			'#type'=>'markup',
-			'#markup'=>t('<a href="#Yes" class="button large delete-yes">Yes</a>')
+			'#markup'=>t('<a href="#Yes" class="button medium delete-yes" style="margin-right: 10px;">Yes</a>')
 	);
   $form['no']=array(
       '#type'=>'markup',
-      '#markup'=>t('<a href="#No" class="button large delete-no">No</a>')
+      '#markup'=>t('<a href="#No" class="button medium delete-no" style="margin-left: 10px;">No</a>')
   );
   $form['markup-wrap-end']=array(
     '#type'=>'markup',

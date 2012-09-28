@@ -37,6 +37,6 @@ function demopoly_preprocess_user_profile (&$vars){
 	}
 	$vars['user_news'] .= '<span class="setting">If there is a newsletter, I want to get it.</span>';
 
-	drupal_set_title('Welcome '.$vars['user_firstname'].'<br /> and thank you for participating.');
+	drupal_set_title('Welcome '.$vars['user_firstname'].' and thank you for participating.');
 }
 ?>
