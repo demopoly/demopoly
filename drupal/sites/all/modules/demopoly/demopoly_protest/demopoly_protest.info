@@ -16,6 +16,7 @@ dependencies[] = features
 dependencies[] = flag
 dependencies[] = geofield
 dependencies[] = list
+dependencies[] = location
 dependencies[] = token
 dependencies[] = views
 features[context][] = delete-form
