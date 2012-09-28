@@ -4,7 +4,6 @@
 	<?php
 		print render($form['field_address_geo']);
 		print render($form['field_address_postal']);
-		print render($form['field_location']);
 	?>
 </div>
 <div id="name-city">
@@ -105,11 +104,7 @@
 						});
 					}
 				}
-				$(".form-item-field-location-und-0-city").appendTo("#edit-field-city");
 				$("#edit-submit").addClass('button medium upload');
-				//$('#edit-field-protest-image-und-0-upload').customFileInput();
-				$('#field-location-add-more-wrapper').show();
-				
 				$(document).trigger('iframe-loaded');
 			}
 	}
