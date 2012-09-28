@@ -99,8 +99,10 @@
 					var opac = $(obj).css('opacity');
 					if( opac > 0){
 						var y = $(obj).height();
+						var x = $(obj).width();
 						top.jQuery.colorbox.resize({
-							'innerHeight':y+20
+							'innerHeight':y+50,
+							'innerWidth': x+25
 						});
 					}
 				}
