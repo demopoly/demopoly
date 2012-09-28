@@ -19,7 +19,7 @@
 				<?php if ($user->uid==0){?>
 				<li><a class="active login-button" href="#Login" title="Login">Login</a></li>
 				<?php } else {?>
-				<li><a class="active profile-button" href="<?php print url('user')?>" target="_self" title="Logout">profile-settings</a></li>
+				<li><a class="active profile-button" href="<?php print url('user')?>" target="_self" title="Profile Settings">profile settings</a></li>
 				<li><a class="active logout-button" href="<?php print url('user/logout')?>" target="_self" title="Logout">Logout</a></li>
 				<?php }?>
 			</ul>
