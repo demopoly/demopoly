@@ -5,6 +5,7 @@ package = demopoly
 php = 5.2.4
 dependencies[] = addressfield
 dependencies[] = context
+dependencies[] = countryicons
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = demopoly_geonames

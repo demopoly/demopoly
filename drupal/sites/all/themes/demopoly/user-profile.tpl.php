@@ -39,6 +39,12 @@ drupal_add_js(drupal_get_path('theme', 'demopoly').'/js/profile.js');
 $delete_profile_url = url('user/delete',array('query'=>array('width'=>'480', 'height' => '150', 'iframe'=>'true')));
 $add_image_url = url('protest/add',array('query'=>array('width'=>'900', 'iframe'=>'true')));
 $reload_image_url = url('user/my_images/reload');
+
+$countries = _country_get_predefined_list();
+$user_country = $countries[$user_postal[0]['country']];
+$user_country_icon = theme('countryicons_icon', array('code' =>  $user_postal[0]['country'], 'iconset' =>  'shiny'));
+$user_city = $user_postal[0]['locality'];
+
 ?>
 <!-- start profile -->    
 
@@ -84,7 +90,7 @@ $reload_image_url = url('user/my_images/reload');
 			</div>
 			<hr class="dashed" />
 			<div class="floatLeft fullwidth"><span class="user-profile-label">Country/Autonomous Region/Stateless:</span>
-				<span class="value"><?php print $user_country?></span></div>
+				<span class="value"><?php print $user_country?> <?php print $user_country_icon?></span></div>
 			<hr class="dashed" />
 			<div class="floatLeft"><span class="user-profile-label">City:</span><span class="value"><?php print $user_city?></span></div>
 			<div class="floatRight"><span class="user-profile-label">Password:</span><span class="value"><?php print $user_pass?></span></div>
