@@ -100,10 +100,16 @@
 					if( opac > 0){
 						var y = $(obj).height();
 						var x = $(obj).width();
-						top.jQuery.colorbox.resize({
-							'innerHeight':y+50,
-							'innerWidth': x+25
-						});
+						if($('body').hasClass('page-protest-edit')){
+							top.jQuery.colorbox.resize({
+								'innerHeight':y+50,
+								'innerWidth': x+25
+							});
+						} else {
+							top.jQuery.colorbox.resize({
+								'innerHeight':y+50,
+							});
+						}
 					}
 				}
 				$("#edit-submit").addClass('button medium upload');

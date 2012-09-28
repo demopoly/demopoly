@@ -29,10 +29,6 @@ foreach($views_slideshow_ddblock_slider_items as $slider_item){
 	$thumbnails[] = array($thumb, $slider_item['uniqid']);
 }
 
-function splitAtUpperCase($s) {
-	return preg_split('/(?=[A-Z])/', $s, -1, PREG_SPLIT_NO_EMPTY);
-}
-
 if(count($views_slideshow_ddblock_slider_items) > 1){
 	$prevNext = true;
 } else {
@@ -52,8 +48,9 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 	</div>
 	
 <?php
+global $user;
 	foreach ($views_slideshow_ddblock_slider_items as $slider_item){
-		global $user;
+		
 		$show = true;
 		$flag = flag_get_flag('flag_protest');
 		if($user->uid > 1){
@@ -63,11 +60,13 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 		}
 		
 		if($show != false){
-			$cityCountry = splitAtUpperCase($slider_item['add_postal']);
-// 			$countryCode = $slider_item->field_field_address_postal[0]['raw']['country'];
-// 			$field_city  = $slider_item->field_field_address_postal[0]['raw']['locality'];
-			
-		
+						
+			$protest_postal = field_get_items('protest', entity_load_single('protest', $slider_item['uniqid']), 'field_address_postal');
+
+			$countries = _country_get_predefined_list();
+			$protest_country = $countries[$protest_postal[0]['country']];
+			$protest_country_icon = theme('countryicons_icon', array('code' =>  $protest_postal[0]['country'], 'iconset' =>  'shiny'));
+			$protest_city = $protest_postal[0]['locality'];
 ?>
 	<div class="container-wrapper">
 		<div class="container-image">
@@ -112,7 +111,7 @@ drupal_add_css(drupal_get_path('module', 'views_slideshow_ddblock') . '/css/view
 				</div>
 			</div>
 			<div class="container-text">
-				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php echo $cityCountry[1]; ?> (<?php echo $cityCountry[2]?>)</p>
+				<p class="para-name-city"><strong><?php print $slider_item['slide_name'] ?></strong>, <?php echo $protest_city ?> (<?php echo $protest_country?>)</p>
 				<p class="para-date"><?php print date("F d Y", $slider_item['slide_date']) ?></p>
 				<div class="para-context">
 					<div class="para-context-inline">
