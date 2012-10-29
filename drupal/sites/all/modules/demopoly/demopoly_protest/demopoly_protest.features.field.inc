@@ -826,11 +826,7 @@ function demopoly_protest_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'protest',
-      'default_value' => array(
-        0 => array(
-          'value' => '1',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1236,11 +1232,7 @@ function demopoly_protest_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'protest',
-      'default_value' => array(
-        0 => array(
-          'value' => '1',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
